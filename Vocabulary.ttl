@@ -118,3 +118,27 @@ Grade rdf:Property ;
 Competency rdf:Property ;
     rdfs:label "competency"@en ;
     rdfs:comment "A topic in which the student is competent."@en .
+
+:University rdf:type rdfs:Class ;
+    rdfs:subClassOf foaf:Organization .
+
+:Course rdf:type rdfs:Class .
+:Lecture rdf:type rdfs:Class .
+:Topic rdf:type rdfs:Class .
+:Student rdf:type rdfs:Class .
+
+:LectureContent a owl:Class ;
+    rdfs:label "Lecture Content"@en ;
+    rdfs:comment "The content of a lecture."@en .
+:Slides rdf:type rdfs:Class ;
+    rdfs:label "Slides"@en ;
+    rdfs:subClassOf :LectureContent .
+:Worksheets rdf:type rdfs:Class ;
+    rdfs:label "Worksheets"@en ;
+    rdfs:subClassOf :LectureContent .
+:Readings rdf:type rdfs:Class ;
+    rdfs:label "Readings"@en ;
+    rdfs:subClassOf :LectureContent .
+:OtherMaterial rdf:type rdfs:Class ;
+    rdfs:label "Other Material"@en ;
+    rdfs:subClassOf :LectureContent .
