@@ -1,0 +1,27 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix dbpedia: <http://dbpedia.org/ontology/> .
+@prefix wikidata: <https://www.wikidata.org/wiki/Property:> .
+
+:University a owl:Class ;
+    rdfs:label "University"@en ;
+    rdfs:comment "A higher education institution."@en .
+    
+:Course a owl:Class ;
+    rdfs:label "Course"@en ;
+    rdfs:comment "An academic course offered by a university."@en .
+
+:Lecture a owl:Class ;
+    rdfs:label "Lecture"@en ;
+    rdfs:comment "A session within a course that provides instruction on a specific topic."@en .
+
+:Topic a owl:Class ;
+    rdfs:label "Topic"@en ;
+    rdfs:comment "A subject covered within a course."@en .
+
+:Student a owl:Class ;
+    rdfs:label "Student"@en ;
+    rdfs:comment "An individual enrolled in a university."@en .
