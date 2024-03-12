@@ -25,3 +25,96 @@
 :Student a owl:Class ;
     rdfs:label "Student"@en ;
     rdfs:comment "An individual enrolled in a university."@en .
+
+
+UniversityName rdf:Property ;
+    rdfs:label "university name"@en ;
+    rdfs:comment "The name of the university."@en .
+
+UniversityLink rdf:Property ;
+    rdfs:label "university Link"@en ;
+    rdfs:comment "A link to the university's entry in DBpedia or wikidata."@en .
+
+CourseName rdf:Property ;
+    rdfs:label "course name"@en ;
+    rdfs:comment "The name of the course."@en .
+
+CourseSubject rdf:Property ;
+    rdfs:label "course subject"@en ;
+    rdfs:comment "The subject code of the course."@en .
+
+CourseNumber rdf:Property ;
+    rdfs:label "course number"@en ;
+    rdfs:comment "The number code of the course."@en .
+
+CourseCredits rdf:Property ;
+    rdfs:label "course credits"@en ;
+    rdfs:comment "The credit value of the course."@en .
+
+CourseDescription rdf:Property ;
+    rdfs:label "course description"@en ;
+    rdfs:comment "A description of the course."@en .
+
+CourseWebsite rdfs:subPropertyOf rdfs:seeAlso ;
+    rdfs:label "course website"@en ;
+    rdfs:comment "A link to a webpage with information about the course."@en .
+
+CourseOutline rdf:Property ;
+    rdfs:label "course outline"@en ;
+    rdfs:comment "A link to the course outline."@en .
+
+LectureNumber rdf:Property ;
+    rdfs:label "lecture number"@en ;
+    rdfs:comment "The sequential number of the lecture."@en .
+
+LectureName rdf:Property ;
+    rdfs:label "lecture name"@en ;
+    rdfs:comment "The name of the lecture."@en .
+
+LectureContent rdf:Property ;
+    rdfs:label "lecture content"@en ;
+    rdfs:comment "The content of the lecture."@en .
+
+LectureWebsite rdfs:subPropertyOf rdfs:seeAlso;
+    rdfs:label "lecture website"@en ;
+    rdfs:comment "A link to a webpage with information about the lecture."@en .
+
+TopicName rdf:Property ;
+    rdfs:label "topic name"@en ;
+    rdfs:comment "The name of the topic."@en .
+
+TopicProvenance rdf:Property ;
+    rdfs:label "topic provenance"@en ;
+    rdfs:comment "The source where the topic was identified."@en .
+
+TopicLink rdf:Property ;
+    rdfs:label "Topic link"@en ;
+    rdfs:comment "A link to the topic in DBpedia."@en .
+
+FirstName rdf:Property ;
+    rdfs:label "first name"@en ;
+    rdfs:comment "The first name of the student."@en .
+
+LastName rdf:Property ;
+    rdfs:label "last name"@en ;
+    rdfs:comment "The last name of the student."@en .
+
+IDNumber rdf:Property ;
+    rdfs:label "ID number"@en ;
+    rdfs:comment "The identification number of the student."@en .
+
+Email rdf:Property ;
+    rdfs:label "email"@en ;
+    rdfs:comment "The email address of the student."@en .
+
+CompletedCourse rdf:Property ;
+    rdfs:label "completed course"@en ;
+    rdfs:comment "A course completed by the student."@en .
+
+Grade rdf:Property ;
+    rdfs:label "grade"@en ;
+    rdfs:comment "The grade achieved by the student in a course."@en .
+
+Competency rdf:Property ;
+    rdfs:label "competency"@en ;
+    rdfs:comment "A topic in which the student is competent."@en .
