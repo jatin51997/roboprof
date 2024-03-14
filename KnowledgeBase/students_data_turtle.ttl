@@ -1,0 +1,63 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#> .
+@prefix vocdata: <file:///Users/jatin/workspace/roboprof/data#> .
+
+vocdata:123456 a voc:Student ;
+    voc:Competency "Deep_learning",
+        "Machine_learning",
+        "Natural_language_processing",
+        "Recommender_system" ;
+    voc:CompletedCourse "COMP6721",
+        "COMP6741" ;
+    voc:Grade "A-",
+        "B+" ;
+    voc:IDNumber "123456" ;
+    foaf:familyName "Doe" ;
+    foaf:givenName "John" ;
+    foaf:mbox "johndoe@example.com" .
+
+vocdata:456789 a voc:Student ;
+    voc:Competency "Machine_learning",
+        "Recommender_system" ;
+    voc:CompletedCourse "COMP6741" ;
+    voc:Grade "A",
+        "C+" ;
+    voc:IDNumber "456789" ;
+    foaf:familyName "Williams" ;
+    foaf:givenName "Bob" ;
+    foaf:mbox "bobwilliams@example.com" .
+
+vocdata:654321 a voc:Student ;
+    voc:Competency "Machine_learning",
+        "Recommender_system" ;
+    voc:CompletedCourse "COMP6741" ;
+    voc:Grade "A" ;
+    voc:IDNumber "654321" ;
+    foaf:familyName "Smith" ;
+    foaf:givenName "Jane" ;
+    foaf:mbox "janesmith@example.com" .
+
+vocdata:789123 a voc:Student ;
+    voc:Competency "Deep_learning",
+        "Natural_language_processing" ;
+    voc:CompletedCourse "COMP6721" ;
+    voc:Grade "A" ;
+    voc:IDNumber "789123" ;
+    foaf:familyName "Brown" ;
+    foaf:givenName "Eva" ;
+    foaf:mbox "evabrown@example.com" .
+
+vocdata:987654 a voc:Student ;
+    voc:Competency "Deep_learning",
+        "Machine_learning",
+        "Natural_language_processing",
+        "Recommender_system" ;
+    voc:CompletedCourse "COMP6721",
+        "COMP6741" ;
+    voc:Grade "A-",
+        "C+" ;
+    voc:IDNumber "987654" ;
+    foaf:familyName "Johnson" ;
+    foaf:givenName "Alice" ;
+    foaf:mbox "alicejohnson@example.com" .
+

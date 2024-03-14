@@ -1,0 +1,26 @@
+@prefix dbp: <http://dbpedia.org/resource/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#> .
+@prefix vocdata: <file:///Users/jatin/workspace/roboprof/data#> .
+
+vocdata:1849964882 a voc:Topic ;
+    voc:TopicProvenance <file:///Users/jatin/workspace/roboprof/data#Datasets/COMP6741/lectures/6_Machine%20Learning%20for%20Intelligent%20Systems/slides06.pdf> ;
+    rdfs:seeAlso dbp:Machine_learning ;
+    foaf:name "Machine_learning" .
+
+vocdata:4911446801 a voc:Topic ;
+    voc:TopicProvenance <file:///Users/jatin/workspace/roboprof/data#Datasets/COMP6721/lectures/10_NLP/slides10.pdf> ;
+    rdfs:seeAlso dbp:Natural_language_processing ;
+    foaf:name "Natural_language_processing" .
+
+vocdata:7948519564 a voc:Topic ;
+    voc:TopicProvenance <file:///Users/jatin/workspace/roboprof/data#Datasets/COMP6721/lectures/7_IntroToDL/slides07.pdf> ;
+    rdfs:seeAlso dbp:Deep_learning ;
+    foaf:name "Deep_learning" .
+
+vocdata:9835047445 a voc:Topic ;
+    voc:TopicProvenance <file:///Users/jatin/workspace/roboprof/data#Datasets/COMP6741/lectures/5_Recommender%20Systems/slides05.pdf> ;
+    rdfs:seeAlso dbp:Recommender_system ;
+    foaf:name "Recommender_system" .
+
