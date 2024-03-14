@@ -1,144 +1,141 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix voc: <file:///Users/jatin/workspace/roboprof/schema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix schema: <http://schema.org/> .
-@prefix dbpedia: <http://dbpedia.org/ontology/> .
-@prefix wikidata: <https://www.wikidata.org/wiki/Property:> .
 
-:University a owl:Class ;
-    rdfs:label "University"@en ;
-    rdfs:comment "A higher education institution."@en .
-    
-:Course a owl:Class ;
-    rdfs:label "Course"@en ;
-    rdfs:comment "An academic course offered by a university."@en .
+voc:University
+    a rdfs:Class ;
+    rdfs:subClassOf foaf:Organization ;
+    rdfs:label "University"@en .
 
-:Lecture a owl:Class ;
-    rdfs:label "Lecture"@en ;
-    rdfs:comment "A session within a course that provides instruction on a specific topic."@en .
+#foaf:name
+#rdfs:seeAlso
 
-:Topic a owl:Class ;
-    rdfs:label "Topic"@en ;
-    rdfs:comment "A subject covered within a course."@en .
+voc:Course
+    a rdfs:Class ;
+    rdfs:label "An academic course offered by a university."@en .
 
-:Student a owl:Class ;
-    rdfs:label "Student"@en ;
-    rdfs:comment "An individual enrolled in a university."@en .
-
-
-UniversityName rdf:Property ;
-    rdfs:label "university name"@en ;
-    rdfs:comment "The name of the university."@en .
-
-UniversityLink rdf:Property ;
-    rdfs:label "university Link"@en ;
-    rdfs:comment "A link to the university's entry in DBpedia or wikidata."@en .
-
-CourseName rdf:Property ;
-    rdfs:label "course name"@en ;
-    rdfs:comment "The name of the course."@en .
-
-CourseSubject rdf:Property ;
+voc:CourseSubject a rdf:Property ;
+    rdfs:domain voc:Course ;
+    rdfs:range rdfs:Literal ;
     rdfs:label "course subject"@en ;
     rdfs:comment "The subject code of the course."@en .
 
-CourseNumber rdf:Property ;
+voc:CourseNumber a rdf:Property ;
+    rdfs:domain voc:Course ;
+    rdfs:range rdfs:Literal ;
     rdfs:label "course number"@en ;
     rdfs:comment "The number code of the course."@en .
 
-CourseCredits rdf:Property ;
+voc:CourseCredits a rdf:Property ;
+    rdfs:domain voc:Course ;
+    rdfs:range rdfs:Literal ;
     rdfs:label "course credits"@en ;
     rdfs:comment "The credit value of the course."@en .
 
-CourseDescription rdf:Property ;
+voc:CourseDescription a rdf:Property ;
+    rdfs:domain voc:Course ;
+    rdfs:range rdfs:Literal ;
     rdfs:label "course description"@en ;
     rdfs:comment "A description of the course."@en .
 
-CourseWebsite rdfs:subPropertyOf rdfs:seeAlso ;
-    rdfs:label "course website"@en ;
-    rdfs:comment "A link to a webpage with information about the course."@en .
-
-CourseOutline rdf:Property ;
+voc:CourseOutline a rdf:Property ;
+    rdfs:domain voc:Course ;
     rdfs:label "course outline"@en ;
     rdfs:comment "A link to the course outline."@en .
 
-LectureNumber rdf:Property ;
+#foaf:name
+#rdfs:seeAlso
+
+
+voc:Lecture
+    a rdfs:Class ;
+    rdfs:label "A session within a course that provides instruction on a specific topic."@en .
+
+voc:LectureNumber a rdf:Property ;
     rdfs:label "lecture number"@en ;
-    rdfs:comment "The sequential number of the lecture."@en .
+    rdfs:comment "The sequential number of the lecture."@en ;
+    rdfs:domain voc:Lecture ;
+    rdfs:range rdfs:Literal .
 
-LectureName rdf:Property ;
-    rdfs:label "lecture name"@en ;
-    rdfs:comment "The name of the lecture."@en .
-
-LectureContent rdf:Property ;
+voc:LectureContent a rdf:Property ;
     rdfs:label "lecture content"@en ;
-    rdfs:comment "The content of the lecture."@en .
+    rdfs:comment "The content of the lecture."@en ;
+    rdfs:domain voc:Lecture ;
+    rdfs:range rdfs:Literal .
 
-LectureWebsite rdfs:subPropertyOf rdfs:seeAlso;
-    rdfs:label "lecture website"@en ;
-    rdfs:comment "A link to a webpage with information about the lecture."@en .
-
-TopicName rdf:Property ;
-    rdfs:label "topic name"@en ;
-    rdfs:comment "The name of the topic."@en .
-
-TopicProvenance rdf:Property ;
-    rdfs:label "topic provenance"@en ;
-    rdfs:comment "The source where the topic was identified."@en .
-
-TopicLink rdf:Property ;
-    rdfs:label "Topic link"@en ;
-    rdfs:comment "A link to the topic in DBpedia."@en .
-
-FirstName rdf:Property ;
-    rdfs:label "first name"@en ;
-    rdfs:comment "The first name of the student."@en .
-
-LastName rdf:Property ;
-    rdfs:label "last name"@en ;
-    rdfs:comment "The last name of the student."@en .
-
-IDNumber rdf:Property ;
-    rdfs:label "ID number"@en ;
-    rdfs:comment "The identification number of the student."@en .
-
-Email rdf:Property ;
-    rdfs:label "email"@en ;
-    rdfs:comment "The email address of the student."@en .
-
-CompletedCourse rdf:Property ;
-    rdfs:label "completed course"@en ;
-    rdfs:comment "A course completed by the student."@en .
-
-Grade rdf:Property ;
-    rdfs:label "grade"@en ;
-    rdfs:comment "The grade achieved by the student in a course."@en .
-
-Competency rdf:Property ;
-    rdfs:label "competency"@en ;
-    rdfs:comment "A topic in which the student is competent."@en .
-
-:University rdf:type rdfs:Class ;
-    rdfs:subClassOf foaf:Organization .
-
-:Course rdf:type rdfs:Class .
-:Lecture rdf:type rdfs:Class .
-:Topic rdf:type rdfs:Class .
-:Student rdf:type rdfs:Class .
-
-:LectureContent a owl:Class ;
-    rdfs:label "Lecture Content"@en ;
-    rdfs:comment "The content of a lecture."@en .
-:Slides rdf:type rdfs:Class ;
+voc:Slides a rdfs:Class ;
     rdfs:label "Slides"@en ;
-    rdfs:subClassOf :LectureContent .
-:Worksheets rdf:type rdfs:Class ;
+    rdfs:subClassOf voc:LectureContent .
+
+voc:Worksheets a rdfs:Class ;
     rdfs:label "Worksheets"@en ;
-    rdfs:subClassOf :LectureContent .
-:Readings rdf:type rdfs:Class ;
+    rdfs:subClassOf voc:LectureContent .
+
+voc:Readings a rdfs:Class ;
     rdfs:label "Readings"@en ;
-    rdfs:subClassOf :LectureContent .
-:OtherMaterial rdf:type rdfs:Class ;
+    rdfs:subClassOf voc:LectureContent .
+
+voc:OtherMaterial a rdfs:Class ;
     rdfs:label "Other Material"@en ;
-    rdfs:subClassOf :LectureContent .
+    rdfs:subClassOf voc:LectureContent .
+
+#foaf:name
+#rdfs:seeAlso
+
+voc:Topic
+    a rdfs:Class ;
+    rdfs:label "A subject covered within a course."@en .
+
+voc:TopicProvenance a rdf:Property ;
+    rdfs:label "topic provenance"@en ;
+    rdfs:comment "The source where the topic was identified."@en ;
+    rdfs:domain voc:Topic ;
+    rdfs:range voc:Lecture .
+
+#foaf:name
+#rdfs:seeAlso
+
+voc:Student
+    a rdfs:Class ;
+    rdfs:subClassOf foaf:Person ;
+    rdfs:label "An individual enrolled in a university."@en .
+
+voc:IDNumber a rdf:Property ;
+    rdfs:label "ID number"@en ;
+    rdfs:comment "The identification number of the student."@en ;
+    rdfs:domain voc:Student ;
+    rdfs:range rdfs:Literal .
+
+voc:CompletedCourse a rdf:Property ;
+    rdfs:label "completed course"@en ;
+    rdfs:comment "A course completed by the student."@en ;
+    rdfs:domain voc:Student ;
+    rdfs:range rdfs:Course .
+
+voc:Grade a rdf:Property ;
+    rdfs:label "grade"@en ;
+    rdfs:comment "The grade achieved by the student in a course."@en ;
+    rdfs:range rdfs:Literal .
+    
+voc:Competency a rdf:Property ;
+    rdfs:label "competency"@en ;
+    rdfs:comment "A topic in which the student is competent."@en ;
+    rdfs:domain voc:Student ;
+    rdfs:range rdfs:Literal .
+
+#foaf:givenName 
+#foaf:familyName 
+#foaf:mbox 
+
+voc:OfferedBy a rdf:Property ;
+    rdfs:label "offered by"@en ;
+    rdfs:comment "The university offering the course."@en ;
+    rdfs:domain voc:Course ;
+    rdfs:range voc:University .
+
+voc:BelongsTo rdf:type rdf:Property ;
+    rdfs:label "belongs to"@en ;
+    rdfs:comment "The course that the lecture belongs to."@en ;
+    rdfs:domain voc:Lecture ;
+    rdfs:range voc:Course .
