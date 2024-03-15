@@ -117,7 +117,7 @@ def createLecturesRDF(graph, course_folder, courses):
         graph.add((lecture_uri, RDF.type, voc.Lecture))
         graph.add((lecture_uri, voc.LectureNumber, Literal(lecture_number)))
         graph.add((lecture_uri, FOAF.name, Literal(lecture_name)))
-        graph.add((lecture_uri, voc.BelongsTo, Literal(course_id)))
+        graph.add((lecture_uri, voc.BelongsTo, vocdata[course_id]))
 
         for content_file in os.listdir(lecture_path):
             content_path = os.path.join(lecture_path, content_file)
@@ -214,7 +214,7 @@ if __name__ == "__main__":
 
     g = Graph()
     g.bind("voc", voc)
-    g.bind("data", vocdata)
+    g.bind("vocdata", vocdata)
     courses_folders = ["Datasets/COMP6741", "Datasets/COMP6721"]
     for course_folder in courses_folders:
         createLecturesRDF(g, course_folder, courses)
