@@ -7,10 +7,10 @@ vocdata:123456 a voc:Student ;
         "Machine_learning",
         "Natural_language_processing",
         "Recommender_system" ;
-    voc:CompletedCourse "COMP6721",
-        "COMP6741" ;
-    voc:Grade "A-",
-        "B+" ;
+    voc:CompletedCourse [ voc:Course "COMP6741" ;
+            voc:Grade "A-" ],
+        [ voc:Course "COMP6721" ;
+            voc:Grade "B+" ] ;
     voc:IDNumber "123456" ;
     foaf:familyName "Doe" ;
     foaf:givenName "John" ;
@@ -19,9 +19,10 @@ vocdata:123456 a voc:Student ;
 vocdata:456789 a voc:Student ;
     voc:Competency "Machine_learning",
         "Recommender_system" ;
-    voc:CompletedCourse "COMP6741" ;
-    voc:Grade "A",
-        "C+" ;
+    voc:CompletedCourse [ voc:Course "COMP6741" ;
+            voc:Grade "C+" ],
+        [ voc:Course "COMP6741" ;
+            voc:Grade "A" ] ;
     voc:IDNumber "456789" ;
     foaf:familyName "Williams" ;
     foaf:givenName "Bob" ;
@@ -30,8 +31,8 @@ vocdata:456789 a voc:Student ;
 vocdata:654321 a voc:Student ;
     voc:Competency "Machine_learning",
         "Recommender_system" ;
-    voc:CompletedCourse "COMP6741" ;
-    voc:Grade "A" ;
+    voc:CompletedCourse [ voc:Course "COMP6741" ;
+            voc:Grade "A" ] ;
     voc:IDNumber "654321" ;
     foaf:familyName "Smith" ;
     foaf:givenName "Jane" ;
@@ -40,8 +41,8 @@ vocdata:654321 a voc:Student ;
 vocdata:789123 a voc:Student ;
     voc:Competency "Deep_learning",
         "Natural_language_processing" ;
-    voc:CompletedCourse "COMP6721" ;
-    voc:Grade "A" ;
+    voc:CompletedCourse [ voc:Course "COMP6721" ;
+            voc:Grade "A" ] ;
     voc:IDNumber "789123" ;
     foaf:familyName "Brown" ;
     foaf:givenName "Eva" ;
@@ -52,10 +53,10 @@ vocdata:987654 a voc:Student ;
         "Machine_learning",
         "Natural_language_processing",
         "Recommender_system" ;
-    voc:CompletedCourse "COMP6721",
-        "COMP6741" ;
-    voc:Grade "A-",
-        "C+" ;
+    voc:CompletedCourse [ voc:Course "COMP6721" ;
+            voc:Grade "A-" ],
+        [ voc:Course "COMP6741" ;
+            voc:Grade "C+" ] ;
     voc:IDNumber "987654" ;
     foaf:familyName "Johnson" ;
     foaf:givenName "Alice" ;

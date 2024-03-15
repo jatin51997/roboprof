@@ -1,5 +1,5 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
-from rdflib import Graph, URIRef, Literal, Namespace, RDF, RDFS, FOAF
+from rdflib import BNode, Graph, URIRef, Literal, Namespace, RDF, RDFS, FOAF
 import random
 import os
 import csv
@@ -128,6 +128,8 @@ def createLecturesRDF(graph, course_folder, courses):
                 content_type = voc.Worksheets
             elif content_file.startswith("assignment"):
                 content_type = voc.OtherMaterial
+            elif content_file.startswith("labs"):
+                content_type = voc.OtherMaterial
             elif content_file.startswith("readings"):
                 content_type = voc.Readings
 
@@ -175,11 +177,14 @@ def createStudentsRDF(csv_file):
             g.add((student_uri, FOAF.familyName, Literal(row["Last Name"])))
             g.add((student_uri, voc.IDNumber, Literal(row["ID Number"])))
             g.add((student_uri, FOAF.mbox, Literal(row["Email"])))
-            g.add((student_uri, voc.CompletedCourse, Literal(row["Completed Course"])))
-            g.add((student_uri, voc.Grade, Literal(row["Grade"])))
             competencies = [Literal(comp) for comp in row["Competencies"].split(",")]
             for competency in competencies:
                 g.add((student_uri, voc.Competency, competency))
+
+            course_and_grade = BNode()
+            g.add((student_uri, voc.CompletedCourse, course_and_grade))
+            g.add((course_and_grade, voc.Course, Literal(row["Completed Course"])))
+            g.add((course_and_grade, voc.Grade, Literal(row["Grade"])))
 
     return g
 
