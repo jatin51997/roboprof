@@ -177,15 +177,18 @@ def createStudentsRDF(csv_file):
             g.add((student_uri, FOAF.familyName, Literal(row["Last Name"])))
             g.add((student_uri, voc.IDNumber, Literal(row["ID Number"])))
             g.add((student_uri, FOAF.mbox, Literal(row["Email"])))
-            competencies = [Literal(comp) for comp in row["Competencies"].split(",")]
-            for competency in competencies:
-                g.add((student_uri, voc.Competency, competency))
+
+            competencies_bnode = BNode()
+            g.add((competencies_bnode, voc.Course, Literal(row["Completed Course"])))
+            g.add((student_uri, voc.Competency, competencies_bnode))
+            competencies = row["Competencies"].split(",")
+            for comp in competencies:
+                g.add((competencies_bnode, voc.competencies, Literal(comp.strip())))
 
             course_and_grade = BNode()
             g.add((student_uri, voc.CompletedCourse, course_and_grade))
             g.add((course_and_grade, voc.Course, Literal(row["Completed Course"])))
             g.add((course_and_grade, voc.Grade, Literal(row["Grade"])))
-
     return g
 
 
