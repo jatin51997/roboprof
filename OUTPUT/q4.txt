@@ -1,0 +1,16 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+SELECT ?courseName ?courseSubject ?courseNumber
+WHERE {
+  ?university foaf:name "Concordia University" . 
+  
+  ?courseId a voc:Course;
+            voc:offeredBy ?university;
+            voc:courseSubject ?courseSubject;
+            foaf:name ?courseName;
+            voc:courseNumber ?courseNumber .
+  
+  FILTER(?courseSubject = "COMP")
+}

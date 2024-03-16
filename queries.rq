@@ -1,0 +1,182 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+
+SELECT ?courseName ?courseSubject ?courseNumber ?universityName
+WHERE {
+  ?university a voc:University;
+              foaf:name "Concordia University" .  
+  ?course a voc:Course;
+          foaf:name ?courseName;
+          voc:courseSubject ?courseSubject;
+          voc:courseNumber ?courseNumber;
+          voc:offeredBy ?university .
+  ?university foaf:name ?universityName .
+}
+
+SELECT ?topicName ?courseName ?courseSubject ?courseNumber 
+WHERE {
+ ?topic a voc:Topic ;
+    foaf:name ?topicName ;
+         foaf:name "Deep_learning" ;
+         voc:TopicProvenance ?topicProvenance .
+  ?lecture a voc:Lecture;
+         voc:LectureContent ?topicProvenance;
+         voc:BelongsTo ?courseId.
+  ?courseId a voc:Course;
+        foaf:name ?courseName;
+       voc:courseSubject ?courseSubject;
+      voc:courseNumber ?courseNumber.    
+}
+
+SELECT  ?topicName ?courseName ?lectureNumber
+WHERE {
+  ?course a voc:Course;
+    foaf:name ?courseName;
+  foaf:name "APPLIED ARTIFICIAL INTELLIGENCE".
+  
+  ?lectures voc:BelongsTo ?course;
+    voc:LectureNumber ?lectureNumber;
+    voc:LectureContent ?lectureContent.
+  
+  ?topic a voc:Topic;
+    voc:TopicProvenance ?lectureContent;
+    foaf:name ?topicName.
+    FILTER(?lectureNumber = "7")
+}
+
+SELECT ?courseName ?courseSubject ?courseNumber
+WHERE {
+  ?university foaf:name "Concordia University" . 
+  
+  ?courseId a voc:Course;
+            voc:offeredBy ?university;
+            voc:courseSubject ?courseSubject;
+            foaf:name ?courseName;
+            voc:courseNumber ?courseNumber .
+  
+  FILTER(?courseSubject = "COMP")
+}
+
+SELECT  ?topicName ?courseNo  ?materials
+WHERE {
+  ?course a voc:Course;
+          voc:courseSubject "COMP";
+          voc:courseNumber "6721";
+          foaf:name ?courseName;
+          voc:courseSubject ?courseSub;
+          voc:courseNumber ?courseNum.
+  
+    ?lecture a voc:Lecture;
+      foaf:name ?lectureName ;
+      voc:LectureContent ?lectureContent;
+      voc:BelongsTo ?course;
+      voc:LectureContent ?materials.
+  
+  ?topic a voc:Topic;
+      foaf:name ?topicName;
+      foaf:name "Deep_learning";
+      voc:TopicProvenance ?lectureContent;
+  BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
+}
+
+SELECT ?courseName ?courseSubject ?courseNumber ?description ?credits
+WHERE {
+  ?course a voc:Course;
+          foaf:name ?courseName;
+          voc:courseSubject ?courseSubject;
+          voc:courseNumber ?courseNumber;
+          voc:courseDescription ?description;
+          voc:courseCredits ?credits.
+          
+  FILTER(?courseSubject = "COMP" && ?courseNumber = "6741")
+}
+
+SELECT ?courseNo ?lectureName ?lectureNumber ?lectureContent
+WHERE {
+  ?course a voc:Course ;
+          voc:courseSubject "COMP" ;
+          voc:courseNumber "6721" ;
+          voc:courseSubject ?courseSub;
+          voc:courseNumber ?courseNum.
+  
+  ?lecture a voc:Lecture ;
+           voc:BelongsTo ?course ;
+           voc:LectureNumber "11";
+           voc:LectureNumber ?lectureNumber;
+           foaf:name ?lectureName;
+           voc:LectureContent ?lectureContent.
+  BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
+}
+
+SELECT  ?topicName ?courseNo  ?readingMaterials
+WHERE {
+	?course a voc:Course;
+          voc:courseSubject "COMP";
+          voc:courseNumber "6721";
+          foaf:name ?courseName;
+          voc:courseSubject ?courseSub;
+          voc:courseNumber ?courseNum.
+  
+  	?lecture a voc:Lecture;
+    	foaf:name ?lectureName ;
+    	voc:LectureContent ?lectureContent;
+    	voc:BelongsTo ?course;
+  		voc:LectureContent ?readingMaterials.
+    	?readingMaterials a voc:Readings.
+  
+	?topic a voc:Topic;
+   		foaf:name ?topicName;
+    	foaf:name "Deep_learning";
+    	voc:TopicProvenance ?lectureContent;
+	BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
+}
+
+SELECT DISTINCT ?course ?competency
+WHERE {
+  ?student a voc:Student ;
+           voc:Competency ?competencyNode .
+  ?competencyNode voc:Course ?course ;
+                  voc:competencies ?competency .
+  FILTER(?course = "COMP6741")
+}
+
+SELECT DISTINCT ?IDnumber ?givenName ?familyName ?course ?grade 
+WHERE {
+  ?student a voc:Student;
+           voc:IDNumber "123456";      
+           voc:CompletedCourse ?completedCourse.
+  
+  ?completedCourse voc:Course ?course ;                   
+                   voc:Grade ?grade .
+  
+  ?student foaf:givenName ?givenName ;
+           foaf:familyName ?familyName ;
+           voc:IDNumber ?IDnumber.
+  
+  FILTER (?course = "COMP6741")
+}
+
+SELECT DISTINCT ?studentID ?givenName ?familyName ?email
+WHERE {
+  ?student a voc:Student;
+           voc:CompletedCourse ?completedCourse;
+           foaf:givenName ?givenName;
+           foaf:familyName ?familyName;
+           voc:IDNumber ?studentID;
+           foaf:mbox ?email.
+   ?completedCourse voc:Course ?course ;
+           
+  FILTER(?course = "COMP6741")
+}
+
+SELECT DISTINCT ?course ?grade
+WHERE {
+  ?student a voc:Student;
+           voc:IDNumber "123456";      
+           voc:CompletedCourse ?completedCourse.
+  
+  ?completedCourse voc:Course ?course ;
+                    voc:Grade ?grade .
+}

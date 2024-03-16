@@ -1,0 +1,20 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+SELECT ?courseNo ?lectureName ?lectureNumber ?lectureContent
+WHERE {
+  ?course a voc:Course ;
+          voc:courseSubject "COMP" ;
+          voc:courseNumber "6721" ;
+          voc:courseSubject ?courseSub;
+          voc:courseNumber ?courseNum.
+  
+  ?lecture a voc:Lecture ;
+           voc:BelongsTo ?course ;
+           voc:LectureNumber "11";
+           voc:LectureNumber ?lectureNumber;
+           foaf:name ?lectureName;
+           voc:LectureContent ?lectureContent.
+  BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
+}
