@@ -1,0 +1,19 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+SELECT  ?topicName ?courseName ?lectureNumber
+WHERE {
+  ?course a voc:Course;
+    foaf:name ?courseName;
+  foaf:name "APPLIED ARTIFICIAL INTELLIGENCE".
+  
+  ?lectures voc:BelongsTo ?course;
+    voc:LectureNumber ?lectureNumber;
+    voc:LectureContent ?lectureContent.
+  
+  ?topic a voc:Topic;
+    voc:TopicProvenance ?lectureContent;
+    foaf:name ?topicName.
+    FILTER(?lectureNumber = "7")
+}

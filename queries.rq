@@ -1,145 +1,182 @@
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX schema: <http://schema.org/>
-PREFIX dbpedia: <http://dbpedia.org/ontology/>
-PREFIX wikidata: <https://www.wikidata.org/wiki/Property:>
+PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 
-SELECT ?courseName ?courseLabel
+SELECT ?courseName ?courseSubject ?courseNumber ?universityName
 WHERE {
-  ?university rdf:type :University ;
-              :UniversityName "[university name]" ;
-              :UniversityLink ?course .
-  ?course rdf:type :Course ;
-          :CourseName ?courseName ;
-          rdfs:label ?courseLabel .
+  ?university a voc:University;
+              foaf:name "Concordia University" .  
+  ?course a voc:Course;
+          foaf:name ?courseName;
+          voc:courseSubject ?courseSubject;
+          voc:courseNumber ?courseNumber;
+          voc:offeredBy ?university .
+  ?university foaf:name ?universityName .
 }
 
-SELECT ?courseName ?courseLabel
+SELECT ?topicName ?courseName ?courseSubject ?courseNumber 
 WHERE {
-  ?course rdf:type :Course ;
-          :CourseName ?courseName .
-  ?topic rdf:type :Topic ;
-         :TopicName "[topic]" ;
-         :TopicLink ?course .
-  ?course rdfs:label ?courseLabel .
+ ?topic a voc:Topic ;
+    foaf:name ?topicName ;
+         foaf:name "Deep_learning" ;
+         voc:TopicProvenance ?topicProvenance .
+  ?lecture a voc:Lecture;
+         voc:LectureContent ?topicProvenance;
+         voc:BelongsTo ?courseId.
+  ?courseId a voc:Course;
+        foaf:name ?courseName;
+       voc:courseSubject ?courseSubject;
+      voc:courseNumber ?courseNumber.    
 }
 
-SELECT ?topicName ?topicLabel
+SELECT  ?topicName ?courseName ?lectureNumber
 WHERE {
-  ?course rdf:type :Course ;
-          :CourseName "[course]" .
-  ?lecture rdf:type :Lecture ;
-           :LectureNumber "[lecture number]" ;
-           :LectureContent ?topic ;
-           :CourseLink ?course .
-  ?topic rdf:type :Topic ;
-         :TopicName ?topicName .
-  ?topic rdfs:label ?topicLabel .
+  ?course a voc:Course;
+    foaf:name ?courseName;
+  foaf:name "APPLIED ARTIFICIAL INTELLIGENCE".
+  
+  ?lectures voc:BelongsTo ?course;
+    voc:LectureNumber ?lectureNumber;
+    voc:LectureContent ?lectureContent.
+  
+  ?topic a voc:Topic;
+    voc:TopicProvenance ?lectureContent;
+    foaf:name ?topicName.
+    FILTER(?lectureNumber = "7")
 }
 
-SELECT ?courseName ?courseLabel
+SELECT ?courseName ?courseSubject ?courseNumber
 WHERE {
-  ?university rdf:type :University ;
-              :UniversityName "[university]" .
-  ?course rdf:type :Course ;
-          :CourseName ?courseName ;
-          :UniversityLink ?university ;
-          :CourseSubject "[subject]" .
-  ?course rdfs:label ?courseLabel .
+  ?university foaf:name "Concordia University" . 
+  
+  ?courseId a voc:Course;
+            voc:offeredBy ?university;
+            voc:courseSubject ?courseSubject;
+            foaf:name ?courseName;
+            voc:courseNumber ?courseNumber .
+  
+  FILTER(?courseSubject = "COMP")
 }
 
-SELECT ?material ?materialLabel
+SELECT  ?topicName ?courseNo  ?materials
 WHERE {
-  ?course rdf:type :Course ;
-          :CourseName "[course]" ;
-          :CourseNumber "[number]" .
-  ?topic rdf:type :Topic ;
-         :TopicName "[topic]" ;
-         :TopicLink ?course .
-  ?lecture rdf:type :Lecture ;
-           :LectureContent ?material ;
-           :CourseLink ?course .
-  ?material rdfs:label ?materialLabel .
+  ?course a voc:Course;
+          voc:courseSubject "COMP";
+          voc:courseNumber "6721";
+          foaf:name ?courseName;
+          voc:courseSubject ?courseSub;
+          voc:courseNumber ?courseNum.
+  
+    ?lecture a voc:Lecture;
+      foaf:name ?lectureName ;
+      voc:LectureContent ?lectureContent;
+      voc:BelongsTo ?course;
+      voc:LectureContent ?materials.
+  
+  ?topic a voc:Topic;
+      foaf:name ?topicName;
+      foaf:name "Deep_learning";
+      voc:TopicProvenance ?lectureContent;
+  BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
 }
 
-SELECT ?credits
+SELECT ?courseName ?courseSubject ?courseNumber ?description ?credits
 WHERE {
-  ?course rdf:type :Course ;
-          :CourseName "[course]" ;
-          :CourseNumber "[number]" ;
-          :CourseCredits ?credits .
+  ?course a voc:Course;
+          foaf:name ?courseName;
+          voc:courseSubject ?courseSubject;
+          voc:courseNumber ?courseNumber;
+          voc:courseDescription ?description;
+          voc:courseCredits ?credits.
+          
+  FILTER(?courseSubject = "COMP" && ?courseNumber = "6741")
 }
 
-SELECT ?additionalResource ?resourceLabel
+SELECT ?courseNo ?lectureName ?lectureNumber ?lectureContent
 WHERE {
-  ?course rdf:type :Course ;
-          :CourseName "[course]" ;
-          :CourseNumber "[number]" ;
-          :CourseWebsite ?additionalResource .
-  ?additionalResource rdfs:label ?resourceLabel .
+  ?course a voc:Course ;
+          voc:courseSubject "COMP" ;
+          voc:courseNumber "6721" ;
+          voc:courseSubject ?courseSub;
+          voc:courseNumber ?courseNum.
+  
+  ?lecture a voc:Lecture ;
+           voc:BelongsTo ?course ;
+           voc:LectureNumber "11";
+           voc:LectureNumber ?lectureNumber;
+           foaf:name ?lectureName;
+           voc:LectureContent ?lectureContent.
+  BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
 }
 
-SELECT ?lectureContent ?contentLabel
+SELECT  ?topicName ?courseNo  ?readingMaterials
 WHERE {
-  ?course rdf:type :Course ;
-          :CourseName "[course]" ;
-          :CourseNumber "[number]" .
-  ?lecture rdf:type :Lecture ;
-           :LectureContent ?lectureContent ;
-           :LectureNumber "[lecture number]" .
-  ?lectureContent rdfs:label ?contentLabel .
+	?course a voc:Course;
+          voc:courseSubject "COMP";
+          voc:courseNumber "6721";
+          foaf:name ?courseName;
+          voc:courseSubject ?courseSub;
+          voc:courseNumber ?courseNum.
+  
+  	?lecture a voc:Lecture;
+    	foaf:name ?lectureName ;
+    	voc:LectureContent ?lectureContent;
+    	voc:BelongsTo ?course;
+  		voc:LectureContent ?readingMaterials.
+    	?readingMaterials a voc:Readings.
+  
+	?topic a voc:Topic;
+   		foaf:name ?topicName;
+    	foaf:name "Deep_learning";
+    	voc:TopicProvenance ?lectureContent;
+	BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
 }
 
-SELECT ?readingMaterial ?materialLabel
+SELECT DISTINCT ?course ?competency
 WHERE {
-  ?course rdf:type :Course ;
-          :CourseName "[course]" .
-  ?topic rdf:type :Topic ;
-         :TopicName "[topic]" ;
-         :TopicLink ?course .
-  ?lecture rdf:type :Lecture ;
-           :LectureContent ?readingMaterial ;
-           :LectureWebsite ?course .
-  ?readingMaterial rdfs:label ?materialLabel .
+  ?student a voc:Student ;
+           voc:Competency ?competencyNode .
+  ?competencyNode voc:Course ?course ;
+                  voc:competencies ?competency .
+  FILTER(?course = "COMP6741")
 }
 
-SELECT ?competency ?topicLabel
+SELECT DISTINCT ?IDnumber ?givenName ?familyName ?course ?grade 
 WHERE {
-  ?course rdf:type :Course ;
-          :CourseName "[course]" ;
-          :CourseNumber "[number]" .
-  ?student rdf:type :Student ;
-           :CompletedCourse ?course ;
-           :Competency ?competency .
-  ?competency rdfs:label ?topicLabel .
+  ?student a voc:Student;
+           voc:IDNumber "123456";      
+           voc:CompletedCourse ?completedCourse.
+  
+  ?completedCourse voc:Course ?course ;                   
+                   voc:Grade ?grade .
+  
+  ?student foaf:givenName ?givenName ;
+           foaf:familyName ?familyName ;
+           voc:IDNumber ?IDnumber.
+  
+  FILTER (?course = "COMP6741")
 }
 
-SELECT ?grade
+SELECT DISTINCT ?studentID ?givenName ?familyName ?email
 WHERE {
-  ?student rdf:type :Student ;
-           :FirstName "[student's first name]" ;
-           :LastName "[student's last name]" ;
-           :CompletedCourse [rdfs:label "[course]"] ;
-           :Grade ?grade .
+  ?student a voc:Student;
+           voc:CompletedCourse ?completedCourse;
+           foaf:givenName ?givenName;
+           foaf:familyName ?familyName;
+           voc:IDNumber ?studentID;
+           foaf:mbox ?email.
+   ?completedCourse voc:Course ?course ;
+           
+  FILTER(?course = "COMP6741")
 }
 
-SELECT ?student ?studentLabel
+SELECT DISTINCT ?course ?grade
 WHERE {
-  ?student rdf:type :Student ;
-           :CompletedCourse [rdfs:label "[course]"] .
-  ?student rdfs:label ?studentLabel .
-}
-
-SELECT ?courseName ?courseLabel ?grade
-WHERE {
-  ?student rdf:type :Student ;
-           :FirstName "[student's first name]" ;
-           :LastName "[student's last name]" ;
-           :CompletedCourse ?course ;
-           :Grade ?grade .
-  ?course rdf:type :Course ;
-          :CourseName ?courseName .
-  ?course rdfs:label ?courseLabel .
+  ?student a voc:Student;
+           voc:IDNumber "123456";      
+           voc:CompletedCourse ?completedCourse.
+  
+  ?completedCourse voc:Course ?course ;
+                    voc:Grade ?grade .
 }

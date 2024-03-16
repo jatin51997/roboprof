@@ -1,0 +1,18 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+SELECT ?topicName ?courseName ?courseSubject ?courseNumber 
+WHERE {
+ ?topic a voc:Topic ;
+    foaf:name ?topicName ;
+         foaf:name "Deep_learning" ;
+         voc:TopicProvenance ?topicProvenance .
+  ?lecture a voc:Lecture;
+         voc:LectureContent ?topicProvenance;
+         voc:BelongsTo ?courseId.
+  ?courseId a voc:Course;
+        foaf:name ?courseName;
+       voc:courseSubject ?courseSubject;
+      voc:courseNumber ?courseNumber.    
+}

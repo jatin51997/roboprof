@@ -1,0 +1,16 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+SELECT DISTINCT ?studentID ?givenName ?familyName ?email
+WHERE {
+  ?student a voc:Student;
+           voc:CompletedCourse ?completedCourse;
+           foaf:givenName ?givenName;
+           foaf:familyName ?familyName;
+           voc:IDNumber ?studentID;
+           foaf:mbox ?email.
+   ?completedCourse voc:Course ?course ;
+           
+  FILTER(?course = "COMP6741")
+}

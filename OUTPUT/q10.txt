@@ -1,0 +1,19 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+SELECT DISTINCT ?IDnumber ?givenName ?familyName ?course ?grade 
+WHERE {
+  ?student a voc:Student;
+           voc:IDNumber "123456";      
+           voc:CompletedCourse ?completedCourse.
+  
+  ?completedCourse voc:Course ?course ;                   
+                   voc:Grade ?grade .
+  
+  ?student foaf:givenName ?givenName ;
+           foaf:familyName ?familyName ;
+           voc:IDNumber ?IDnumber.
+  
+  FILTER (?course = "COMP6741")
+}
