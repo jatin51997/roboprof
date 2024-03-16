@@ -2,30 +2,24 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 import csv
 import os
 
-# Define the Fuseki server endpoint
 sparql_endpoint = "http://localhost:3030/roboprof/query"
 
-# Directory to store the output files
+
 output_directory = "./OUTPUT"
 
-# Ensure the output directory exists
 if not os.path.exists(output_directory):
     os.makedirs(output_directory)
 
-# Read the SPARQL queries from the file
 with open("queries.rq", "r") as file:
     file_content = file.read()
 
-# Split the content into prefix part and query parts
 parts = file_content.split("\n\n")
 prefixes = parts[0]  # Assuming the first part contains the prefix declarations
 queries = parts[1:]  # The rest are the actual queries
 
-# Set up SPARQLWrapper to query the Fuseki server
 sparql = SPARQLWrapper(sparql_endpoint)
 sparql.setReturnFormat(JSON)
 
-# Iterate over the queries, write them to individual text files, and save the results in CSV files
 for i, query_str in enumerate(queries, start=1):
     query_filename = os.path.join(output_directory, f"q{i}.txt")
     output_filename = os.path.join(output_directory, f"q{i}-out.csv")
