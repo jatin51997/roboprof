@@ -160,7 +160,7 @@ def createLecturesRDF(graph, course_folder, courses):
                     with open(content_path, "r") as file:
                         for line in file:
                             resource = line.strip()
-                            content_uri = URIRef(urllib.parse.quote(resource))
+                            content_uri = URIRef(resource)
                             graph.add((content_uri, RDF.type, content_type1))
                             graph.add((lecture_uri, voc.LectureContent, content_uri))
 
