@@ -1,2 +1,2 @@
-topicName,courseNo,readingMaterials
-Deep_learning,COMP 6721,file:///Users/jatin/workspace/roboprof/data#Datasets/COMP6721/lectures/7_IntroToDL/readings07.pdf
+courseURI,courseNo,lectureURI,lectureName,lectureNumber,lectureContent
+file:///Users/jatin/workspace/roboprof/data#3671756991,COMP 6721,file:///Users/jatin/workspace/roboprof/data#Datasets/COMP6721/lectures/11_Optimisation,Optimisation,11,file:///Users/jatin/workspace/roboprof/data#Datasets/COMP6721/lectures/11_Optimisation/slides11.pdf

@@ -1,3 +1,2 @@
-course,competency
-COMP6741,Machine_learning
-COMP6741,Recommender_system
+topicURI,topicName,courseURI,courseNo,readingMaterials
+file:///Users/jatin/workspace/roboprof/data#2621722467,Deep_learning,file:///Users/jatin/workspace/roboprof/data#3671756991,COMP 6721,file:///Users/jatin/workspace/roboprof/data#Datasets/COMP6721/lectures/7_IntroToDL/readings07.pdf

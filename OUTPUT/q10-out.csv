@@ -1,2 +1,3 @@
-IDnumber,givenName,familyName,course,grade
-123456,John,Doe,COMP6741,A-
+course,competency,competencyURI
+COMP6741,Recommender_system,file:///Users/jatin/workspace/roboprof/data#5096213492
+COMP6741,Machine_learning,file:///Users/jatin/workspace/roboprof/data#4350036575

@@ -2,11 +2,25 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
 PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-SELECT DISTINCT ?course ?competency
+SELECT  (?topic as ?topicURI) ?topicName (?course as ?courseURI) ?courseNo  ?readingMaterials
 WHERE {
-  ?student a voc:Student ;
-           voc:Competency ?competencyNode .
-  ?competencyNode voc:Course ?course ;
-                  voc:competencies ?competency .
-  FILTER(?course = "COMP6741")
+  ?course a voc:Course;
+          voc:courseSubject "COMP";
+          voc:courseNumber "6721";
+          foaf:name ?courseName;
+          voc:courseSubject ?courseSub;
+          voc:courseNumber ?courseNum.
+  
+    ?lecture a voc:Lecture;
+      foaf:name ?lectureName ;
+      voc:LectureContent ?lectureContent;
+      voc:BelongsTo ?course;
+      voc:LectureContent ?readingMaterials.
+      ?readingMaterials a voc:Readings.
+  
+  ?topic a voc:Topic;
+      foaf:name ?topicName;
+      foaf:name "Deep_learning";
+      voc:TopicProvenance ?lectureContent;
+  BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
 }

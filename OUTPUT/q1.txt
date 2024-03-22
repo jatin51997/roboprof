@@ -2,7 +2,7 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
 PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-SELECT ?courseName ?courseSubject ?courseNumber ?universityName
+SELECT DISTINCT (?course as ?courseURI) ?courseName  ?courseSubject ?courseNumber ?universityName (?university as ?universityURI) 
 WHERE {
   ?university a voc:University;
               foaf:name "Concordia University" .  

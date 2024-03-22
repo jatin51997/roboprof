@@ -1,0 +1,20 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+SELECT DISTINCT ?course ?grade ?alphabeticPrefix ?numericPart (?course1 as ?courseURI)
+WHERE {
+  ?student a voc:Student;
+           voc:IDNumber "123456";      
+           voc:CompletedCourse ?completedCourse.
+  
+  ?completedCourse voc:Course ?course ;
+                    voc:Grade ?grade .
+  BIND(REPLACE(STR(?course), "[^A-Za-z]+", "") AS ?alphabeticPrefix).
+  BIND(REPLACE(STR(?course), "[^0-9]+", "") AS ?numericPart).
+  
+  ?course1 a voc:Course;
+              voc:courseNumber ?numericPart;
+              voc:courseSubject ?alphabeticPrefix;
+              voc:courseDescription "Lecture".
+  }
