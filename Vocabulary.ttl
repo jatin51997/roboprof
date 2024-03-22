@@ -80,6 +80,9 @@ voc:OtherMaterial a rdfs:Class ;
     rdfs:label "Other Material"@en ;
     rdfs:subClassOf voc:LectureContent .
 
+voc:AdditionalResources a rdfs:Class ;
+    rdfs:label "Additional Resources"@en ;
+    rdfs:subClassOf voc:LectureContent .
 #foaf:name
 #rdfs:seeAlso
 
