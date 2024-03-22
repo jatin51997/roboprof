@@ -93,6 +93,26 @@ WHERE {
   FILTER(?courseSubject = "COMP" && ?courseNumber = "6741")
 }
 
+SELECT  DISTINCT ?courseNo  ?additionalResources 
+WHERE {
+  ?course a voc:Course;
+          voc:courseSubject "COMP";
+          voc:courseNumber "6741";
+          foaf:name ?courseName;
+          voc:courseSubject ?courseSub;
+          voc:courseNumber ?courseNum.
+  
+    ?lecture a voc:Lecture;
+      foaf:name ?lectureName ;
+      voc:LectureContent ?lectureContent;
+      voc:BelongsTo ?course;
+      voc:LectureContent ?additionalResources.  
+    ?additionalResources a voc:AdditionalResources.
+  
+  
+  BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
+}
+
 SELECT ?courseNo ?lectureName ?lectureNumber ?lectureContent
 WHERE {
   ?course a voc:Course ;
