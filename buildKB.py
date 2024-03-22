@@ -87,6 +87,28 @@ def createCoursesRDF(csv_file, university_ids):
             if subject.startswith("COMP") and catalog in ["6741", "6721"]:
                 course_ids[(subject, catalog)] = unique_id_str_padded
 
+            if subject.startswith("COMP") and catalog in ["6741"]:
+                g.add(
+                    (
+                        vocdata_uri,
+                        RDFS.seeAlso,
+                        URIRef(
+                            "https://moodle.concordia.ca/moodle/course/view.php?id=162041"
+                        ),
+                    )
+                )
+
+            if subject.startswith("COMP") and catalog in ["6721"]:
+                g.add(
+                    (
+                        vocdata_uri,
+                        RDFS.seeAlso,
+                        URIRef(
+                            "https://moodle.concordia.ca/moodle/course/view.php?id=162021"
+                        ),
+                    )
+                )
+
             university_uri = URIRef("http://dbpedia.org/resource/Concordia_University")
             if university_uri in university_ids:
                 university_vocdata_id = university_ids[university_uri]

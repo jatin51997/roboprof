@@ -9,10 +9,10 @@ vocdata:123456 a voc:Student ;
         [ voc:Course "COMP6721" ;
             voc:competencies "Deep_learning",
                 "Natural_language_processing" ] ;
-    voc:CompletedCourse [ voc:Course "COMP6741" ;
-            voc:Grade "A-" ],
-        [ voc:Course "COMP6721" ;
-            voc:Grade "B+" ] ;
+    voc:CompletedCourse [ voc:Course "COMP6721" ;
+            voc:Grade "B+" ],
+        [ voc:Course "COMP6741" ;
+            voc:Grade "A-" ] ;
     voc:IDNumber "123456" ;
     foaf:familyName "Doe" ;
     foaf:givenName "John" ;
@@ -26,9 +26,9 @@ vocdata:456789 a voc:Student ;
             voc:competencies "Machine_learning",
                 "Recommender_system" ] ;
     voc:CompletedCourse [ voc:Course "COMP6741" ;
-            voc:Grade "A" ],
+            voc:Grade "C+" ],
         [ voc:Course "COMP6741" ;
-            voc:Grade "C+" ] ;
+            voc:Grade "A" ] ;
     voc:IDNumber "456789" ;
     foaf:familyName "Williams" ;
     foaf:givenName "Bob" ;
@@ -57,12 +57,12 @@ vocdata:789123 a voc:Student ;
     foaf:mbox "evabrown@example.com" .
 
 vocdata:987654 a voc:Student ;
-    voc:Competency [ voc:Course "COMP6741" ;
-            voc:competencies "Machine_learning",
-                "Recommender_system" ],
-        [ voc:Course "COMP6721" ;
+    voc:Competency [ voc:Course "COMP6721" ;
             voc:competencies "Deep_learning",
-                "Natural_language_processing" ] ;
+                "Natural_language_processing" ],
+        [ voc:Course "COMP6741" ;
+            voc:competencies "Machine_learning",
+                "Recommender_system" ] ;
     voc:CompletedCourse [ voc:Course "COMP6721" ;
             voc:Grade "A-" ],
         [ voc:Course "COMP6741" ;
