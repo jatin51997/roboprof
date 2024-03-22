@@ -133,7 +133,6 @@ def createLecturesRDF(graph, course_folder, courses):
             elif content_file.startswith("readings"):
                 content_type = voc.Readings
             elif content_file.startswith("AdditionalResources.txt"):
-                print("Hiii!!", content_path)
                 content_type1 = voc.AdditionalResources
                 if content_type1:
                     with open(content_path, "r") as file:
