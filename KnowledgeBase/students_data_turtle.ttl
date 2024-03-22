@@ -3,12 +3,12 @@
 @prefix vocdata: <file:///Users/jatin/workspace/roboprof/data#> .
 
 vocdata:123456 a voc:Student ;
-    voc:Competency [ voc:Course "COMP6721" ;
-            voc:competencies "Deep_learning",
-                "Natural_language_processing" ],
-        [ voc:Course "COMP6741" ;
+    voc:Competency [ voc:Course "COMP6741" ;
             voc:competencies "Machine_learning",
-                "Recommender_system" ] ;
+                "Recommender_system" ],
+        [ voc:Course "COMP6721" ;
+            voc:competencies "Deep_learning",
+                "Natural_language_processing" ] ;
     voc:CompletedCourse [ voc:Course "COMP6741" ;
             voc:Grade "A-" ],
         [ voc:Course "COMP6721" ;
