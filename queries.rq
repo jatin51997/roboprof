@@ -3,7 +3,7 @@ PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
 PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 
-SELECT ?courseName ?courseSubject ?courseNumber ?universityName
+SELECT DISTINCT (?course as ?courseURI) ?courseName  ?courseSubject ?courseNumber ?universityName (?university as ?universityURI) 
 WHERE {
   ?university a voc:University;
               foaf:name "Concordia University" .  
@@ -15,7 +15,7 @@ WHERE {
   ?university foaf:name ?universityName .
 }
 
-SELECT ?topicName ?courseName ?courseSubject ?courseNumber 
+SELECT (?topic as ?topicURI) ?topicName (?courseId as ?courseURI) ?courseName ?courseSubject ?courseNumber 
 WHERE {
  ?topic a voc:Topic ;
     foaf:name ?topicName ;
@@ -30,7 +30,7 @@ WHERE {
       voc:courseNumber ?courseNumber.    
 }
 
-SELECT  ?topicName ?courseName ?lectureNumber
+SELECT  (?topic as ?topicURI) ?topicName (?course as ?courseURI) ?courseName (?lectures as ?lectureURI) ?lectureNumber
 WHERE {
   ?course a voc:Course;
     foaf:name ?courseName;
@@ -46,7 +46,7 @@ WHERE {
     FILTER(?lectureNumber = "7")
 }
 
-SELECT ?courseName ?courseSubject ?courseNumber
+SELECT DISTINCT ?courseName (?courseId as ?courseURI) ?courseSubject ?courseNumber
 WHERE {
   ?university foaf:name "Concordia University" . 
   
@@ -59,7 +59,7 @@ WHERE {
   FILTER(?courseSubject = "COMP")
 }
 
-SELECT  ?topicName ?courseNo  ?materials
+SELECT  (?topic as ?topicURI) ?topicName (?course as ?courseURI) ?courseNo  ?materials
 WHERE {
   ?course a voc:Course;
           voc:courseSubject "COMP";
@@ -81,7 +81,7 @@ WHERE {
   BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
 }
 
-SELECT ?courseName ?courseSubject ?courseNumber ?description ?credits
+SELECT (?course as ?courseURI) ?courseName ?courseSubject ?courseNumber ?description ?credits
 WHERE {
   ?course a voc:Course;
           foaf:name ?courseName;
@@ -93,7 +93,7 @@ WHERE {
   FILTER(?courseSubject = "COMP" && ?courseNumber = "6741")
 }
 
-SELECT  DISTINCT ?courseNo  ?additionalResources 
+SELECT  DISTINCT (?course as ?courseURI) ?courseNo  ?additionalResources 
 WHERE {
   ?course a voc:Course;
           voc:courseSubject "COMP";
@@ -113,7 +113,7 @@ WHERE {
   BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
 }
 
-SELECT ?courseNo ?lectureName ?lectureNumber ?lectureContent
+SELECT (?course as ?courseURI) ?courseNo (?lecture as ?lectureURI) ?lectureName ?lectureNumber ?lectureContent
 WHERE {
   ?course a voc:Course ;
           voc:courseSubject "COMP" ;
@@ -130,39 +130,41 @@ WHERE {
   BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
 }
 
-SELECT  ?topicName ?courseNo  ?readingMaterials
+SELECT  (?topic as ?topicURI) ?topicName (?course as ?courseURI) ?courseNo  ?readingMaterials
 WHERE {
-	?course a voc:Course;
+  ?course a voc:Course;
           voc:courseSubject "COMP";
           voc:courseNumber "6721";
           foaf:name ?courseName;
           voc:courseSubject ?courseSub;
           voc:courseNumber ?courseNum.
   
-  	?lecture a voc:Lecture;
-    	foaf:name ?lectureName ;
-    	voc:LectureContent ?lectureContent;
-    	voc:BelongsTo ?course;
-  		voc:LectureContent ?readingMaterials.
-    	?readingMaterials a voc:Readings.
+    ?lecture a voc:Lecture;
+      foaf:name ?lectureName ;
+      voc:LectureContent ?lectureContent;
+      voc:BelongsTo ?course;
+      voc:LectureContent ?readingMaterials.
+      ?readingMaterials a voc:Readings.
   
-	?topic a voc:Topic;
-   		foaf:name ?topicName;
-    	foaf:name "Deep_learning";
-    	voc:TopicProvenance ?lectureContent;
-	BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
+  ?topic a voc:Topic;
+      foaf:name ?topicName;
+      foaf:name "Deep_learning";
+      voc:TopicProvenance ?lectureContent;
+  BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
 }
 
-SELECT DISTINCT ?course ?competency
+SELECT DISTINCT ?course ?competency (?topic as ?competencyURI)
 WHERE {
   ?student a voc:Student ;
            voc:Competency ?competencyNode .
   ?competencyNode voc:Course ?course ;
-                  voc:competencies ?competency .
+            voc:competencies ?competency .
+  ?topic a voc:Topic;
+            foaf:name ?competency.
   FILTER(?course = "COMP6741")
 }
 
-SELECT DISTINCT ?IDnumber ?givenName ?familyName ?course ?grade 
+SELECT DISTINCT (?student as ?studentURI) ?IDnumber ?givenName ?familyName ?course ?grade 
 WHERE {
   ?student a voc:Student;
            voc:IDNumber "123456";      
@@ -178,7 +180,7 @@ WHERE {
   FILTER (?course = "COMP6741")
 }
 
-SELECT DISTINCT ?studentID ?givenName ?familyName ?email
+SELECT DISTINCT (?student as ?studentURI) ?studentID ?givenName ?familyName ?email
 WHERE {
   ?student a voc:Student;
            voc:CompletedCourse ?completedCourse;
@@ -191,7 +193,7 @@ WHERE {
   FILTER(?course = "COMP6741")
 }
 
-SELECT DISTINCT ?course ?grade
+SELECT DISTINCT ?course ?grade ?alphabeticPrefix ?numericPart (?course1 as ?courseURI)
 WHERE {
   ?student a voc:Student;
            voc:IDNumber "123456";      
@@ -199,4 +201,21 @@ WHERE {
   
   ?completedCourse voc:Course ?course ;
                     voc:Grade ?grade .
+  BIND(REPLACE(STR(?course), "[^A-Za-z]+", "") AS ?alphabeticPrefix).
+  BIND(REPLACE(STR(?course), "[^0-9]+", "") AS ?numericPart).
+  
+  ?course1 a voc:Course;
+              voc:courseNumber ?numericPart;
+              voc:courseSubject ?alphabeticPrefix;
+              voc:courseDescription "Lecture".
+  }
+
+SELECT (COUNT(*) AS ?totalTriples)
+  WHERE {
+    ?subject ?predicate ?object
+  }
+
+SELECT (COUNT(DISTINCT ?course) AS ?courseCount)
+WHERE {
+  ?course a voc:Course .
 }
