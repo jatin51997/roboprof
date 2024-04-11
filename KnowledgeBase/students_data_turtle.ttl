@@ -3,16 +3,16 @@
 @prefix vocdata: <file:///Users/jatin/workspace/roboprof/data#> .
 
 vocdata:123456 a voc:Student ;
-    voc:Competency [ voc:Course "COMP6741" ;
-            voc:competencies "Machine_learning",
-                "Recommender_system" ],
-        [ voc:Course "COMP6721" ;
-            voc:competencies "Deep_learning",
-                "Natural_language_processing" ] ;
-    voc:CompletedCourse [ voc:Course "COMP6721" ;
-            voc:Grade "B+" ],
+    voc:Competency [ voc:Course "COMP6721" ;
+            voc:competencies "Deep Learning",
+                "Natural Language Processing" ],
         [ voc:Course "COMP6741" ;
-            voc:Grade "A-" ] ;
+            voc:competencies "Machine Learning",
+                "Recommender systems" ] ;
+    voc:CompletedCourse [ voc:Course "COMP6741" ;
+            voc:Grade "A-" ],
+        [ voc:Course "COMP6721" ;
+            voc:Grade "B+" ] ;
     voc:IDNumber "123456" ;
     foaf:familyName "Doe" ;
     foaf:givenName "John" ;
@@ -20,11 +20,11 @@ vocdata:123456 a voc:Student ;
 
 vocdata:456789 a voc:Student ;
     voc:Competency [ voc:Course "COMP6741" ;
-            voc:competencies "Machine_learning",
-                "Recommender_system" ],
+            voc:competencies "Machine Learning",
+                "Recommender systems" ],
         [ voc:Course "COMP6741" ;
-            voc:competencies "Machine_learning",
-                "Recommender_system" ] ;
+            voc:competencies "Machine Learning",
+                "Recommender systems" ] ;
     voc:CompletedCourse [ voc:Course "COMP6741" ;
             voc:Grade "C+" ],
         [ voc:Course "COMP6741" ;
@@ -36,8 +36,8 @@ vocdata:456789 a voc:Student ;
 
 vocdata:654321 a voc:Student ;
     voc:Competency [ voc:Course "COMP6741" ;
-            voc:competencies "Machine_learning",
-                "Recommender_system" ] ;
+            voc:competencies "Machine Learning",
+                "Recommender systems" ] ;
     voc:CompletedCourse [ voc:Course "COMP6741" ;
             voc:Grade "A" ] ;
     voc:IDNumber "654321" ;
@@ -47,8 +47,8 @@ vocdata:654321 a voc:Student ;
 
 vocdata:789123 a voc:Student ;
     voc:Competency [ voc:Course "COMP6721" ;
-            voc:competencies "Deep_learning",
-                "Natural_language_processing" ] ;
+            voc:competencies "Deep Learning",
+                "Natural Language Processing" ] ;
     voc:CompletedCourse [ voc:Course "COMP6721" ;
             voc:Grade "A" ] ;
     voc:IDNumber "789123" ;
@@ -58,15 +58,15 @@ vocdata:789123 a voc:Student ;
 
 vocdata:987654 a voc:Student ;
     voc:Competency [ voc:Course "COMP6721" ;
-            voc:competencies "Deep_learning",
-                "Natural_language_processing" ],
+            voc:competencies "Deep Learning",
+                "Natural Language Processing" ],
         [ voc:Course "COMP6741" ;
-            voc:competencies "Machine_learning",
-                "Recommender_system" ] ;
-    voc:CompletedCourse [ voc:Course "COMP6721" ;
-            voc:Grade "A-" ],
-        [ voc:Course "COMP6741" ;
-            voc:Grade "C+" ] ;
+            voc:competencies "Machine Learning",
+                "Recommender systems" ] ;
+    voc:CompletedCourse [ voc:Course "COMP6741" ;
+            voc:Grade "C+" ],
+        [ voc:Course "COMP6721" ;
+            voc:Grade "A-" ] ;
     voc:IDNumber "987654" ;
     foaf:familyName "Johnson" ;
     foaf:givenName "Alice" ;

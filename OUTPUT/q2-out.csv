@@ -1,2 +1,3 @@
-topicURI,topicName,courseURI,courseName,courseSubject,courseNumber
-file:///Users/jatin/workspace/roboprof/data#2621722467,Deep_learning,file:///Users/jatin/workspace/roboprof/data#3671756991,APPLIED ARTIFICIAL INTELLIGENCE,COMP,6721
+courseURI,courseName,courseSubject,courseNumber,topicName
+file:///Users/jatin/workspace/roboprof/data#6272216589,APPLIED ARTIFICIAL INTELLIGENCE,COMP,6721,Deep Learning
+file:///Users/jatin/workspace/roboprof/data#1709075924,INTELLIGENT SYSTEMS,COMP,6741,Deep Learning

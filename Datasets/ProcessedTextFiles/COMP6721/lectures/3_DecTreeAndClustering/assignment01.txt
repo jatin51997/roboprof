@@ -1,0 +1,119 @@
+COMP6721 Applied Artiﬁcial Intelligence (Winter 2023)
+Assignment #2: Naive Baysian, Dicision Tree, Neural
+Netowrk
+Due: 11:59PM, February 28th, 2023
+Theoretical Part
+Question 1 Gradient back-propagation technique is one of the fundamental algorithms for
+training feedforward neural networks. Using the chain rule, this algorithm
+calculates the gradient of the loss function at diﬀerent layers of the network.
+In subsequent stages, computed gradients will be used to update weights with
+optimizerssuchasgradientdescentorstochasticgradientdescenttominimizea
+loss function. In this question, we want to drive an expression for the gradient
+of a cost function with respect to the weights and biases of a simple neural
+network. Consider a 1-hidden layer neural network as follows
+where x∈RN×1is the input feature vector and y∈Ris the network output.
+The network’s weights are W1∈RN×Mandw2∈RM, biases are b1∈RMand
+b2∈Rand activation function ρ.
+(a) Following the Neural Network lecture from your course, derive the feed-
+forward equation that maps the input to the output i.e. y=f(x; Θ), where
+Θ={W1,w2,b1,b2}is the set of all learnable parameters.
+(b) Consider a cost function
+J=1
+BB
+/summation.disp
+i=1l/parenleft.alt1ˆyi,yi/parenright.alt1,wherel(ˆy,y)=(ˆy−y)2,
+whereBis the batch size for optimization. Using the chain-rule, derive
+the expressions for the following gradients
+∂J
+∂w1,∂J
+∂w2,∂J
+∂b1,∂J
+∂b2.
+1Question 2 Consider the squared loss L(X,w,y)=1
+2/parallel.alt1Xw−y/parallel.alt12for data matrix X∈RN×D,
+weightsw∈RD×1, and outputs y∈RN×1.
+(a) Find the expression for gradient ∇wL(X,w,y)and minimizer of this loss,
+arg min wL(X,w,y). (Hint: See the example on page 96 of Goodfellow I,
+Bengio Y, Courville A. Deep learning. MIT press, Link .)
+(b) Takew0as the initialization for gradient descent with step size αand show
+an expression for the ﬁrst and second iterates w1andw2only in terms of
+α,w0,X,y.
+(c) Generalize this to show an expression for wkin terms of α,w0,X,y,k.
+(d) Write a pseudo code for calculating the wkin terms of α,w0,X,y,k.
+Question 3 Consider the following 1-hidden neural networks with 2 inputs and a single
+output:
+We can write the below equation for the given neural network:
+y=wT
+2σ/parenleft.alt1wT
+1x+b/parenright.alt1.
+The loss function for training this neural network is:
+l(y,t)=1
+3(y−t)3.
+Consider the activation function σasSigmoid and values for parameters as:
+w1=/bracketleft.alt4−1 0.5
+1 0.5/bracketright.alt4x=/bracketleft.alt40.5
+1.0/bracketright.alt4w2=/bracketleft.alt4−1
+1.0/bracketright.alt4b=/bracketleft.alt40
+0/bracketright.alt4t=1
+Show the sequence of steps in backpropagation to get∂l
+∂x,∂l
+∂b. (Hint:σ′(x)=
+σ(x)(1−σ(x)), You may use intermediate variables in your answer.)
+2Implementation
+Question 1 (K-means ) K-means clustering can be used in image compression. It works on
+clustering speciﬁc (K) numbers of colors to represent the image color instead
+of actual number of colors and in this way, it reduces image size. Obviously,
+it clusters pixels with colors similar to each other and considers one value for
+them. Pleaes note that image “bird.png” is uploaded for this assignment.
+It has dimension of rows*columns pixels and each pixel consists three channels
+of RGB showing color and intensity. Image data can be considered as arrays
+of [rows, columns, 3]. Using ‘image_compression.py’ , ﬁnd cluster centers for
+this image as [centroid, 3]. You ought to:
+(a) Cluster image pixels using predeﬁned python libraries for K-means.
+(b) Findsuitablevalue K,reportaccuracyandattachyour ‘compress_image.png’
+by your report.
+Question 2 (Naive Bayes ) Consider the following table:
+Example No. Color Type Origin Stolen?
+1 Red Sports Domestic Yes
+2 Red Sports Domestic No
+3 Red Sports Domestic Yes
+4 Yellow Sports Domestic No
+5 Yellow Sports Imported Yes
+6 Yellow SUV Imported No
+7 Yellow SUV Imported Yes
+8 Yellow SUV Domestic No
+9 Red SUV Imported No
+10 Red Sports Imported Yes
+Attributes are Color, Type, Origin, and the subject, stolen can be either “yes”
+or “no”.
+3(a) design a Naive Bayes classiﬁer by hand to determine the class of the Red
+Domestic SUV
+(b) using the pre-deﬁned functions of scikit-learn package, train Naive Bayes
+classiﬁer to classify a Red Domestic SUV. Note there is no example of a
+Red Domestic SUV in our data set.
+Question 3 (Decision Tree ) Breast cancer is the most frequent reason for cancer mortal-
+ity among women, which needs to be detected earlier in order to decrease the
+death rate. In this question, we aim to work on the Breast Cancer Wisconsin
+(Diagnostic) Data Set. You can download the data from the following link
+https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)
+for diagnosis of breast cancer with Decision Tree (DT). There are 569 data
+points in the dataset: 212 – Malignant, and 357 –Benign. In this dataset,
+features are computed from a digitized image of a ﬁne needle aspirate (FNA)
+of a breast mass. They describe the characteristics of the cell nuclei present in
+the image.
+Figure 1: Images taken using the FNA test: (a) Benign, (b) Malign
+(a) Using the NumPy or Pandas package, load the dataset.
+(Dataset “ breast_cancer_wisconsin.csv ” is uploaded for this assignment).
+Then split the dataset into train and test sets with a test ratio of 0.3.
+(b) Using the scikit-learn package, deﬁne a DT classiﬁer with custom hyperpa-
+rameters and ﬁt it to your train set. Measure the precision, recall, F-score,
+and accuracy on both train and test sets. Also, plot the confusion matrices
+of the model on train and test sets.
+(c) Study how maximum tree depth and cost functions of the following can
+inﬂuence the eﬃciency of the Decision Tree on the delivered dataset. De-
+scribe your ﬁndings.
+i. three diﬀerent cost functions: [‘gini’,‘entropy’,‘log _loss’]
+ii. six diﬀerent maximum tree depth: [2,4,6,8,10,12]
+(d) Depict a plot of the decision boundary of the two mentioned hyperparam-
+eters. Comment on the fundamental features in short.
+4

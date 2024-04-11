@@ -1,0 +1,715 @@
+Artificial Intelligence: 
+Deep Learning
+many slides from:  Y. Bengio, A. Ng and Y. LeCun
+1Today
+1.Motivation
+2.Feature Learning
+3.Building Block Design of CNN
+oConvolutional Layer
+oActivation Function
+oPooling Layer
+oNormalization Layer
+2History of AI
+3
+What is Really Deep Learning?
+1.Good old Neural Networks, with more layers/modules
+2.Non-linear, hierarchical, abstract representations of data
+3.Flexible models with any input/output type and size
+4.Differentiable Functional Programming
+4The Google “Inception” deep neural network architecture for image recognition (27 layers)
+Why Deep Learning Now?
+1.Better algorithms & understanding
+2.Computing power (GPUs, TPUs, ...)
+3.Data with labels
+4.Open -source tools and models
+5
+DLToday : Speech -to-Text
+6
+DLToday : Vision
+7
+DLToday : Vision
+8
+DLToday : NLP
+9
+DLToday : NLP
+10
+DLToday : Vision+NLP
+11DLToday : Image Translation
+12DLToday : Generative Models
+13
+DLToday : Generative Models
+14
+Guess which one is generated?
+Tacotron 2 Natural TTS Synthesis by Conditioning WaveNet on 
+Mel Spectrogram Predictions, 2017DLToday : Language/Image Models
+15
+Open -AI GPT -3, or DALL -E: https://openai.com/blog/dall -e/DLToday : Genomics
+16AlphaFold by DeepMindToday
+1.Motivation
+2.Feature Learning
+3.Building Block Design of CNN
+oConvolutional Layer
+oActivation Function
+oPooling Layer
+oNormalization Layer
+1718Feature (Encoder) Learning
+Encoder
+FC𝑐1
+𝑐2
+.
+.
+𝑐𝑀
+Learnable Parameters
+(Encoder Weights)Learnable Parameters
+(Classifier Weights)19Encoder: Convolution Layer
+Higher level of feature abstraction20Encoder: Cascade Layer Design
+21Encoder: Cascade Layer Design
+22Encoder: Cascade Layer Design
+23Encoder: Cascade Layer Design
+24Encoder: Cascade Layer Design
+25Encoder: Cascade Layer Design
+26Encoder: Cascade Layer Design
+27Encoder: Cascade Layer Design
+28Encoder: Cascade Layer Design
+29Encoder: Cascade Layer Design
+30Encoder: Cascade Layer Design
+31Encoder: Cascade Layer Design
+Y1: Square
+Y2: Triangle
+Y3: Circle
+.
+.
+.
+yN: Dimond 32Encoder: Overall Training
+1. Initialize all learnable parameters ( e.g.random sampling)
+2. Preprocess train image dataset and randomly shuffle them
+3. Feed -forward images in mini -batches and compute “Target Predictions”
+4. Calculate Error = Abs(“Target Labels” –“Target Predictions”)
+5. Propagate back error gradients and adjust weights using an 
+optimization method ( e.g.stochastic gradient descent)
+6. Repeat (1) -(4) to converge to a minimal errorInitial Drawbacks
+1.Standard backpropagation with sigmoid activation function 
+does not scale well with multiple layers
+❑Weight of early layers change too slowly (no learning)
+2.Overfitting
+❑Large network -> lots of parameters -> increased capacity to 
+“learn by heart”
+3.Multilayered ANNs need lots of labeled data 
+❑Most data is not labeled :(
+33Initial Drawbacks (1)
+1. Standard gradient -based backpropagation does not scale well with 
+multiple layers…
+When we multiply the gradients many times (for 
+each layer),  it can lead to …
+a)Vanishing gradient problem: 
+❑gradients shrink exponentially with the 
+number of layers 
+❑so weight updates get smaller and smaller
+❑and weights of early layers change very 
+slowly and network learns very very slowly
+b)Exploding gradient problem:
+❑multiplying gradients could also make them 
+grow exponentially.  
+❑so weight updates get larger and larger
+❑and the weights can become so large as to 
+overflow and result in NaN values
+34
+Initial Drawbacks ( 1)
+https://medium.com/towards -data-science/activation -functions -and-its-types -which -is-better -a9a5310cc8f
+https://medium.com/towards -data-science/activation -functions -neural -networks -1cbd9f8d91d6
+To help, we can :
+a)Use other activation 
+functions …
+a)Do “gradient clipping” 
+(i.e. set bounds on the 
+gradients)
+35Initial Drawbacks (2)
+https://www.kdnuggets.com/2015/04/preventing -overfitting -neural -networks.html
+2.Overfitting
+❑Large network -> lots of parameters -> 
+increased capacity to “learn by heart”
+❑Solutions:
+❑Regularization: 
+❑modify the error function that we minimize to penalize large weights.
+❑where f(w)grows larger as the weights grow larger and λis the 
+regularization strength
+❑Dropout: 
+❑keep a neuron active with some probability por setting it to 
+zero otherwise. 
+❑prevents the network from becoming too dependent on any 
+one neuron. 
+36Initial Drawbacks (3)
+3.Multilayered ANNs need lots of labeled data for training. To 
+solve the problem:
+▪Transfer Learning: use pre -trained encoder weights
+▪Fine-Tuning
+37Encoder
+FC𝑐1
+𝑐2
+.
+.
+𝑐𝑀
+Learnable Parameters
+(Classifier Weights)Pre-trained weight initializationInitial Drawbacks (3)
+3.Multilayered ANNs need lots of labeled data for training. To 
+solve the problem:
+▪Transfer Learning: use pre -trained encoder weights
+▪Deep -Tuning
+38
+Encoder
+FC𝑐1
+𝑐2
+.
+.
+𝑐𝑀
+Learnable Parameters
+(Classifier Weights)Pre-trained weight initialization
+Learnable Parameters
+(Encoder Weights)Initial Drawbacks (3)
+3.Multilayered ANNs need lots of labeled data for training. To 
+solve the problem:
+▪Image Augmentation: randomly perturb representation
+▪Shifting
+▪Flipping
+▪Rotation
+▪Skewing
+▪Color/illumination perturbation
+39
+Classic ML
+Input
+Motorbikes
+“Non” -MotorbikesLearning
+algorithm
+Feature 1
+Feature 2
+Manual Extraction of Features 
+(eg. edge detection, colors, 
+texture,…)
+Classic ML, 
+requires labeled 
+data and hand -
+crafted features
+1.Needs expert 
+knowledge
+2. Time -consuming 
+and expensive
+3. Does not     
+generalize to 
+other domains
+Slide from Y. LeCun
+40Automatic Feature Learning
+Input
+Motorbikes
+“Non” -MotorbikesAutomatic 
+Feature 
+RepresentationLearning
+algorithm
+“wheel”“handle”handle
+wheel
+eg. handle, wheel, … With Automatic 
+Feature Learning:
+1. We feed the 
+network the raw data 
+(not feature -
+curated)
+2. The features are 
+learned by the 
+network
+3. Features learned 
+can be re -used in 
+similar tasks. 
+41Slide from Y. LeCunAutomatic Feature Learning
+https://www.strong.io/blog -images/movie -posters/Slide6.png42Automatic Feature Learning
+❑Each layer learns more abstract features that are then combined / 
+composed into higher -level features automatically
+❑Like the human brain … 
+❑ has many layers of neurons which act as feature detectors
+❑ detecting more and more abstract features as you go up
+❑E.g. to classify an image of a cat:
+▪Bottom Layers: Edge detectors, curves, corners straight lines
+▪Middle Layers: Fur patterns, eyes, ears
+▪Higher Layers: Body, head, legs
+▪Top Layer: Cat or Dog
+Deep Learning = Machine learning algorithms based on 
+learning multiple levels of representation / abstraction. 
+–Y. Bengio
+43Automatic Feature Learning
+44What Types of Features?
+▪For image recognition 
+❑ pixel -> edge -> texton -> motif -> part -> object
+▪For NLP
+❑ character -> word ->  constituents -> clause -> sentence -> discourse
+▪For speech:
+❑ sample →spectral band -> sound -> … phone -> phoneme -> word
+Figure from Y LeCun
+ 45Eg: Learning Image Features
+Faces CarsElephants Chairs
+Actual images 
+(pixels)
+46
+Learned 
+object 
+parts
+Learned 
+edgesExamples of learned objects parts from object categories
+Learned 
+objectsLearned features / 
+representations can be used in  
+variety of OTHER classification 
+tasks… →deep learningToday
+1.Motivation
+2.Feature Learning
+3.Building Block Design of CNN
+oConvolutional Layer
+oActivation Function
+oPooling Layer
+oNormalization Layer
+4748Building Block Design of CNN
+Atypical backbone
+architecture design ofCNN
+EncoderConvolution
+Activation
+Pooling
+Normalization
+Convolution
+Activation
+Pooling
+Normalization
+Convolution
+Activation
+Pooling
+Normalization
+Convolution
+Activation
+Pooling
+Normalization…49Building Block Design of CNN
+Feature Responses
+EncoderConvolution
+Activation
+Pooling
+Normalization
+Convolution
+Activation
+Pooling
+Normalization
+Convolution
+Activation
+Pooling
+Normalization
+Convolution
+Activation
+Pooling
+Normalization
+50Building Block Design of CNN
+EncoderConvolution
+Activation
+Pooling
+Normalization
+Convolution
+Activation
+Pooling
+Normalization
+Convolution
+Activation
+Pooling
+Normalization
+Convolution
+Activation
+Pooling
+Normalization…224
+377
+51251Building Block Design of CNN
+EncoderConvolution
+Activation
+Pooling
+Normalization
+Convolution
+Activation
+Pooling
+Normalization
+Convolution
+Activation
+Pooling
+Normalization
+Convolution
+Activation
+Pooling
+Normalization
+…
+224
+377
+51252Building Block Design of CNN
+EncoderConvolution
+Activation
+Pooling
+Normalization
+Convolution
+Activation
+Pooling
+Normalization
+Convolution
+Activation
+Pooling
+Normalization
+Convolution
+Activation
+Pooling
+Normalization
+…224
+3
+77
+51253Conv Layer of CNN
+Activation
+Pooling
+Normalization
+Convolution54Using Spatial Structure
+Activation
+Pooling
+Normalization
+Convolution
+55Using Spatial Structure
+Activation
+Pooling
+Normalization
+Convolution56Feature Extraction with Convolution
+Activation
+Pooling
+Normalization
+Convolution
+57What is Convolution Operation?
+Activation
+Pooling
+Normalization
+Convolution
+•Elementwise multiplication and addition
+58What is Convolution Operation?
+Activation
+Pooling
+Normalization
+Convolution
+•Elementwise multiplication and addition59Sliding Window for Convolution
+Activation
+Pooling
+Normalization
+Convolution
+60Sliding Window for Convolution
+Activation
+Pooling
+Normalization
+Convolution
+61Sliding Window for Convolution
+Activation
+Pooling
+Normalization
+Convolution
+62Sliding Window for Convolution
+Activation
+Pooling
+Normalization
+Convolution
+63Output Feature Map size in Convolution
+Activation
+Pooling
+Normalization
+Convolution
+64Output Feature Map size in Convolution
+Activation
+Pooling
+Normalization
+Convolution
+65Output Feature Map size in Convolution
+Activation
+Pooling
+Normalization
+Convolution
+66Output Feature Map size in Convolution
+Activation
+Pooling
+Normalization
+Convolution
+67Output Feature Map size in Convolution
+Activation
+Pooling
+Normalization
+Convolution
+68Output Feature Map size in Convolution
+Activation
+Pooling
+Normalization
+Convolution
+69Padding for Convolution
+Activation
+Pooling
+Normalization
+Convolution
+70Conv Layer of CNN
+Activation
+Pooling
+Normalization
+Convolution
+https://cs231n.github.io/convolutional -networks /71Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+ConvolutionConvolution…Width 
+(𝑾)72Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+ConvolutionConvolution…Width 
+(𝑾)
+Height 
+(𝑯)73Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+ConvolutionConvolution…Width 
+(𝑾)
+Height 
+(𝑯)
+#Input Channel 
+(𝑵𝑰)𝑭𝑰∈ℝ𝑯×𝑾×𝑵𝑰74Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+ConvolutionConvolution…Width 
+(𝑾)
+Height 
+(𝑯)
+#Input Channel 
+(𝑵𝑰)…Width 
+(𝑾′)
+Height 
+(𝑯′)
+#Output Channel 
+(𝑵𝑶)𝑭𝑰∈ℝ𝑯×𝑾×𝑵𝑰 𝑭𝑶∈ℝ𝑯′×𝑾′×𝑵𝑶75Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+ConvolutionConvolution
+∗
+Ʃ76Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+ConvolutionConvolution
+∗∗
+Ʃ77Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+ConvolutionConvolution
+∗∗∗
+Ʃ78Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+ConvolutionConvolution…
+∗∗∗∗
+Ʃ79Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+ConvolutionConvolution…
+∗∗∗∗
+Ʃ80Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+ConvolutionConvolution…
+∗∗∗∗
+Ʃ81Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+ConvolutionConvolution…
+∗∗∗∗
+Ʃ82Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+ConvolutionConvolution…
+∗∗∗∗
+Ʃ…83Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+Convolution
+Convolutional filters (aka kernels) can 
+be represented in Tensor format𝒊𝒋
+𝑲∈ℝ𝒉×𝒘×𝑵𝑰×𝑵𝑶84Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+Convolution
+Convolutional filters (aka kernels) can 
+be represented in Tensor format𝒊𝒋
+𝑲∈ℝ𝒉×𝒘×𝑵𝑰×𝑵𝑶
+Ex1.3x3x64x128
+Ex2. 5x5x64x12 885Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+Convolution
+Convolutional filters (aka kernels) can 
+be represented in Tensor format𝒊𝒋
+𝑲∈ℝ𝒉×𝒘×𝑵𝑰×𝑵𝑶
+Ex1.3x3x64x128
+Ex2. 5x5x64x12 886Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+ConvolutionConvolution…Width 
+(𝑾)
+Height 
+(𝑯)
+#Input Channel 
+(𝑵𝑰)…Width 
+(𝑾′)
+Height 
+(𝑯′)
+#Output Channel 
+(𝑵𝑶)
+𝑭𝑶:,:,𝒋=෍
+𝒊=𝟏𝑵𝑰
+𝑭𝑰:,:,𝒊∗𝑲(:,:,𝒊,𝒋)+𝒃𝒋𝑭𝑰∈ℝ𝑯×𝑾×𝑵𝑰 𝑭𝑶∈ℝ𝑯′×𝑾′×𝑵𝑶87Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+ConvolutionConvolution…Width 
+(𝑾)
+Height 
+(𝑯)
+#Input Channel 
+(𝑵𝑰)…Width 
+(𝑾′)
+Height 
+(𝑯′)
+#Output Channel 
+(𝑵𝑶)Ex1. Input   Feature Map: 56x56x64 -->
+Output Feature Map: 56x56x128 (Stride=1) 1. 56x56x64 --> 28x28x128 
+(Stride=2)88Convolutional Feature Mapping
+Activation
+Pooling
+Normalization
+ConvolutionConvolution…Width 
+(𝑾)
+Height 
+(𝑯)
+#Input Channel 
+(𝑵𝑰)…Width 
+(𝑾′)
+Height 
+(𝑯′)
+#Output Channel 
+(𝑵𝑶)Ex1. Input   Feature Map: 56x56x64 -->
+Output Feature Map: 28x28x128 (Stride=2) 1. 56x56x64 --> 28x28x128 
+(Stride=2)89Non-Linear Activation
+Pooling
+NormalizationConvolution
+Activation
+90Pooling (i.e. down -sampling)
+NormalizationConvolution
+Activation
+Pooling91Pooling (i.e. down -sampling)
+NormalizationConvolution
+Activation
+Pooling
+92Pooling (i.e. down -sampling)
+NormalizationConvolution
+Activation
+Pooling
+93Pooling (i.e. down -sampling)
+NormalizationConvolution
+Activation
+Pooling
+94Pooling (i.e. down -sampling)
+NormalizationConvolution
+Activation
+Pooling
+95Pooling (i.e. down -sampling)
+NormalizationConvolution
+Activation
+Pooling
+96Pooling (i.e. down -sampling)
+NormalizationConvolution
+Activation
+Pooling
+97Pooling (i.e. down -sampling)
+NormalizationConvolution
+Activation
+Pooling
+98Pooling (i.e. down -sampling)
+NormalizationConvolution
+Activation
+Pooling
+99Pooling (i.e. down -sampling)
+NormalizationConvolution
+Activation
+Pooling
+100Pooling (i.e. down -sampling)
+NormalizationConvolution
+Activation
+Pooling
+101Pooling (i.e. down -sampling)
+NormalizationConvolution
+Activation
+Pooling
+102Pooling (i.e. down -sampling)
+NormalizationConvolution
+Activation
+Pooling
+103Pooling (i.e. down -sampling)
+NormalizationConvolution
+Activation
+Pooling
+104Batch Normalization
+Convolution
+Activation
+Pooling
+Normalization
+•BN is basically Whitening Transformation
+•i.e.makes distribution close tostandard normal
+•To bring stochasticity, batch statistics are used
+•We make BN layer to learn its scaling/bias adjusting factors෠𝐹=𝐹−𝜇
+𝜎+𝜖𝜇=𝐸𝐹,  𝜎=𝑉𝑎𝑟(𝐹)
+෠𝐹=𝐹−ො𝜇
+ො𝜎+𝜖Ƹ𝜇=1
+𝐵෍
+𝑘=1𝐵
+𝐹𝑘,ො𝜎=1
+𝐵෍
+𝑘=1𝐵
+(𝐹𝑘−Ƹ𝜇)2
+෠𝐹=𝛾𝐹−ො𝜇
+ො𝜎+𝜖+𝛽
+Learnable 
+parameter: scalingLearnable 
+parameter: bias105Why Do We Use BN?
+Convolution
+Activation
+Pooling
+Normalization
+106Why Do We Use BN?
+Convolution
+Activation
+Pooling
+Normalization
+107How BN Helps?
+Convolution
+Activation
+Pooling
+Normalization
+•BN reduces the internal covariate shiftToday
+1.Motivation
+2.Feature Learning
+3.Building Block Design of CNN
+oConvolutional Layer
+oActivation Function
+oPooling Layer
+oNormalization Layer
+108
+Convolution
+Activation
+Pooling
+Normalization

@@ -1,0 +1,3003 @@
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.1Lecture 2
+Knowledge Graphs
+COMP 474/6741, Winter 2024
+René Witte
+Department of Computer Science
+and Software Engineering
+Concordia UniversityRené Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.2Outline
+1Introduction
+2History
+3The Resource Description Framework (RDF)
+4Example: Data Integration with Knowledge Graphs
+5Conclusions
+6Notes and Further ReadingRené Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.3Slides Credit
+Includes slides from Jay Pujara & Sameer Singh, Mining Knowledge Graphs
+from Text , https://kgtutorial.github.io/
+Includes slides by Ivan Herman, W3C [Her]
+Includes slides from Kristof Neys, Neo4j, The perfect couple: Uniting Large
+Language Models and Knowledge Graphs for Enhanced Knowledge
+Representation ,
+https://www.slideshare.net/neo4j/the-perfect-couple-uniting-large-language-m
+odels-and-knowledge-graphs-for-enhanced-knowledge-representationRené Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.4Outline
+1Introduction
+Motivation
+Why Knowledge Graphs?
+2History
+3The Resource Description Framework (RDF)
+4Example: Data Integration with Knowledge Graphs
+5Conclusions
+6Notes and Further ReadingRené Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.5Eliza
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.6Google Assistant
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.7IBM Watson
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.8Generic Assistant Architecture
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.9
+What is a knowledge graph?
+•Knowledge in graph form!
+•Captures entities, attributes, 
+and relationships
+•Nodes are entities
+•Nodes are labeled with 
+attributes (e.g., types)
+•Typed edges between two 
+nodes capture a relationship 
+between entities
+20E1
+A1
+A2
+E2
+E3
+A1
+A2
+A1
+A2René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.10
+Example knowledge graph
+•Knowledge in graph form!
+•Captures entities, attributes, 
+and relationships
+•Nodes are entities
+•Nodes are labeled with 
+attributes (e.g., types)
+•Typed edges between two 
+nodes capture a relationship 
+between entities
+21
+person
+ place
+Liverpool
+band
+Beatles
+John 
+LennonRené Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.11
+Why knowledge graphs?
+•Humans:
+•Combat information overload
+•Explore via intuitive structure
+•Tool for supporting knowledge-driven tasks
+•AIs:
+•Key ingredient for many AI tasks
+•Bridge from data to human semantics
+•Use decades of work on graph analysis
+23René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.12
+Applications 1: QA/Agents
+24
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.13
+Applications 2: Decision Support
+25
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.14
+Applications 3: Fueling Discovery
+26
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.15
+Knowledge Graphs & Industry
+•Google Knowledge Graph
+•Google Knowledge Vault
+•Amazon Product Graph
+•Facebook Graph API
+•IBM Watson
+•Microsoft Satori
+•Project Hanover/Literome
+•LinkedIn Knowledge Graph
+•YandexObject Answer
+•Diffbot, GraphIQ, Maana, ParseHub, Reactor Labs, 
+SpazioDati
+27
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.16
+Where do knowledge graphs come from?
+•Structured Text
+◦Wikipedia Infoboxes, tables, 
+databases, social nets
+30
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.17
+Where do knowledge graphs come from?
+•Structured Text
+◦Wikipedia Infoboxes, tables, 
+databases, social nets
+•Unstructured Text
+◦WWW, news, social media, 
+reference articles
+31
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.18
+Where do knowledge graphs come from?
+•Structured Text
+◦Wikipedia Infoboxes, tables, 
+databases, social nets
+•Unstructured Text
+◦WWW, news, social media, 
+reference articles
+•Images
+32
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.19
+Where do knowledge graphs come from?
+•Structured Text
+◦Wikipedia Infoboxes, tables, 
+databases, social nets
+•Unstructured Text
+◦WWW, news, social media, 
+reference articles
+•Images
+•Video
+◦YouTube, video feeds
+33
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.20Outline
+1Introduction
+2History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+3The Resource Description Framework (RDF)
+4Example: Data Integration with Knowledge Graphs
+5Conclusions
+6Notes and Further ReadingRené Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.21History of Knowledge Representation (KR)
+Simon&Newell
+General Problem 
+Solver
+McCarthy
+Formalizing 
+Commonsense
+Hayes&McCarthy
+Frame Problem
+Quillian
+Semantic 
+Networks
+ConceptNet
+Brooks
+Subsumption
+Minsky, Filmore
+Frames
+McCulloch
+&Pitts
+Artificial 
+Neurons
+Minsky
+&Pappert
+“Perceptrons”
+ Systematicity
+Debate
+2000              1990                1980             1970               1960               1950              1940
+2000              1990                1980             1970               1960               1950              1940
+SHRUTI
+Bobrow
+STUDENT
+Winograd
+SHRDLU
+Rumelhartet al
+BackPropagation
+ Series of Neural-
+Symbolic Models
+Description 
+Logic
+Lenant
+Cyc
+SLIDE COURTESY OF DANIEL KHASHABIRené Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.22
+Knowledge Representation
+•Decades of research into knowledge representation
+•Most knowledge graph implementations use RDF triples
+•<rdf:subject, rdf:predicate, rdf:object> : r(s,p,o)
+•Temporal scoping, reification, and skolemization...
+•ABox(assertions) versus TBox(terminology)
+•Common ontological primitives
+•rdfs:domain, rdfs:range, rdf:type, rdfs:subClassOf, rdfs:subPropertyOf, ...
+•owl:inverseOf, owl:TransitiveProperty, owl:FunctionalProperty, ...
+36René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.23
+Semantic Web
+•Standards for defining and exchanging knowledge
+•RDF, RDFa, JSON-LD, schema.org
+•RDFS, OWL, SKOS, FOAF
+•Annotated data provide critical resource for automation
+•Major weakness: annotate everything?
+37"LINKING OPEN DATA CLOUD DIAGRAM 2014, BY MAX SCHMACHTENBERG, CHRISTIAN BIZER, ANJA JENTZSCH
+AND RICHARD CYGANIAK. HTTP://LOD-CLOUD.NET/"
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.24
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.25Today
+From 1950–2020. . .
+Concepts have been around for a long time (Semantic Networks, Frames,
+Description Logic, . . . )
+1980s/90s
+AI/IS systems suffer from the Knowledge Acquisition Bottleneck
+One of the reasons for the AI Winter at that time
+Technology
+Open standards, based on W3C recommendations, e.g., RDF
+Proprietary products, e.g., Neo4J or Oracle Spatial and Graph
+We now have substantial knowledge bases available, both proprietary
+(e.g., Facebook Graph Search, Google Knowledge Graph) and
+open access (e.g., Wikidata, DBpedia, YAGO)René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.26
+What is a knowledge graph?
+•Knowledge in graph form!
+•Captures entities, attributes, 
+and relationships
+•Nodes are entities
+•Nodes are labeled with 
+attributes (e.g., types)
+•Typed edges between two 
+nodes capture a relationship 
+between entities
+40E1
+A1
+A2
+E2
+E3
+A1
+A2
+A1
+A2René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.27TBL at TED on “The Next Web” (2009)
+https://www.youtube.com/watch?v=OM6XIICm_qoRené Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.28Outline
+1Introduction
+2History
+3The Resource Description Framework (RDF)
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases: DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+4Example: Data Integration with Knowledge Graphs
+5Conclusions
+6Notes and Further ReadingRené Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.29
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.30The W3C “Layer Cake”
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.31Knowledge as Graphs
+!Work sheet #1:Tasks 1&2 https://www.w3.org/TR/rdf11-primer/René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.32Triples
+Representation of Knowledge Graphs
+In a system, we represent graphs in form of triples:
+<subject> <predicate> <object>
+(The predicate is sometimes called property .)
+Examples
+<Bob> <is a> <person>.
+<Bob> <is a friend of> <Alice>.
+<Bob> <is born on> <the 14th of July 1990>.
+<Bob> <is interested in> <the Mona Lisa>.
+<the Mona Lisa> <was created by> <Leonardo da Vinci>.
+!Work sheet #1:Tasks 3&4René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.33Graphs vs. Triples
+<subject> <predicate> <object>
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.34RDF Triples
+The Resource Description Framework (RDF)
+W3C (World Wide Web Consortium) standard (“recommendation”)
+ﬁrst public draft 1997
+RDF 1.0 in 1999; revised in 2004
+RDF 1.1 in 2014 (current version)
+Family of standards: RDF , RDFS, RDFa, Turtle, N3, SPARQL, . . .René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.35RDF Triples
+Format of triples
+In RDF ,
+Subject and predicate must be URIs (IRIs)
+Object can be IRI or literal
+Examples
+<http://www.wikidata.org/entity/Q12418>
+<http://purl.org/dc/terms/title>
+"Mona Lisa" .
+<http://www.wikidata.org/entity/Q12418>
+<http://purl.org/dc/terms/creator>
+<http://dbpedia.org/resource/Leonardo_da_Vinci> .
+!Work sheet #1:Tasks 5&6René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.36RDF Literals
+"Mona Lisa"
+In this triple
+<http://www.wikidata.org/entity/Q12418>
+<http://purl.org/dc/terms/title> "Mona Lisa" .
+"Mona Lisa" is a string literal
+Things to know about literals
+Literals have a datatype, e.g., string orint
+Strings can have a language tag, e.g.,
+"Leonardo da Vinci"@en
+"Léonard de Vinci"@fr
+Strings are often used to provide human-readable labels
+“Hey, how did you like the movie Q168154?”
+For strings only, datatype can be omitted:
+"Mona Lisa" is equivalent to "Mona Lisa"^^xsd:string
+Again, literals can only appear in the object position of a triple <s> <p> <o>
+All the details about datatypes: https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#section-DatatypesRené Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.37Blank Nodes
+<http://dbpedia.org/resource/Mona_Lisa> <lio:shows> _:x .
+_:x a <http://dbpedia.org/resource/Cypress> .René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.38Wikidata
+http://www.wikidata.org/entity/Q12418
+Wikidata URIs
+Make sure you use the correct URI:
+http://wikidata.org/entity/Q{id} is the persistent URI
+Visited with a web browser, the Wikidata server redirects to
+http://wikidata.org/wiki/Q{id} (HTML data, for a human)
+!Work sheet #1:Task 7René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.39DBpedia
+http://dbpedia.org/resource/Leonardo_da_Vinci
+DBpedia URIs
+Similarly, make sure you use the correct DBpedia URIs:
+http://dbpedia.org/resource/... is the canonical URI
+The DBpedia server returns either
+http://dbpedia.org/page/... (HTML data, for a human)
+http://dbpedia.org/data/... (RDF data, for an AI)René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.40Namespaces
+Shortening URIs
+Instead of always writing full URIs (IRIs), we can split them into a preﬁx and sufﬁx,
+e.g.: <http://dbpedia.org/resource/Leonardo_da_Vinci>
+We deﬁne a preﬁx dbpedia:
+PREFIX dbpedia: <http://dbpedia.org/resource/>
+and now we can simple write:
+dbpedia:Leonardo_da_Vinci
+Note: angle brackets <>only for full IRIs
+!reduces dataset sizes, easier to read
+Conventions
+Commonly used URLs use the same namespace preﬁx
+E.g., FOAF (friend-of-a-friend):
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+Lookup a preﬁx at https://prefix.cc/
+!Work sheet #1:Tasks 8&9René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.41Serialization
+Formats
+There is no single format .rdf (like.xml ), commonly used are:
+RDF/XML for data exchange (somewhat deprecated)
+RDFa for embedding RDF into web pages
+N-Triples (N3) for streaming RDF data and bulk dataset up-/download
+Turtle for human-readable ﬁles
+JSON-LD for web applications
+plus some variations/extensions.
+N-Triples
+So far, we’ve mostly used the N-Triples format:
+<http://www.wikidata.org/entity/Q12418>  -
+<http://purl.org/dc/terms/title> "Mona Lisa" .
+each line in a ﬁle is one triple, full IRIs only (no namespace preﬁxes) and ended by
+a period ’.’René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.42Turtle
+BASE <http://example.org/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema>
+PREFIX schema: <http://schema.org/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+<bob #me>
+a foaf:Person ;
+foaf:knows <alice #me> ;
+schema:birthDate "1990-07-04"^^xsd:date ;
+foaf:topic_interest wd:Q12418 .
+wd:Q12418
+dcterms:title "Mona Lisa" ;
+dcterms:creator <http://dbpedia.org/resource/Leonardo_da_Vinci> .
+<http://data.europeana.eu/item/04802/243FA8618938F4117025F17A8B813C5F9AA4D619>
+dcterms:subject wd:Q12418 .René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.43Graph corresponding to the Turtle example
+https://www.w3.org/TR/rdf11-primer/René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.44
+(64) 
+ 64  } For example, using Python+RDFLib:§ a “Graph” object is created§ the RDF ﬁle is parsed and results stored in the Graph§ the Graph offers methods to retrieve (or add):• triples• (property,object) pairs for a speciﬁc subject• (subject,property) pairs for speciﬁc object• etc.§ the rest is conventional programming…} Similar tools exist in Java, PHP , etc.
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.45
+(65) 
+ 65  
+  # create a graph from a file   graph = rdflib.Graph()   graph.parse("filename.rdf", format="rdfxml")   # take subject with a known URI   subject = rdflib.URIRef("URI_of_Subject")   # process all properties and objects for this subject   for (s,p,o) in graph.triples((subject,None,None)) :     do_something(p,o)    René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.46Outline
+1Introduction
+2History
+3The Resource Description Framework (RDF)
+4Example: Data Integration with Knowledge Graphs
+5Conclusions
+6Notes and Further ReadingRené Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.47Let’s start with a Book. . .
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.48
+(21) 
+ 21  
+ISBN Author Title Publisher Year 0006511409X id_xyz The Glass Palace id_qpr 2000 
+ID Name Homepage id_xyz Ghosh, Amitav http://www.amitavghosh.com 
+ID Publisher’s name City id_qpr Harper Collins London René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.49
+(22) 
+ 22  
+http://…isbn/000651409X  
+Ghosh, Amitav  
+http://www.amitavghosh.com 
+The Glass Palace  
+2000  
+London  
+Harper Collins  a:title a:year a:city a:p_name a:name a:homepage a:author René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.50
+(23) 
+ 23  } Relations form a graph§ the nodes refer to the “real” data or contain some literal§ how the graph is represented in machine is immaterial for now
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.51Now the same book in French. . .
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.52
+(25) 
+ 25  
+A B C D 1 ID Titre Traducteur Original 2 ISBN 2020286682 Le Palais des Miroirs $A12$ ISBN 0-00-6511409-X 3 4 5 6 ID Auteur 7 ISBN 0-00-6511409-X $A11$ 8 9 10 Nom 11 Ghosh, Amitav 12 Besse, Christianne René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.53
+(26) 
+ 26  
+http://…isbn/000651409X  
+Ghosh, Amitav  
+Besse, Christianne  
+Le palais des miroirs  
+f:nom f:traducteur f:auteur 
+http://…isbn/2020386682  f:nom René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.54
+(27) 
+ 27  
+http://…isbn/000651409X  
+Ghosh, Amitav  
+Besse, Christianne  
+Le palais des miroirs  
+f:nom f:traducteur  f:auteur 
+http://…isbn/2020386682  f:nom 
+http://…isbn/000651409X  
+Ghosh, Amitav  
+http://www.amitavghosh.com  
+The Glass Palace  
+2000  
+London  
+Harper Collins  a:title a:year  a:city a:p_name a:name a:homepage a:author René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.55
+(28) 
+ 28  
+http://…isbn/000651409X  
+Ghosh, Amitav  
+Besse, Christianne  
+Le palais des miroirs  
+f:nom f:traducteur  f:auteur 
+http://…isbn/2020386682  f:nom 
+http://…isbn/000651409X  
+Ghosh, Amitav  
+http://www.amitavghosh.com  
+The Glass Palace  
+2000  
+London  
+Harper Collins  a:title a:year  a:city a:p_name a:name a:homepage a:author Same URI! René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.56
+(29) 
+ 29  
+a:title 
+Ghosh, Amitav  
+Besse, Christianne  
+Le palais des miroirs  f:original 
+f:nom  f:traducteur  f:auteur 
+http://…isbn/2020386682  f:nom 
+Ghosh, Amitav  
+http://www.amitavghosh.com  
+The Glass Palace  
+2000  
+London  
+Harper Collins  a:year  a:city a:p_name a:name a:homepage a:author 
+http://…isbn/000651409X  René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.57
+(30) 
+ 30  } User of data “F” can now ask queries like:§ “give me the title of the original”• well, … « donnes-moi le titre de l’original »} This information is not in the dataset “F”…} …but can be retrieved by merging with dataset “A”!
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.58
+(31) 
+ 31  } We “feel” that a:author and f:auteur should be the same} But an automatic merge doest not know that!} Let us add some extra information to the merged data:§ a:author same as f:auteur§ both identify a “Person”§ a term that a community may have already deﬁned:• a “Person” is uniquely identiﬁed by his/her name and, say, homepage• it can be used as a “category” for certain type of resources
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.59
+(32) 
+ 32  
+Besse, Christianne  
+Le palais des miroirs  f:original 
+f:nom f:traducteur  f:auteur 
+http://…isbn/2020386682  f:nom 
+Ghosh, Amitav  
+http://www.amitavghosh.com  
+The Glass Palace  
+2000  
+London  
+Harper Collins  a:title a:year  a:city a:p_name a:name a:homepage a:author 
+http://…isbn/000651409X  
+http://…foaf/Person  r:type r:type 
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.60
+(33) 
+ 33  } User of dataset “F” can now query:§ “donnes-moi la page d’accueil de l’auteur de l’original”• well… “give me the home page of the original’s ‘auteur’”} The information is not in datasets “F” or “A”…} …but was made available by:§ merging datasets “A” and datasets “F”§ adding three simple extra statements as an extra “glue”
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.61
+(34) 
+ 34  } Using, e.g., the “Person”, the dataset can be combined with other sources} For example, data in Wikipedia can be extracted using dedicated tools§ e.g., the “dbpedia” project can extract the “infobox” information from Wikipedia already… 
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.62
+(35) 
+ 35  
+Besse, Christianne  
+Le palais des miroirs  f:original 
+f:nom  f:traducteur  f:auteur 
+http://…isbn/2020386682  f:nom 
+Ghosh, Amitav  
+http://www.amitavghosh.com  
+The Glass Palace  
+2000  
+London  
+Harper Collins  a:title a:year  a:city a:p_name a:name a:homepage a:author 
+http://…isbn/000651409X  
+http://…foaf/Person  r:type r:type 
+http://dbpedia.org/../Amitav_Ghosh  r:type foaf:name w:reference René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.63
+(36) 
+ 36  
+Besse, Christianne  
+Le palais des miroirs  f:original 
+f:nom f:traducteur  f:auteur 
+http://…isbn/2020386682  f:nom 
+Ghosh, Amitav  
+http://www.amitavghosh.com  
+The Glass Palace  
+2000  
+London  
+Harper Collins  a:title a:year  a:city a:p_name a:name a:homepage a:author 
+http://…isbn/000651409X  
+http://…foaf/Person  r:type r:type 
+http://dbpedia.org/../Amitav_Ghosh  
+http://dbpedia.org/../The_Hungry_Tide  
+http://dbpedia.org/../The_Calcutta_Chromosome  
+http://dbpedia.org/../The_Glass_Palace  r:type foaf:name w:reference 
+w:author_of w:author_of w:author_of w:isbn René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.64
+(37) 
+ 37  
+Besse, Christianne  
+Le palais des miroirs  f:original 
+f:nom f:traducteur  f:auteur 
+http://…isbn/2020386682  f:nom  
+Ghosh, Amitav  
+http://www.amitavghosh.com  
+The Glass Palace  
+2000  
+London  
+Harper Collins  a:title a:year  a:city a:p_name a:name a:homepage a:author 
+http://…isbn/000651409X  
+http://…foaf/Person  r:type r:type 
+http://dbpedia.org/../Amitav_Ghosh  
+http://dbpedia.org/../The_Hungry_Tide  
+http://dbpedia.org/../The_Calcutta_Chromosome  
+http://dbpedia.org/../Kolkata  
+http://dbpedia.org/../The_Glass_Palace  r:type foaf:name w:reference 
+w:author_of  w:author_of w:author_of w:born_in w:isbn 
+w:long w:lat René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.65
+(38) 
+ 38  } It may look like it but, in fact, it should not be…} What happened via automatic means is done every day by Web users!} The difference: a bit of extra rigour so that machines could do this, too
+!Work sheet #1:Task 10René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.66Outline
+1Introduction
+2History
+3The Resource Description Framework (RDF)
+4Example: Data Integration with Knowledge Graphs
+5Conclusions
+Architecture
+Examples
+Knowledge Graphs and Large Language Models
+6Notes and Further ReadingRené Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.67
+(40) 
+ 40  
+Data in various formats Data represented in abstract format Applications 
+Map, Expose, … Manipulate Query … René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.68
+(41) 
+ 41  
+Inferencing Query and Update 
+Web of Data Applications  
+Browser Applications  
+Stand Alone Applications  
+Common “Graph”  Format &  Common Vocabularies  “Bridges” 
+Data on the Web  
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.69Google’s Knowledge Graph (2012)
+https://www.youtube.com/watch?v=mmQl6VGvX-cRené Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.701Introduction
+2History
+3The Resource Description Framework (RDF)
+4Example: Data Integration with Knowledge Graphs
+5Conclusions
+Architecture
+Examples
+Knowledge Graphs and Large Language Models
+6Notes and Further ReadingRené Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.71
+© 2023 Neo4j, Inc. All rights reserved. 
+LLMs Core function…To manipulate strings… 
+•GPT training focuses primarily on predicting the probability of text sequences and 
+specifically for predicting which words come next in a sequence 
+“When you play the 
+game of thrones…. Input LLM
+…you win or you die. 
+There is no middle 
+ground.” Output 
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.72
+© 2023 Neo4j, Inc. All rights reserved. 
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.73
+© 2023 Neo4j, Inc. All rights reserved. 
+There is no need for this…! René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.74
+© 2023 Neo4j, Inc. All rights reserved. 
+Whereas we all know what The Truth is… 
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.75
+© 2023 Neo4j, Inc. All rights reserved. 
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.76
+© 2023 Neo4j, Inc. All rights reserved. 
+Making stuff up… 
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.77
+© 2023 Neo4j, Inc. All rights reserved. 
+In Summary… 
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.78
+© 2023 Neo4j, Inc. All rights reserved. 
+ 18Three main ways to let LLM’s work with your Graph 
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.79
+© 2023 Neo4j, Inc. All rights reserved. 
+How to Help LLMs Do Better? 
+Few-Shot Learning Fine-Tuning Grounding 
+Provide completed 
+examples “shots” to the AI 
+as context in prompts. 
+a.k.a In-Context Learning Provide additional training 
+data to better tune GenAI 
+to your use case Provide AI with the 
+information to use for 
+generating responses 
+René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.80
+© 2023 Neo4j, Inc. All rights reserved. 
+Grounding 
+Provide AI with the information to use for generating responses 
+Best of Both Worlds 
+Use the language understanding skills of LLMs but control the knowledge/sources it uses 
+●Improve accuracy & tailor to enterprise and use case 
+●Reduce hallucinations and other inconsistencies 
+●Control provenance 
+Methods 
+●Internet search, plugins, agents 
+●Query generation 
+●Retrieval Augmented Generation (RAG) 
+Image by GenAI (DALL-E) René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.81
+© 2023 Neo4j, Inc. All rights reserved. 32
+Grounding with Retrieval Augmented Generation (RAG) René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.82
+© 2023 Neo4j, Inc. All rights reserved. LLMs can help g ener a t e more accur a t e responses  by 
+considering the connec tions and dependencies within the 
+gr aph and mapping ne w link s as ne w da ta is  iden tiﬁed. 
+Fl e xibl e Schema  means it is 
+easy t o gr ow y our knowl edg e 
+base whene v er new 
+in forma tion is a v ailabl e R ela tionships are da ta 
+tha t is used t o r e turn 
+e xplicit r esul ts   A ccur ac y 
+V ec t or Search adds seman tic 
+sear ch René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.83
+© 2023 Neo4j, Inc. All rights reserved. Knowl edg e gr aphs suppl y the LLM with in forma tion about y our  
+compan y  so answ ers are speciﬁc t o y our business, giving mor e 
+con t e x t for mor e accur a t e r esponses.  
+A dd a la y er o f con t e x t o v er 
+y our LLM for accur ac y and 
+speciﬁcity  
+Speciﬁcity René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.84
+© 2023 Neo4j, Inc. All rights reserved. Map rela tionships be tw een sear ch 
+r esul ts and da ta sour ce nodes   R epr esen t  da ta sources as nodes  
+A dd me tada ta or anno ta tions  
+V erif y the enriched responses  fr om y our LLM because each piece o f 
+in forma tion is link ed t o its sour ces and origins. 
+Explainability René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.85
+© 2023 Neo4j, Inc. All rights reserved. LLM r e trie v es and r e turns in forma tion g o v erned b y y our en t erprise security 
+and access con trol policies  -  down t o the node l e v el.   
+De ﬁne policies by rol e or 
+iden tity 
+In t egr a t es with iden tity and 
+access manag emen t  pr o vider 
+with SS O 
+Security & Priv ac y 
+Buil d constr ain ts  on nodes, 
+label s, r ela tionships, pr oper ties, 
+speciﬁc par ts o f the gr aph, and 
+e v en tr a v ersal dep th René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.86
+© 2023 Neo4j, Inc. All rights reserved. 
+Easil y scal e with aut onomous 
+cl us t ering R eliability & L o w-la t enc y 
+Knowl edg e gr aphs scal e and ar e ba t tl e - t es t ed t o thousands o f 
+concurr en t users, g e t answ ers quickl y with incr edibl y fas t quer y speeds.   
+Incredibl y f ast tr a v ersal s with inde x 
+fr ee adjacency René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.87Outline
+1Introduction
+2History
+3The Resource Description Framework (RDF)
+4Example: Data Integration with Knowledge Graphs
+5Conclusions
+6Notes and Further ReadingRené Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.88Reading Material
+Required
+[Yu14, Chapters 1, 2] (Introduction, RDF)
+Supplemental
+[Wor14] (RDF Primer)René Witte
+Introduction
+Motivation
+Why Knowledge Graphs?
+History
+Knowledge Representation
+Semantic Web
+Knowledge Graphs
+RDF
+Introduction
+RDF Triples
+Literals
+Blank Nodes
+Knowledge Bases:
+DBpedia, Wikidata
+Namespaces
+Serialization
+Programming
+Data Integration
+Example
+Conclusions
+Architecture
+Examples
+KGs and LLMs
+Notes and Further
+Reading
+2.89References
+[Her] Ivan Herman.
+Tutorial on Semantic Web Technologies.
+http://www.w3.org/People/Ivan/CorePresentations/RDFTutorial/.
+[Wor14] World Wide Web Consortium (W3C).
+RDF 1.1 Primer.
+http://www.w3.org/TR/rdf11-primer/, 24 June 2014.
+[Yu14] Liyang Yu.
+A Developer’s Guide to the Semantic Web .
+Springer-Verlag Berlin Heidelberg, 2nd edition, 2014.
+https://concordiauniversity.on.worldcat.org/oclc/897466408.

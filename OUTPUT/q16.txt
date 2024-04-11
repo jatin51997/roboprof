@@ -1,0 +1,23 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+SELECT DISTINCT (?course as ?courseURI) ?courseName ?topicName ?wikiURI (?lectureNumber as ?courseEventURI) (?lectureContent as ?resourceURI)  ?ResourceName
+WHERE {
+  ?course a voc:Course;
+          voc:courseSubject ?courseSubject;
+          voc:courseNumber ?courseNumber.
+  ?lecture a voc:Lecture;
+          voc:BelongsTo ?course;
+          foaf:name ?lectureName;
+          voc:LectureNumber ?lectureNum;
+          voc:LectureContent ?lectureContent.
+  ?topic a voc:Topic;
+          voc:TopicProvenance ?lectureContent;
+          foaf:name ?topicName;
+          rdfs:seeAlso ?wikiURI.
+  ?lectureContent voc:ResourceName ?ResourceName.
+  BIND(CONCAT("Lecture ", ?lectureNum) AS ?lectureNumber).
+  BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName)
+  FILTER(?courseSubject = "COMP" && ?courseNumber = "6721")
+}LIMIT 50

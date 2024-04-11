@@ -1,0 +1,1974 @@
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.1Lecture 3
+Knowledge Graphs: Vocabularies & Ontologies
+COMP 474/6741, Winter 2024
+René Witte
+Department of Computer Science
+and Software Engineering
+Concordia UniversityRené Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.2Outline
+1Introduction
+2RDF Schema
+3Vocabularies
+4Example: schema.org
+5Notes and Further ReadingRené Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.3Slides Credit
+Includes slides from Jay Pujara & Sameer Singh, Mining Knowledge Graphs
+from Text , https://kgtutorial.github.io/
+Includes slides by Ivan Herman, W3C [Her]René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.4Outline
+1Introduction
+Review
+Anatomy of a URI
+Back to the bookstore example
+2RDF Schema
+3Vocabularies
+4Example: schema.org
+5Notes and Further ReadingRené Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.5
+https://www.w3.org/TR/rdf11-primer/René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.6
+Why knowledge graphs?
+•Humans:
+•Combat information overload
+•Explore via intuitive structure
+•Tool for supporting knowledge-driven tasks
+•AIs:
+•Key ingredient for many AI tasks
+•Bridge from data to human semantics
+•Use decades of work on graph analysis
+23René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.7
+(47) 
+ 47  
+} An RDF Triple (s,p,o) is such that:§ “s”, “p” are URI-s, ie, resources on the Web; “o” is a URI or a literal “s”, “p”, and “o” stand for “subject”, “property”, and “object”§ here is the complete triple:} RDF is a general model for such triples (with machine readable formats like RDF/XML, Turtle, N3, RDFa, Json, …)
+(<http://…isbn…6682>, <http://…/original>, <http://…isbn…409X>) René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.8
+(51) 
+ 51  
+<http://…/isbn/2020386682>     f:titre "Le palais des mirroirs"@fr ;     f:original <http://…/isbn/000651409X> .  
+http://…isbn/2020386682  
+Le palais des miroirs  
+http://…isbn/000651409X  René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.9Anatomy of a URI
+A URI (Uniform Resource Identiﬁer) uniquely identiﬁes a resource (e.g.,
+person, book, class of things) on the Web.
+A URI is not always a URL (Uniform Resource Locator)
+URNs (Uniform Resource Names) are URIs that name resources without
+specifying how to retrieve them, e.g., urn:isbn:0451450523 .
+It’s possible URLs are not available, e.g.,
+http://www.concordia.ca/comp474/lecture03/slide5
+is a valid URL, but nothing can be (currently?) retrieved from this address
+URIs have a generic syntax:
+schemez}|{
+http :==www.example.org| {z }
+authority=pathz}|{
+bob #me|{z}
+fragment
+Queries are also possible, following the format:
+scheme:[//authority]path[?query][#fragment]
+Namespaces are used to shorten URIs and prevent name clashes, e.g., ex:me
+IRIs(Internationalized Resource Identiﬁers) are URIs with Unicode charactersRené Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.10
+(27) 
+ 27  
+http://…isbn/000651409X  
+Ghosh, Amitav  
+Besse, Christianne  
+Le palais des miroirs  
+f:nom f:traducteur  f:auteur 
+http://…isbn/2020386682  f:nom 
+http://…isbn/000651409X  
+Ghosh, Amitav  
+http://www.amitavghosh.com  
+The Glass Palace  
+2000  
+London  
+Harper Collins  a:title a:year  a:city a:p_name a:name a:homepage a:author René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.11From the ﬁrst week’s lecture. . .
+Common Issue
+Data in Information Silos
+Documents, databases,
+spreadsheets, emails, . . .
+Disconnected, missing knowledge
+Knowledge Integration
+Connect silo-ed knowledge
+Leverage existing, external
+Knowledge Bases
+Freely available, many domains
+Continuously updated
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.12
+Photo credit “nepatterson”, Flickr René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.13
+(28) 
+ 28  
+http://…isbn/000651409X  
+Ghosh, Amitav  
+Besse, Christianne  
+Le palais des miroirs  
+f:nom f:traducteur  f:auteur 
+http://…isbn/2020386682  f:nom 
+http://…isbn/000651409X  
+Ghosh, Amitav  
+http://www.amitavghosh.com  
+The Glass Palace  
+2000  
+London  
+Harper Collins  a:title a:year  a:city a:p_name a:name a:homepage a:author Same URI! René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.14
+(29) 
+ 29  
+a:title 
+Ghosh, Amitav  
+Besse, Christianne  
+Le palais des miroirs  f:original 
+f:nom  f:traducteur  f:auteur 
+http://…isbn/2020386682  f:nom 
+Ghosh, Amitav  
+http://www.amitavghosh.com  
+The Glass Palace  
+2000  
+London  
+Harper Collins  a:year  a:city a:p_name a:name a:homepage a:author 
+http://…isbn/000651409X  René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.15Semantics
+What’s an “author”?
+author
+auteur
+Autor
+book author
+writer
+editor
+ghostwriter
+co-author
+blogger
+. . .
+How can we deﬁne their meaning? And relations?René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.16
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.17Library of Congress
+RDF Triples (SKOS vocabulary, introduced later)
+<http://id.loc.gov/authorities/subjects/sh85010023>
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+<http://www.w3.org/2004/02/skos/core#Concept> .
+<http://id.loc.gov/authorities/subjects/sh85010023>
+<http://www.w3.org/2004/02/skos/core#prefLabel>
+"Authors and publishers"@en .
+<http://id.loc.gov/authorities/subjects/sh85010023>
+<http://www.w3.org/2004/02/skos/core#broader>
+<http://id.loc.gov/authorities/subjects/sh85031620> .
+<http://id.loc.gov/authorities/subjects/sh85010023>
+<http://www.w3.org/2004/02/skos/core#narrower>
+<http://id.loc.gov/authorities/subjects/sh85109817> .
+...
+http://id.loc.gov/authorities/subjects/sh85010023.htmlRené Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.18
+Photo credit “kxlly”, Flickr René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.19TBL at TED on “The year open data went worldwide” (2010)
+https://www.youtube.com/watch?v=3YcZ3Zqk0a8René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.20Outline
+1Introduction
+2RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+3Vocabularies
+4Example: schema.org
+5Notes and Further ReadingRené Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.21
+Nexus Simulation Credit Erich Bremmer René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.22The W3C “Layer Cake”
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.23RDF Schema (RDFS)
+W3C Recommendation
+“RDF Vocabulary Description Language 1.0: RDF Schema” (RDFS 1.0)
+Current version (2014): “RDF Schema 1.1”
+Used together with RDF
+RDF provides “a way to make statements about resources” (IRIs)
+RDFS provides semantics about what the IRIs stand for
+(Schemas aka Vocabularies aka Ontologies aka. . . )René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.24Classes and Instances
+Classes
+Resources may be divided into groups called classes
+The members of a class are known as instances of the class
+An instance can be member of more than one class
+What is a knowledge graph – Pokémon edition: https://pieterheyvaert.com/blog/2019/12/27/kg-pkmn/
+Deﬁning Classes
+We deﬁne that an URI in a triple is a class using . . . a triple!
+(sounds weird the ﬁrst time you hear it, but you get used to it)René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.25Classes and Instances (contd.)
+Deﬁning Classes
+To deﬁne that C(a resource) is an RDFS class , write:
+Crdf:type rdfs:Class
+withrdfs deﬁned as http://www.w3.org/2000/01/rdf-schema#
+Example
+ex:Novel rdf:type rdfs:Class
+Turtle
+In Turtle, rdf:type can be abbreviated as a
+!Work sheet #2:Task 2René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.26Classes and Instances (contd.)
+Instances
+To deﬁne that I(a resource) is an instance of C(a class), write:
+Irdf:type C
+(orainstead of rdf:type in Turtle.)
+Example
+<http://...isbn/000651409X> rdf:type ex:Novel
+Note
+This is just another triple, so we can read both data andschema at run-time!
+!Work sheet #2:Task 3René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.27
+(71) 
+ 71  } RDFS deﬁnes the meaning of these terms§ (these are all special URI-s, we just use the namespace abbreviation)
+rdf:type  
+#Novel  
+http://…isbn/000651409X  
+rdfs:Class  René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.28Label & Comment
+Human-Readable Content
+By convention, always provide:
+rdfs:label a human-readable label
+rdfs:comment a short (one paragraph) description
+using language tags for multiple languages.
+Examples (dbpedia:The_Glass_Palace)
+<http://dbpedia.org/resource/The_Glass_Palace>
+rdfs:label "The Glass Palace"@en ,
+"Le Palais des miroirs"@fr ;
+rdfs:comment "The Glass Palace is a 2000 historical novel..."@en ,
+"Le Palais des miroirs est un roman..."@fr ;
+!Work sheet #2:Task 4René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.29Subclasses
+Deﬁning a subclass
+To deﬁne that C1(a class) is a subclass of C2(a class), write:
+C1rdfs:subClassOf C2
+Semantics
+This states that all the instances of C1 are also instances of C2.
+Therdfs:subClassOf property is transitive.
+!Work sheet #2:Task 5René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.30
+(75) 
+ 75  } is not in the original RDF data…} …but can be inferred from the RDFS rules} RDFS environments return that triple, too
+rdf:type  
+#Novel  
+http://…isbn/000651409X  
+#Fiction  
+(<http://…/isbn/000651409X> rdf:type #Fiction) René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.31
+(76) 
+ 76  } The RDF Semantics document has a list of (33) entailment rules:§ “if such and such triples are in the graph, add this and this”§ do that recursively until the graph does not change} The relevant rule for our example:
+If:   uuu rdfs:subClassOf xxx .   vvv rdf:type uuu . Then add:   vvv rdf:type xxx . !Work sheet #2:Task 6René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.32Properties
+Example
+<studies at> <type> <Property>
+Deﬁning a Property
+To deﬁne that P(a resource) is a property, write:
+Prdf:type rdf:Property
+Properties are used to deﬁne relations between subject resources and object
+resources.
+!Work sheet #2:Task 7René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.33Domain and Range
+Domain
+To deﬁne a class Cas the domain of a property P, write:
+Prdfs:domain C
+This states that resources denoted by the subjects of triples whose predicate is P
+are instances of the class C.
+Range
+To deﬁne a class Cas the range of a property P, write:
+Prdfs:range C
+This states that the resources denoted by the objects of triples whose predicate is P
+are instances of the class C.
+Note
+Properties are also resources (named with URIs)
+So we deﬁne properties of properties using. . . RDF properties!
+Again, you’ll get used to it. . .
+!Work sheet #2:Task 8René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.34
+(79) 
+ 79  
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.35
+(80) 
+ 80  
+<rdf:Property rdf:ID="title">   <rdfs:domain rdf:resource="#Fiction"/>   <rdfs:range rdf:resource="http://...#Literal"/> </rdf:Property> } In RDF/XML:
+:title   rdf:type    rdf:Property;   rdfs:domain :Fiction;   rdfs:range  rdfs:Literal.  } In Turtle:René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.36Subproperties
+Deﬁning a Subproperty
+To deﬁne that P1(a property) is a subproperty of P2(a property), write:
+P1rdfs:subPropertyOf P2
+With a subproperty, we can state that all resources related by one property are also
+related by another.
+Example
+Like inheritance for classes, we can have inheritance for properties:
+<is father of> <subPropertyOf> <is parent of>René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.37RDFS Utility Vocabulary
+Some “helper” constructs
+rdfs:seeAlso a property that links a resource to another for more information (can
+be in any format)
+rdfs:isDeﬁnedBy a property typically used to refer to a vocabulary (RDF Schema)
+deﬁning the subject IRI
+There are also some datastructures (bag, list etc.) – read more before using!
+Copyright 2014 by Manning Publications Co., [WZRH14]René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.38RDF Schema Constructs: Summary
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.39Outline
+1Introduction
+2RDF Schema
+3Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+4Example: schema.org
+5Notes and Further ReadingRené Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.40Vocabularies
+Goal: Knowledge Integration
+Two major principles:
+1Reuse of vocabularies
+E.g., always use FOAF to describe names, emails, etc., instead of making up
+your own schema
+2Make your data self-describing
+Embed metadata using RDF to ensure data can be understood and processed
+independently.
+Adhering to these principles supports interoperability and semantic understanding
+across different systems.René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.41Self-Describing Datasets
+Provide useful information about new terms
+For example, if we create our own proprietary term, like SmallMediumEnterprise,
+we could describe it as [HB11]:
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.42Reuse vocabularies whenever possible
+Copyright 2014 by Manning Publications Co., [WZRH14]René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.43Core Vocabularies
+Copyright 2014 by Manning Publications Co., [WZRH14]René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.43FOAF (Friend-of-a-Friend) Vocabulary
+FOAF
+Model people and their
+connections in a social network.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+<http://example.org/joe> a foaf:Person ;
+foaf:name "Joe Doe" ;
+foaf:mbox <mailto:joe.doe@example.com> .
+!Work sheet #2:Task 9René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.44Dublin Core
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.45
+Photo credit “scarletgreen”, Flickr René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.46
+(228) 
+ 228  } Represent and share classiﬁcations, glossaries, thesauri, etc§ for example:• Dewey Decimal Classiﬁcation, Art and Architecture Thesaurus, ACM classiﬁcation of keywords and terms…• classiﬁcation/formalization of Web 2.0 type tags} Deﬁne classes and properties to add those structures to an RDF universe§ allow for a quick port of this traditional data, combine it with other data
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.47
+(229) 
+ 229  
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.48
+(230) 
+ 230  
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.49
+(231) 
+ 231  } The structure of the LOC page is fairly typical§ label, alternate label, narrower, broader, …§ there is even an ISO standard for these} SKOS provides a basic structure to create an RDF representation of these
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.50
+(232) 
+ 232  
+skos:Concept 
+Fiction  
+Metafiction 
+Novels  
+Literature  
+Allegories  
+Adventure stories rdf:type  
+skos:narrower skos:broader 
+skos:prefLabel skos:prefLabel skos:prefLabel 
+http://id.loc.gov/…#concept 
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.51
+(233) 
+ 233  
+skos:Concept 
+Historical Fiction 
+Fiction  
+The Glass Palace  
+rdf:type  dc:subject skos:broader 
+http:.//…/isbn/… 
+skos:prefLabel 
+dc:title René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.52
+(234) 
+ 234  
+<http://…/isbn/000651409X>      dc:title "The Glass Palace"@en;     dc:subject <http://id.loc.gov/authorities/sh85061165#concept>;     ...  <http://id.loc.gov/authorities/sh85061165#concept>     a    skos:Concept;     skos:prefLabel "Historical Fiction"@en;     skos:broader <http://id.loc.gov/authorities/sh85048050#concept>;     ...  <http://id.loc.gov/authorities/sh85048050#concept>     a skos:Concept;     skos:prefLabel "Fiction"@en;     skos:narrower <http://id.loc.gov/authorities/sh85061165#concept>;     ...     René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.53
+(235) 
+ 235  } Classes and Properties:§ Basic description (Concept, ConceptScheme,…)§ Labeling (prefLabel, altLabel,…)§ Documentation (deﬁnition, historyNote,…)§ Semantic relations (broader, narrower, related,…)§ Collections (Collection, OrderedCollection,…)§ Concept mappings (broadMatch, narrowMatch,…)
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.54
+(236) 
+ 236  } SKOS provides a simple bridge between the “print world” and the (Semantic) Web} Thesauri, glossaries, etc, from the library community can be made available§ LOC is a good example} SKOS can also be used to organize, eg, tags, annotate other vocabularies, …
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.55
+(237) 
+ 237  } Anybody in the World can refer to common concepts§ they mean the same for everybody} Applications may exploit the relationships among concepts§ eg, SPARQL queries may be issued on the library data+LOC
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.56More authoritative vocabularies
+Copyright 2014 by Manning Publications Co., [WZRH14]René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.57Outline
+1Introduction
+2RDF Schema
+3Vocabularies
+4Example: schema.org
+5Notes and Further ReadingRené Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.58
+(129) 
+ 129  
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.59
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.60
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.61
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.62
+René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.63
+(125) 
+ 125  
+ <div itemscope itemtype="http://schema.org/Review">     ...   <h1 itemprop="name">Oscars 2012: The Artist, review</h1>   <h2 itemprop="description">The Artist, an utterly beguiling…</h2>   ...       <span itemprop="ratingValue" class="hidden">5</span>   ... René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.64
+(126) 
+ 126  
+ [ rdf:type schema:Review ;   schema:name "Oscars 2012: The Artist, review" ;   schema:description "The Artist, an utterly beguiling…" ;   schema:ratingValue "5" ;   … ]  René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.65Outline
+1Introduction
+2RDF Schema
+3Vocabularies
+4Example: schema.org
+5Notes and Further ReadingRené Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.66Reading Material
+Required
+[Yu14, Chapter 4] (RDFS)
+[Yu14, Chapter 7] (FOAF)
+Supplemental
+[Wor14] (RDF Primer)
+[Yu14, Chapter 10] (Schema.org)
+[WZRH14, Chapters 2, 4] (RDF , FOAF)René Witte
+Introduction
+Review
+Anatomy of a URI
+Back to the bookstore
+example
+RDF Schema
+Introduction
+Class and Instance
+Label & Comment
+Subclass
+Property
+RDFS Utility Vocabulary
+Summary
+Vocabularies
+Introduction
+FOAF
+Dublin Core
+SKOS
+Summary
+Example: schema.org
+Notes and Further
+Reading
+3.67References
+[HB11] Tom Heath and Christian Bizer.
+Linked Data: Evolving the Web into a Global Data Space .
+Morgan & Claypool, 2011.
+https://concordiauniversity.on.worldcat.org/oclc/704257552.
+[Her] Ivan Herman.
+Tutorial on Semantic Web Technologies.
+http://www.w3.org/People/Ivan/CorePresentations/RDFTutorial/.
+[Wor14] World Wide Web Consortium (W3C).
+RDF 1.1 Primer.
+http://www.w3.org/TR/rdf11-primer/, 24 June 2014.
+[WZRH14] David Wood, Marsha Zaidman, Luke Ruth, and Michael Hausenblas.
+Linked Data: Structured Data on the Web .
+Manning, 2014.
+https://concordiauniversity.on.worldcat.org/oclc/871683907.
+[Yu14] Liyang Yu.
+A Developer’s Guide to the Semantic Web .
+Springer-Verlag Berlin Heidelberg, 2nd edition, 2014.
+https://concordiauniversity.on.worldcat.org/oclc/897466408.

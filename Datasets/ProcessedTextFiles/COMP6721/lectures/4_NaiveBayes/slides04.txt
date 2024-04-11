@@ -1,0 +1,685 @@
+1Artificial Intelligence: 
+Naive Bayes ClassificationRemember this slide…
+23Today
+1.Introduction to ML
+2.Naïve Bayes Classifier
+3.Evaluation
+https://medium.com/machine -learning -for-humans/neural -networks -deep-learning -cdad8aeae49b
+4Why Machine Learning?
+Over 2.5 quintillion bytes of data are created every single day, and it is only 
+going to grow from there. By 2020, it is estimated that 1.7MB of data will be 
+created every second for every person on earth.5Why Machine Learning?
+6Machine Learning History
+In 1959, Arthur Samuel first proposed 
+the concept Machine Learning:
+“A computer program is said to learn from 
+experience E with respect to some class of  
+tasks T and performance measure P if its 
+performance at tasks in T, as measured by 
+P, improves with experience E.”
+7Machine Learning Process
+8Supervised Learning
+9Unsupervised Learning
+10Reinforcement Learning
+11Types of ML Algorithms
+Machine Learning
+Supervised 
+Learning
+(task -driven)
+Classification RegressionUnsupervised 
+Learning
+(data analytics)
+Association ClusteringReinforcement Learning
+(learns by reacting to 
+environment)
+Reward Based12ML outside of AI
+ML is widely used in Data Mining
+◼a.k.a. Knowledge Discovery in Databases (KDD)
+◼e.g. Clustering, Anomaly Detection, 
+Association Rule Mining
+◼Example: predict if a customer is likely to purchase 
+certain goods according to history of shopping 
+activities.
+13Types of Machine Learning
+Supervised
+Learning Unsupervised 
+LearningReinforcement 
+Learning
+Definition The machine learns by 
+using labelled dataThe machine is trained 
+on unlabeled data 
+without any guidanceAn agent interacts with 
+its environment by 
+producing actions & 
+discovers errors and 
+rewards
+Types of problems Regression 
+&ClassificationAssociation & 
+ClusteringReward based
+Type of data Labelled data Unlabelled data No pre -defined data
+Training External supervision No supervision No supervision
+Approach Map labelled input to 
+known outputUnderstand patterns 
+and discover outputFollow trail and error 
+method
+Popular Algorithms Linear Regression, 
+Logistic Regression, KNN, 
+etcK-means, C -means, etc Q-learning, etc15Today
+1.Introduction to ML
+2.Naïve Bayes Classifier
+3.Evaluation
+https://medium.com/machine -learning -for-humans/neural -networks -deep-learning -cdad8aeae49b
+16Motivation
+◼How do we represent and reason about 
+non-factual knowledge?
+❑It might rain tonight
+❑If you have red spots on your face, you might have 
+the measles
+❑This e -mail is most likely spam
+❑I can’t read this character, but it looks like a “B”
+❑These 2 pictures are very likely of the same 
+person
+❑…17◼Pis a probability function:
+❑0 ≤ P(A) ≤ 1
+❑P(A) = 0 ⇒the event Awill never take place
+❑P(A) = 1 ⇒the event Amust take place
+❑iP(Ai) = 1⇒one of the events Aiwill take place
+❑P(A) + P(~A) = 1
+◼Joint probability 
+❑intersection A1...Anis an event that takes place if allthe events 
+A1,...,Antake place
+❑denoted P(AB) or P(A,B) 
+◼Sum Rule
+❑union A1...Anis an event that takes place if at least one of the 
+events A1,...,Antakes place
+❑denoted P(A B) = P(A) + P(B) -P(A B)Remember…
+A BA∩B18Conditional Probability
+◼Prior (or unconditional) probability
+❑Probability of an event before any evidence is 
+obtained
+❑P(A)  = 0.1 P(rain today) = 0.1
+❑i.e. your belief about A given that you have no 
+evidence
+◼Posterior (or conditional ) probability
+❑Probability of an event given that you know that B is 
+true       (B = some evidence)
+❑P(A|B) = 0.8 P(rain today| cloudy) = 0.8
+❑i.e. your belief about A given that you know B19Conditional Probability (con’t)
+A B
+A)B
+P(B)B)P(A, P(B) B) P(A  B)|P(A ==20Example
+◼Rolling two dice (together):
+◼Rolling two dice one after the other, first dice rolled 1:
+21Chain Rule
+◼With 2 events, the probability that A and B occur is:
+◼With 3 events, the probability that A, B and C occur is:
+❑The probability that A occurs
+❑Times, the probability that B occurs, assuming that A occurred
+❑Times, the probability that C occurs, assuming that A and B have 
+occurred
+◼With n events, we can generalize to the Chain rule:
+P(A1, A2, A3, A4, ..., An) 
+= P (Ai)
+= P(A1) ×P(A2|A1) ×P(A3|A1,A2) ×... ×P(An|A1,A2,A3,…,An-1)
+P(B) x B)|P(A  B)P(A,  so  P(B)B)P(A,  B)|P(A = =22So what?
+◼we can do probabilistic inference
+❑i.e. infer new knowledge from observed evidence23Example 1
+◼Joint probability distribution:
+Toothache ~Toothache
+Cavity 0.04 0.06
+~Cavity 0.01 0.89evidence
+hypothesisP(Toothache ∩Cavity)
+0.80.01 0.040.04
+e) P(toothachtoothache) P(cavitytoothache)| P(cavity =+==
+P(E)E)H P(E)|P(H=24Getting the Probabilities
+◼in most applications, you just count from a set of 
+observations
+ll_events count_of_acount_of_AP(A)=
+ll_B count_of_aether _and_B_tog count_of_A
+P(B)B) P(AB)|P(A ==25Combining Evidence
+◼Assume now 2 pieces of evidence:
+◼Suppose, we know that
+❑P(Cavity | Toothache) = 0.12
+❑P(Cavity | Young) = 0.18
+◼A patient complains about Toothache and is Young… 
+❑what is P(Cavity | Toothache Young) ? 26Combining Evidence
+◼But how do we get the data ?
+◼In reality, we may have dozens, hundreds of variables
+◼We cannot have a table with the probability of all 
+possible combinations of variables
+❑Ex. with 16 binary variables, we would need 216 entriesToothache ~Toothache
+Young ~ Young Young ~ Young
+Cavity 0.108 0.012 0.072 0.008
+~Cavity 0.016 0.064 0.144 0.576
+P(Toothache ∩Cavity ∩Young)27Independent Events
+◼In real life:
+❑some variables are independent… 
+◼ex: living in Montreal & tossing a coin
+◼P(Montreal, head) = P(Montreal) * P(head)
+◼probability of 2 heads in a row: 
+❑P(head, head) = 1/2 * 1/2 = 1/4
+❑some variables are not independent…
+◼ex: living in Montreal & wearing boots
+◼P(Montreal, boots) ≠ P(Montreal) * P(boots)
+28◼Two events A and B are independent:
+❑if the occurrence of one of them does not influence the 
+occurrence of the other
+❑i.e.  A is independent of B if P(A) = P(A|B)
+◼If A and B are independent, then: 
+❑P(A,B) = P(A|B) x P(B) (by chain rule) 
+= P(A)    x P(B) (by independence)
+◼To make things work in real applications, we often assume 
+that events are independent 
+❑P(A,B) = P(A) x P(B)Independent Events29Conditional Independent Events
+◼Two events A and B are conditionally
+independent given C:
+❑Given that C is true , then any evidence about B 
+cannot change our belief about A
+❑P(A, B |  C) = P(A | C) x P(B | C). 30Bayes’ Theorem
+◼given:
+◼then:
+◼and:P(A|B) x P(B) = P(B|A) x P(A)
+P(B) x B)|P(A  B)P(A,  so  P(B)B)P(A,  B)|P(A = =
+P(A) x A)|P(B  B)P(A,  so  P(A)B)P(A,  A)|P(B = =31So?
+◼We typically want to know: P(Hypothesis | Evidence)
+◼P(Disease | Symptoms)… P(meningitis | red spots)
+◼P(Cause | Side Effect)… P(misaligned brakes| squeaky wheels)
+◼But P(Hypothesis| Evidence) is hard to gather
+❑ex: out of all people who have red spots… how many have meningitis? 
+◼However P(Evidence | Hypothesis) is easier to gather 
+❑ex: out of all people who have the meningitis … how many have red 
+spots?
+◼So 
+) P(Evidenceis) P(Hypothes) Hypothesis| P(EvidenceEvidence)|is P(Hypothes=32Example 2
+→If you have spots… you are more likely to have 
+meningitis than if we don’t know about you having 
+spotsAssume we only have 1 hypothesis
+Assume:
+◼P(spots=yes | meningitis=yes) = 0.4
+◼P(meningitis=yes) = 0.00003
+◼P(spots=yes) = 0.05
+00024.005.000003.04.0yes) P(spotsyes)is P(meningit x yes) meningitis|yes P(spotsyes) spots|yesis P(meningit
+==== = === =33Example 3
+◼Predict the weather tomorrow based on tonight‘s sunset...
+◼Assume we have 3 hypothesis...
+❑H1: weather will be nice P(H1) = 0.2
+❑H2: weather will be bad P(H2) = 0.5 
+❑H3: weather will be mixed P(H3) = 0.3 
+◼And 1 piece of evidence with 3 possible values
+❑E1: today, there's a beautiful sunset
+❑E2: today, there's a average sunset
+❑E3: today, there's nosunset
+P(Ex|Hi)E1E2E3
+H1 0.7 0.2 0.1
+H2 0.3 0.3 0.4
+H3 0.4 0.4 0.2P(E2 |H1)34Example 3
+◼Predict the weather tomorrow based on tonight‘s sunset...
+◼Assume we have 3 hypothesis...
+❑H1: weather will be nice P(H1) = 0.2
+❑H2: weather will be bad P(H2) = 0.5 
+❑H3: weather will be mixed P(H3) = 0.3
+◼And 1 piece of evidence with 
+3 possible values
+❑E1: today, there's a beautiful sunset
+❑E2: today, there's a average sunset
+❑E3: today, there's nosunsetP(Ex|Hi)E1E2E3
+H1 0.7 0.2 0.1
+H2 0.3 0.3 0.4
+H3 0.4 0.4 0.235Example 3
+◼Observation: average sunset ( E2)
+◼Question: how will be the weather tomorrow? 
+❑P(Hi| E2)?
+❑predict the weather that maximizes the probability
+❑select Hisuch that P(Hi| E2)is the greatest
+)P(E)H|P(E x )P(H  )E|P(H
+2i 2 i
+2 i=
+0.31  .12  .15  .04  .3x.4 .5x.3  .2x.2 )H|P(E x )P(H  )H|P(E x )P(H )H|P(E x )P(H  )P(E 3 2 3 2 2 2 1 2 1 2
+=++=++=+ + =36Example 3
+H2is the most likely hypothesis, given the evidence 
+P(H2| E2) is the highest
+Tomorrow the weather will be bad
+129.31.2.x2.
+)P(E)H|P(E x )P(H  )E|P(H
+21 2 1
+2 1 == =
+484.31.3.x5.
+)P(E)H|P(E x )P(H  )E|P(H
+22 2 2
+2 2 == =
+387.31.4.x3.
+)P(E)H|P(E x )P(H  )E|P(H
+23 2 3
+2 3 == =
+P(E) )H|P(E x )P(H argmax Hi i
+HNB
+i=37Bayes’ Reasoning
+◼Out of n hypothesis…
+❑we want to find the most probable Higiven the evidence E
+◼So we choose the Hiwith the largest P(Hi|E)
+◼But… P(E) 
+❑is the same for all possible Hi(and is hard to gather anyways)
+❑so we can drop it 
+◼So Bayesian reasoning: 
+P(E) )H|P(E x )P(H  argmax  E)|P(H argmax  Hi i
+Hi
+HNB
+i i= =
+ )H|P(E x )P(H argmax P(E) )H|P(E x )P(H argmax Hi i
+Hi i
+HNB
+i i= =38Representing the Evidence
+◼The evidence is typically represented by many 
+attributes/features
+❑beautiful sunset? clouds? temperature? summer?, …
+◼so often represented as a feature/attribute vector
+◼e1 = <a1, … , an>
+◼e1 = <sunset:beautiful, clouds:no, temp:high, summer:yes>
+ 
+ evidence   hypothesis  
+ sunset  
+a1 clouds   
+a2 temp  
+a3.  summer  
+a4  weather 
+tomorrow  
+e1 beautiful  no high yes  Nice 
+ 39Combining Evidence 
+Now we have decomposed the joint probability distribution into much 
+smaller pieces… 
+ ? yes) Young yes che yes|Tootha P(Cavity === =
+ 
+toothache  young  cavity  
+yes yes ? 
+ 
+yes ) Young yes ) x P(e P(Toothachyes) ity yes)xP(Cav yes|Cavity Young yese P(Toothach: assumption ce independen with
+= == = ===
+yes) Young yes ) x P(e P(Toothachyes) vity yes)x P(Ca yes|Cavity Young yes )  xP( yes|Cavitye P(Toothach: assumption ce independen l conditiona with
+= == = = = ==
+yes) Young yese P(Toothachyes) ity yes)xP(Cavy yes| Cavit Young yese P(Toothach :Rule Bayes with
+=== = ===40Combining Evidence 
+But since we only care about ranking the hypothesis…
+yes)  Young yes che no| Tootha P(Cavityyes)  Young yes hache yes | Toot P(Cavity
+= = == = =
+ 
+toothache  young  cavity  
+yes yes yes?  or no?  
+ 
+ )H|P(a x )P(H argmax  )H|a,...,a,a,aP( x )P(H argmax)H|P(E x )P(H argmax P(E) )H|P(E x )P(H argmax Hn
+1ji j i
+Hi n 321 i
+Hi i
+Hi i
+HNB
+i i i i
+==  = = =
+no)y yes| Cavit P(Young no)y yes| Cavite P(Toothach no) P(Cavityyes)y yes| Cavit P(Young yes)y yes| Cavite P(Toothach yes) P(Cavity
+= = = = == = = = =
+yes) P(Young yes) e P(Toothachno)y yes| Cavit P(Young no)y yes| Cavite P(Toothach no) P(Cavityyes)  P(Young yes) e P(Toothachyes)y yes| Cavit P(Young yes)y yes| Cavite P(Toothach yes) P(Cavity
+= == = = = == == = = = =41Example 4evidence
+Day Outlook  Temperature  Humidity  Wind Play Tennis  
+Day1 Sunny  Hot High Weak  No 
+Day2  Sunny  Hot High Strong  No 
+Day3  Overcast  Hot High Weak  Yes 
+Day4  Rain Mild High Weak  Yes 
+Day5  Rain Cool Normal  Weak  Yes 
+Day6  Rain Cool Normal  Strong  No 
+Day7  Overcast  Cool Normal  Strong  Yes 
+Day8  Sunny  Mild High Weak  No 
+Day9  Sunny  Cool Normal  Weak  Yes 
+Day10  Rain Mild Normal  Weak  Yes 
+Day11  Sunny  Mild Normal  Strong  Yes 
+Day12  Overcast  Mild High Strong  Yes 
+Day13  Overcast  Hot Normal  Weak  Yes 
+Day14  Rain Mild High Strong  No 
+ 42Example 4
+◼Goal: Given a new instance X =<a1,…, an>, classify as Yes/No
+◼Naïve Bayes: Assumes that the attributes/features are 
+conditionally independent
+ )H|P(a x )P(H argmax  )H|a,...,a,a,aP( x )P(H argmax)H|P(E x )P(H argmax P(E) )H|P(E x )P(H argmax Hn
+1ji j i
+Hi n 321 i
+Hi i
+Hi i
+HNB
+i i i i
+==  = = =43Example 4
+◼Goal: Given a new instance X =<a1,…, an>, classify as Yes/No
+1st estimate the probabilities from the training examples:
+a)For each hypothesis Hi
+b)For each attribute value aj  of each instance (evidence)
+)H(P estimatei
+)H|a(P estimate ij
+ )H|P(a x )P(H argmax Hn
+1ji j i
+HNB
+i
+==441.TRAIN:
+◼compute the probabilities from the training setExample 4
+prior probabilities P(Hi)
+conditional probabilities
+60.05/3)no PlayTennis| strong Wind(P33.09/3)yes PlayTennis| strong Wind(P...4.05/2)no PlayTennis|rain Out(P33.09/3)yes PlayTennis|rain Out(P60.05/3)no PlayTennis| sunny Out(P22.09/2)yes PlayTennis| sunny Out(P36.014/5)no PlayTennis(P64.014/9)yes PlayTennis(P
+=== ==== ==== ==== ==== ==== =======
+)H|a(P ij45Example 4
+2.TEST:
+classify the new case: X=(Outlook: Sunny, Temp: Cool, Hum: High, Wind: Strong)
+0053.0   )yes PlayTennis| strong Wind(xP)yes PlayTennis|high Hum(xP)yes PlayTennis|cool Temp(xP)yes PlayTennis| sunny Outlook(P x   )yes PlayTennis(P )1
+== = = = = = = ==
+)H| strong P(Wind x )H|high P(Humidity x                   )H|cool P(Temp x )H| sunny P(Outlook x )P(H argmax       )H|P(a x )P(H  argmax       )H|P(X x )P(H  argmax H
+i ii i i
+no][yes,Hji j i
+no][yes,Hi i
+no][yes,HNB
+iii
+= == = ===
+
+
+no)X( PlayTennis: answer = 
+0206.0   )no PlayTennis| strong Wind(xP)no PlayTennis|high Hum(xP)no PlayTennis|cool Temp(xP)no PlayTennis| sunny Outlook(P x   )no PlayTennis(P )2
+== = = = = = = ==46Application of Bayesian Reasoning
+◼Categorization: P(Category | Features of Object)
+❑Diagnostic systems: P(Disease | Symptoms)
+❑Text classification: P(sports_news | text) 
+❑Character recognition: P(character | bitmap) 
+❑Speech recognition: P(words | acoustic signal)
+❑Image processing: P(face_person | image features)
+❑Spam filter: P(spam_message | words in e -mail)
+❑… 47Naive Bayes Classifier
+◼A simple probabilistic classifier based on Bayes' theorem 
+❑with strong (naive) independence assumption
+❑i.e. the features/attributes are conditionally independent
+◼The assumption of conditional independence, often does 
+not hold… 
+◼But Naïve Bayes works very well in many applications 
+anyways!
+❑ex: Medical Diagnosis
+❑ex: Text Categorization (spam filtering)48Ex. Application: Spam Filtering
+◼Task: classify e -mails (documents) into a pre -
+defined class
+❑ex: spam / ham
+❑ex: sports, recreation, politics, war, economy,…
+❑ex: customer email →order, complaint, support request, 
+...
+◼Given
+❑N sets of training texts (1 set for each class)
+❑Each set is already tagged by the class name 
+Strictly speaking, what we will see is called a Multinomial Naïve Bayes 
+classifier, because we will count the number of words, as opposed to just 
+using binary values for the presence/absence of words… 49e-mail Representation
+◼each e -mail is represented by a vector of feature/value:
+❑feature = actual words in the e -mail
+❑value = number of times that word appears in the e -mail
+◼each e -mail in the training set is tagged with the correct 
+category.
+◼task: correctly tag a new e -mail
+data 
+instance  features / evidence / X  f(X) 
+offer money viagra laptop exam study  category  
+email 1  3 2 5 1 0 1 SPAM  
+email 2  1 1 0 5 4 3 HAM  
+email 3  0 3 2 1 0 1 SPAM  
+…        
+ 
+ 
+ offer money viagra laptop exam study category  
+new email  2 1 0 1 1 2 ? 
+ 
+ 50Naïve Bayes Algorithm
+// 1. training
+for all classes ci   // ex. ham or spam
+for all words wjin the vocabulary
+compute
+for all classes ci
+compute 
+// 2. testing a new document D
+for all classes ci// ex. ham or spam
+score(ci) = P(ci)
+for all words wjin the D
+score(ci) = score(ci) x P(wj| ci)
+choose c* = with the greatest score(ci)
+ )c,count(w )c,count(w  )c|P(w
+jijij
+ij=
+ documents) count(all )c in ments count(docu  )P(ci
+i=
+ w1 w2 w3 w4 w5 w6 
+c1 : SPAM  p(w 1|c1) p(w 2|c1) p(w 3|c1) p(w 4|c1) p(w 5|c1) p(w 6|c1) 
+c2 : HAM  p(w 1|c2) p(w 2|c2) p(w 3|c2) p(w 4|c2) p(w 5|c2) p(w 6|c2) 
+ 
+ 51Example
+◼Dataset
+❑c1: SPAM
+doc1:  "cheap meds for sale"
+doc2:  "click here for the best meds"
+doc3:  "book your trip"
+❑c2: HAM
+doc4:   "cheap book sale, not meds"
+doc5:   "here is the book for you"
+◼Question : 
+❑doc6:  “the cheap book”
+❑should it be classified as HAM or SPAM?
+Spam
+Ham
+?52Example (cont'd)
+Assume 
+vocabulary = {best, book, cheap, sale, trip, meds}
+If not in vocabulary, ignore word
+1. Training:
+❑P(best| SPAM ) = 1/7 P(best| HAM ) =0/5
+❑P(book| SPAM ) = 1/7 P(book| HAM ) =2/5
+❑P(cheap| SPAM ) = 1/7 P(cheap| HAM ) = 1/5
+❑P(sale| SPAM ) = 1/7 P(sale| HAM ) = 1/5
+❑P(trip| SPAM ) = 1/7 P(trip| HAM ) = 0/5
+❑P(meds| SPAM ) = 2/7 P(meds| HAM ) = 1/5
+❑P(SPAM ) = 3/5 P(HAM ) = 2/5
+2. Testing: “the cheap book”
+❑Score( HAM )= P(HAM ) x P(cheap| HAM ) x P(book| HAM ) 
+❑Score( SPAM )= P(SPAM )  x P(cheap| SPAM ) x P(book| SPAM ) 53Be Careful: Smooth Probabilities
+◼normally:
+◼what if we have a P(wi|cj) = 0…?
+❑ex. the word "dumbo" never appeared in the class SPAM? 
+❑then P("dumbo"| SPAM) = 0
+◼so if a text contains the word "dumbo", the class SPAM is 
+completely ruled out !
+◼to solve this: we assume that every word always appears at 
+least once (or a smaller value) 
+❑ex: add -1 smoothing:
+vocabulary of size c in words of number total1 )c in w of (frequency
+  )c|P(w
+jj i
+j i++
+=
+jj i
+j ic in words of number total)c in w of (frequency
+  )c|P(w=54Be Careful: Use Logs
+◼if we really do the product of probabilities…
+❑argmaxcjP(cj) ∏P(wi|cj) 
+❑we soon have numerical underflow…
+❑ex: 0.01 x 0.02 x 0.05 x …
+◼so instead, we add the log of the probs
+❑argmaxcjlog(P(cj)) + Σlog(P(wi|c))
+❑ex: log(0.01) + log(0.02) + log(0.05) + …55Example
+◼Dataset
+◼Assume:
+❑|V| = 100     vocabulary = {ball, heat, kitchen, referee, stove, the, ... }
+❑500,000 words in Cooking
+❑300,000 words in Sports
+❑100,000 docs in Cooking
+❑75,000 docs in Sportsc1: COOKING c2: SPORTS
+doc1:   … stove… kitchen… the… heat
+doc2:   … kitchen… pasta… stove…
+…
+doc100000 :  … stove…heat… ball…doc1:   … ball… heat…
+doc2:   … the… referee… player…
+…
+doc75000:   goal… injury …
+COOKiNG
+ SPORTS56Example
+◼Training –Unsmoothed  / Smoothed probs:
+❑P(ball| COOKING ) = P(ball| SPORTS ) = 
+❑P(heat| COOKING) = P(heat| SPORTS ) = 
+❑P(kitchen| COOKING ) = P(kitchen| SPORTS ) =     
+❑P(referee| COOKING ) = P(referee| SPORTS ) =    
+❑P(stove| COOKING ) = P(stove| SPORTS ) = 
+❑P(the| COOKING ) = P(the| SPORTS ) = 
+❑…
+❑P(COOKING ) = P(SPORTS ) = 
+◼Testing: “the referee hit the bluebird”
+❑Score( COOKING )= log() + log(P(the| COOKING )) + log(P(referee| COOKING )) +  
+log(P(hit| COOKING )) + log(P(the| COOKING )) 
+❑Score( SPORTS )= log() + log(P(the| SPORTS )) + log(P(referee| SPORTS )) + 
+log(P(hit| SPORTS )) + log(P(the| SPORTS )) 57Example
+◼58Another Application:
+Postal Code Recognition
+59Digit Recognition
+◼MNIST dataset
+◼data set contains handwritten 
+digits from the American Census 
+Bureau employees and American 
+high school students
+◼28 x 28 grayscale images
+◼training set: 60,000 examples 
+◼test set: 10,000 examples.
+◼Features: each pixel is used as a 
+feature so:
+❑there are 28x28 = 784 features
+❑each feature = 256 greyscale value
+◼Task: classify new digits into one 
+of the 10 classes
+https://en.wikipedia.org/wiki/MNIST_database60
+Image Classification61Comments on Naïve Bayes Classification
+◼Makes a strong assumption of conditional independence
+❑that is often incorrect
+❑ex: the word ambulance is not conditionally independent of the 
+word accident given the class SPORTS
+◼BUT: 
+❑surprisingly very effective on real -world tasks
+❑basis of many spam filters
+❑fast, simple
+❑gives confidence in its class predictions (i.e., the scores)
+◼Fast, easy to apply
+❑often used as a baseline algorithm before trying other methods62Today
+1.Introduction to ML
+2.Naïve Bayes Classifier
+3.Evaluation
+https://medium.com/machine -learning -for-humans/neural -networks -deep-learning -cdad8aeae49b
+63Evaluation of Learning Model
+◼How do you know if what you learned is correct?
+◼You run your classifier on a data set of unseen examples (that 
+you did not use for training) for which you know the correct 
+classification
+◼Split data set into 3 sub -sets
+1.Actual training set (~80%)
+2.Validation set (~20%)
+3.Test set~20%~80%64Standard Methodology
+1. Collect a large set of examples (all with correct classifications)
+2. Divide collection into training, validation and test set
+Loop:
+3. Apply learning algorithm to training set to learn the parameters
+4. Measure performance with the validation set, and adjust hyper -
+parameters* to improve performance
+5. Measure performance with the test set
+◼DO NOT LOOK AT THE TEST SET  u ntil step 5.
+Hyper-parameters:  parameters 
+used to set up the ML model. eg. 
+•for NB: value of delta for 
+smoothing, 
+•for DTs: pruning level
+•for ANNs: nb of hidden layers, nb 
+of nodes per layer…Parameters:  
+basic values learned by the ML 
+model. eg. 
+•for NB: prior & conditional 
+probabilities 
+•for DTs: features to split
+•for ANNs: weights 65Metrics
+◼Accuracy 
+❑% of instances of the test set the algorithm correctly 
+classifies
+❑when all classes are equally important and represented 
+◼Recall, Precision & F -measure
+❑when one class is more important than the others66Accuracy
+◼% of instances of the test set the algorithm correctly 
+classifies
+◼when all classes are equally important and represented 
+◼problem: 
+❑when one class C is more important than the others
+❑eg. when data set is unbalanced
+ Target  system 1  
+ X1  X1  
+ X2  X2  
+ X3  X3  
+ X4  X4  
+ X5  X5  
+ X6  X6  
+ X7  X7  
+ … … 
+ … … 
+ X500   X500   
+Accuracy   450/500 = 
+90% !  
+ 
+ 
+Accuracy                        = 495/500 
+= 99%                       67Recall, Precision, Accuracy
+❑Recall: How many % of instances of C were found correctly?
+❑Precision: Of the detected instances of C, how many % were correct?
+❑Accuracy:  How many % were correct overall (both C and not C)?
+❑See confusion matrix:
+TP
+TP+FNRecall=
+TP+FPTPPrecision =TP+TN
+TP+TN+FP+FNAccuracy=  TP
+TP+FNRecall=TP
+TP+FNRecall=
+ 
+ 
+ 
+Model  says… In reality, the instance  is… 
+in class C  Is not in class C  
+   instance is in class C  True Positive 
+(TP) False P ositive  
+(FP) 
+   instance is NOT in class C  False Negative 
+(FN) True Negative 
+(TN) 
+ 
+ 68Example
+ Target  system 1  system 2  system 3  
+ X1  X1  X1  X1  
+ X2  X2  X2  X2  
+ X3  X3  X3  X3  
+ X4  X4  X4  X4  
+ X5  X5  X5  X5  
+ X6  X6  X6  X6  
+ X7  X7  X7  X7  
+ …  … …  …  
+ …  … …  …  
+ X500   X500   X500  X500  
+Accuracy   450/500 = 90% !  498/500  = 99.6%  498/500  = 99.6%  
+Precision   0/0 3/3 =  100%  5/7 = 71%  
+Recall   0/5 = 0% 3/5 = 60%  5/5 = 100%  
+ 
+ 
+ 
+495/500 = 99% !69Error Analysis
+◼Where did the learner go wrong ?
+◼Use a confusion matrix / contingency table
+ 
+correct class 
+(that should have 
+been assigned)  classes assigned by the learner  
+ C1 C2 C3 C4 C5 C6 … Total 
+C1 94 3 0 0 3 0  100 
+C2 0 93 3 4 0 0  100 
+C3 0 1 94 2 1 2  100 
+C4 0 1 3 94 2 0  100 
+C5 0 0 3 2 92 3  100 
+C6 0 0 5 0 10 85  100 
+…         
+ 
+ 70Today
+1.Introduction to ML
+2.Naïve Bayes Classifier
+3.Evaluation
+https://medium.com/machine -learning -for-humans/neural -networks -deep-learning -cdad8aeae49b

@@ -1,3 +1,3 @@
-course,grade,alphabeticPrefix,numericPart,courseURI
-COMP6741,A-,COMP,6741,file:///Users/jatin/workspace/roboprof/data#5084272549
-COMP6721,B+,COMP,6721,file:///Users/jatin/workspace/roboprof/data#3671756991
+course,grade,courseURI
+COMP6741,A-,file:///Users/jatin/workspace/roboprof/data#1709075924
+COMP6721,B+,file:///Users/jatin/workspace/roboprof/data#6272216589

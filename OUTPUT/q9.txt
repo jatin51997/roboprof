@@ -20,7 +20,7 @@ WHERE {
   
   ?topic a voc:Topic;
       foaf:name ?topicName;
-      foaf:name "Deep_learning";
+      foaf:name "Deep Learning";
       voc:TopicProvenance ?lectureContent;
   BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
 }

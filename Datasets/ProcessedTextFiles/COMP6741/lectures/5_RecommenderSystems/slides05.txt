@@ -1,0 +1,1737 @@
+René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.1Lecture 5
+Recommender Systems
+Personalization, Collaborative Filtering & Content-based recommendation
+COMP 474/6741, Winter 2024
+René Witte
+Department of Computer Science
+and Software Engineering
+Concordia UniversityRené Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.2Outline
+1Introduction
+Modeling Users
+Netﬂix Recommendations
+2Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+3Content-based Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+4Notes and Further ReadingRené Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.3Slides Credit
+Includes slides by Christopher D. Manning, Prabhakar Raghavan and
+Hinrich Schütze [MRS08]
+Copyright © 2008 Cambridge University PressRené Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.4Recommender Systems and Collaborative Filtering
+René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.5Collecting User Interactions
+Copyright 2009 by Manning Publications Co., [Ala09]René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.6Item Metadata
+Copyright 2009 by Manning Publications Co., [Ala09]René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.7Netﬂix Recommendations
+https://www.youtube.com/watch?v=nq2QtatuF7URené Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.81Introduction
+2Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+3Content-based Recommendations
+4Notes and Further ReadingRené Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.9Making Recommendations
+Given Information about a User. . .
+. . . we want to be able to have a system
+recommending items (books, movies, music, photos, videos, etc.)
+ﬁnd users interested in a new item
+ﬁnd similar items, based on interests of other users
+René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.10Collaborative Filtering
+Copyright 2016 by Manning Publications Co., [TB16]René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.11Data Collection
+Copyright 2016 by Manning Publications Co., [TB16]René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.12Fun with Flags Vectors
+Vectors
+A vector ~vis an element of a vector space.
+For example, ~v2Rnwith
+~v=2
+6664x1
+x2
+...
+xn3
+77752Rn
+Visualization
+We can visualize vectors, e.g., in 2D:
+~vRené Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.13So what?
+Vectors of words, users, products, . . .
+We can represent (users, documents, products) as vectors, e.g., using the count of
+tags or the weight of words. This is called a vector space model.
+Vector operations on entities, e.g., to compute their similarity
+Copyright 2008 by Cambridge University Press, [MRS08]René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.14Movies as Vectors
+Copyright 2016 by Manning Publications Co., [TB16]René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.15Length normalization
+How do we compute the length of a vector?
+A vector can be (length-) normalized by dividing each of its components by its
+length – here we use the L2norm:jjxjj2=qP
+ix2
+i
+This maps vectors onto the unit sphere . . .
+. . . since after normalization: jjxjj2=qP
+ix2
+i=1:0
+As a result, longer and shorter vectors (more/fewer tags) have weights of the
+same order of magnitude.
+!Work sheet #4:Tasks 1,2René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.16How do we formalize vector space similarity?
+Computing the similarity
+First cut: (negative) distance between two points
+( = distance between the end points of the two vectors)
+Euclidean distance?
+Euclidean distance is a bad idea . . .
+. . . because Euclidean distance is large for vectors of different lengths.René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.17Why Euclidian distance is a bad idea
+0 101
+richpoor
+q:[rich poor]d1:Ranks of starving poets swelld2:Rich poor gap grows
+d3:Record baseball salaries in 2010
+The Euclidean distance of ~qand~d2is large although the distribution of terms in the
+query qand the distribution of terms in the document d2are very similar.René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.18From angles to cosines
+Comparing vectors
+The following two notions are equivalent:
+Compare item vectors according to the angle between them, in decreasing
+order
+Rank item vectors according to cosine(item 1, item 2) in increasing order
+Cosine is a monotonically decreasing function of the angle for the interval [0;180]René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.19Cosine
+René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.20Cosine for normalized vectors
+Computing similarity
+For normalized vectors, the cosine is equivalent to the dot product or scalar product:
+cos(~q;~d) =~q~d=X
+iqidi
+(if both ~qand~dare length-normalized)
+!Work sheet #4:Task 3René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.21Item Recommendation
+Simple Tag-based Recommendation
+Collaborative tagging gives rise to simple recommender approaches:
+show other items (products, photos, videos, music) that were tagged similar by
+other users
+exploited in many e-commerce/social networking web sites
+René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.22Collaborative Filtering
+Finding related content
+When multiple users tag the same resource, content can be discovered based on
+the most frequent tags (example: Last.fm).
+René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.23Recommendations
+Recommendations based on tags
+We can now exploit tags for a number of use cases:
+Recommend items related to other items
+Recommend items based on user’s interest
+Find users interested in a new item
+General Approach
+Represent users/items as
+(normalized) term vectors
+Compute cosine similarity
+between vectors; i.e., the angle
+between them (for normalized
+vectors, this is simply their dot
+product)
+Copyright 2008 by Cambridge University Press, [MRS08]René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.24Items related to other items
+Simple point-to-point recommendation engine
+Create item vectors using raw count
+Normalize vectors
+Compute cosine similarity
+Result is a similarity matrixRené Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.25Items of interest to a user
+Personalization
+Item-to-item is the same for all users
+How can we recommend items for a particular user?
+Solution: build user-speciﬁc similarity matrix
+Computation of vectors, normalization as before
+This time, we calculate the cosine similarity between a user vector and an
+article vector
+!Work sheet #4:Tasks 4,5René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.26Finding relevant users for an item
+Recommending items to users
+New item comes in (blog post, photo, article, product, : : :)
+Which users would be interested in it?
+Similar to before, compute similarity matrix between metadata of new item and
+metadata of users.René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.27Cold-Start Problem
+General issue in recommender system deployment
+New user)no user proﬁle for recommendations
+New item)no user interactions for this item
+No general solution. . .
+Some strategies:
+Ask user for preferences during sign-up
+Recommend top- nitems (e.g., currently most popular movies/songs/products)René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.28Semantic Vocabularies for User Modeling
+Semantic User Proﬁles
+Idea: Use vocabularies instead of keywords in the vector representation of a user
+proﬁle
+Motivation
+Semantic recommendations (remember the “tree” example from Lecture #01)
+Open knowledge bases:
+interoperable between applications
+controlled by users, not corporationsRené Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.29Vocabularies
+Generic user modeling vocabularies
+FOAF
+The most popular generic user model offering descriptions for basic user
+information
+No comprehensive classes for describing preferences or interests
+GUMO
+A generic user model that offers several classes for users’ characteristics
+Basic user dimensions like Emotional States, Characteristics and Personality
+IntelLEO
+Several ontologies strongly focused on personalization
+Enables describing user and team modelling, preferences, tasks and interestsRené Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.30The $1m Netﬂix Prize Competition (2009)
+René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.31General machine learning process
+René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.32Performance Evaluation
+Measuring performance
+Is our fancy model better than giving out random recommendations?
+We need metrics to evaluate and compare the performance of different
+approaches against a ground truth (a.k.a. gold standard)
+Precision and Recall
+The precision provides a measure of the quality of the generated recommendations:
+precision =#correct system recommendations
+#all system recommendations
+The recall indicates how many relevant recommendations were found by a system:
+recall =#correct system recommendations
+#all correct recommendations
+Generally, there is a trade-off between precision and recall.
+!Work sheet #4:Task 6René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.33Precision@ k
+Precision at cutoff k
+Return a ranked list of recommendations (e.g., based on cosine similarity)
+Evaluate only top- krecommendations (e.g., top-10)
+precision@k =1
+kkX
+c=1rel(c);
+where rel (c)tells us if item at rank cwas relevant (1) or not (0).
+Intuitively. . .
+The percentage of correct recommendations in the top- k.
+Wait, what happened to Recall ?
+Well. . . in this application scenario, we don’t really care (there are millions of
+potentially relevant items on Amazon or movies on Netﬂix)
+!Work sheet #4:Task 7René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.34Average Precision
+Average Precision at N
+If we recommend Nitems to a user, where there are at most mrelevant items in
+1: : :N,
+AP@N =1
+mNX
+k=1precision@krel(k)
+again, rel (c)is 1 if the recommendation at rank cis relevant, 0 otherwise
+Note
+AP “rewards” (gives a higher score to) higher-ranked, correct recommendations
+!Work sheet #4:Task 8René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.35Mean Average Precision (MAP)
+MAP
+So far, everything was calculated for one user u2U
+But we want to know how well the system works across all users
+Hence, average the AP for all users:
+MAP@N =1
+jUjjUjX
+u=1AP@N (u)
+But wait, there’s more. . .
+Accuracy, Sensitivity, F-measure, . . .
+Non-binary ranked results (i.e., not just correct or wrong, but a Likert -scale):
+Compute the discounted cumulative gain (DCG),
+DCG u=rel1+jCjX
+c=2relc
+log2cRené Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.361Introduction
+2Collaborative Filtering
+3Content-based Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+4Notes and Further ReadingRené Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.37Content-based Recommendations
+Motivation
+So far, we build our model using vectors of concepts (e.g., tags, movie
+categories, etc.)
+What if we want to create recommendations based on the content
+Movie description/summary
+Blog post
+News article
+Research publication
+. . .
+Approach
+Same idea, but now we have to build vectors out of whole documents
+Basic idea of information retrieval (IR)
+Used in Internet search enginesRené Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.38Binary incidence matrix
+Anthony Julius The Hamlet Othello Macbeth . . .
+and Caesar Tempest
+Cleopatra
+ANTHONY 1 1 0 0 0 1
+BRUTUS 1 1 0 1 0 0
+CAESAR 1 1 0 1 1 1
+CALPURNIA 0 1 0 0 0 0
+CLEOPATRA 1 0 0 0 0 0
+MERCY 1 0 1 1 1 1
+WORSER 1 0 1 1 1 0
+. . .
+Each document is represented as a binary vector 2f0;1gjVj.
+[from Introduction to Information Retrieval ]René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.39Count matrix
+Anthony Julius The Hamlet Othello Macbeth . . .
+and Caesar Tempest
+Cleopatra
+ANTHONY 157 73 0 0 0 1
+BRUTUS 4 157 0 2 0 0
+CAESAR 232 227 0 2 1 0
+CALPURNIA 0 10 0 0 0 0
+CLEOPATRA 57 0 0 0 0 0
+MERCY 2 0 3 8 5 8
+WORSER 2 0 1 1 1 5
+. . .
+Each document is now represented as a count vector 2NjVj.René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.40Content Models
+Bag of words model
+We do not consider the order of words in a document.
+John is quicker than Mary andMary is quicker than John are represented the
+same way.
+This is called a bag of words model.René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.41tf-idf
+Term frequency tf
+The term frequency tf t;dof term tin document dis deﬁned as the number of times
+thattoccurs in d.
+Frequency in document vs. frequency in collection
+In addition, to term frequency (the frequency of the term in the document) . . .
+. . . we also want to use the frequency of the term in the collection for weighting
+and ranking.
+Rare terms are more informative than frequent terms.
+Consider a term in the query that is rare in the collection (e.g., ARACHNOCENTRIC ).
+A document containing this term is very likely to be relevant.
+!We want high weights for rare terms like ARACHNOCENTRIC .René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.42Desired weight for frequent terms
+Weighting scheme
+Frequent terms are less informative than rare terms.
+Consider a term in the query that is frequent in the collection (e.g., GOOD ,
+INCREASE ,LINE).
+A document containing this term is more likely to be relevant than a document
+that doesn’t . . .
+. . . but words like GOOD ,INCREASE and LINE are not sure indicators of
+relevance.
+!For frequent terms like GOOD ,INCREASE , and LINE, we want positive
+weights . . .
+. . . but lower weights than for rare terms.René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.43Document Frequency
+Document Frequency (df)
+We want high weights for rare terms like ARACHNOCENTRIC .
+We want low (positive) weights for frequent words like GOOD ,INCREASE , and
+LINE.
+We will use document frequency to factor this into computing the matching
+score.
+The document frequency is the number of documents in the collection that the
+term occurs in.René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.44idf weight
+inverse document frequency (idf)
+dftis the document frequency, the number of documents that toccurs in.
+dftis an inverse measure of the informativeness of term t.
+We deﬁne the idf weight of a term tas follows:
+idft= log10N
+dft
+(Nis the number of documents in the collection.)
+idftis a measure of the informativeness of the term.
+[logN=dft] instead of [ N=dft] to “dampen” the effect of idf
+Note that we use the log transformation for both term frequency and document
+frequency.René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.45Examples for idf
+Calculation
+Compute idf tusing the formula: idf t= log101;000;000
+dft(example size N=1;000;000)
+term dftidft
+calpurnia 1 6
+animal 100 4
+sunday 1000 3
+ﬂy 10,000 2
+under 100,000 1
+the 1,000,000 0
+Effect of idf on ranking
+idf affects the ranking of documents for queries with at least two terms.
+For example, in the query “arachnocentric line”, idf weighting increases the
+relative weight of ARACHNOCENTRIC and decreases the relative weight of LINE.
+idf has little effect on ranking for one-term queries.René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.46tf-idf weighting
+Computing tf-idf
+The tf-idf weight of a term is the product of its tf weight and its idf weight:
+wt;d= (1+ log tft;d)logN
+dft
+Set to 0 if tf t;d=0
+Best known weighting scheme in information retrieval
+Note: the “-” in tf-idf is a hyphen, not a minus sign!
+Alternative names: tf.idf, tf x idfRené Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.47Summary: tf-idf
+Computation
+Assign a tf-idf weight for each term tin each document d:
+wt;d=(
+(1+ log tft;d)logN
+dft;if tft;d>0
+0; otherwise
+Effect
+The tf-idf weight . . .
+. . . increases with the number of occurrences within a document
+(due to the term frequency)
+. . . increases with the rarity of the term in the collection
+(due to the inverse document frequency)
+!Work sheet #4:Task 9René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.48Binary incidence matrix
+Anthony Julius The Hamlet Othello Macbeth . . .
+and Caesar Tempest
+Cleopatra
+ANTHONY 1 1 0 0 0 1
+BRUTUS 1 1 0 1 0 0
+CAESAR 1 1 0 1 1 1
+CALPURNIA 0 1 0 0 0 0
+CLEOPATRA 1 0 0 0 0 0
+MERCY 1 0 1 1 1 1
+WORSER 1 0 1 1 1 0
+. . .
+Each document is represented as a binary vector 2f0;1gjVj.
+[from Introduction to Information Retrieval ]René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.49Count matrix
+Anthony Julius The Hamlet Othello Macbeth . . .
+and Caesar Tempest
+Cleopatra
+ANTHONY 157 73 0 0 0 1
+BRUTUS 4 157 0 2 0 0
+CAESAR 232 227 0 2 1 0
+CALPURNIA 0 10 0 0 0 0
+CLEOPATRA 57 0 0 0 0 0
+MERCY 2 0 3 8 5 8
+WORSER 2 0 1 1 1 5
+. . .
+Each document is now represented as a count vector 2NjVj.René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.50Binary!count!weight matrix
+Anthony Julius The Hamlet Othello Macbeth . . .
+and Caesar Tempest
+Cleopatra
+ANTHONY 5.25 3.18 0.0 0.0 0.0 0.35
+BRUTUS 1.21 6.10 0.0 1.0 0.0 0.0
+CAESAR 8.59 2.54 0.0 1.51 0.25 0.0
+CALPURNIA 0.0 1.54 0.0 0.0 0.0 0.0
+CLEOPATRA 2.85 0.0 0.0 0.0 0.0 0.0
+MERCY 1.51 0.0 1.90 0.12 5.25 0.88
+WORSER 1.37 0.0 0.11 4.15 0.25 1.95
+. . .
+Each document is now represented as a real-valued vector of tf-idf weights 2RjVj.René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.51Vector Space Model
+Documents as vectors
+Each document is now represented as a real-valued vector of tf-idf weights 2RjVj
+So we have ajVj-dimensional real-valued vector space.
+Terms are axes of the space.
+Documents are points or vectors in this space.
+Very high-dimensional: tens of millions of dimensions when you apply this to
+web search engines
+Each vector is very sparse – most entries are zero.René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.52Cosine similarity between query and document
+Goal: Query a dataset dto ﬁnd similar items
+Similar products, photos, movies, songs, . . . to a given item q
+Solution: cosine similarity
+cos(~q;~d) = SIM(~q;~d) =~q~d
+j~qjj~dj=PjVj
+i=1qidiqPjVj
+i=1q2
+iqPjVj
+i=1d2
+i
+qiis the tf-idf weight of term iin the query.
+diis the tf-idf weight of term iin the document.
+j~qjandj~djare the lengths of ~qand~d.
+This is the cosine similarity of ~qand~d. . . . . . or, equivalently, the cosine of the
+angle between ~qand~d.René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.53Cosine similarity illustrated
+0 101
+richpoor
+/vector v(q)/vector v(d1)
+/vector v(d2)
+/vector v(d3)θ
+.René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.54Basic Recommender Engine using Vector Space Model
+Approach
+Represent all documents (movie descriptions, blog posts, research
+articles, . . . ) as a weighted tf-idf vector
+Compute the cosine similarity between the target vector and each document
+vector
+Rank documents with respect to the target
+Return the top k(e.g., k=10) to the userRené Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.55Summary
+Vector Space Model
+A mathematical model to portray an n-dimensional space
+Entities are described by vectors with ncoordinates in a real space Rn
+Given two vectors, we can compute a similarity coefﬁcient between them
+Cosine of the angle between two vectors reﬂects their degree of similarity
+tf=1+ log( tft;d) (1)
+idf= logN
+dft(2)
+cos(~q;~d) =Pjvj
+i=1qidiqPjvj
+i=1qi2qPjvj
+i=1di2(3)
+René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.57Outline
+1Introduction
+2Collaborative Filtering
+3Content-based Recommendations
+4Notes and Further ReadingRené Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.58Reading Material
+Required
+[Ala09, Chapters 2, 3] (Recommendations)
+[MRS08, Chapter 8] (Evaluation)
+Supplemental
+[MRS08, Chapter 6] (Vector Space Model, tf-idf)René Witte
+Introduction
+Modeling Users
+Netﬂix Recommendations
+Collaborative Filtering
+Introduction
+Computing with Words
+Item Recommendation
+Items Related to other
+Items
+Items of Interest to a User
+Relevant Users for an Item
+Semantic User Proﬁles
+Evaluation
+Content-based
+Recommendations
+Motivation
+TF*IDF weighting
+Term Vector Space Model
+Summary
+Notes and Further
+Reading
+5.59References
+[Ala09] Satnam Alag.
+Collective Intelligence in Action .
+Manning, 2009.
+https://concordiauniversity.on.worldcat.org/oclc/314121652.
+[MRS08] Christopher D. Manning, Prabhakar Raghavan, and Hinrich Schütze.
+Introduction to Information Retrieval .
+Cambridge University Press, 2008.
+http://informationretrieval.org.
+[TB16] Doug Turnbull and John Berryman.
+Relevant Search .
+Manning, 2016.
+https://concordiauniversity.on.worldcat.org/oclc/954339855.

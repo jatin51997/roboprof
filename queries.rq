@@ -15,11 +15,11 @@ WHERE {
   ?university foaf:name ?universityName .
 }
 
-SELECT (?topic as ?topicURI) ?topicName (?courseId as ?courseURI) ?courseName ?courseSubject ?courseNumber 
+SELECT DISTINCT (?courseId as ?courseURI)  ?courseName ?courseSubject ?courseNumber ?topicName
 WHERE {
  ?topic a voc:Topic ;
-    foaf:name ?topicName ;
-         foaf:name "Deep_learning" ;
+      foaf:name ?topicName;
+         foaf:name "Deep Learning" ;
          voc:TopicProvenance ?topicProvenance .
   ?lecture a voc:Lecture;
          voc:LectureContent ?topicProvenance;
@@ -76,18 +76,18 @@ WHERE {
   
   ?topic a voc:Topic;
       foaf:name ?topicName;
-      foaf:name "Deep_learning";
+      foaf:name "Deep learning";
       voc:TopicProvenance ?lectureContent;
   BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
 }
 
-SELECT (?course as ?courseURI) ?courseName ?courseSubject ?courseNumber ?description ?credits
+SELECT (?course as ?courseURI) ?courseName ?courseSubject ?courseNumber ?type ?credits
 WHERE {
   ?course a voc:Course;
           foaf:name ?courseName;
           voc:courseSubject ?courseSubject;
           voc:courseNumber ?courseNumber;
-          voc:courseDescription ?description;
+          voc:CourseType ?type;
           voc:courseCredits ?credits.
           
   FILTER(?courseSubject = "COMP" && ?courseNumber = "6741")
@@ -117,13 +117,13 @@ SELECT (?course as ?courseURI) ?courseNo (?lecture as ?lectureURI) ?lectureName 
 WHERE {
   ?course a voc:Course ;
           voc:courseSubject "COMP" ;
-          voc:courseNumber "6721" ;
+          voc:courseNumber "6741" ;
           voc:courseSubject ?courseSub;
           voc:courseNumber ?courseNum.
   
   ?lecture a voc:Lecture ;
            voc:BelongsTo ?course ;
-           voc:LectureNumber "11";
+           voc:LectureNumber "6";
            voc:LectureNumber ?lectureNumber;
            foaf:name ?lectureName;
            voc:LectureContent ?lectureContent.
@@ -148,7 +148,7 @@ WHERE {
   
   ?topic a voc:Topic;
       foaf:name ?topicName;
-      foaf:name "Deep_learning";
+      foaf:name "Deep Learning";
       voc:TopicProvenance ?lectureContent;
   BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
 }
@@ -193,7 +193,7 @@ WHERE {
   FILTER(?course = "COMP6741")
 }
 
-SELECT DISTINCT ?course ?grade ?alphabeticPrefix ?numericPart (?course1 as ?courseURI)
+SELECT DISTINCT ?course ?grade (?course1 as ?courseURI)
 WHERE {
   ?student a voc:Student;
            voc:IDNumber "123456";      
@@ -207,7 +207,7 @@ WHERE {
   ?course1 a voc:Course;
               voc:courseNumber ?numericPart;
               voc:courseSubject ?alphabeticPrefix;
-              voc:courseDescription "Lecture".
+              voc:CourseType "Lecture".
   }
 
 SELECT (COUNT(*) AS ?totalTriples)
@@ -219,3 +219,136 @@ SELECT (COUNT(DISTINCT ?course) AS ?courseCount)
 WHERE {
   ?course a voc:Course .
 }
+
+SELECT DISTINCT (?course as ?courseURI) ?courseName ?topicName ?wikiURI (?lectureNumber as ?courseEventURI) (?lectureContent as ?resourceURI)  ?ResourceName
+WHERE {
+  ?course a voc:Course;
+          voc:courseSubject ?courseSubject;
+          voc:courseNumber ?courseNumber.
+  ?lecture a voc:Lecture;
+          voc:BelongsTo ?course;
+          foaf:name ?lectureName;
+          voc:LectureNumber ?lectureNum;
+          voc:LectureContent ?lectureContent.
+  ?topic a voc:Topic;
+          voc:TopicProvenance ?lectureContent;
+          foaf:name ?topicName;
+          rdfs:seeAlso ?wikiURI.
+  ?lectureContent voc:ResourceName ?ResourceName.
+  BIND(CONCAT("Lecture ", ?lectureNum) AS ?lectureNumber).
+  BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName)
+  FILTER(?courseSubject = "COMP" && ?courseNumber = "6721")
+}LIMIT 50
+
+SELECT ?wikiURI ?topicName (?course as ?courseURI) ?courseName  (COUNT(?lectureNumber) AS ?occurrences)  (GROUP_CONCAT(DISTINCT CONCAT("Lecture ", STR(?lectureNum)); separator=", ") AS ?lectureNumbers)
+WHERE {
+  ?topic a voc:Topic;
+        rdfs:seeAlso ?wikiURI;
+          voc:TopicProvenance ?lectureContent;
+          foaf:name ?topicName.    
+  
+  ?lectures a voc:Lecture;       
+          voc:LectureContent ?lectureContent;
+        voc:LectureNumber ?lectureNum;
+          voc:BelongsTo ?course.
+  
+  ?course a voc:Course;
+          voc:courseSubject ?courseSubject;
+          voc:courseNumber ?courseNumber.
+  
+   BIND(CONCAT("Lecture ", ?lectureNum) AS ?lectureNumber).
+  BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName).
+  FILTER(?wikiURI = <https://www.wikidata.org/wiki/Q197536>).
+}
+GROUP BY ?wikiURI ?topicName ?course ?courseName
+ORDER BY DESC(?occurrences)
+
+SELECT DISTINCT ?topicName (?course as ?courseURI) ?courseName  (?lectureNumber as ?courseEventURI) (?lectureContent as ?resourceURI)  ?ResourceName
+WHERE {
+  ?topic a voc:Topic;
+          voc:TopicProvenance ?lectureContent;
+          foaf:name ?topicName.
+   ?lecture a voc:Lecture;
+          voc:LectureContent ?lectureContent;
+          voc:BelongsTo ?course;
+          foaf:name ?lectureName;
+          voc:LectureNumber ?lectureNum.          
+  ?course a voc:Course;
+          voc:courseSubject ?courseSubject;
+          voc:courseNumber ?courseNumber. 
+  
+  ?lectureContent voc:ResourceName ?ResourceName.
+  BIND(CONCAT("Lecture ", ?lectureNum) AS ?lectureNumber).
+  BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName)
+  FILTER(?topicName ="Deep Learning")
+}
+
+SELECT DISTINCT  (?lectureNumber as ?courseEventURI) (?lectureContent as ?resourceURI)  ?ResourceName
+WHERE {  
+  ?lecture a voc:Lecture;
+          foaf:name ?lectureName;
+          voc:LectureNumber ?lectureNum;
+          voc:LectureContent ?lectureContent.
+  
+  ?lectureContent voc:ResourceName ?ResourceName.
+  BIND(CONCAT("Lecture ", ?lectureNum) AS ?lectureNumber).
+  FILTER NOT EXISTS{
+    ?topic a voc:Topic;
+       voc:TopicProvenance ?lectureContent
+  }
+}
+
+SELECT (?course as ?courseURI) ?courseName ?courseSubject ?courseNumber ?CourseDescription
+WHERE {
+  ?course a voc:Course;
+          foaf:name ?courseName;
+          voc:courseSubject ?courseSubject;
+          voc:courseNumber ?courseNumber;
+          voc:CourseType "Lecture";
+          voc:CourseDescription ?CourseDescription.
+          
+  FILTER(?courseSubject = "COMP" && ?courseNumber = "6741")
+}
+
+SELECT DISTINCT (?course as ?courseURI) ?courseName (?lectureContent as ?resourceURI)  ?ResourceName ?topicName ?wikiURI
+WHERE {
+  ?course a voc:Course;
+          voc:courseSubject ?courseSubject;
+          voc:courseNumber ?courseNumber.
+  ?lecture a voc:Lecture;
+          voc:BelongsTo ?course;
+          foaf:name ?lectureName;
+          voc:LectureNumber ?lectureNum;
+          voc:LectureContent ?lectureContent.
+  ?topic a voc:Topic;
+          voc:TopicProvenance ?lectureContent;
+          foaf:name ?topicName;
+          rdfs:seeAlso ?wikiURI.
+  ?lectureContent voc:ResourceName ?ResourceName.
+  BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName).
+  FILTER(?courseSubject = "COMP" && ?courseNumber = "6741" && ?ResourceName ="lab05" )
+}LIMIT 50
+
+
+SELECT ?topicName (?course as ?courseURI) ?courseName  (COUNT(?lectureNumber) AS ?occurrences)  (GROUP_CONCAT(DISTINCT CONCAT("Lecture ", STR(?lectureNum)); separator=", ") AS ?lectureNumbers) (GROUP_CONCAT(DISTINCT CONCAT(STR(?Resourcename)); separator=", ") AS ?ResourceName) 
+WHERE {
+  ?topic a voc:Topic;
+        rdfs:seeAlso ?wikiURI;
+          voc:TopicProvenance ?lectureContent;
+          foaf:name ?topicName.    
+  
+  ?lectures a voc:Lecture;       
+          voc:LectureContent ?lectureContent;
+        voc:LectureNumber ?lectureNum;
+          voc:BelongsTo ?course.
+  
+  ?course a voc:Course;
+          voc:courseSubject ?courseSubject;
+          voc:courseNumber ?courseNumber.
+  ?lectureContent voc:ResourceName ?Resourcename.
+   BIND(CONCAT("Lecture ", ?lectureNum) AS ?lectureNumber).
+  BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName).
+  FILTER(?topicName = "Deep Learning").
+}
+GROUP BY ?topicName ?course ?courseName
+ORDER BY DESC(?occurrences)

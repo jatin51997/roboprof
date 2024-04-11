@@ -1,0 +1,272 @@
+Artificia lIntelligence:
+Convolutional Neural Network 
+(CNN) Architectures
+portion of slides from:  Fei FeiLi
+1Today
+1.Applications
+2.Backbone Models
+1.Serial Cascading
+2.Serial/Parallel Cascading
+3.Residual Connection
+4.Depthwise /Separable Convolutions
+5.Squeeze -Excitation
+2History of AI
+3
+How Computers Recognize Objects?
+4
+Question: Object s are anywhere in the scene (in any orientation, 
+color hue, perspectives, illumination, etc), so how can we 
+recognize them?
+Answer: Learn a ton of features (millions) from the bottom up, 
+by learning convolutional filters rather than pre -computing themFeature Invariance to Perturbation is Hard
+5Viewpoint Variation
+(Perspective Geometry)Scale Variation Deformation
+Illumination Conditions Background Clutter Intra -Class Variation
+ImageNet Large Scale Visual Recognition 
+Challenge (ILSVRC)
+6ImageNet -1K Class
+DogImageNet Large Scale Visual Recognition 
+Challenge (ILSVRC)
+7ImageNet -1K Class
+DogImageNet Large Scale Visual Recognition 
+Challenge (ILSVRC)
+8ImageNet -1K Class ImageNet -20K Class
+Dog
+Serial Cascade : AlexNet
+9•5 Conv and 3 FC layers
+•ReLU Activation
+•Training on Multiple GPUs ( GTX 580 with 3GB memory)
+•Response Normalization
+•Overlapping Pooling
+•Heavy data augmentation
+•Image translation/horizontal reflection
+•Altering intensities of RGBchannels using PCA
+10Serial Cascade : AlexNet
+ConvolutionConvolution…Width 
+(𝑾)
+Height 
+(𝑯)
+#Input Channel 
+(𝑵𝑰)…Width 
+(𝑾′)
+Height 
+(𝑯′)
+#Output Channel 
+(𝑵𝑶)
+𝑭𝑶:,:,𝒋=෍
+𝒊=𝟏𝑵𝑰
+𝑭𝑰:,:,𝒊∗𝑲(:,:,𝒊,𝒋)+𝒃𝒋𝑭𝑰∈ℝ𝑯×𝑾×𝑵𝑰 𝑭𝑶∈ℝ𝑯′×𝑾′×𝑵𝑶
+𝑲∈ℝ𝒉×𝒘×𝑵𝑰×𝑵𝑶Reminder from Convolution Feature mappingSerial Cascade : AlexNet
+11•Feature mapping via cascaded convolutional layers
+Serial Cascade : AlexNet
+12•AlexNet was the coming out party for CNNs in the computer 
+vision community. This was the first time a model performed 
+so well on a historically difficult ImageNet dataset.
+•How did the learned kernels responses look like?
+Serial Cascade : AlexNet
+13•Further analysis on AlexNet pretrained kernels (e.g. in 1st
+layer) reveals that convolution kernels encode features in 
+different orientations, frequencies, and colors
+Serial Cascade : AlexNet
+14•Further analysis on AlexNet pretrained kernels (e.g. in 1st
+layer) reveals that convolution kernels encode features in 
+different orientations, frequencies, and colors
+Serial Cascade : AlexNet
+15
+Serial Cascade : Going Deeper with VGG
+16•Investigate the effect of the 
+convolutional network depth
+•Great boost is achieved by increasing 
+#layers to 16 -19
+•Won ILSVRC 2014 challenge
+•Keydesign choice
+•3x3kernel size
+•Stack of conv layers w/o pooling
+•Conv stride =1 (no skipping)
+•ReLU activation
+•5Max-pooling (x2 downsampling )
+•3FClayers
+•Later designs added Batch Normalization
+Serial Cascade : Going Deeper with VGG
+17
+Serial Cascade : Going Deeper with VGG
+18
+Serial Cascade : Going Deeper with VGG
+19
+Serial Cascade : Going Deeper with VGG
+20
+Serial Cascade : Going Deeper with VGG
+21
+Serial Cascade : Going Deeper with VGG
+22
+Serial Cascade : Going Deeper with VGG
+23
+Serial Cascade : Going Deeper with VGG —
+Training Phase
+24•Input training image: fixed size of 224x224 crop
+•Images have varying size, so upscale to e.g. 384x(N>384)
+•Random crop 224x224
+•Standard augmentation: random flip and RGB shift
+•SGD-Momentum (next lecture)
+•Regularization : dropout and weight decay
+•Fast convergence (74 training epochs)
+•Initialization (some sort of transfer -learning)
+•Deeper networks areprone tovanishing -gradients
+•11-layer net:random initialization from N(0;0.01)
+•Deep er nets: Top & bottom layers initialized with 11 -layer. Other 
+layers : random initializationSerial Cascade : Going Deeper with VGG —
+Testing Phase (ImageNet -1k)
+25•Evaluation onvariable sizeimages
+•Testing on multiple 224x224 crops [AlexNet ]
+•Multiple scales aretested (256xN, 384xN, 512xN) and class score averaged
+•Error decreases with depth
+•Using multiple scales is important
+•Multi-scale training outperforms single scale training =
+•Mutli -scale testing further improves the results
+Serial/Parallel Cascade : Inception Net
+26•Multiple scales are encoded in parallel and cascaded to next 
+layers
+Residual Connection : ResNet Architecture
+27•Is learning better networks as easy as stacking more layers?
+•Obstacle: d eeper networks are difficult to train because of the 
+notorious problem of vanishing/exploding gradients
+•Early solutions were proposed by introducing
+•normalized initialization
+•intermediate normalization layer
+•Still accuracy gets saturated with increasing depth and then degrades 
+rapidly (this is not caused by overfitting!)
+•Adding more layers leads tohigher training error
+Residual Connection : ResNet Architecture
+28•Residual learning: instead of hoping each few stacked layers 
+directly fit a desired underling mapping, w e explicitly let these 
+layers fit a residual mapping
+•Define underlying forward mapping by H(x) := F(x) + x
+•Corresponding gradient back -propagation:
+𝜕𝜖
+𝜕𝑥=𝜕𝜖
+𝜕𝐻(𝑥)∙𝜕𝐻𝑥
+𝜕𝑥=𝜕𝜖
+𝜕𝐻𝑥∙𝜕𝐹
+𝜕𝑥+1=𝜕𝜖
+𝜕𝐻𝑥∙𝜕𝐹
+𝜕𝑥+𝜕𝜖
+𝜕𝐻𝑥
+•Gradient from output layer transfers directly to the input layer and avoids 
+vanishing
+Residual Connection : ResNet Architecture
+29•Plain baseline is inspired by VGG nets
+•Shortcuts introduced onplain baseline
+•Same number of filters are used for the 
+same output feature map size
+•Ifthefeature map size is halved, the 
+number of filters is doubled
+•Down -sampling by stride=2
+•Network ends with global -average -pooling
+•1000 -wayFClayer with softmax
+•ResNet34 has3.6BFLOPS (18% of
+VGG19 i.e.19.6BFLOPS )
+Residual Connection : ResNet Architecture
+30•Different ResNet architectures of ResNet18, ResNet34, 
+ResNet50, ResNet101, ResNet152
+Residual Connection : ResNet Architecture
+31•ResNet performance on ImageNet
+Depthwise /Separable Convolutions
+32•Keep input channel convolution separate from mapping 
+to output feature map
+Sep-Conv
+…
+∗Depthwise /Separable Convolutions
+33•Keep input channel convolution separate from mapping 
+to output feature map
+Sep-Conv
+…
+∗∗Depthwise /Separable Convolutions
+34•Keep input channel convolution separate from mapping 
+to output feature map
+Sep-Conv
+…
+∗∗∗Depthwise /Separable Convolutions
+35•Keep input channel convolution separate from mapping 
+to output feature map
+Sep-Conv
+…
+∗∗∗∗……𝑤3,1Depthwise /Separable Convolutions
+36•Keep input channel convolution separate from mapping 
+to output feature map
+Sep-Conv
+…
+∗∗∗∗……Ʃ𝑤2,1𝑤1,1
+𝑤𝑁𝐼,1𝑤3,2Depthwise /Separable Convolutions
+37 Sep-Conv
+…
+∗∗∗∗……Ʃ𝑤2,2𝑤1,2
+𝑤𝑁𝐼,2•Keep input channel convolution separate from mapping 
+to output feature map𝑤3,3Depthwise /Separable Convolutions
+38 Sep-Conv
+…
+∗∗∗∗……Ʃ𝑤2,3𝑤1,3
+𝑤𝑁𝐼,3•Keep input channel convolution separate from mapping 
+to output feature map𝑤3,𝑁𝑂Depthwise /Separable Convolutions
+39 Sep-Conv
+…
+∗∗∗∗…… …Ʃ𝑤2,𝑁𝑂𝑤1,𝑁𝑂
+𝑤𝑁𝐼,𝑁𝑂•Keep input channel convolution separate from mapping 
+to output feature mapDepthwise /Separable Convolutions
+40 Sep-Conv
+…𝑭𝑰∈ℝ𝑯×𝑾×𝑵𝑰•Keep input channel convolution separate from mapping 
+to output feature mapDepthwise /Separable Convolutions
+41 Sep-Conv
+… …𝑭𝑰∈ℝ𝑯×𝑾×𝑵𝑰 ഥ𝑭𝑰∈ℝ𝑯′×𝑾′×𝑵𝑰ഥ𝑲∈ℝ𝒉×𝒘×𝟏×𝑵𝑰•Keep input channel convolution separate from mapping 
+to output feature mapDepthwise /Separable Convolutions
+42 Sep-Conv
+… … …𝑭𝑰∈ℝ𝑯×𝑾×𝑵𝑰 ഥ𝑭𝑰∈ℝ𝑯′×𝑾′×𝑵𝑰 𝑭𝑶∈ℝ𝑯′×𝑾′×𝑵𝑶ഥ𝑲∈ℝ𝒉×𝒘×𝟏×𝑵𝑰
+ഥ𝑲∈ℝ𝟏×𝟏×𝑵𝑰×𝑵𝑶•Keep input channel convolution separate from mapping 
+to output feature mapDepthwise /Separable Convolutions
+43 Sep-Conv•What arethebenefits?
+•Standard convolution hasthecomputation cost of
+•Depthwise -separable convolution has the computation cost of
+•Reduction in computation ratio𝑶𝒉∙𝒘∙𝑵𝑰∙𝑵𝑶∙𝑯∙𝑾
+Convolution 
+KernelInput 
+Feature Map
+𝑶𝒉∙𝒘∙𝑵𝑰∙𝑯∙𝑾+𝑵𝑰∙𝑵𝑶∙𝑯∙𝑾
+Conv 
+Kernel -1Input 
+FeatureConv 
+Kernel -2Input 
+Feature
+𝒓=𝒉𝒘𝑵𝑰𝑯𝑾+𝑵𝑰𝑵𝑶𝑯𝑾
+𝒉𝒘𝑵𝑰𝑵𝑶𝑯𝑾=𝟏
+𝑵𝑶+𝟏
+𝒉𝒘
+𝑵𝑶
+𝒉𝟏
+𝒓Depthwise /Separable Convolutions
+44 Sep-Conv•Activation and Batch -Normalization are used inbetween
+•1x1convolution also referred by Pointwise Convolution
+MobileNet by Depthwise Separable
+Convolutions
+45•All layers are followed 
+by BN and ReLU
+•MobileNet has 28 
+separate layers
+MobileNet by Depthwise Separable
+Convolutions
+46•Significant parameter reduction while maintaining performance 
+accuracy
+Squeeze -Excitation Block
+47•The idea is to boost the representation power of the network
+•SE:channel relationships are adaptively recalibrated in 
+channel -wise feature response by explicit modelling 
+interdependencies between channels
+Squeeze -Excitation Block
+48
+Today
+1.Applications
+2.Backbone Models
+1.Serial Cascading
+2.Serial/Parallel Cascading
+3.Residual Connection
+4.Depthwise /Separable Convolutions
+5.Squeeze -Excitation
+49

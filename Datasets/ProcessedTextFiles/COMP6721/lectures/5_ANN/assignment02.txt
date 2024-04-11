@@ -1,0 +1,116 @@
+COMP6721 Applied Artiﬁcial Intelligence (Winter 2023)
+Assignment #1: State Space Search and Adversarial
+Search
+Due: 11:59PM, February 5th, 2023
+State Space Search
+Question 1 Consider the simpliﬁed Pac-Man problem shown in the ﬁgure below, which is
+given as a 5 ×5 grid environment. In this version of the game, the Pac-Man
+starts in the center of the grid, with 4 food items in the grid corners. The goal
+is to eat the 4 food items while avoiding the ghost. An illegal state is one where
+both the Pac-Man and the Monster are in the same location. For simplicity,
+we assume that at each time step, the ghost moves ﬁrst then the Pac-Man.
+Each agent can move one grid horizontally or vertically at each time step.
+(a) Representthisproblemasasearchproblem(forthePac-Man)andchoosea
+representation from the problem’s states. Each state should be represented
+as a tuple. Note:if a certain attribute is not important when representing
+a certain state(s), you can use X to indicate "not important".
+(b) Write down the initial state (as shown in the image).
+(c) Write down the goal state.
+(d) What are the possible actions for the Pac-Man?
+(e) Draw 2 levels (2 steps) of the state space for this problem showing all
+possible states. Assume that the ghost is idle during these steps.
+(f) Draw 1 level (1 Pac-Man step) of the state space for this problem showing
+all possible states. Assume that the ghost takes a moving step before the
+Pac-Man.
+1(g) How many illegal states are there? Give 4 examples of illegal states.
+Question 2 For each of the following graphs/trees, use the following search strategies to
+show the states visited, along with the open and closed lists at each step (where
+it applies). The value on each node reﬂects a heuristic, while the edges are
+given cost values. You are required to explore the graph/tree starting from
+node S until the goal node G is explored or until no more nodes can be visited.
+Nodes of equal importance should be explored in an alphabetical
+order (whenever the order is not speciﬁed by the algorithm itself,
+use alphabetical order). .
+Searchstrategies : BFS, DFS,IterativeDeepeningDFS, Uniformcostsearch,
+Hill Climbing, Best-ﬁrst search, Algorithm A.
+(a) S/leftrightline →"No Goal"
+(b) S/leftrightline →G
+2(c) S/leftrightline →G
+Question 3 The map below shows the distances (in miles) between some major cities in the
+US.YourfriendistravelingfromChicago(Start)toNewYork(Goal)andneeds
+your help to ﬁnd the route with the shortest distance (in miles). Note: your
+answers should be based on the costs given, no heuristic values are available.
+(a) Fromthelistofsearchmethodsgiveninthepreviousquestion, whichsearch
+method can you use to ﬁnd the route with the shortest distance?
+(b) Applyyoursearchmethodofchoicetotheproblem. Showthestates(cities)
+visited, alongwiththeopenandclosedlistsateachstep(ifitapplies). Stop
+once the goal state (New York) is visited.
+3(c) Based on your search method, what route should your friend follow? What
+is the cost of this path?
+Question 4 In this question, you will be asked to prove and design admissible and mono-
+tonic (consistent) heuristics for varying problems.
+(a) An example of an 8-puzzle is given in the ﬁgure below. The goal is to
+move the tiles one at a time until the goal is reached, in which the tiles are
+ordered. Given a state n, prove that the following heuristic for the 8-puzzle
+is admissible:
+h(n)=8
+/summation.disp
+i=1Manh (Ti,n,Ti,g) (1)
+where Ti,nis position of tile iin state n,Ti,gis the position of tile iin the
+goal state, and Manh (Ti,n,Ti,g)is the Manhattan Distance between tiles
+Ti,nandTi,g.
+(b) For the Pac-Man problem given in Question 1, design an admissible heuris-
+ticthatgivesavalueforeachstate. Youcancompletelyignoretheexistence
+of the ghost.
+Adversarial Search
+Question 1 For each of the following trees:
+•Compute the minimax game values for all the given nodes.
+•Explore the tree using Alpha-Beta pruning. Indicate all parts of the tree
+that are pruned, and indicate the winning path or paths. For each node,
+show the alpha/beta values throughout the process
+•Re-draw the trees (with minimax values) by re-ordering the children of
+each internal node (maintaining an equivalent tree) such that the pruning
+is maximized.
+4•Preform alpha-beta pruning again on the re-ordered trees and indicate
+the diﬀerence in pruning (total number of nodes pruned compared to the
+previous version of the tree).
+(a) ..
+(b) ..
+(c) ..
+Question 2 In the example below, you are the X player in a tic-tac-toe game, with 4 possi-
+ble moves. For each of your possible moves, the O player has 3 possible moves.
+5To evaluate a certain scenario, you use the following evaluation function:
+value V=0
+for allrows, columns, diagonals Rdo:
+ifRcontains three Xsthen:
+V=V+1000
+else if Rcontains three Osthen:
+V=V−1000
+else if Rcontains two Xsthen:
+V=V+100
+else if Rcontains two Osthen:
+V=V−100
+else if Rcontains one Xthen:
+V=V+10
+else if Rcontains one Othen:
+V=V−10
+end if
+end for
+return V
+Draw all the possible conﬁgurations following the actions of player X (4 con-
+ﬁgurations) and player O (4 ×3 = 12 conﬁgurations). Evaluate the last layer
+of conﬁgurations using the aforementioned evaluation function, and compute
+the minimax game values for the rest of the nodes. Indicate the winning path.
+Question 3 Ahmed and Soorena are involved in a big argument. The ﬁgures below show
+two equivalent trees, A and B. Ahmed claims that the alpha-beta pruning in
+tree A is maximized, while Soorena claims that the pruning is maximize in
+tree B. Your help is needed! Which tree has the maximized pruning (more
+nodes pruned)? Use alpha-beta pruning to ﬁnd the number of nodes pruned.
+After declaring the winner between Ahmed and Soorena, you need to provide a
+6justiﬁcation for the conclusion you reached. In your justiﬁcation, use the main
+idea of ordering the nodes of a tree to get a maximum cutoﬀ.
+* Disclaimer: Ahmed and Soorena will maintain full professionalism while
+grading this question, regardless of who you declare as the winner ,.
+Tree A:
+Tree B:
+7

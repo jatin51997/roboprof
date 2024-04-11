@@ -6,13 +6,13 @@ SELECT (?course as ?courseURI) ?courseNo (?lecture as ?lectureURI) ?lectureName 
 WHERE {
   ?course a voc:Course ;
           voc:courseSubject "COMP" ;
-          voc:courseNumber "6721" ;
+          voc:courseNumber "6741" ;
           voc:courseSubject ?courseSub;
           voc:courseNumber ?courseNum.
   
   ?lecture a voc:Lecture ;
            voc:BelongsTo ?course ;
-           voc:LectureNumber "11";
+           voc:LectureNumber "6";
            voc:LectureNumber ?lectureNumber;
            foaf:name ?lectureName;
            voc:LectureContent ?lectureContent.

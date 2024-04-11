@@ -1,3 +1,3 @@
-courseURI,courseName,courseSubject,courseNumber,description,credits
-file:///Users/jatin/workspace/roboprof/data#5908036945,INTELLIGENT SYSTEMS,COMP,6741,Laboratory,4.00
-file:///Users/jatin/workspace/roboprof/data#5084272549,INTELLIGENT SYSTEMS,COMP,6741,Lecture,4.00
+courseURI,courseName,courseSubject,courseNumber,type,credits
+file:///Users/jatin/workspace/roboprof/data#6736519082,INTELLIGENT SYSTEMS,COMP,6741,Laboratory,4.00
+file:///Users/jatin/workspace/roboprof/data#1709075924,INTELLIGENT SYSTEMS,COMP,6741,Lecture,4.00

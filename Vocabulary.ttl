@@ -39,6 +39,12 @@ voc:CourseDescription a rdf:Property ;
     rdfs:label "course description"@en ;
     rdfs:comment "A description of the course."@en .
 
+voc:CourseType a rdf:Property ;
+    rdfs:domain voc:Course ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "course description"@en ;
+    rdfs:comment "A description of the course."@en .
+
 voc:CourseOutline a rdf:Property ;
     rdfs:domain voc:Course ;
     rdfs:label "course outline"@en ;
@@ -142,3 +148,8 @@ voc:BelongsTo rdf:type rdf:Property ;
     rdfs:comment "The course that the lecture belongs to."@en ;
     rdfs:domain voc:Lecture ;
     rdfs:range voc:Course .
+
+voc:ResourceName rdf:type rdf:Property 
+    rdfs:label "resource name"@en ;
+    rdfs:comment "The name of the resource material."@en ;
+    rdfs:range voc:Literal .
