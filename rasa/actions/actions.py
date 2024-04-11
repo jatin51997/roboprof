@@ -22,7 +22,11 @@ class ActionListCourses(Action):
 
     def run(self, dispatcher, tracker, domain):
         university = tracker.get_slot("university")
-
+        if university is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the university you are asking about. Could you please specify the university again?"
+            )
+            return []
         sparql_query = f"""PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                         PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
                         PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
@@ -90,8 +94,13 @@ class ActionFindCoursesByTopic(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        # topic_name = tracker.get_slot("topic")
         topic_name = next(tracker.get_latest_entity_values("topic"), None)
+        if topic_name is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the topic you are asking about. Could you please specify the topic again?"
+            )
+            return []
+
         sparql_query = f"""PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                         PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
                         PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
@@ -163,8 +172,17 @@ class ActionFindTopicsInLecture(Action):
     ) -> List[Dict[Text, Any]]:
 
         course_name = next(tracker.get_latest_entity_values("course"), None)
+        if course_name is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course you are asking about. Could you please ask again?"
+            )
+            return []
         lecture_number = next(tracker.get_latest_entity_values("lecture_number"), None)
-
+        if lecture_number is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the lecture you are asking about. Could you please ask again?"
+            )
+            return []
         sparql_query = f"""
                      PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                     PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
@@ -249,7 +267,17 @@ class ActionFindCoursesBySubject(Action):
     ) -> List[Dict[Text, Any]]:
 
         university_name = next(tracker.get_latest_entity_values("university"), None)
+        if university_name is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the university you are asking about. Could you please ask again?"
+            )
+            return []
         subject = next(tracker.get_latest_entity_values("subject"), None)
+        if subject is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course you are asking about. Could you please ask again?"
+            )
+            return []
         sparql_query = f"""
                         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                         PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
@@ -335,8 +363,23 @@ class ActionFindMaterialsByTopic(Action):
     ) -> List[Dict[Text, Any]]:
 
         subject = next(tracker.get_latest_entity_values("subject"), None)
+        if subject is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course you are asking about. Could you please ask again?"
+            )
+            return []
         subjectNumber = next(tracker.get_latest_entity_values("subjectNumber"), None)
+        if subjectNumber is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course number you are asking about. Could you please ask again?"
+            )
+            return []
         topic_name = next(tracker.get_latest_entity_values("topic"), None)
+        if topic_name is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the topic you are asking about. Could you please ask again?"
+            )
+            return []
 
         sparql_query = f"""
             PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -432,7 +475,17 @@ class ActionFindCreditsBySubject(Action):
     ) -> List[Dict[Text, Any]]:
 
         subject = next(tracker.get_latest_entity_values("subject"), None)
+        if subject is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course you are asking about. Could you please ask again?"
+            )
+            return []
         subjectNumber = next(tracker.get_latest_entity_values("subjectNumber"), None)
+        if subjectNumber is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course number you are asking about. Could you please ask again?"
+            )
+            return []
 
         sparql_query = f"""
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -518,7 +571,17 @@ class ActionFindAdditionalResources(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
         subject = next(tracker.get_latest_entity_values("subject"), None)
+        if subject is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course you are asking about. Could you please ask again?"
+            )
+            return []
         subjectNumber = next(tracker.get_latest_entity_values("subjectNumber"), None)
+        if subjectNumber is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course number you are asking about. Could you please ask again?"
+            )
+            return []
         sparql_query = f"""
             PREFIX foaf: <http://xmlns.com/foaf/0.1/>
             PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
@@ -604,8 +667,23 @@ class ActionQueryLectureContent(Action):
     ) -> List[Dict[Text, Any]]:
 
         subject = next(tracker.get_latest_entity_values("subject"), None)
+        if subject is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course you are asking about. Could you please ask again?"
+            )
+            return []
         subjectNumber = next(tracker.get_latest_entity_values("subjectNumber"), None)
+        if subjectNumber is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course number you are asking about. Could you please ask again?"
+            )
+            return []
         lecture_number = next(tracker.get_latest_entity_values("lecture_number"), None)
+        if lecture_number is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the lecture you are asking about. Could you please ask again?"
+            )
+            return []
 
         sparql_query = f"""
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -694,9 +772,23 @@ class ActionQueryReadingMaterials(Action):
     ) -> List[Dict[Text, Any]]:
 
         topic = next(tracker.get_latest_entity_values("topic"), None)
+        if topic is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the topic you are asking about. Could you please ask again?"
+            )
+            return []
         subject = next(tracker.get_latest_entity_values("subject"), None)
+        if subject is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course you are asking about. Could you please ask again?"
+            )
+            return []
         subjectNumber = next(tracker.get_latest_entity_values("subjectNumber"), None)
-
+        if subjectNumber is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course number you are asking about. Could you please ask again?"
+            )
+            return []
         sparql_query = f"""
             PREFIX foaf: <http://xmlns.com/foaf/0.1/>
             PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
@@ -788,7 +880,17 @@ class ActionQueryCourseCompetencies(Action):
     ) -> List[Dict[Text, Any]]:
 
         subject = next(tracker.get_latest_entity_values("subject"), None)
+        if subject is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course you are asking about. Could you please ask again?"
+            )
+            return []
         subjectNumber = next(tracker.get_latest_entity_values("subjectNumber"), None)
+        if subjectNumber is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course number you are asking about. Could you please ask again?"
+            )
+            return []
         subjectNumber = subject + subjectNumber
         sparql_query = f"""
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -868,8 +970,23 @@ class ActionQueryStudentGrades(Action):
     ) -> List[Dict[Text, Any]]:
 
         student_id = next(tracker.get_latest_entity_values("student_id"), None)
+        if student_id is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the student ID you are asking about. Could you please ask again?"
+            )
+            return []
         subject = next(tracker.get_latest_entity_values("subject"), None)
+        if subject is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course you are asking about. Could you please ask again?"
+            )
+            return []
         subjectNumber = next(tracker.get_latest_entity_values("subjectNumber"), None)
+        if subjectNumber is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course number you are asking about. Could you please ask again?"
+            )
+            return []
         subjectNumber = subject + subjectNumber
         sparql_query = f"""
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -957,7 +1074,17 @@ class ActionQueryCompletedStudents(Action):
     ) -> List[Dict[Text, Any]]:
 
         subject = next(tracker.get_latest_entity_values("subject"), None)
+        if subject is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course you are asking about. Could you please ask again?"
+            )
+            return []
         subjectNumber = next(tracker.get_latest_entity_values("subjectNumber"), None)
+        if subjectNumber is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course number you are asking about. Could you please ask again?"
+            )
+            return []
         subjectNumber = subject + subjectNumber
 
         sparql_query = f"""
@@ -1042,6 +1169,11 @@ class ActionQueryTranscript(Action):
     ) -> List[Dict[Text, Any]]:
 
         student_id = next(tracker.get_latest_entity_values("student_id"), None)
+        if student_id is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the student ID you are asking about. Could you please ask again?"
+            )
+            return []
 
         sparql_query = f"""
             PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -1128,8 +1260,17 @@ class ActionQueryCourseDetails(Action):
     ) -> List[Dict[Text, Any]]:
 
         course_subject = next(tracker.get_latest_entity_values("subject"), None)
+        if course_subject is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course subject you are asking about. Could you please ask again?"
+            )
+            return []
         course_number = next(tracker.get_latest_entity_values("subjectNumber"), None)
-
+        if course_number is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course number you are asking about. Could you please ask again?"
+            )
+            return []
         sparql_query = f"""
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
         PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
@@ -1214,9 +1355,23 @@ class ActionQueryCourseEventTopics(Action):
     ) -> List[Dict[Text, Any]]:
 
         course_subject = next(tracker.get_latest_entity_values("subject"), None)
+        if course_subject is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course subject you are asking about. Could you please ask again?"
+            )
+            return []
         course_number = next(tracker.get_latest_entity_values("subjectNumber"), None)
+        if course_number is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course number you are asking about. Could you please ask again?"
+            )
+            return []
         resource_name = next(tracker.get_latest_entity_values("courseEvent"), None)
-
+        if resource_name is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the course event you are asking about. Could you please ask again?"
+            )
+            return []
         sparql_query = f"""
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
         PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
@@ -1300,9 +1455,10 @@ class ActionQueryTopicCoverage(Action):
     ) -> List[Dict[Text, Any]]:
 
         topic_name = next(tracker.get_latest_entity_values("topic"), None)
-
-        if not topic_name:
-            dispatcher.utter_message(text="Please specify a topic to search for.")
+        if topic_name is None:
+            dispatcher.utter_message(
+                text="I'm sorry, I couldn't understand the topic you are asking about. Could you please ask again?"
+            )
             return []
 
         sparql_query = f"""
