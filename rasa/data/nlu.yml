@@ -129,7 +129,7 @@ nlu:
 - intent: query_course_by_topic
   examples: |
     - In which courses is [machine learning](topic) discussed?
-    - In which courses is [knowledge graphs](topic) discussed?
+    - In which courses is [__oov__](topic) discussed?
     - Can you tell me about courses that cover [quantum computing](topic)?
     - I'm looking for courses on [sustainable agriculture](topic).
     - Which classes include information about [cybersecurity](topic)?
@@ -266,8 +266,6 @@ nlu:
     - I'm interested in knowing the students who completed [SOEN](subject) [1212](subjectNumber).
     - Show me the students who have completed [PHYS](subject) [101](subjectNumber) at [Stanford](university).
     - Provide a list of students who completed [ECON](subject) [301](subjectNumber) at [Harvard](university).
-
-
     - Can you show the students who finished [BIO](subject) [123](subjectNumber) at [Princeton](university)?
     - List students who completed [HIST](subject) [300](subjectNumber) at [Yale](university).
     - Show the students who completed [CHEM](subject) [100](subjectNumber) at [Columbia](university).

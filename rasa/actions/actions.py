@@ -363,7 +363,7 @@ class ActionFindMaterialsByTopic(Action):
             foaf:name "{topic_name}";
             voc:TopicProvenance ?lectureContent;
         BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
-        }}
+        }}LIMIT 10
         """
 
         print(sparql_query)
@@ -542,7 +542,7 @@ class ActionFindAdditionalResources(Action):
         
         
         BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
-        }}
+        }}LIMIT 10
         """
 
         print(sparql_query)
@@ -627,7 +627,7 @@ class ActionQueryLectureContent(Action):
                 foaf:name ?lectureName;
                 voc:LectureContent ?lectureContent.
         BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
-        }}
+        }}LIMIT 10
         """
         print(sparql_query)
         fuseki_endpoint = "http://localhost:3030/roboprof/query"
@@ -723,7 +723,7 @@ class ActionQueryReadingMaterials(Action):
                 foaf:name "{topic}";
                 voc:TopicProvenance ?lectureContent;
             BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
-            }}
+            }}LIMIT 10
         """
         print(sparql_query)
         fuseki_endpoint = "http://localhost:3030/roboprof/query"
@@ -804,7 +804,7 @@ class ActionQueryCourseCompetencies(Action):
         ?topic a voc:Topic;
                     foaf:name ?competency.
         FILTER(?course = "{subjectNumber}")
-        }}
+        }}LIMIT 10
         """
 
         fuseki_endpoint = "http://localhost:3030/roboprof/query"
