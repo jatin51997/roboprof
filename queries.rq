@@ -153,15 +153,20 @@ WHERE {
   BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
 }
 
-SELECT DISTINCT ?course ?competency (?topic as ?competencyURI)
+SELECT DISTINCT ?courseNo ?competency (?lectureContent as ?competencyURI)
 WHERE {
-  ?student a voc:Student ;
-           voc:Competency ?competencyNode .
-  ?competencyNode voc:Course ?course ;
-            voc:competencies ?competency .
+  ?course a voc:Course ;
+      voc:courseNumber ?courseNum;
+        voc:courseSubject ?courseSub.
+  ?lecture a voc:Lecture;
+        voc:BelongsTo ?course;
+        voc:LectureContent ?lectureContent.
   ?topic a voc:Topic;
+          voc:TopicProvenance ?lectureContent;
             foaf:name ?competency.
-  FILTER(?course = "COMP6741")
+  BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
+  FILTER(?courseSub = "COMP" && ?courseNum="6741")
+  
 }
 
 SELECT DISTINCT (?student as ?studentURI) ?IDnumber ?givenName ?familyName ?course ?grade 
