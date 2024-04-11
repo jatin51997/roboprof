@@ -74,9 +74,9 @@ class ActionListCourses(Action):
 
     def generate_response(self, university: str, courses: List[str]) -> str:
         if not courses:
-            return f"Sorry no courses found!"
+            return f"Sorry no courses found for!{university}"
 
-        response = f"Here are some of the courses are offered by {university}:\n"
+        response = f"Here are some of the courses that are offered by {university}:\n"
         for course in courses:
             response += f"- {course}\n"
 
@@ -177,12 +177,16 @@ class ActionFindTopicsInLecture(Action):
                 text="I'm sorry, I couldn't understand the course you are asking about. Could you please ask again?"
             )
             return []
-        lecture_number = next(tracker.get_latest_entity_values("lecture_number"), None)
-        if lecture_number is None:
+        lecture_number1 = next(tracker.get_latest_entity_values("lecture_number"), None)
+        if lecture_number1 is None:
             dispatcher.utter_message(
                 text="I'm sorry, I couldn't understand the lecture you are asking about. Could you please ask again?"
             )
             return []
+        lecture_number = ""
+        for char in lecture_number1:
+            if char.isdigit():
+                lecture_number += char
         sparql_query = f"""
                      PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                     PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
@@ -344,9 +348,11 @@ class ActionFindCoursesBySubject(Action):
                 f"Sorry, no courses found offered by {university} within the subject.\n"
             )
 
-        response = f"Courses offered by {university} within the subject:\n"
+        response = (
+            f"Here are some courses offered by {university} within the subject:\n"
+        )
         for course in courses:
-            response += f"- Name: {course['name']}, Subject: {course['subject']}, Number: {course['number']}\n"
+            response += f"-{course['name']}, {course['subject']} {course['number']}\n"
 
         return response
 
@@ -551,11 +557,9 @@ class ActionFindCreditsBySubject(Action):
         if not credits:
             return f"Sorry, no credits found for subject {subject} and number {subject_number}.\n"
 
-        response = f"Credits for subject {subject} and number {subject_number}:\n"
-        for credit in credits:
-            response += (
-                f"- Course: {credit['course']}\n  Credits: {credit['credits']}\n"
-            )
+        if credits:
+            first_credit = credits[0]
+            response = f"The credits for subject {subject} {subject_number} are {first_credit['credits']}.\n"
 
         return response
 
@@ -678,13 +682,16 @@ class ActionQueryLectureContent(Action):
                 text="I'm sorry, I couldn't understand the course number you are asking about. Could you please ask again?"
             )
             return []
-        lecture_number = next(tracker.get_latest_entity_values("lecture_number"), None)
-        if lecture_number is None:
+        lecture_number1 = next(tracker.get_latest_entity_values("lecture_number"), None)
+        if lecture_number1 is None:
             dispatcher.utter_message(
                 text="I'm sorry, I couldn't understand the lecture you are asking about. Could you please ask again?"
             )
             return []
-
+        lecture_number = ""
+        for char in lecture_number1:
+            if char.isdigit():
+                lecture_number += char
         sparql_query = f"""
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
         PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
@@ -734,8 +741,8 @@ class ActionQueryLectureContent(Action):
         dispatcher.utter_message(text=response_text)
         return []
 
-    def parse_sparql_results(self, json_results: Dict) -> Dict[Text, Any]:
-        lecture_details = {}
+    def parse_sparql_results(self, json_results: Dict) -> List[Dict[Text, Any]]:
+        lecture_details_list = []
         for result in json_results["results"]["bindings"]:
             lecture_details = {
                 "course_number": result["courseNo"]["value"],
@@ -743,19 +750,25 @@ class ActionQueryLectureContent(Action):
                 "lecture_number": result["lectureNumber"]["value"],
                 "lecture_content": result["lectureContent"]["value"],
             }
-        return lecture_details
+            lecture_details_list.append(lecture_details)
+        return lecture_details_list
 
     def generate_response_for_lecture_content(
-        self, course_number: str, lecture_number: str, lecture_details: Dict[Text, Any]
+        self,
+        course_number: str,
+        lecture_number: str,
+        lecture_details_list: List[Dict[Text, Any]],
     ) -> str:
-        if not lecture_details:
+        if not lecture_details_list:
             return f"Sorry, no lecture content found for lecture {lecture_number} in course {course_number}.\n"
 
         response = (
             f"Lecture content for lecture {lecture_number} in course {course_number}:\n"
         )
-        response += f"- Lecture Name: {lecture_details['lecture_name']}\n"
-        response += f"- Lecture Content: {lecture_details['lecture_content']}\n"
+        for detail in lecture_details_list:
+            if detail["lecture_number"] == lecture_number:
+                response += f"-{detail['lecture_content']}\n"
+                response += "\n"
 
         return response
 
@@ -794,7 +807,7 @@ class ActionQueryReadingMaterials(Action):
             PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
             PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-        SELECT  (?topic as ?topicURI) ?topicName (?course as ?courseURI) ?courseNo  ?readingMaterials
+        SELECT  DISTINCT ?topicName (?course as ?courseURI) ?courseNo  ?readingMaterials
             WHERE {{
             ?course a voc:Course;
                     voc:courseSubject "{subject}";
@@ -891,24 +904,29 @@ class ActionQueryCourseCompetencies(Action):
                 text="I'm sorry, I couldn't understand the course number you are asking about. Could you please ask again?"
             )
             return []
-        subjectNumber = subject + subjectNumber
+        # subjectNumber = subject + subjectNumber
         sparql_query = f"""
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
         PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
         PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-        SELECT DISTINCT ?course ?competency 
+        SELECT DISTINCT ?course ?courseNo ?competency (?lectureContent as ?competencyURI)
         WHERE {{
-        ?student a voc:Student ;
-                voc:Competency ?competencyNode .
-        ?competencyNode voc:Course ?course ;
-                    voc:competencies ?competency .
+        ?course a voc:Course ;
+            voc:courseNumber ?courseNum;
+                voc:courseSubject ?courseSub.
+        ?lecture a voc:Lecture;
+                voc:BelongsTo ?course;
+                voc:LectureContent ?lectureContent.
         ?topic a voc:Topic;
+                voc:TopicProvenance ?lectureContent;
                     foaf:name ?competency.
-        FILTER(?course = "{subjectNumber}")
+        BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
+        FILTER(?courseSub = "{subject}" && ?courseNum="{subjectNumber}")
+        
         }}LIMIT 10
         """
-
+        print(sparql_query)
         fuseki_endpoint = "http://localhost:3030/roboprof/query"
 
         headers = {
@@ -1437,7 +1455,7 @@ class ActionQueryCourseEventTopics(Action):
         response = "Topics covered:\n"
         for topic in topics:
             response += (
-                f"- Topic: {topic['topicName']} (See more: {topic['wikiURI']})\n"
+                f"- {topic['topicName']} (See more: {topic['wikiURI']})\n"
             )
 
         return response

@@ -144,16 +144,16 @@ nlu:
 
 - intent: query_lecture_topics
   examples: |
-    - Which topics are covered in [APPLIED ARTIFICIAL INTELLIGENCE](course) during lecture [3](lecture_number)?
-    - Which topics are covered in [INTELLIGENT SYSTEMS](course) during lecture [3](lecture_number)?
-    - What topics does [Math](course) cover in lecture [5](lecture_number)?
-    - Can you tell me the topics discussed in [Biology](course) on lecture [2](lecture_number)?
-    - I'm curious about the topics for lecture [9](lecture_number) in [Physics 101](course).
-    - What are the main topics in [Chemistry 200](course) during lecture [4](lecture_number)?
-    - Which topics are discussed in lecture [7](lecture_number) of [Computer Science 101](course)?
-    - Can you provide the topics covered in lecture [10](lecture_number) of [Economics 201](course)?
-    - What topics are addressed in lecture [6](lecture_number) of [Literature 101](course)?
-    - List the topics covered in lecture [12](lecture_number) of [Psychology 301](course).
+    - Which topics are covered in [APPLIED ARTIFICIAL INTELLIGENCE](course) during [lecture3](lecture_number)?
+    - Which topics are covered in [INTELLIGENT SYSTEMS](course) during [lecture3](lecture_number)?
+    - What topics does [Math](course) cover in [lecture5](lecture_number)?
+    - Can you tell me the topics discussed in [Biology](course) on [lecture2](lecture_number)?
+    - I'm curious about the topics for [lecture9](lecture_number) in [Physics 101](course).
+    - What are the main topics in [Chemistry 200](course) during [lecture4](lecture_number)?
+    - Which topics are discussed in [lecture7](lecture_number) of [Computer Science 101](course)?
+    - Can you provide the topics covered in [lecture10](lecture_number) of [Economics 201](course)?
+    - What topics are addressed in [lecture6](lecture_number) of [Literature 101](course)?
+    - List the topics covered in [lecture12](lecture_number) of [Psychology 301](course).
 
 - intent: list_courses_by_subject
   examples: |
@@ -207,16 +207,16 @@ nlu:
 
 - intent: query_lecture_content
   examples: |
-    - Detail the content available for lecture [1](lecture_number) in [COMP](subject) [2514](subjectNumber).
-    - What materials are available for lecture [4](lecture_number) in [COMP](subject) [1283](subjectNumber)?
-    - Can you provide details on the content for lecture [5](lecture_number) in [SOEN](subject) [3234](subjectNumber)?
-    - List the materials for lecture [10](lecture_number) in [SOEN](subject) [6412](subjectNumber).
-    - Show me the content for lecture [30](lecture_number) in [COMP](subject) [6721](subjectNumber).
-    - Describe the content covered in lecture [12](lecture_number) of [PHYS](subject) [101](subjectNumber) at [Stanford](university).
-    - Provide details on lecture [8](lecture_number) of [ECON](subject) [301](subjectNumber) at [Harvard](university).
-    - Can you describe the materials for lecture [5](lecture_number) of [CHEM](subject) [123](subjectNumber) at [Princeton](university)?
-    - List the content for lecture [9](lecture_number) of [BIO](subject) [200](subjectNumber) at [Yale](university).
-    - Describe the materials covered in lecture [7](lecture_number) of [HIST](subject) [300](subjectNumber) at [Columbia](university).
+    - Detail the content available for [lecture1](lecture_number) in [COMP](subject) [2514](subjectNumber).
+    - What materials are available for [lecture4](lecture_number) in [COMP](subject) [1283](subjectNumber)?
+    - Can you provide details on the content for [lecture5](lecture_number) in [SOEN](subject) [3234](subjectNumber)?
+    - List the materials for [lecture10](lecture_number) in [SOEN](subject) [6412](subjectNumber).
+    - Show me the content for [lecture30](lecture_number) in [COMP](subject) [6721](subjectNumber).
+    - Describe the content covered in [lecture12](lecture_number) of [PHYS](subject) [101](subjectNumber) at [Stanford](university).
+    - Provide details on [lecture8](lecture_number) of [ECON](subject) [301](subjectNumber) at [Harvard](university).
+    - Can you describe the materials for [lecture5](lecture_number) of [CHEM](subject) [123](subjectNumber) at [Princeton](university)?
+    - List the content for [lecture9](lecture_number) of [BIO](subject) [200](subjectNumber) at [Yale](university).
+    - Describe the materials covered in [lecture7](lecture_number) of [HIST](subject) [300](subjectNumber) at [Columbia](university).
 
 - intent: query_reading_materials
   examples: |
