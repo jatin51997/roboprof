@@ -1,0 +1,144 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - about_person
+  - list_courses
+  - query_course_by_topic
+  - query_lecture_topics
+  - list_courses_by_subject
+  - recommended_materials
+  - course_credits
+  - additional_resources
+  - query_lecture_content
+  - query_reading_materials
+  - query_course_competencies
+  - query_student_grades
+  - query_completed_students
+  - query_transcript
+  - query_course_description
+  - query_course_event_topics
+  - query_topic_coverage
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+entities:
+  - person
+  - university
+  - topic
+  - course
+  - lecture_number
+  - subject
+  - subjectNumber
+  - student_id
+  - courseEvent
+slots:
+  person:
+    type: text
+    initial_value: "unknown"
+    mappings:
+      - type: from_entity
+        entity: person
+
+  university:
+    type: text
+    initial_value: "unknown"
+    mappings:
+      - type: from_entity
+        entity: university
+  
+  topic:
+    type: text
+    initial_value: "unknown"
+    mappings:
+      - type: from_entity
+        entity: topic
+  
+  course:
+    type: text
+    initial_value: "unknown"
+    mappings:
+      - type: from_entity
+        entity: course
+  
+  lecture_number:
+    type: text
+    initial_value: "unknown"
+    mappings:
+      - type: from_entity
+        entity: lecture_number
+  
+  subject:
+    type: text
+    initial_value: "unknown"
+    mappings:
+      - type: from_entity
+        entity: subject
+
+  subjectNumber:
+    type: text
+    initial_value: "unknown"
+    mappings:
+      - type: from_entity
+        entity: subjectNumber
+
+  student_id:
+    type: text
+    initial_value: "unknown"
+    mappings:
+      - type: from_entity
+        entity: student_id
+
+  courseEvent:
+    type: text
+    initial_value: "unknown"
+    mappings:
+      - type: from_entity
+        entity: student_id
+
+actions:
+  - action_person_info
+  - action_list_courses
+  - action_find_courses_by_topic
+  - action_find_topics_by_course_lecture
+  - action_find_courses_by_subject
+  - action_find_recommended_material
+  - action_find_credits
+  - action_find_additional_resources
+  - action_query_lecture_content
+  - action_query_reading_materials
+  - action_query_course_competencies
+  - action_query_student_grades
+  - action_query_completed_students
+  - action_query_transcript
+  - action_query_course_description
+  - action_query_course_event_topics
+  - action_query_topic_coverage

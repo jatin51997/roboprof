@@ -1,0 +1,153 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: get person info
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: about_person
+    - action: action_person_info
+  
+- story: Get course information
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: list_courses
+    - action: action_list_courses
+
+- story: Get course for topics
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: query_course_by_topic
+    - action: action_find_courses_by_topic
+
+- story: Get topics for course and lecture
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: query_lecture_topics
+    - action: action_find_topics_by_course_lecture
+
+- story: Get courses for subject
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: list_courses_by_subject
+    - action: action_find_courses_by_subject
+
+- story: Get recommended material
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: recommended_materials
+    - action: action_find_recommended_material
+
+
+- story: Get credits for a subject
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: course_credits
+    - action: action_find_credits
+
+
+- story: Get additional resources for a subject
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: additional_resources
+    - action: action_find_additional_resources
+
+- story: Get material of a lecture in a course
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: query_lecture_content
+    - action: action_query_lecture_content
+
+
+- story: Get reading material 
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: query_reading_materials
+    - action: action_query_reading_materials
+
+- story: Get competencies
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: query_course_competencies
+    - action: action_query_course_competencies
+
+
+- story: Get grades
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: query_student_grades
+    - action: action_query_student_grades
+
+- story: Get completed students
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: query_completed_students
+    - action: action_query_completed_students
+
+- story: Get transcript
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: query_transcript
+    - action: action_query_transcript
+
+- story: Get course description
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: query_course_description
+    - action: action_query_course_description
+
+- story: Get course topics for event
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: query_course_event_topics
+    - action: action_query_course_event_topics
+
+- story: Get course topics for event
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: query_topic_coverage
+    - action: action_query_topic_coverage

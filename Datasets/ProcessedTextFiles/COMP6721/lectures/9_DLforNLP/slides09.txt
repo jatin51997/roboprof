@@ -1,0 +1,469 @@
+Artificial Intelligence: 
+Deep Learning for NLP
+many slides from:  Y. Bengio, A. Ng and Y. LeCun
+1Today
+1.Introduction
+2.Word Embeddings
+3.Deep Learning for NLP
+2History of AI
+3
+Deep Learning in the News (2013)
+Slide from Yoshua Bengio, 2015 4Deep Learning in the News (2012 -2014)
+Slide from Yoshua Bengio, 2015 5Major Breakthroughs 
+Image Captioning (deep vision + deep NLP)
+Question Answering▪Speech Recognition & Machine Translation (2010+)
+▪Image Recognition & Computer Vision (2012+)
+▪Natural Language Processing (2014+)
+6A
+BImage Captioning: Better than humans?
+7Many Types of Neural Networks  
+https://becominghuman.ai/cheat -sheets -for-ai-neural -networks -machine -learning -deep-learning -big-data-678c51b4b463
+8Autoencoder
+▪The network is trained 
+to output the input
+▪i.e. learn the identity 
+function. 
+▪Trivial… unless, we 
+impose constraints:
+▪Nb of units in layer 2 < nb 
+of input units (learn 
+compressed 
+representation) 
+OR
+▪Constrain layer 2 to be 
+sparse (i.e. many 
+connections are 
+“disabled”)  x4
+x5
+x6
++1
+layer 1 
+(input)layer 2x1
+x2
+x3
+x4
+x5
+x6x1
+x2
+x3
++1
+layer 3 
+(output)a1
+a2
+a3
+9Autoencoder
+x4
+x5
+x6
++1
+input 
+layerlayer 2x1
+x2
+x3
+x4
+x5
+x6x1
+x2
+x3
++1a1
+a2
+a3Feedforward input
+Backprop erroroutput 
+layer
+10Autoencoder
+x4
+x5
+x6
++1
+input 
+layerlayer 2x1
+x2
+x3
+x4
+x5
+x6x1
+x2
+x3
++1a1
+a2
+a3
+output 
+layer
+11Autoencoder
+New (compressed) representation of 
+the input to be fed to the next layer
+i.e. the encoded x x4
+x5
+x6
++1layer 2x1
+x2
+x3a1
+a2
+a3
+input layer
+12Today
+1.Motivation
+2.Word Embeddings
+3.Deep Learning for NLP
+13Deep Learning for NLP 
+Deep learning models for  NLP use:
+▪Vector representation of words 
+❑i.e., word embeddings
+▪Neural network structures
+❑Recurrent Neural Networks (RNNs)
+❑Convolutional Networks (CNNs)
+❑Recursive Neural Networks 
+❑…
+14Word Embeddings
+▪To do NLP with neural networks, words need to be represented 
+as vectors
+▪Traditional approach: “one hot vector”
+❑Binary vector
+❑Length = | vocab |
+❑1 in the position of the word id, the rest are 0
+❑[0, 0, 0, 1, 0, 0, 0, . . .]
+▪However, this does not represent word meaning ; -(
+http://ahogrammer.com/2017/03/22/why -is-word -embeddings -important -for-natural -language -processing/▪Similar words such as python and ruby
+should have similar vector representations
+▪However, similarity/distance between all 
+“one hot vectors” is the same
+15Word Embeddings
+▪We would like:
+▪cat/kitty /dog... to have similar representations
+▪cat/orange /train /python … to have dissimilar representations
+▪Word embeddings:
+▪aka. word representations
+▪Represent each word by a vector of fixed dimensions 
+(eg, n= 50 to 300)
+▪Like a point in n -dimensional space
+16Word2vec
+▪Popular embedding method
+▪Very fast to train
+▪Code available on the web
+❑https://code.google.com/archive/p/word2vec
+▪Idea: 
+❑predict rather than count 
+❑use unsupervised texts from the Web 
+17Word2vec
+▪Instead of counting how often each word woccurs near 
+"apricot"
+▪Train a classifier on a binary prediction task:
+❑Is w likely to show up near “ cat"?
+▪In the end, we do not actually care about this task
+❑But we will take the learned weights as the word embeddings
+▪Use as training set readily available texts, so no need for 
+hand-labeled supervision !
+18Word2vec Models
+▪Basic Idea: 
+1.Similar words should have similar contexts (surrounding words) 
+2.So we can use the contexts to guess the word (or vice -versa).
+▪ The cat/kitty/dog hunts for mice. 
+▪ The brown furry cat/kitty/dog  is eating.
+▪ John’s cat/kitty purrs.  
+3.Train an ANN to guess a word given its context (or vice -versa) “A word is known by the 
+company it keeps” –J. R. Firth
+19Word2Vec models
+Word2Vec has 2 models:
+1. CBOW:  given 
+context words, guess 
+the word
+2. Skip-gram: given a 
+word, guess one of 
+its surrounding word
+http://rohanvarma.me/Word2Vec/
+20Word2Vec: CBOW Model
+Uses a shallow neural network 
+with only 3 layers: 
+1.Oneinput layer
+2.One hidden layer and 
+3.One output layer.
+goal: predict the probability of 
+a target word ( cat) given a 
+context ( brown furry chases 
+the).Thebrown furry cat chases the mouse
+one-hot vector 
+for “brown ”one-hot vector 
+for “furry ”one-hot vector 
+for “the”…
+Probability of 
+word “ cat”
+http://www.claudiobellei.com/2018/01/06/backprop -word2vec/21Word2Vec –Creating the Data Set
+The brown furry catchases the mouse inside the house.
+…
+...
+Instance Context 
+word -2Context 
+word -1Context 
+word +1Context 
+word +2To 
+Predict
+1 the brown cat chases furry
+2 brown furry chases the cat
+3 furry cat the mouse chases
+4 cat chases mouse inside the
+5 chases the inside the mouse
+6 the mouse the house insideAssume context words are 
+those in +/ -2 word window
+22Word2Vec –Input to the Network“the”“brown”“chases”
+…
+Probability of 
+word “ furry ”V = size of vocabulary
+N = size of the embedding that we want 
+(i.e. number of neurons in the hidden layer)
+C = size of context (2 words before + 2 after)
+Inst
+anceInput word
+1 Context -2 the 010 0 00 000 …
+1 Context -1 brown 000 0 01 000 …
+1 Context +1 cat 100 0 00 000 …
+1 Context +2 chases 000 1 00 000V
+Inst
+anceInput word
+2 Context -2 brown 0 00 0 0 100 0 …
+2 Context -1 furry 0 00 0 1 000 0 …
+2 Context +1 chases 0 00 0 0 000 1 …
+Context +2 the 0 10 0 0 000 0 … …
+23Word2Vec –Weights WProbability “cat”▪Weight Matrix W between input & hidden 
+layer
+▪W is a VxN matrix…
+▪Initially random but modified via backprop
+▪No bias!
+V
+N (nb of nodes in hidden layer, i.e. size of the embedding)
+24
+1 2 3 4 5 ...
+6 7 8 9 10 ...
+11 12 13 14 15 ...
+16 17 18 19 20 ...
+21 22 23 24 25 ...
+26 27 28 29 30 ...
+31 32 33 34 35 ...
+36 37 38 39 40 ...
+41 42 43 44 45 ...
+46 47 48 49 50 ...
+... ... ... ... ... ...Word2Vec –Feedforward
+1.Calculate the output of each of the N hidden nodes 
+for each context word
+Note: there is no activation function . 
+Output of hi is just the dot product 
+2. Then take the average
+V
+V= .
+NC
+N
+25
+instance 1 Context -2 the010000000...
+instance 1 Context -1 brown 000001000...
+instance 1 Context +1 cat 000000001...
+instance 1 Context +2 chases 000010000...
+h1h2 h3 h4h5...
+6 7 8910...
+26 27 282930...
+41 42 434445...
+21 22 232425...
+average of dot products
+h1h2 h3 h4h5 
+24 25 262728…
+1 2 3 4 5 ...
+6 7 8 9 10 ...
+11 12 13 14 15 ...
+16 17 18 19 20 ...
+21 22 23 24 25 ...
+26 27 28 29 30 ...
+31 32 33 34 35 ...
+36 37 38 39 40 ...
+41 42 43 44 45 ...
+46 47 48 49 50 ...
+... ... ... ... ... ...Word2Vec –Weights W’
+Matrix W’
+V.
+N (size of embeddings)▪Weight Matrix W’ between hidden & output layer
+▪W’ is a NxV matrix…
+▪Initially random but modified via backprop
+▪Feed forward average of hidden neurons and do 
+dot product with matrix W’
+=
+VN
+26
+0.70 0.13 0.14 0.60 0.16 0.17 0.60 0.19 0.20 0.21 …
+0.12 0.50 0.14 0.15 0.50 0.30 0.18 0.20 0.20 0.21 …
+0.17 0.40 0.60 0.25 0.26 0.50 0.35 0.37 0.30 0.55 …
+0.32 0.33 0.34 0.38 0.36 0.37 0.25 0.55 0.56 0.41 …
+0.42 0.43 0.44 0.45 0.46 0.47 0.48 0.49 0.50 0.30 …
+… … … … … … … … … … …
+average of dot products
+h1h2 h3 h4h5 
+24 25 262728…
+y1 y2 y3 y4 y5 y6 y7 y8 y9 y10
+output layer 43.7550 46.0750 43.1300 46.5950 44.8300 46.8250 47.2600 46.8500 45.8400 43.2200 …Turn dot product into probabilities
+V
+// use softmax function
+// to turn the vector above into 
+// a vector of probabilities 
+// (that nicely add up to 1)
+V
+27
+output layer 43.7550 46.0750 43.1300 46.5950 44.8300 46.8250 47.2600 46.8500 45.8400 43.2200 …sum
+e^y_i 1.01E+19 1.02E+20 5.38E+18 1.72E+20 2.95E+19 2.17E+20 3.35E+20 2.22E+20 8.09E+19 5.89E+18 …1.180E+21
+softmax(y_i) 0.0085 0.0868 0.0046 0.1459 0.0250 0.1837 0.2837 0.1883 0.0686 0.0050 … 1.0000
+y1 y2 y3 y4 y5 y6 y7 y8 y9 y10
+output layer 43.7550 46.0750 43.1300 46.5950 44.8300 46.8250 47.2600 46.8500 45.8400 43.2200 …Compute Error of output layer
+V
+-
+=Instance Context 
+word -2Context 
+word -1Context 
+word +1Context 
+word +2To Predict
+1 the brown cat chases furry
+2 brown furry chases the cat
+... ... ... ... ... ...remember the training set:
+t1 t2 t3 t4 t5 t6 t7 t8 t9 t10
+// target = 1 hot 
+representation 
+of the target 
+(furry) in the 
+training set
+28
+O-T 0.0085 0.0868 0.0046 0.1459 0.0250 0.1837 -0.7163 0.1883 0.0686 0.0050 …
+y1 y2 y3 y4 y5 y6 y7 y8 y9 y10
+O= output 0.0085 0.0868 0.0046 0.1459 0.0250 0.1837 0.2837 0.1883 0.0686 0.0050…
+T= target 0 0 0 0 0 0 1 0 0 0…Backpropagate errors to adjust W and W’ 
+▪Adjust W’ and W using backpropagation
+▪<after a bit of math>, we get:
+η: learning rate
+C: size of context (eg 4)
+29http://www.stokastik.in/understanding -word -vectors -and-word2vec/update only the wijfor the inputs where x1 =1
+The weight updates are ONLY done on the "rows" of W that correspond to 
+the input word, not for all elements of W. Remember that the input words 
+are represented as 1 -hot vectors, so only the weights of the word that has 
+a "1" are updated. This makes intuitive sense, as we want to update the 
+weight only of the context word since its previous weights lead to an error.Word2Vec –FeedForward next data
+Insta
+nceInput word
+2 Context -2 brown 00 0 0 0100 0 …
+2 Context -1 furry 00 0 0 1000 0 …
+2 Context +1 chases 00 0 0 0000 1 …
+1 Context +2 the 01 0 0 0000 0 …Instance Context 
+word -2Context 
+word -1Context 
+word +1Context 
+word +2To Predict
+1 the brown cat chases furry
+2 brown furry chases the cat
+3 furry cat the mouse chases
+4 cat chases mouse inside the
+5 chases the inside the mouse
+6 the mouse the house inside
+▪Iterate feedforward/ backprop until error is minimized
+▪Trained on Google News dataset (about 100 billion words).
+▪See: https://code.google.com/archive/p/word2vec/
+30almost...
+remember, we did all this to get embeddings...
+I’m not leaving ‘till I get my embeddings!
+31Word2Vec -Get the embeddings
+▪After many iterations of feedforward, backpropagation on the entire 
+training set ...
+▪The classifier will be built!
+▪Then, we throw it away ! (yes, we do!)
+▪and only keep W’, these are your word embeddings!
+V
+Embedding for 
+bananaEmbedding 
+for airplaneEmbedding 
+for zooN
+32
+0.70 0.13 0.14 0.60 0.16 0.17 0.60 0.19 0.20 0.21…
+0.12 0.50 0.14 0.15 0.50 0.30 0.18 0.20 0.20 0.21…
+0.17 0.40 0.60 0.25 0.26 0.50 0.35 0.37 0.30 0.55…
+0.32 0.33 0.34 0.38 0.36 0.37 0.25 0.55 0.56 0.41…
+0.42 0.43 0.44 0.45 0.46 0.47 0.48 0.49 0.50 0.30…
+… … … … … … … … … ……Results
+vector[queen] ~ vector[king]  -vector[man] + vector[woman]  
+vector[swimming] ~ vector[swam]  -vector[walked] + vector[walking]  
+vector[Rome] ~ vector[Madrid] –vector[Spain] + vector[Italy] 
+33Results
+34Results
+35Multilingual Word Embeddings
+Used in Machine TranslationWords in different 
+languages but with 
+similar meanings  
+(i.e. translations) 
+are represented by 
+similar vectors
+36Word History through Embeddings
+Train embeddings on old books to study 
+changes in word meaning
+~30 million books, 1850 -1990, Google Books data
+Project 300 dimensions down into 2
+37Today
+1.Motivation
+2.Word Embeddings
+3.Deep Learning for NLP
+3839Stages of NLU
+source: Luger (2005)Deep Learning for NLP 
+Deep learning models for  NLP use:
+▪Vector representation of words 
+❑i.e., word embeddings
+▪Neural network structures
+❑Recurrent Neural Networks (RNNs)
+❑Recursive Neural Networks 
+❑Convolutional Networks (CNNs)
+❑…
+40CNNs for NLP
+41
+[Hobson Lane, Cole Howard, and Hannes Max Hapke: Natural Language Processing in Action . Manning Publications Co., 2019. 
+https://concordiauniversity.on.worldcat.org/oclc/1102387045]CNNs for 
+NLP (II)
+42[Hobson Lane, Cole Howard, and Hannes Max Hapke: Natural Language Processing in Action . Manning Publications Co., 2019. 
+https://concordiauniversity.on.worldcat.org/oclc/1102387045]
+Recurrent Neural Networks
+▪To model sequences of decisions, such as machine 
+translation, language modelling, ….
+❑e.g., A word at position n can influence a word/decision at 
+position n+t
+▪decision/output from the past can influence current 
+decision/output
+▪Networks with loops in them, allowing information to persist.
+http://www.wildml.com/2015/09/recurrent -neural -networks -tutorial -part-1-introduction -to-rnns/
+43Cool Applications
+▪RNNs + word embeddings 
+❑Google Translate 
+▪As of July 2017, uses an RNN + word embeddings (called Neural 
+Machine Translation (NMT) )
+▪Input sequence: words in a source sentence 
+▪Output sequence: words in the target language
+❑Dialogue Systems
+▪CNNs + RNNs + word embeddings
+❑Image Captioning
+❑Video to Text Descriptions
+❑Visual Question Answering
+▪…
+44Demo Website
+Input: an image + a natural language question 
+Output: natural language answerVisual Question Answering 
+Picture from (Antol et al., 2015) 45▪The output is conditioned on both image and textual inputs. 
+▪A CNN is used to encode the image.
+▪A RNN is used to encode the sentence. Visual Question Answering
+3846Machine Translation
+47Conversational Agents
+http://www.wildml.com/2016/04/deep -learning -for-chatbots -part-1-introduction/48Transformers
+49
+http://jalammar.github.io/illustrated -transformer/Transformers (II)
+50http://jalammar.github.io/illustrated -transformer/
+Transformers (II)
+51https://devblogs.nvidia.com/training -bert-with-gpus/
+GPT-3
+52https://towardsdatascience.com/gpt -3-the-new-mighty -language -model -from-openai -a74ff35346fc
+GPT-3 Applications
+53 https://www.youtube.com/watch?v=QYfZJ5jbUWU
+Google PaLM (April 2022)
+54 https://ai.googleblog.com/2022/04/pathways -language -model -palm -scaling -to.htmlPathways Language Model (PaLM): 
+Scaling to 540 Billion Parameters for Breakthrough Performance
+Google PaLM: Explaining Jokes!
+55 https://ai.googleblog.com/2022/04/pathways -language -model -palm -scaling -to.html
+Today
+1.Motivation
+2.Word Embeddings
+3.Deep Learning for NLP
+56

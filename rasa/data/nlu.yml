@@ -1,0 +1,324 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: about_person
+  examples: |
+    - Who is he?
+    - Who is [Joe](person) ?
+    - Who is [Kate](person)?
+    - Who is [Harry](person)
+    - Tell me about him
+    - Tell me about
+    - Tell me about [Peter](person)
+    - Tell me about [Joe](person)
+    - Can you tell me about him?
+    - Can you tell me about [Jane](person)?
+    - Can you tell me about [Peter](person) ?
+    - Can you tell me about [Jonathan](person) ?
+    - Do you know [Alice](person) ?
+    - Tell me about [Jack](person) ?
+
+
+- intent: list_courses
+  examples: |
+    - List all courses offered by [Concordia University](university)
+    - What are the courses offered by [Oxford](university)?
+    - Provide a list of courses available at [MIT](university).
+    - List courses at [Harvard](university)
+    - Show me courses from [Stanford University](university)
+    - What courses does [Princeton](university) offer?
+    - Display courses offered by [Yale University](university)
+    - Can you list the courses available at [Columbia](university)?
+    - What are the courses at [University of California, Berkeley](university)?
+    - Tell me about the courses taught at [Massachusetts Institute of Technology](university)
+    - Show courses from [University of Toronto](university)
+    - Provide a list of courses available at [University of Cambridge](university).
+    - What courses are offered by [ETH Zurich](university)?
+    - List all courses at [California Institute of Technology](university).
+    - Show me courses from [University of Michigan](university).
+
+- intent: query_course_by_topic
+  examples: |
+    - In which courses is [machine learning](topic) discussed?
+    - In which courses is [knowledge graphs](topic) discussed?
+    - Can you tell me about courses that cover [quantum computing](topic)?
+    - I'm looking for courses on [sustainable agriculture](topic).
+    - Which classes include information about [cybersecurity](topic)?
+    - Do you have any courses about [artificial intelligence](topic)?
+    - Show me courses that deal with [philosophy](topic).
+    - I want to learn about [European history](topic), which courses should I look into?
+    - Are there any courses focusing on [marketing strategies](topic)?
+    - What courses cover [robotics](topic)?
+    - Can you recommend courses related to [data science](topic)?
+    - I'm interested in courses that discuss [bioinformatics](topic).
+    - Which courses include [environmental science](topic) in their curriculum?
+
+- intent: query_lecture_topics
+  examples: |
+    - Which topics are covered in [APPLIED ARTIFICIAL INTELLIGENCE](course) during lecture [3](lecture_number)?
+    - Which topics are covered in [INTELLIGENT SYSTEMS](course) during lecture [3](lecture_number)?
+    - What topics does [Math](course) cover in lecture [5](lecture_number)?
+    - Can you tell me the topics discussed in [Biology](course) on lecture [2](lecture_number)?
+    - I'm curious about the topics for lecture [9](lecture_number) in [Physics 101](course).
+    - What are the main topics in [Chemistry 200](course) during lecture [4](lecture_number)?
+    - Which topics are discussed in lecture [7](lecture_number) of [Computer Science 101](course)?
+    - Can you provide the topics covered in lecture [10](lecture_number) of [Economics 201](course)?
+    - What topics are addressed in lecture [6](lecture_number) of [Literature 101](course)?
+    - List the topics covered in lecture [12](lecture_number) of [Psychology 301](course).
+
+- intent: list_courses_by_subject
+  examples: |
+    - List all courses offered by [Concordia University](university) within [COMP](subject).
+    - What are the courses available at [Stanford](university) within [SOEN](subject)?
+    - Show me the courses offered by [Harvard](university) in [COMP](subject).
+    - Can you list the courses at [Oxford](university) in [SOEN](subject)?
+    - I want to see all courses offered by [Cambridge](university) within [COMP](subject).
+    - Show me courses within [Physics](subject) at [MIT](university).
+    - List all courses within [History](subject) at [Princeton](university).
+    - What courses are offered within [Computer Engineering](subject) at [ETH Zurich](university)?
+    - Provide a list of courses within [Chemistry](subject) at [University of Toronto](university).
+    - Show me courses within [Economics](subject) at [Yale University](university).
+
+- intent: recommended_materials
+  examples: |
+    - What materials are recommended for [deep learning](topic) in [COMP](subject) [2514](subjectNumber)?
+    - Can you suggest materials for [neural networks](topic) in [SOEN](subject) [2178](subjectNumber)?
+    - What are the recommended resources for studying [Machine learning](topic) in [COMP](subject) [7623](subjectNumber)?
+    - Give me materials recommended for [natural language processing](topic) in [COMP](subject) [7812](subjectNumber).
+    - Could you recommend study materials for [database management](topic) in [COMP](subject) [1234](subjectNumber)?
+    - What supplementary materials are recommended for [robotics](topic) in [MECH](subject) [324](subjectNumber)?
+    - Can you suggest resources for [business ethics](topic) in [PHIL](subject) [232](subjectNumber)?
+    - I need additional materials for studying [biochemistry](topic) in [CHEM](subject) [312](subjectNumber).
+
+- intent: course_credits
+  examples: |
+    - How many credits is [COMP](subject) [2514](subjectNumber) worth?
+    - Can you tell me the credit value of [COMP](subject) [2514](subjectNumber)?
+    - What is the credit count for [SOEN](subject) [2178](subjectNumber)?
+    - How many credits do I get for taking [COMP](subject) [7623](subjectNumber)?
+    - Tell me the worth in credits for [COMP](subject) [7812](subjectNumber).
+    - What is the credit allocation for [PHYS](subject) [101](subjectNumber) at [Stanford](university)?
+    - How many credits does [ECON](subject) [301](subjectNumber) carry at [Harvard](university)?
+    - Can you provide the credit value for [MATH](subject) [201](subjectNumber) at [Princeton](university)?
+    - What is the credit equivalent for [BIO](subject) [123](subjectNumber) at [Yale](university)?
+    - How many credits is [CHEM](subject) [100](subjectNumber) at [Columbia](university) worth?
+
+- intent: additional_resources
+  examples: |
+    - For [COMP](subject) [2514](subjectNumber), what additional resources are available?
+    - Can you provide information about additional resources for [SOEN](subject) [2162](subjectNumber)?
+    - What supplementary materials are provided for [COMP](subject) [6371](subjectNumber)?
+    - I'm interested in knowing about extra resources available for [SOEN](subject) [8283](subjectNumber).
+    - Are there any additional resources available for [PHYS](subject) [101](subjectNumber) at [Stanford](university)?
+    - Can you recommend extra materials for [MATH](subject) [201](subjectNumber) at [Harvard](university)?
+    - I need supplementary resources for [BIO](subject) [123](subjectNumber) at [Princeton](university).
+    - What additional materials are available for [CHEM](subject) [100](subjectNumber) at [Yale](university)?
+    - Could you provide information about extra resources for [ECON](subject) [301](subjectNumber) at [Columbia](university)?
+    - Are there supplementary materials for [HIST](subject) [200](subjectNumber) at [University of California, Berkeley](university)?
+
+- intent: query_lecture_content
+  examples: |
+    - Detail the content available for lecture [1](lecture_number) in [COMP](subject) [2514](subjectNumber).
+    - What materials are available for lecture [4](lecture_number) in [COMP](subject) [1283](subjectNumber)?
+    - Can you provide details on the content for lecture [5](lecture_number) in [SOEN](subject) [3234](subjectNumber)?
+    - List the materials for lecture [10](lecture_number) in [SOEN](subject) [6412](subjectNumber).
+    - Show me the content for lecture [30](lecture_number) in [COMP](subject) [6721](subjectNumber).
+    - Describe the content covered in lecture [12](lecture_number) of [PHYS](subject) [101](subjectNumber) at [Stanford](university).
+    - Provide details on lecture [8](lecture_number) of [ECON](subject) [301](subjectNumber) at [Harvard](university).
+    - Can you describe the materials for lecture [5](lecture_number) of [CHEM](subject) [123](subjectNumber) at [Princeton](university)?
+    - List the content for lecture [9](lecture_number) of [BIO](subject) [200](subjectNumber) at [Yale](university).
+    - Describe the materials covered in lecture [7](lecture_number) of [HIST](subject) [300](subjectNumber) at [Columbia](university).
+
+- intent: query_reading_materials
+  examples: |
+    - What reading materials are recommended for studying [deep learning](topic) in [COMP](subject) [2514](subjectNumber)?
+    - Can you suggest reading materials for learning about [machine learning](topic) in [SOEN](subject) [2123](subjectNumber)?
+    - What are the recommended reading materials for [NLP](topic) in [COMP](subject) [1242](subjectNumber)?
+    - Which books/articles are recommended for studying [deep learning](topic) in [COMP](subject) [1145](subjectNumber)?
+    - I'm interested in reading materials for [Data structures](topic) in [SOEN](subject) [2618](subjectNumber).
+    - Could you suggest additional reading materials for [Statistics](topic) in [MATH](subject) [201](subjectNumber) at [Princeton](university)?
+    - Can you recommend books/articles for [Microeconomics](topic) in [ECON](subject) [301](subjectNumber) at [Harvard](university)?
+    - I need reading materials for [Modern Art](topic) in [ART] [100](subjectNumber) at [Yale](university).
+    - What books/articles are recommended for [Political Science](topic) in [POLI] [200](subjectNumber) at [Columbia](university)?
+    - Can you suggest reading materials for [Environmental Studies](topic) in [ENVS] [101](subjectNumber) at [University of California, Berkeley](university)?
+
+- intent: query_course_competencies
+  examples: |
+    - What competencies does a student gain after completing [COMP](subject) [2514](subjectNumber)?
+    - Can you tell me the competencies gained after completing [COMP](subject) [1234](subjectNumber)?
+    - What skills/topics do students learn in [SOEN](subject) [7823](subjectNumber)?
+    - List the competencies acquired after completing [SOEN](subject) [3131](subjectNumber).
+    - I'm interested in knowing the topics covered in [course_name] [COMP](subject) [3232](subjectNumber).
+    - What competencies are developed by completing [PHYS](subject) [101](subjectNumber) at [Stanford](university)?
+    - Can you list the skills acquired from [ECON](subject) [301](subjectNumber) at [Harvard](university)?
+    - Describe the competencies gained from completing [BIO](subject) [123](subjectNumber) at [Princeton](university).
+    - List the skills acquired from [HIST](subject) [300](subjectNumber) at [Yale](university).
+    - What topics are covered in [CHEM](subject) [100](subjectNumber) at [Columbia](university)?
+
+- intent: query_student_grades
+  examples: |
+    - What grades did [123567](student_id) achieve in [COMP](subject) [2514](subjectNumber)?
+    - Can you tell me the grades obtained by [172737](student_id) in [COMP](subject) [1234](subjectNumber)?
+    - What were the grades of [763817](student_id) in [COMP](subject) [1234](subjectNumber)?
+    - List the grades achieved by [938162](student_id) in [SOEN](subject) [3131](subjectNumber).
+    - I'm interested in knowing the grades of [183683](student_id) in [COMP](subject) [3232](subjectNumber).
+    - Show me the grades of [984567](student_id) in [PHYS](subject) [101](subjectNumber) at [Stanford](university).
+    - Can you provide the grades of [789123](student_id) in [ECON](subject) [301](subjectNumber) at [Harvard](university)?
+    - List the grades obtained by [456789](student_id) in [BIO](subject) [123](subjectNumber) at [Princeton](university).
+    - What were the grades of [231456](student_id) in [HIST](subject) [300](subjectNumber) at [Yale](university)?
+    - Show the grades of [876543](student_id) in [CHEM](subject) [100](subjectNumber) at [Columbia](university).
+
+- intent: query_completed_students
+  examples: |
+    - Which students have completed [COMP](subject) [2514](subjectNumber)?
+    - Can you list the students who have completed [COMP](subject) [1213](subjectNumber)?
+    - Who completed [COMP](subject) [1234](subjectNumber)?
+    - List the students who finished [SOEN](subject) [3131](subjectNumber).
+    - I'm interested in knowing the students who completed [SOEN](subject) [1212](subjectNumber).
+    - Show me the students who have completed [PHYS](subject) [101](subjectNumber) at [Stanford](university).
+    - Provide a list of students who completed [ECON](subject) [301](subjectNumber) at [Harvard](university).
+
+
+    - Can you show the students who finished [BIO](subject) [123](subjectNumber) at [Princeton](university)?
+    - List students who completed [HIST](subject) [300](subjectNumber) at [Yale](university).
+    - Show the students who completed [CHEM](subject) [100](subjectNumber) at [Columbia](university).
+
+- intent: query_transcript
+  examples: |
+    - Print a transcript for [123567](student_id), listing all the courses taken with their grades.
+    - Can you provide a transcript for [172737](student_id), including all courses taken and their grades?
+    - I need a transcript for [763817](student_id), showing all courses completed along with their grades.
+    - Please show me the transcript of [938162](student_id), including grades for all courses taken.
+    - Print out the transcript for [183683](student_id), with grades for each course taken.
+    - Provide a transcript for [984567](student_id), including grades for all courses taken at [Stanford](university).
+    - Show me the transcript of [789123](student_id), listing all courses taken and their grades at [Harvard](university).
+    - I need a transcript for [456789](student_id), showing all courses completed along with their grades at [Princeton](university).
+    - Please provide the transcript of [231456](student_id), including grades for each course taken at [Yale](university).
+    - Print out the transcript for [876543](student_id), with grades for all courses taken at [Columbia](university).
+
+- intent: query_course_description
+  examples: |
+    - What is the [COMP](subject) [2514](subjectNumber) about?
+    - Can you tell me more about the [SOEN](subject) [1234](subjectNumber)?
+    - I'd like to know what [COMP](subject) [1234](subjectNumber) covers.
+    - Please provide details on what's covered in [COMP](subject) [3232](subjectNumber).
+    - Can you describe the content of [PHYS](subject) [101](subjectNumber) at [Stanford](university)?
+    - Provide a description of [ECON](subject) [301](subjectNumber) at [Harvard](university).
+    - Describe [BIO](subject) [123](subjectNumber) at [Princeton](university).
+    - I want to know more about [HIST](subject) [300](subjectNumber) at [Yale](university).
+    - Please provide information about [CHEM](subject) [100](subjectNumber) at [Columbia](university).
+
+- intent: query_course_event_topics
+  examples: |
+    - Which topics are covered in [COMP](subject) [2514](subjectNumber) [lab02](courseEvent)?
+    - Tell me what's covered in [COMP](subject) [1234](subjectNumber) [lab10](courseEvent)?
+    - What topics do [SOEN](subject) [3131](subjectNumber) [slides05](courseEvent)? cover?
+    - I'm interested in the topics of [SOEN](subject) [2872](subjectNumber) [slides01](courseEvent).
+    - Can you list the topics discussed in [COMP](subject) [3232](subjectNumber) [slides12](courseEvent)?
+    - Show me the topics covered in [PHYS](subject) [101](subjectNumber) [lab03](courseEvent) at [Stanford](university).
+    - Provide the topics discussed in [ECON](subject) [301](subjectNumber) [lecture04](courseEvent) at [Harvard](university).
+    - What are the topics covered in [BIO](subject) [123](subjectNumber) [discussion01](courseEvent) at [Princeton](university)?
+    - List the topics addressed in [HIST](subject) [300](subjectNumber) [lecture05](courseEvent) at [Yale](university).
+    - Describe the topics discussed in [CHEM](subject) [100](subjectNumber) [tutorial02](courseEvent) at [Columbia](university).
+
+- intent: query_topic_coverage
+  examples: |
+    - Which course events cover [deep learning](topic)?
+    - Can you show me courses that cover [Machine Learning](topic)?
+    - I'm looking for lectures on [Artificial Intelligence](topic).
+    - Find course events about [deep learning](topic).
+    - What covers [Quantum Computing](topic) in the course?
+    - Show me course events that discuss [Data Mining](topic).
+    - List lectures that cover [Computer Vision](topic).
+    - Can you provide information about course events related to [Natural Language Processing](topic)?
+    - Show me lectures that discuss [Neural Networks](topic).
+    - What course events focus on [Software Engineering](topic)?

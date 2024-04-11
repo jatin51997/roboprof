@@ -82,7 +82,7 @@ def createCoursesRDF(csv_file, university_ids):
             g.add((vocdata_uri, voc.courseSubject, Literal(subject)))
             g.add((vocdata_uri, voc.courseNumber, Literal(catalog)))
             g.add((vocdata_uri, voc.courseCredits, Literal(class_units)))
-            g.add((vocdata_uri, voc.courseDescription, Literal(course_description)))
+            g.add((vocdata_uri, voc.CourseType, Literal(course_description)))
 
             if subject.startswith("COMP") and catalog in ["6741", "6721"]:
                 course_ids[(subject, catalog)] = unique_id_str_padded
@@ -97,6 +97,7 @@ def createCoursesRDF(csv_file, university_ids):
                         ),
                     )
                 )
+                g.add((vocdata_uri,voc.CourseDescription, Literal("Knowledge representation and reasoning. Uncertainty and conflict resolution. Design of intelligent systems. Grammar-based, rule-based, and blackboard architectures. A project is required.")))
 
             if subject.startswith("COMP") and catalog in ["6721"]:
                 g.add(
@@ -108,6 +109,7 @@ def createCoursesRDF(csv_file, university_ids):
                         ),
                     )
                 )
+                g.add((vocdata_uri, voc.CourseDescription, Literal("The course covers heuristic and adversarial searches for concrete applications. It then discusses automated reasoning, advanced knowledge representation and dealing with uncertainly for Artificial Intelligence applications. Finally, it introduces autoencoders, recurrent neural networks and sequence to sequence models. A project is required.")))
 
             university_uri = URIRef("http://dbpedia.org/resource/Concordia_University")
             if university_uri in university_ids:
@@ -118,12 +120,13 @@ def createCoursesRDF(csv_file, university_ids):
 
 
 def createLecturesRDF(graph, course_folder, courses):
-    lectures_folder = os.path.join(course_folder, "lectures")
+    lectures_folder = course_folder + "/lectures"
     if not os.path.exists(lectures_folder):
         print(f"No lectures folder found for course: {course_folder}")
         return
 
-    course_code = lectures_folder.split("/")[1]
+    course_code = lectures_folder.split("/")[2]
+    #print(course_code)
     for course_key, course_id in courses.items():
         if "".join(course_key) == course_code:
             break
@@ -135,7 +138,7 @@ def createLecturesRDF(graph, course_folder, courses):
 
         lecture_number, lecture_name = lecture_folder.split("_")
 
-        lecture_uri = URIRef(vocdata[urllib.parse.quote(lecture_path)])
+        lecture_uri = URIRef(vocdata[lecture_path.replace("\\", "/")])
         graph.add((lecture_uri, RDF.type, voc.Lecture))
         graph.add((lecture_uri, voc.LectureNumber, Literal(lecture_number)))
         graph.add((lecture_uri, FOAF.name, Literal(lecture_name)))
@@ -144,13 +147,16 @@ def createLecturesRDF(graph, course_folder, courses):
         for content_file in os.listdir(lecture_path):
             content_path = os.path.join(lecture_path, content_file)
             content_type = None
+            file_name_without_extension = os.path.splitext(content_file)[0]  # Extract file name without extension
+
+
             if content_file.startswith("slides"):
                 content_type = voc.Slides
             elif content_file.startswith("worksheet"):
                 content_type = voc.Worksheets
             elif content_file.startswith("assignment"):
                 content_type = voc.OtherMaterial
-            elif content_file.startswith("labs"):
+            elif content_file.startswith("lab"):
                 content_type = voc.OtherMaterial
             elif content_file.startswith("readings"):
                 content_type = voc.Readings
@@ -165,9 +171,11 @@ def createLecturesRDF(graph, course_folder, courses):
                             graph.add((lecture_uri, voc.LectureContent, content_uri))
 
             if content_type:
-                content_uri = URIRef(vocdata[urllib.parse.quote(content_path)])
+                content_uri = URIRef(vocdata[content_path.replace("\\", "/")])
                 graph.add((content_uri, RDF.type, content_type))
+                graph.add((content_uri, voc.ResourceName, Literal(file_name_without_extension)))
                 graph.add((lecture_uri, voc.LectureContent, content_uri))
+
 
 
 def createTopicsRDF(csv_file):
@@ -175,21 +183,27 @@ def createTopicsRDF(csv_file):
     g.bind("voc", voc)
     g.bind("vocdata", vocdata)
     g.bind("dbp", dbp)
-    with open(csv_file, newline="") as file:
+
+    with open(csv_file, newline="", encoding="utf-8") as file:
         reader = csv.reader(file)
+        next(reader)  # Skip the header row
         for row in reader:
-            unique_id = random.randint(10**9, (10**10) - 1)
+            unique_id = random.randint(10 ** 9, (10 ** 10) - 1)
             unique_id_str = str(unique_id)
             unique_id_str_padded = unique_id_str.zfill(10)
-            vocdata_uri = vocdata[unique_id_str_padded]
-            topic_name = Literal(row[1])
-            topic_provenance = URIRef(row[2])
-            topic_link = dbp[row[3]]
+            topic_uri = vocdata[unique_id_str_padded]  # This creates a URIRef object
 
-            g.add((vocdata_uri, RDF.type, voc.Topic))
-            g.add((vocdata_uri, FOAF.name, topic_name))
-            g.add((vocdata_uri, voc.TopicProvenance, topic_provenance))
-            g.add((vocdata_uri, RDFS.seeAlso, topic_link))
+            file_path = row[0]
+            # No need to encode the file_path as URI, we use the generated unique URI
+            topic_name = Literal(row[1])
+            topic_link = URIRef(row[2])  # Assuming row[2] contains a valid URI
+            topic_provenance = vocdata[file_path]
+
+            # Add triples using the unique topic URI
+            g.add((topic_uri, RDF.type, voc.Topic))
+            g.add((topic_uri, FOAF.name, topic_name))
+            g.add((topic_uri, voc.TopicProvenance, URIRef(topic_provenance)))
+            g.add((topic_uri, RDFS.seeAlso, topic_link))
 
     return g
 
@@ -254,13 +268,13 @@ if __name__ == "__main__":
     g = Graph()
     g.bind("voc", voc)
     g.bind("vocdata", vocdata)
-    courses_folders = ["Datasets/COMP6741", "Datasets/COMP6721"]
+    courses_folders = ["Datasets/ProcessedTextFiles/COMP6741", "Datasets/ProcessedTextFiles/COMP6721"]
     for course_folder in courses_folders:
         createLecturesRDF(g, course_folder, courses)
 
     serialize_rdf_graph(g, "lectures_data.ttl")
 
-    topics_rdf = createTopicsRDF("Datasets/topics_data.csv")
+    topics_rdf = createTopicsRDF("Datasets/entity-urls.csv")
     serialize_rdf_graph(topics_rdf, "topics_data.ttl")
 
     students_rdf = createStudentsRDF("Datasets/students_data.csv")

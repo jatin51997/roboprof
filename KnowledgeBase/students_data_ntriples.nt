@@ -1,81 +1,81 @@
-<file:///Users/jatin/workspace/roboprof/data#654321> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Student> .
-<file:///Users/jatin/workspace/roboprof/data#123456> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:N957f18b4a8c5409887fb57a6e899db31 .
-_:Ne18c38eb625c4c22a5bd4ffae5595d79 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Natural_language_processing" .
-_:N1c38be9a473a4e95a4f04946eb4e5252 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Machine_learning" .
-<file:///Users/jatin/workspace/roboprof/data#456789> <http://xmlns.com/foaf/0.1/givenName> "Bob" .
-<file:///Users/jatin/workspace/roboprof/data#456789> <http://xmlns.com/foaf/0.1/mbox> "bobwilliams@example.com" .
-_:N86286867acda42fc9ea0a111f67d6170 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
-_:N957f18b4a8c5409887fb57a6e899db31 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
-_:Nd7aa00104eef4da09088d2449c7e1bac <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "C+" .
-<file:///Users/jatin/workspace/roboprof/data#987654> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#IDNumber> "987654" .
-<file:///Users/jatin/workspace/roboprof/data#789123> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:N6c589e9910934cc2815cb126003fb26e .
-<file:///Users/jatin/workspace/roboprof/data#123456> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:N86286867acda42fc9ea0a111f67d6170 .
+_:Nbf2fbb01ef0443238d2080a623e22ad2 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6721" .
 <file:///Users/jatin/workspace/roboprof/data#123456> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#IDNumber> "123456" .
-_:N1d5b81263e2f4376b5a6997a98d01901 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "A-" .
-_:Ne18c38eb625c4c22a5bd4ffae5595d79 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6721" .
-<file:///Users/jatin/workspace/roboprof/data#789123> <http://xmlns.com/foaf/0.1/familyName> "Brown" .
-<file:///Users/jatin/workspace/roboprof/data#123456> <http://xmlns.com/foaf/0.1/familyName> "Doe" .
-<file:///Users/jatin/workspace/roboprof/data#123456> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:Ne18c38eb625c4c22a5bd4ffae5595d79 .
-<file:///Users/jatin/workspace/roboprof/data#456789> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#IDNumber> "456789" .
-<file:///Users/jatin/workspace/roboprof/data#123456> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Student> .
-_:N5626ce80c50d4b79a11214959f711496 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Machine_learning" .
-<file:///Users/jatin/workspace/roboprof/data#123456> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:N667430a4b4c745229362553cb1caf0df .
-<file:///Users/jatin/workspace/roboprof/data#987654> <http://xmlns.com/foaf/0.1/mbox> "alicejohnson@example.com" .
-<file:///Users/jatin/workspace/roboprof/data#789123> <http://xmlns.com/foaf/0.1/mbox> "evabrown@example.com" .
-_:N84701fa77d4643b08fc62ea793863730 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
-_:N32b0b9cec4794d159491f04b513cdd7f <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
-_:Ne54e342bc4c14e9e8573faed1a23ef55 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Recommender_system" .
-_:N5626ce80c50d4b79a11214959f711496 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Recommender_system" .
-_:N46052047aa684419b7928591d13c80d2 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6721" .
-<file:///Users/jatin/workspace/roboprof/data#654321> <http://xmlns.com/foaf/0.1/mbox> "janesmith@example.com" .
-<file:///Users/jatin/workspace/roboprof/data#987654> <http://xmlns.com/foaf/0.1/givenName> "Alice" .
-<file:///Users/jatin/workspace/roboprof/data#456789> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Student> .
-<file:///Users/jatin/workspace/roboprof/data#987654> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:Nd7aa00104eef4da09088d2449c7e1bac .
-<file:///Users/jatin/workspace/roboprof/data#987654> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Student> .
-<file:///Users/jatin/workspace/roboprof/data#456789> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:N84701fa77d4643b08fc62ea793863730 .
-_:N667430a4b4c745229362553cb1caf0df <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6721" .
-<file:///Users/jatin/workspace/roboprof/data#987654> <http://xmlns.com/foaf/0.1/familyName> "Johnson" .
-_:Nd7aa00104eef4da09088d2449c7e1bac <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
-_:N6c589e9910934cc2815cb126003fb26e <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Deep_learning" .
-<file:///Users/jatin/workspace/roboprof/data#456789> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:N32b0b9cec4794d159491f04b513cdd7f .
-<file:///Users/jatin/workspace/roboprof/data#987654> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:Ne54e342bc4c14e9e8573faed1a23ef55 .
-_:N957f18b4a8c5409887fb57a6e899db31 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Machine_learning" .
-<file:///Users/jatin/workspace/roboprof/data#987654> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:N1d5b81263e2f4376b5a6997a98d01901 .
-_:N1c38be9a473a4e95a4f04946eb4e5252 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Recommender_system" .
-_:N09de1067a5db4cd799542b9d2cceff46 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
-_:N46052047aa684419b7928591d13c80d2 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "A" .
+_:N6cbeb90fd15945cb8b721466315707dc <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Deep Learning" .
+_:N7e884ea40bb54c1d8278380a13a5f2ca <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Recommender systems" .
+<file:///Users/jatin/workspace/roboprof/data#456789> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:N961551249bad4d6a8f352c1c6ba6a215 .
+_:Nb3427e0ea7cf4e3b8beb439fbeb3d3fe <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Recommender systems" .
+<file:///Users/jatin/workspace/roboprof/data#987654> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:N81eb5b5152154592b9be81c71ca11d61 .
+<file:///Users/jatin/workspace/roboprof/data#987654> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#IDNumber> "987654" .
 <file:///Users/jatin/workspace/roboprof/data#789123> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#IDNumber> "789123" .
-_:Ne54e342bc4c14e9e8573faed1a23ef55 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
-_:N5626ce80c50d4b79a11214959f711496 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
-<file:///Users/jatin/workspace/roboprof/data#654321> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#IDNumber> "654321" .
-_:N09de1067a5db4cd799542b9d2cceff46 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "C+" .
-_:N91ca705c80784d71bf74525ff6f99779 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
+<file:///Users/jatin/workspace/roboprof/data#789123> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:Nc01026744ea84b1aa072576d99193bf1 .
+_:Naf7fd5e9eec14914ab316e8647fc4d40 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "B+" .
+_:N6cbeb90fd15945cb8b721466315707dc <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6721" .
+<file:///Users/jatin/workspace/roboprof/data#789123> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:Nbd3110ed99e44a97a326850a07f963f8 .
+_:N1a2a54bb6b4d4b6c93e69952566a785f <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "C+" .
+_:N0cb56f93965e42b1a3e769cd58d589c0 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "A" .
+_:N961551249bad4d6a8f352c1c6ba6a215 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Recommender systems" .
+_:Naf7fd5e9eec14914ab316e8647fc4d40 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6721" .
+_:N3df0dcebf6c4403b9c7520808e439ef5 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
+_:Nbd3110ed99e44a97a326850a07f963f8 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Natural Language Processing" .
+<file:///Users/jatin/workspace/roboprof/data#123456> <http://xmlns.com/foaf/0.1/familyName> "Doe" .
+_:N4a0d0676205e44aba5291664f9956317 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Natural Language Processing" .
+_:N81eb5b5152154592b9be81c71ca11d61 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Machine Learning" .
 <file:///Users/jatin/workspace/roboprof/data#456789> <http://xmlns.com/foaf/0.1/familyName> "Williams" .
-_:Ne14fa33f71c24240980c7a452bd119cb <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Natural_language_processing" .
-_:N667430a4b4c745229362553cb1caf0df <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "B+" .
-<file:///Users/jatin/workspace/roboprof/data#123456> <http://xmlns.com/foaf/0.1/givenName> "John" .
-<file:///Users/jatin/workspace/roboprof/data#654321> <http://xmlns.com/foaf/0.1/givenName> "Jane" .
-<file:///Users/jatin/workspace/roboprof/data#789123> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:N46052047aa684419b7928591d13c80d2 .
-_:N957f18b4a8c5409887fb57a6e899db31 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Recommender_system" .
-_:N86286867acda42fc9ea0a111f67d6170 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "A-" .
-_:Ne54e342bc4c14e9e8573faed1a23ef55 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Machine_learning" .
+_:Nbd3110ed99e44a97a326850a07f963f8 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6721" .
+<file:///Users/jatin/workspace/roboprof/data#654321> <http://xmlns.com/foaf/0.1/mbox> "janesmith@example.com" .
+<file:///Users/jatin/workspace/roboprof/data#456789> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#IDNumber> "456789" .
+<file:///Users/jatin/workspace/roboprof/data#987654> <http://xmlns.com/foaf/0.1/familyName> "Johnson" .
+_:N50206e8be00443089fb4d2f756a734dd <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "A" .
+<file:///Users/jatin/workspace/roboprof/data#456789> <http://xmlns.com/foaf/0.1/givenName> "Bob" .
+<file:///Users/jatin/workspace/roboprof/data#789123> <http://xmlns.com/foaf/0.1/familyName> "Brown" .
+_:Nbbf5ff31cd044a61b05506db3a70eb18 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Recommender systems" .
+_:Nbbf5ff31cd044a61b05506db3a70eb18 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
+_:N7e884ea40bb54c1d8278380a13a5f2ca <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
+_:Nb3427e0ea7cf4e3b8beb439fbeb3d3fe <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
+<file:///Users/jatin/workspace/roboprof/data#654321> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:N7e884ea40bb54c1d8278380a13a5f2ca .
+<file:///Users/jatin/workspace/roboprof/data#654321> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:N0cb56f93965e42b1a3e769cd58d589c0 .
+_:N3df0dcebf6c4403b9c7520808e439ef5 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "C+" .
+<file:///Users/jatin/workspace/roboprof/data#987654> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:N3df0dcebf6c4403b9c7520808e439ef5 .
+<file:///Users/jatin/workspace/roboprof/data#456789> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:Nb3427e0ea7cf4e3b8beb439fbeb3d3fe .
 <file:///Users/jatin/workspace/roboprof/data#654321> <http://xmlns.com/foaf/0.1/familyName> "Smith" .
-_:N1d5b81263e2f4376b5a6997a98d01901 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6721" .
-<file:///Users/jatin/workspace/roboprof/data#789123> <http://xmlns.com/foaf/0.1/givenName> "Eva" .
-_:Ne18c38eb625c4c22a5bd4ffae5595d79 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Deep_learning" .
-_:N91ca705c80784d71bf74525ff6f99779 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "A" .
-_:Ne14fa33f71c24240980c7a452bd119cb <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6721" .
-<file:///Users/jatin/workspace/roboprof/data#456789> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:N09de1067a5db4cd799542b9d2cceff46 .
-_:N6c589e9910934cc2815cb126003fb26e <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Natural_language_processing" .
-<file:///Users/jatin/workspace/roboprof/data#789123> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Student> .
-_:N84701fa77d4643b08fc62ea793863730 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Machine_learning" .
-<file:///Users/jatin/workspace/roboprof/data#654321> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:N91ca705c80784d71bf74525ff6f99779 .
-<file:///Users/jatin/workspace/roboprof/data#987654> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:Ne14fa33f71c24240980c7a452bd119cb .
+_:N1a2a54bb6b4d4b6c93e69952566a785f <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
+_:Nbf2fbb01ef0443238d2080a623e22ad2 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "A-" .
+_:N45e185e967eb4b08a36d949ac9d19594 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "A-" .
+<file:///Users/jatin/workspace/roboprof/data#654321> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Student> .
+<file:///Users/jatin/workspace/roboprof/data#987654> <http://xmlns.com/foaf/0.1/mbox> "alicejohnson@example.com" .
+_:N4a0d0676205e44aba5291664f9956317 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6721" .
+_:N7e884ea40bb54c1d8278380a13a5f2ca <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Machine Learning" .
+_:Nbd3110ed99e44a97a326850a07f963f8 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Deep Learning" .
+_:Nb3427e0ea7cf4e3b8beb439fbeb3d3fe <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Machine Learning" .
+<file:///Users/jatin/workspace/roboprof/data#123456> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:Nbbf5ff31cd044a61b05506db3a70eb18 .
+<file:///Users/jatin/workspace/roboprof/data#789123> <http://xmlns.com/foaf/0.1/mbox> "evabrown@example.com" .
+_:N4a0d0676205e44aba5291664f9956317 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Deep Learning" .
+_:N81eb5b5152154592b9be81c71ca11d61 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
+_:N961551249bad4d6a8f352c1c6ba6a215 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
+<file:///Users/jatin/workspace/roboprof/data#987654> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:Nbf2fbb01ef0443238d2080a623e22ad2 .
+_:Nc01026744ea84b1aa072576d99193bf1 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6721" .
+_:N6cbeb90fd15945cb8b721466315707dc <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Natural Language Processing" .
+<file:///Users/jatin/workspace/roboprof/data#456789> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Student> .
+<file:///Users/jatin/workspace/roboprof/data#987654> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Student> .
+<file:///Users/jatin/workspace/roboprof/data#123456> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Student> .
+<file:///Users/jatin/workspace/roboprof/data#123456> <http://xmlns.com/foaf/0.1/givenName> "John" .
+<file:///Users/jatin/workspace/roboprof/data#123456> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:Naf7fd5e9eec14914ab316e8647fc4d40 .
+_:N81eb5b5152154592b9be81c71ca11d61 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Recommender systems" .
+_:N50206e8be00443089fb4d2f756a734dd <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
+<file:///Users/jatin/workspace/roboprof/data#987654> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:N6cbeb90fd15945cb8b721466315707dc .
+_:N961551249bad4d6a8f352c1c6ba6a215 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Machine Learning" .
+<file:///Users/jatin/workspace/roboprof/data#654321> <http://xmlns.com/foaf/0.1/givenName> "Jane" .
+_:N45e185e967eb4b08a36d949ac9d19594 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
 <file:///Users/jatin/workspace/roboprof/data#123456> <http://xmlns.com/foaf/0.1/mbox> "johndoe@example.com" .
-_:N32b0b9cec4794d159491f04b513cdd7f <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "A" .
-<file:///Users/jatin/workspace/roboprof/data#654321> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:N1c38be9a473a4e95a4f04946eb4e5252 .
-_:N1c38be9a473a4e95a4f04946eb4e5252 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
-_:N6c589e9910934cc2815cb126003fb26e <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6721" .
-_:Ne14fa33f71c24240980c7a452bd119cb <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Deep_learning" .
-<file:///Users/jatin/workspace/roboprof/data#456789> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:N5626ce80c50d4b79a11214959f711496 .
-_:N84701fa77d4643b08fc62ea793863730 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Recommender_system" .
+<file:///Users/jatin/workspace/roboprof/data#987654> <http://xmlns.com/foaf/0.1/givenName> "Alice" .
+<file:///Users/jatin/workspace/roboprof/data#789123> <http://xmlns.com/foaf/0.1/givenName> "Eva" .
+<file:///Users/jatin/workspace/roboprof/data#456789> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:N50206e8be00443089fb4d2f756a734dd .
+<file:///Users/jatin/workspace/roboprof/data#456789> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:N1a2a54bb6b4d4b6c93e69952566a785f .
+<file:///Users/jatin/workspace/roboprof/data#123456> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#CompletedCourse> _:N45e185e967eb4b08a36d949ac9d19594 .
+<file:///Users/jatin/workspace/roboprof/data#456789> <http://xmlns.com/foaf/0.1/mbox> "bobwilliams@example.com" .
+<file:///Users/jatin/workspace/roboprof/data#789123> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Student> .
+_:Nbbf5ff31cd044a61b05506db3a70eb18 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#competencies> "Machine Learning" .
+_:N0cb56f93965e42b1a3e769cd58d589c0 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Course> "COMP6741" .
+<file:///Users/jatin/workspace/roboprof/data#654321> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#IDNumber> "654321" .
+<file:///Users/jatin/workspace/roboprof/data#123456> <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Competency> _:N4a0d0676205e44aba5291664f9956317 .
+_:Nc01026744ea84b1aa072576d99193bf1 <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#Grade> "A" .

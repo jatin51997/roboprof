@@ -1,0 +1,26 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+SELECT ?wikiURI ?topicName (?course as ?courseURI) ?courseName  (COUNT(?lectureNumber) AS ?occurrences)  (GROUP_CONCAT(DISTINCT CONCAT("Lecture ", STR(?lectureNum)); separator=", ") AS ?lectureNumbers)
+WHERE {
+  ?topic a voc:Topic;
+        rdfs:seeAlso ?wikiURI;
+          voc:TopicProvenance ?lectureContent;
+          foaf:name ?topicName.    
+  
+  ?lectures a voc:Lecture;       
+          voc:LectureContent ?lectureContent;
+        voc:LectureNumber ?lectureNum;
+          voc:BelongsTo ?course.
+  
+  ?course a voc:Course;
+          voc:courseSubject ?courseSubject;
+          voc:courseNumber ?courseNumber.
+  
+   BIND(CONCAT("Lecture ", ?lectureNum) AS ?lectureNumber).
+  BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName).
+  FILTER(?wikiURI = <https://www.wikidata.org/wiki/Q197536>).
+}
+GROUP BY ?wikiURI ?topicName ?course ?courseName
+ORDER BY DESC(?occurrences)
