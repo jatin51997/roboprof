@@ -108,20 +108,20 @@ input layer
 13Deep Learning for NLP 
 Deep learning models for  NLP use:
 ▪Vector representation of words 
-❑i.e., word embeddings
+i.e., word embeddings
 ▪Neural network structures
-❑Recurrent Neural Networks (RNNs)
-❑Convolutional Networks (CNNs)
-❑Recursive Neural Networks 
-❑…
+Recurrent Neural Networks (RNNs)
+Convolutional Networks (CNNs)
+Recursive Neural Networks 
+…
 14Word Embeddings
 ▪To do NLP with neural networks, words need to be represented 
 as vectors
 ▪Traditional approach: “one hot vector”
-❑Binary vector
-❑Length = | vocab |
-❑1 in the position of the word id, the rest are 0
-❑[0, 0, 0, 1, 0, 0, 0, . . .]
+Binary vector
+Length = | vocab |
+1 in the position of the word id, the rest are 0
+[0, 0, 0, 1, 0, 0, 0, . . .]
 ▪However, this does not represent word meaning ; -(
 http://ahogrammer.com/2017/03/22/why -is-word -embeddings -important -for-natural -language -processing/▪Similar words such as python and ruby
 should have similar vector representations
@@ -140,17 +140,17 @@ should have similar vector representations
 ▪Popular embedding method
 ▪Very fast to train
 ▪Code available on the web
-❑https://code.google.com/archive/p/word2vec
+https://code.google.com/archive/p/word2vec
 ▪Idea: 
-❑predict rather than count 
-❑use unsupervised texts from the Web 
+predict rather than count 
+use unsupervised texts from the Web 
 17Word2vec
 ▪Instead of counting how often each word woccurs near 
 "apricot"
 ▪Train a classifier on a binary prediction task:
-❑Is w likely to show up near “ cat"?
+Is w likely to show up near “ cat"?
 ▪In the end, we do not actually care about this task
-❑But we will take the learned weights as the word embeddings
+But we will take the learned weights as the word embeddings
 ▪Use as training set readily available texts, so no need for 
 hand-labeled supervision !
 18Word2vec Models
@@ -404,12 +404,12 @@ Project 300 dimensions down into 2
 source: Luger (2005)Deep Learning for NLP 
 Deep learning models for  NLP use:
 ▪Vector representation of words 
-❑i.e., word embeddings
+i.e., word embeddings
 ▪Neural network structures
-❑Recurrent Neural Networks (RNNs)
-❑Recursive Neural Networks 
-❑Convolutional Networks (CNNs)
-❑…
+Recurrent Neural Networks (RNNs)
+Recursive Neural Networks 
+Convolutional Networks (CNNs)
+…
 40CNNs for NLP
 41
 [Hobson Lane, Cole Howard, and Hannes Max Hapke: Natural Language Processing in Action . Manning Publications Co., 2019. 
@@ -420,7 +420,7 @@ https://concordiauniversity.on.worldcat.org/oclc/1102387045]
 Recurrent Neural Networks
 ▪To model sequences of decisions, such as machine 
 translation, language modelling, ….
-❑e.g., A word at position n can influence a word/decision at 
+e.g., A word at position n can influence a word/decision at 
 position n+t
 ▪decision/output from the past can influence current 
 decision/output
@@ -428,16 +428,16 @@ decision/output
 http://www.wildml.com/2015/09/recurrent -neural -networks -tutorial -part-1-introduction -to-rnns/
 43Cool Applications
 ▪RNNs + word embeddings 
-❑Google Translate 
+Google Translate 
 ▪As of July 2017, uses an RNN + word embeddings (called Neural 
 Machine Translation (NMT) )
 ▪Input sequence: words in a source sentence 
 ▪Output sequence: words in the target language
-❑Dialogue Systems
+Dialogue Systems
 ▪CNNs + RNNs + word embeddings
-❑Image Captioning
-❑Video to Text Descriptions
-❑Visual Question Answering
+Image Captioning
+Video to Text Descriptions
+Visual Question Answering
 ▪…
 44Demo Website
 Input: an image + a natural language question 

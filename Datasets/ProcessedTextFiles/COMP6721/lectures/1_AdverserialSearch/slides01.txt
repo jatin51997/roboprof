@@ -3,81 +3,81 @@ Adversarial Search2Motivation
 GO
 chess
  tic-tac-toe3Today
-◼State Space Search for Game Playing
-❑MiniMax
-❑Alpha -beta pruning
-❑Stochastic Games
-◼Where we are today
+State Space Search for Game Playing
+MiniMax
+Alpha -beta pruning
+Stochastic Games
+Where we are today
 5Adversarial Search
-◼Classical application for heuristic search
-❑simple games: exhaustively searchable
-❑complex games: only partial search possible
-❑additional problem: playing against opponent
-◼Here, we look at 2 -player adversarial games
-❑win, lose, or tie6Types of Games
-◼Perfect Information
-❑A game with the perfect information is that in which agents can 
+Classical application for heuristic search
+simple games: exhaustively searchable
+complex games: only partial search possible
+additional problem: playing against opponent
+Here, we look at 2 -player adversarial games
+win, lose, or tie6Types of Games
+Perfect Information
+A game with the perfect information is that in which agents can 
 look into the complete board. Agents have all the information about 
 the game, and they can see each other moves also. 
-❑Examples: Chess, Checkers, Go, etc.
-◼Imperfect Information
-❑Game state only partially observable, choices by opponent are not 
+Examples: Chess, Checkers, Go, etc.
+Imperfect Information
+Game state only partially observable, choices by opponent are not 
 visible (hidden)
-❑Example: Battleship, Stratego, many card games, etc.7Types of Games (II)
-◼Deterministic games
-❑No games of chance (e.g., rolling dice)
-❑Examples: Chess, Tic -Tac-Toe, Go, etc.
-◼Non-deterministic games
-❑Games with unpredictable (random) events (involving chance or luck)
-❑Example: Backgammon, Monopoly, Poker, etc.8Types of Games (III)
-◼Zero-Sum Game
-❑If the total gains of one player are added up, and the 
+Example: Battleship, Stratego, many card games, etc.7Types of Games (II)
+Deterministic games
+No games of chance (e.g., rolling dice)
+Examples: Chess, Tic -Tac-Toe, Go, etc.
+Non-deterministic games
+Games with unpredictable (random) events (involving chance or luck)
+Example: Backgammon, Monopoly, Poker, etc.8Types of Games (III)
+Zero-Sum Game
+If the total gains of one player are added up, and the 
 total losses are subtracted, they will sum to zero
 (example: cutting a cake) 
-❑A gain by one player must be matched by a loss by the 
+A gain by one player must be matched by a loss by the 
 other player
-❑One player tries to maximize a single value, the other 
+One player tries to maximize a single value, the other 
 player tries to minimize it
-❑Examples: Checkers, Chess, etc.
-◼Non-Zero-Sum Game
-❑Win-Win or Lose -Lose type games
-❑Famous example: The Prisoner’s Dilemma
+Examples: Checkers, Chess, etc.
+Non-Zero-Sum Game
+Win-Win or Lose -Lose type games
+Famous example: The Prisoner’s Dilemma
 https://en.wikipedia.org/wiki/Prisoner%27s_dilemma9Today
-◼State Space Search for Game Playing
-❑MiniMax
-❑Alpha -beta pruning
-❑Stochastic games
-◼Where we are today
+State Space Search for Game Playing
+MiniMax
+Alpha -beta pruning
+Stochastic games
+Where we are today
 10Example: Game of Nim
-◼Rules
-❑2 players start with a pile of tokens
-❑move: split (any) existing pile into two non-empty
+Rules
+2 players start with a pile of tokens
+move: split (any) existing pile into two non-empty
 differently -sized piles
-❑game ends when no pile can be unevenly split
-❑player who cannot make his move loses11State Space of Game Nim
-◼start with one pile of tokens
-◼each step has to divide one pile 
+game ends when no pile can be unevenly split
+player who cannot make his move loses11State Space of Game Nim
+start with one pile of tokens
+each step has to divide one pile 
 of tokens into 2 non -empty piles 
 of different size
-◼player without a move left loses 
+player without a move left loses 
 game
 source: G. Luger (2005) 12MiniMax Search
-◼Game between two opponents, MIN and MAX
-❑MAX tries to win, and 
-❑MIN tries to minimize MAX’s score
-◼Existing heuristic search methods do not work
-❑would require a helpful opponent
-❑Need to incorporate “hostile” moves into search strategy13Exhaustive MiniMax Search 
-◼For small games where exhaustive search is feasible
-◼Procedure:
+Game between two opponents, MIN and MAX
+MAX tries to win, and 
+MIN tries to minimize MAX’s score
+Existing heuristic search methods do not work
+would require a helpful opponent
+Need to incorporate “hostile” moves into search strategy13Exhaustive MiniMax Search 
+For small games where exhaustive search is feasible
+Procedure:
 1.build complete game tree
 2.label each level according to player’s turn (MAX or MIN)
 3.label leaves with a utility function to determine the outcome 
 of the game
-◼e.g., (0, 1) or ( -1, 0, 1)
+e.g., (0, 1) or ( -1, 0, 1)
 4.propagate this value up:
-◼if parent=MAX, give it max value of children
-◼if parent=MIN, give it min value of children
+if parent=MAX, give it max value of children
+if parent=MIN, give it min value of children
 5.Select best next move for player at root as the move leading 
 to the child with the highest value (for MAX) or lowest 
 values (for MIN) 14
@@ -86,27 +86,27 @@ Bold lines indicate
 forced win for MAX 
 source: G. Luger (2005) 0: win for MIN
 1: win for MAX15n-ply MiniMax with Heuristic
-◼Exhaustive search for interesting games is rarely 
+Exhaustive search for interesting games is rarely 
 feasible
-◼Search only to predefined level
-❑called n-ply look -ahead
-❑n is number of levels
-◼No exhaustive search
-❑nodes evaluated with heuristics and not win/loss
-❑indicates best state that can be reached
-❑horizon effect
-◼Games with opponent
-❑simple strategy: try to maximize difference between 
+Search only to predefined level
+called n-ply look -ahead
+n is number of levels
+No exhaustive search
+nodes evaluated with heuristics and not win/loss
+indicates best state that can be reached
+horizon effect
+Games with opponent
+simple strategy: try to maximize difference between 
 players using a heuristic function e(n)Heuristic Function for 2 -player games
-◼simple strategy: 
-❑try to maximize difference between MAX’s game and MIN’s 
+simple strategy: 
+try to maximize difference between MAX’s game and MIN’s 
 game 
-◼typically called e(n)
-◼e(n) is a heuristic that estimates how favorable a 
+typically called e(n)
+e(n) is a heuristic that estimates how favorable a 
 node n is for MAX
-❑e(n) > 0 --> n is favorable to MAX 
-❑e(n) < 0 --> n is favorable to MIN 
-❑e(n) = 0 --> n is neutral 
+e(n) > 0 --> n is favorable to MAX 
+e(n) < 0 --> n is favorable to MIN 
+e(n) = 0 --> n is neutral 
 16Choosing a Heuristic Function e(n)
 17
 18
@@ -134,7 +134,7 @@ MiniMax with Fixed Ply Depth
 Leaf nodes show the actual heuristic value e(n)
 Internal nodes show back-upheuristic value
 source: G. Luger (2005) Best next move Example: e(n) for Tic -Tac-Toe
-◼Possible e(n)
+Possible e(n)
 number of rows, columns, and diagonals open for MAX
 -number of rows, columns, and diagonals open for MIN  
 + , if n is a forced win for MAX
@@ -150,19 +150,19 @@ Two-ply MiniMax: MAX’s possible 2ndmoves
 source: G. Luger (2005) 27
 Two-ply minimax: MAX’s move at end
 source: G. Luger (2005) 28Today
-◼State Space Search for Game Playing
-❑MiniMax
-❑Alpha -beta pruning
-❑Stochastic games
-◼Where we are today
+State Space Search for Game Playing
+MiniMax
+Alpha -beta pruning
+Stochastic games
+Where we are today
 29Alpha -Beta Pruning
-◼Optimization over MiniMax, that:
-❑ignores (cuts off, prunes) branches of the tree 
+Optimization over MiniMax, that:
+ignores (cuts off, prunes) branches of the tree 
 that cannot possibly lead to a better solution
-❑reduces branching factor
-❑allows deeper search with same effort30Alpha -Beta Pruning: Example 1
-◼With MiniMax, we look at all possible nodes at the n-ply depth
-◼With α -β pruning, we ignore branches that could not possibly 
+reduces branching factor
+allows deeper search with same effort30Alpha -Beta Pruning: Example 1
+With MiniMax, we look at all possible nodes at the n-ply depth
+With α -β pruning, we ignore branches that could not possibly 
 contribute to the final decision
 B will be >= 5
 So we can ignore B’s right 
@@ -176,17 +176,17 @@ So we can ignore E’s right
 branch
 Because C will be 3.
 source: G. Luger (2005) A=min(3, max(5,?))C=max(3, min(0,?), min(2,?))Alpha -Beta Pruning Algorithm
-31◼α :lower bound on the final backed -up value.
-◼β :upper bound on the final backed -up value.
-◼Alpha pruning: 
-❑eg.  if MAX node's α= 6, then the search can prune branches from a MIN 
+31α :lower bound on the final backed -up value.
+β :upper bound on the final backed -up value.
+Alpha pruning: 
+eg.  if MAX node's α= 6, then the search can prune branches from a MIN 
 descendant that has a β<= 6.  
-❑if child β<= ancestor α→prune
-❑
-◼Beta pruning: 
-❑eg. if a MIN node's β= 6, then the search can prune branches from a MAX 
+if child β<= ancestor α→prune
+
+Beta pruning: 
+eg. if a MIN node's β= 6, then the search can prune branches from a MAX 
 descendant that has an α>= 6. 
-❑if ancestor β<= child α→prunevalue ≥6 
+if ancestor β<= child α→prunevalue ≥6 
 value≤5 incompatible… 
 so stop searching the right branch; 
 the value cannot come from there! MAX
@@ -323,26 +323,26 @@ deep cut!Alpha -Beta Pruning: Example 3
 <=1prune
 <=1
 10 nodes explored out of 27 67Efficiency of Alpha -Beta Pruning
-◼Depends on the order of the siblings
-◼In worst case: 
-❑alpha -beta provides no pruning
-◼In best case: 
-❑branching factor is reduced to its square rootAlpha -Beta: Best ordering
+Depends on the order of the siblings
+In worst case: 
+alpha -beta provides no pruning
+In best case: 
+branching factor is reduced to its square rootAlpha -Beta: Best ordering
 68
 Original (arbitrary) game tree
 Best ordering for alpha -betaAlpha -Beta: Best ordering
-◼best ordering: 
+best ordering: 
 1.children of MIN : smallest node first
 2.children of MAX: largest node first
 69
 Alpha -Beta: Best ordering
-◼best ordering: 
+best ordering: 
 1.children of MIN : smallest node first
 2.children of MAX: largest node first
 70
 Alpha -Beta: Best ordering
 71
-◼best ordering: 
+best ordering: 
 1.children of MIN : smallest node first
 2.children of MAX: largest node first
 Alpha -Beta: Best ordering
@@ -352,36 +352,36 @@ Alpha -Beta: Best ordering
 Alpha -Beta: Best ordering
 74
 8 nodes explored out of 27 75Today
-◼State Space Search for Game Playing
-❑MiniMax
-❑Alpha -beta pruning
-❑Stochastic Games
-◼Where we are today
+State Space Search for Game Playing
+MiniMax
+Alpha -beta pruning
+Stochastic Games
+Where we are today
 Backgammon
 source: Russel & Norvig (2010) 
 Stochastic (Non -Deterministic)
 Games
-◼Search tree for games of chance 
-❑white can calculate its own legal moves
-❑but it does not know what black will roll...
-◼Idea: add chance nodes to the search tree
-❑branches indicate possible dice rolls
-❑each branch labeled with the roll and its probability
+Search tree for games of chance 
+white can calculate its own legal moves
+but it does not know what black will roll...
+Idea: add chance nodes to the search tree
+branches indicate possible dice rolls
+each branch labeled with the roll and its probability
 (e.g., 1/6 for a single dice roll)Search Tree for Backgammon
 EXPECTIMINIMAX Algorithm
-◼Calculating E XPECTIMINIMAX
-❑Like MiniMax, but using the weighted sum for Chance nodes:
-❑r is a possible dice roll (or other random event)
-❑P(r) the probability of the event
-❑Result(s, r) is the same state s with dice roll result r
-❑Note: very expensive due to the high branching factor!
-❑See https://en.wikipedia.org/wiki/Expectiminimax
+Calculating E XPECTIMINIMAX
+Like MiniMax, but using the weighted sum for Chance nodes:
+r is a possible dice roll (or other random event)
+P(r) the probability of the event
+Result(s, r) is the same state s with dice roll result r
+Note: very expensive due to the high branching factor!
+See https://en.wikipedia.org/wiki/Expectiminimax
 for the whole algorithm෍𝑃𝑟𝐸𝑥𝑝𝑒𝑐𝑡𝑖𝑚𝑖𝑛𝑖𝑚𝑎𝑥 𝑅𝑒𝑠𝑢𝑙𝑡𝑠,𝑟84Today
-◼State Space Search for Game Playing
-❑MiniMax
-❑Alpha -beta pruning
-❑Stochastic Games
-◼Where we are today
+State Space Search for Game Playing
+MiniMax
+Alpha -beta pruning
+Stochastic Games
+Where we are today
 1992 -1994 -Checkers: 
 Tinsley vs. ChinookMarion Tinsley
 World champion 
@@ -425,36 +425,36 @@ Deep Junior
 2,000,000 pos/sec
 Available at $100
 88892016 –Go: AlphaGo vs Lee Se -dol
-◼GO was always considered a much harder game to automate 
+GO was always considered a much harder game to automate 
 than chess because of its very high branching factor (35 for 
 chess vs 250 for Go!)
-https://www.theverge.com/2016/3/15/11213518/alphago -deepmind -go-match -5-result◼In 2016, AlphaGo beat Lee Sedol in a 
+https://www.theverge.com/2016/3/15/11213518/alphago -deepmind -go-match -5-resultIn 2016, AlphaGo beat Lee Sedol in a 
 five-game match of GO.  
-◼In 2017 AlphaGo beat Ke Jie, the 
+In 2017 AlphaGo beat Ke Jie, the 
 world No.1 ranked player at the time
-◼uses a Monte Carlo tree search 
+uses a Monte Carlo tree search 
 algorithm to find its moves based on 
 knowledge previously "learned" by deep 
 learning902017 –AlphaGo Zero & AlphaZero
 AlphaGo Zero learned the Game by itself, without input of human 
 games
-◼Became better than all old versions after 40 days of training
-◼In the first three days, AlphaGo Zero played 4.9 million games 
+Became better than all old versions after 40 days of training
+In the first three days, AlphaGo Zero played 4.9 million games 
 against itself using reinforcement learning
 AlphaZero can learn other 
 games, like Chess and Shogi
-◼In 2018, it beat the then -
+In 2018, it beat the then -
 best chess program, 
 Stockfish 8 in a 100 -game 
 tournament
-◼Trained using 5,000 tensor 
+Trained using 5,000 tensor 
 processing units (TPUs), run 
 on four TPUs and a 44 -core 
 CPU during matches
 912018 –AlphaZero vs Stockfish 8
 Game commentary: https://www.youtube.com/watch?v=nPexHaFL1uo92Today
-◼State Space Search for Game Playing
-❑MiniMax
-❑Alpha -beta pruning
-❑Stochastic games
-◼Where we are today
+State Space Search for Game Playing
+MiniMax
+Alpha -beta pruning
+Stochastic games
+Where we are today

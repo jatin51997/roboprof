@@ -3,58 +3,58 @@
 @prefix vocdata: <file:///Users/jatin/workspace/roboprof/data#> .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/10_NLP> a voc:Lecture ;
-    voc:BelongsTo vocdata:3131158629 ;
+    voc:BelongsTo vocdata:5325808454 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/10_NLP/readings10.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/10_NLP/slides10.txt> ;
     voc:LectureNumber "10" ;
     foaf:name "NLP" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/11_Optimisation> a voc:Lecture ;
-    voc:BelongsTo vocdata:3131158629 ;
+    voc:BelongsTo vocdata:5325808454 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/11_Optimisation/slides11.txt> ;
     voc:LectureNumber "11" ;
     foaf:name "Optimisation" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/1_AdverserialSearch> a voc:Lecture ;
-    voc:BelongsTo vocdata:3131158629 ;
+    voc:BelongsTo vocdata:5325808454 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/1_AdverserialSearch/slides01.txt> ;
     voc:LectureNumber "1" ;
     foaf:name "AdverserialSearch" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/2_StateSpaceSearch> a voc:Lecture ;
-    voc:BelongsTo vocdata:3131158629 ;
+    voc:BelongsTo vocdata:5325808454 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/2_StateSpaceSearch/slides02.txt> ;
     voc:LectureNumber "2" ;
     foaf:name "StateSpaceSearch" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/3_DecTreeAndClustering> a voc:Lecture ;
-    voc:BelongsTo vocdata:3131158629 ;
+    voc:BelongsTo vocdata:5325808454 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/3_DecTreeAndClustering/assignment01.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/3_DecTreeAndClustering/slides03.txt> ;
     voc:LectureNumber "3" ;
     foaf:name "DecTreeAndClustering" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/4_NaiveBayes> a voc:Lecture ;
-    voc:BelongsTo vocdata:3131158629 ;
+    voc:BelongsTo vocdata:5325808454 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/4_NaiveBayes/slides04.txt> ;
     voc:LectureNumber "4" ;
     foaf:name "NaiveBayes" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/5_ANN> a voc:Lecture ;
-    voc:BelongsTo vocdata:3131158629 ;
+    voc:BelongsTo vocdata:5325808454 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/5_ANN/assignment02.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/5_ANN/slides05.txt> ;
     voc:LectureNumber "5" ;
     foaf:name "ANN" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/6_CNN> a voc:Lecture ;
-    voc:BelongsTo vocdata:3131158629 ;
+    voc:BelongsTo vocdata:5325808454 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/6_CNN/slides06.txt> ;
     voc:LectureNumber "6" ;
     foaf:name "CNN" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/7_IntroToDL> a voc:Lecture ;
-    voc:BelongsTo vocdata:3131158629 ;
+    voc:BelongsTo vocdata:5325808454 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/7_IntroToDL/assignment03.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/7_IntroToDL/readings07.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/7_IntroToDL/slides07.txt> ;
@@ -62,20 +62,20 @@
     foaf:name "IntroToDL" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/8_IntroToNLP> a voc:Lecture ;
-    voc:BelongsTo vocdata:3131158629 ;
+    voc:BelongsTo vocdata:5325808454 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/8_IntroToNLP/assignment04.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/8_IntroToNLP/slides08.txt> ;
     voc:LectureNumber "8" ;
     foaf:name "IntroToNLP" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/9_DLforNLP> a voc:Lecture ;
-    voc:BelongsTo vocdata:3131158629 ;
+    voc:BelongsTo vocdata:5325808454 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/9_DLforNLP/slides09.txt> ;
     voc:LectureNumber "9" ;
     foaf:name "DLforNLP" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/1_IntelligentSystemsIntroduction> a voc:Lecture ;
-    voc:BelongsTo vocdata:6902091415 ;
+    voc:BelongsTo vocdata:8562774643 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/1_IntelligentSystemsIntroduction/lab01.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/1_IntelligentSystemsIntroduction/slides01.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/1_IntelligentSystemsIntroduction/worksheet01.txt> ;
@@ -83,7 +83,7 @@
     foaf:name "IntelligentSystemsIntroduction" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs> a voc:Lecture ;
-    voc:BelongsTo vocdata:6902091415 ;
+    voc:BelongsTo vocdata:8562774643 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/worksheet02.txt>,
@@ -93,7 +93,7 @@
     foaf:name "KnowledgeGraphs" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies> a voc:Lecture ;
-    voc:BelongsTo vocdata:6902091415 ;
+    voc:BelongsTo vocdata:8562774643 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt>,
@@ -102,7 +102,7 @@
     foaf:name "KnowledgeGraphsVocabulariesandOntologies" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData> a voc:Lecture ;
-    voc:BelongsTo vocdata:6902091415 ;
+    voc:BelongsTo vocdata:8562774643 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/lab04.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/worksheet04.txt>,
@@ -114,7 +114,7 @@
     foaf:name "KnowledgeBaseQueriesandLinkedOpenData" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems> a voc:Lecture ;
-    voc:BelongsTo vocdata:6902091415 ;
+    voc:BelongsTo vocdata:8562774643 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/worksheet05.txt>,
@@ -123,7 +123,7 @@
     foaf:name "RecommenderSystems" .
 
 <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems> a voc:Lecture ;
-    voc:BelongsTo vocdata:6902091415 ;
+    voc:BelongsTo vocdata:8562774643 ;
     voc:LectureContent <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt>,
         <file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt>,
         <https://en.wikipedia.org/wiki/K-means_clustering>,

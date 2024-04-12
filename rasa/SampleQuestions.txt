@@ -1,13 +1,12 @@
 List all courses offered by Concordia University.
 In which courses is deep learning discussed?
-Which topics are covered in INTELLIGENT SYSTEMS during lecture number 3?
+Which topics are covered in INTELLIGENT SYSTEMS during lecture3?
 List all courses offered by Concordia University within COMP.
 What materials are recommended for deep learning in COMP 6741?
 How many credits is COMP 6741 worth?
 For COMP 6741, what additional resources are available?
 Detail the content available for lecture3 in COMP 6741.
 What reading materials are recommended for studying deep learning in COMP 6721?
-
 What competencies does a student gain after completing COMP 6741?
 What grades did 123456 achieve in COMP 6741?
 Which students have completed COMP 6741?

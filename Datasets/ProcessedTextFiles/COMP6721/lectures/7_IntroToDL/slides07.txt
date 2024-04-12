@@ -90,28 +90,28 @@ optimization method ( e.g.stochastic gradient descent)
 6. Repeat (1) -(4) to converge to a minimal errorInitial Drawbacks
 1.Standard backpropagation with sigmoid activation function 
 does not scale well with multiple layers
-❑Weight of early layers change too slowly (no learning)
+Weight of early layers change too slowly (no learning)
 2.Overfitting
-❑Large network -> lots of parameters -> increased capacity to 
+Large network -> lots of parameters -> increased capacity to 
 “learn by heart”
 3.Multilayered ANNs need lots of labeled data 
-❑Most data is not labeled :(
+Most data is not labeled :(
 33Initial Drawbacks (1)
 1. Standard gradient -based backpropagation does not scale well with 
 multiple layers…
 When we multiply the gradients many times (for 
 each layer),  it can lead to …
 a)Vanishing gradient problem: 
-❑gradients shrink exponentially with the 
+gradients shrink exponentially with the 
 number of layers 
-❑so weight updates get smaller and smaller
-❑and weights of early layers change very 
+so weight updates get smaller and smaller
+and weights of early layers change very 
 slowly and network learns very very slowly
 b)Exploding gradient problem:
-❑multiplying gradients could also make them 
+multiplying gradients could also make them 
 grow exponentially.  
-❑so weight updates get larger and larger
-❑and the weights can become so large as to 
+so weight updates get larger and larger
+and the weights can become so large as to 
 overflow and result in NaN values
 34
 Initial Drawbacks ( 1)
@@ -126,17 +126,17 @@ gradients)
 35Initial Drawbacks (2)
 https://www.kdnuggets.com/2015/04/preventing -overfitting -neural -networks.html
 2.Overfitting
-❑Large network -> lots of parameters -> 
+Large network -> lots of parameters -> 
 increased capacity to “learn by heart”
-❑Solutions:
-❑Regularization: 
-❑modify the error function that we minimize to penalize large weights.
-❑where f(w)grows larger as the weights grow larger and λis the 
+Solutions:
+Regularization: 
+modify the error function that we minimize to penalize large weights.
+where f(w)grows larger as the weights grow larger and λis the 
 regularization strength
-❑Dropout: 
-❑keep a neuron active with some probability por setting it to 
+Dropout: 
+keep a neuron active with some probability por setting it to 
 zero otherwise. 
-❑prevents the network from becoming too dependent on any 
+prevents the network from becoming too dependent on any 
 one neuron. 
 36Initial Drawbacks (3)
 3.Multilayered ANNs need lots of labeled data for training. To 
@@ -220,12 +220,12 @@ can be re -used in
 similar tasks. 
 41Slide from Y. LeCunAutomatic Feature Learning
 https://www.strong.io/blog -images/movie -posters/Slide6.png42Automatic Feature Learning
-❑Each layer learns more abstract features that are then combined / 
+Each layer learns more abstract features that are then combined / 
 composed into higher -level features automatically
-❑Like the human brain … 
-❑ has many layers of neurons which act as feature detectors
-❑ detecting more and more abstract features as you go up
-❑E.g. to classify an image of a cat:
+Like the human brain … 
+ has many layers of neurons which act as feature detectors
+ detecting more and more abstract features as you go up
+E.g. to classify an image of a cat:
 ▪Bottom Layers: Edge detectors, curves, corners straight lines
 ▪Middle Layers: Fur patterns, eyes, ears
 ▪Higher Layers: Body, head, legs
@@ -236,11 +236,11 @@ learning multiple levels of representation / abstraction.
 43Automatic Feature Learning
 44What Types of Features?
 ▪For image recognition 
-❑ pixel -> edge -> texton -> motif -> part -> object
+ pixel -> edge -> texton -> motif -> part -> object
 ▪For NLP
-❑ character -> word ->  constituents -> clause -> sentence -> discourse
+ character -> word ->  constituents -> clause -> sentence -> discourse
 ▪For speech:
-❑ sample →spectral band -> sound -> … phone -> phoneme -> word
+ sample →spectral band -> sound -> … phone -> phoneme -> word
 Figure from Y LeCun
  45Eg: Learning Image Features
 Faces CarsElephants Chairs

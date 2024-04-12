@@ -189,7 +189,7 @@ Notes and Further
 Reading
 4.6
 (223) 
- 223  } Data integration needs agreements on§ terms • “translator”, “author”§ categories used • “Person”, “literature”§ relationships among those • “an author is also a Person…”, “historical ﬁction is a narrower term than ﬁction”• ie, new relationships can be deduced
+ 223  } Data integration needs agreements on§ terms • “translator”, “author”§ categories used • “Person”, “literature”§ relationships among those • “an author is also a Person…”, “historical ﬁction is a narrower term than ﬁction”• ie, new relationships can be deduced
 René Witte
 Introduction
 Review
@@ -220,7 +220,7 @@ Notes and Further
 Reading
 4.7
 (224) 
- 224  } There is a need for “languages” to deﬁne such vocabularies§ to deﬁne those vocabularies§ to assign clear “semantics” on how new relationships can be deduced
+ 224  } There is a need for “languages” to deﬁne such vocabularies§ to deﬁne those vocabularies§ to assign clear “semantics” on how new relationships can be deduced
 René Witte
 Introduction
 Review
@@ -251,7 +251,7 @@ Notes and Further
 Reading
 4.8
 (69) 
- 69  } Think of well known traditional vocabularies:§ use the term “novel”§ “every novel is a ﬁction”§ “«The Glass Palace» is a novel”§ etc.} RDFS deﬁnes resources and classes:§ everything in RDF is a “resource”§ “classes” are also resources, but…§ …they are also a collection of possible resources (i.e., “individuals”)• “ﬁction”, “novel”, …
+ 69  } Think of well known traditional vocabularies:§ use the term “novel”§ “every novel is a ﬁction”§ “«The Glass Palace» is a novel”§ etc.} RDFS deﬁnes resources and classes:§ everything in RDF is a “resource”§ “classes” are also resources, but…§ …they are also a collection of possible resources (i.e., “individuals”)• “ﬁction”, “novel”, …
 René Witte
 Introduction
 Review
@@ -282,7 +282,7 @@ Notes and Further
 Reading
 4.9
 (70) 
- 70  } Relationships are deﬁned among resources:§ “typing”: an individual belongs to a speciﬁc class • “«The Glass Palace» is a novel”• to be more precise: “«http://.../000651409X» is a novel”§ “subclassing”: all instances of one are also the instances of the other (“every novel is a ﬁction”)} RDFS formalizes these notions in RDF
+ 70  } Relationships are deﬁned among resources:§ “typing”: an individual belongs to a speciﬁc class • “«The Glass Palace» is a novel”• to be more precise: “«http://.../000651409X» is a novel”§ “subclassing”: all instances of one are also the instances of the other (“every novel is a ﬁction”)} RDFS formalizes these notions in RDF
 René Witte
 Introduction
 Review
@@ -313,7 +313,7 @@ Notes and Further
 Reading
 4.10
 (71) 
- 71  } RDFS deﬁnes the meaning of these terms§ (these are all special URI-s, we just use the namespace abbreviation)
+ 71  } RDFS deﬁnes the meaning of these terms§ (these are all special URI-s, we just use the namespace abbreviation)
 rdf:type  
 #Novel  
 http://…isbn/000651409X  
@@ -453,7 +453,7 @@ Notes and Further
 Reading
 4.14
 (245) 
- 245  } For individuals:§ owl:sameAs: two URIs refer to the same concept (“individual”)§ owl:differentFrom: negation of owl:sameAs
+ 245  } For individuals:§ owl:sameAs: two URIs refer to the same concept (“individual”)§ owl:differentFrom: negation of owl:sameAs
 René Witte
 Introduction
 Review
@@ -519,7 +519,7 @@ Notes and Further
 Reading
 4.16
 (247) 
- 247  } Linking our example of Amsterdam from one data set (DBpedia) to the other (Geonames):
+ 247  } Linking our example of Amsterdam from one data set (DBpedia) to the other (Geonames):
 <http://dbpedia.org/resource/Amsterdam>   owl:sameAs <http://sws.geonames.org/2759793>; } This is the main mechanism of “Linking” in the Linked Open Data project!Work sheet #3:Task 1René Witte
 Introduction
 Review
@@ -550,7 +550,7 @@ Notes and Further
 Reading
 4.17
 (248) 
- 248  } In OWL, one can characterize the behavior of properties (symmetric, transitive, functional, inverse functional, reﬂexive, irreﬂexive, …)} OWL also separates data and object properties§ “datatype property” means that its range are typed literals
+ 248  } In OWL, one can characterize the behavior of properties (symmetric, transitive, functional, inverse functional, reﬂexive, irreﬂexive, …)} OWL also separates data and object properties§ “datatype property” means that its range are typed literals
 René Witte
 Introduction
 Review
@@ -581,7 +581,7 @@ Notes and Further
 Reading
 4.18
 (249) 
- 249  } “foaf:email” may be deﬁned as “inverse functional”§  i.e., two different subjects cannot have identical objects
+ 249  } “foaf:email” may be deﬁned as “inverse functional”§  i.e., two different subjects cannot have identical objects
 René Witte
 Introduction
 Review
@@ -612,7 +612,7 @@ Notes and Further
 Reading
 4.19
 (250) 
- 250  } If the following holds in our triples:
+ 250  } If the following holds in our triples:
 :email rdf:type owl:InverseFunctionalProperty.  René Witte
 Introduction
 Review
@@ -643,7 +643,7 @@ Notes and Further
 Reading
 4.20
 (251) 
- 251  } If the following holds in our triples:
+ 251  } If the following holds in our triples:
 :email rdf:type owl:InverseFunctionalProperty.  <A> :email "mailto:a@b.c". <B> :email "mailto:a@b.c". René Witte
 Introduction
 Review
@@ -674,7 +674,7 @@ Notes and Further
 Reading
 4.21
 (252) 
- 252  } If the following holds in our triples:
+ 252  } If the following holds in our triples:
 :email rdf:type owl:InverseFunctionalProperty.  <A> :email "mailto:a@b.c". <B> :email "mailto:a@b.c". 
 <A> owl:sameAs <B>. then, processed through OWL, the following holds, too:René Witte
 Introduction
@@ -706,7 +706,7 @@ Notes and Further
 Reading
 4.22
 (253) 
- 253  } There may be an inverse relationship among properties, eg:
+ 253  } There may be an inverse relationship among properties, eg:
 <somebook> ex:author <somebody>.  ex:author owl:inverseOf ex:authorOf. 
 <somebody> ex:authorOf <somebook>. yields, in OWL:René Witte
 Introduction
@@ -738,7 +738,7 @@ Notes and Further
 Reading
 4.23
 (259) 
- 259  } In RDFS, you can subclass existing classes… that’s all} In OWL, you can construct classes from existing ones:§ enumerate its content§ through intersection, union, complement§ etc
+ 259  } In RDFS, you can subclass existing classes… that’s all} In OWL, you can construct classes from existing ones:§ enumerate its content§ through intersection, union, complement§ etc
 René Witte
 Introduction
 Review
@@ -769,7 +769,7 @@ Notes and Further
 Reading
 4.24
 (290) 
- 290  } OWL DL can be interpreted as a variant of Description Logic§ for connoisseurs: OWL (2) DL ≈ SROIQ (D)} Hence the results of this  particular area of logic are directly applicable
+ 290  } OWL DL can be interpreted as a variant of Description Logic§ for connoisseurs: OWL (2) DL ≈ SROIQ (D)} Hence the results of this  particular area of logic are directly applicable
 René Witte
 Introduction
 Review
@@ -800,7 +800,7 @@ Notes and Further
 Reading
 4.25
 (292) 
- 292  } There is also a compact mathematical notation for axioms, assertions, etc:§ Literature ≣ Novel ⊔ Short_Story ⊔ Poetry§ Listed_Price ⊑ ∀currency.Currencies} You may see these in papers, books…
+ 292  } There is also a compact mathematical notation for axioms, assertions, etc:§ Literature ≣ Novel ⊔ Short_Story ⊔ Poetry§ Listed_Price ⊑ ∀currency.Currencies} You may see these in papers, books…
 René Witte
 Introduction
 Review
@@ -831,7 +831,7 @@ Notes and Further
 Reading
 4.26
 (307) 
- 307  } eClassOwl: eBusiness ontology for products and services, 75,000 classes and 5,500 properties} National Cancer Institute’s ontology: about 58,000 classes} Open Biomedical Ontologies Foundry: a collection of ontologies, including the Gene Ontology to describe gene and gene product attributes in any organism or  protein sequence and annotation terminology and data (UniProt)} BioPAX: for biological pathway data
+ 307  } eClassOwl: eBusiness ontology for products and services, 75,000 classes and 5,500 properties} National Cancer Institute’s ontology: about 58,000 classes} Open Biomedical Ontologies Foundry: a collection of ontologies, including the Gene Ontology to describe gene and gene product attributes in any organism or  protein sequence and annotation terminology and data (UniProt)} BioPAX: for biological pathway data
 René Witte
 Introduction
 Review
@@ -898,7 +898,7 @@ Notes and Further
 Reading
 4.28
 (196) 
- 196  } Remember the Python+RDFLib idiom:
+ 196  } Remember the Python+RDFLib idiom:
 for (s,p,o) in graph.triples((subject,None,None)) :   do_something(p,o); René Witte
 Introduction
 Review
@@ -929,7 +929,7 @@ Notes and Further
 Reading
 4.29
 (197) 
- 197  } In practice, more complex queries into the RDF data are necessary§ something like: “give me the (a,b) pair of resources, for which there is an x such that (x parent a) and (b brother x) holds” (ie, return the uncles)• these rules may become quite complex} The goal of SPARQL (Query Language for RDF)
+ 197  } In practice, more complex queries into the RDF data are necessary§ something like: “give me the (a,b) pair of resources, for which there is an x such that (x parent a) and (b brother x) holds” (ie, return the uncles)• these rules may become quite complex} The goal of SPARQL (Query Language for RDF)
 René Witte
 Introduction
 Review
@@ -996,7 +996,7 @@ Notes and Further
 Reading
 4.31
 (199) 
- 199  } The fundamental idea: use graph patterns§ the pattern contains unbound symbols§ by binding the symbols, subgraphs of the RDF graph are selected§ if there is such a selection, the query returns the bound resources
+ 199  } The fundamental idea: use graph patterns§ the pattern contains unbound symbols§ by binding the symbols, subgraphs of the RDF graph are selected§ if there is such a selection, the query returns the bound resources
 René Witte
 Introduction
 Review
@@ -1027,7 +1027,7 @@ Notes and Further
 Reading
 4.32
 (200) 
- 200  } The triples in WHERE deﬁne the graph pattern, with ?p and ?o “unbound” symbols} The query returns all p,o pairs
+ 200  } The triples in WHERE deﬁne the graph pattern, with ?p and ?o “unbound” symbols} The query returns all p,o pairs
 SELECT ?p ?o WHERE {subject ?p ?o} 
 subject  
 ?o  
@@ -1715,7 +1715,7 @@ Reading
 4.50
 (208) 
  208  
-Returns:  [[<..09X>,33,:£,<…Palace>], … , [<..6682>,78,:$, ]]
+Returns:  [[<..09X>,33,:£,<…Palace>], … , [<..6682>,78,:$, ]]
 SELECT ?isbn ?price ?currency ?wiki WHERE { ?isbn a:price ?x. ?x rdf:value ?price. ?x p:currency ?currency.         OPTIONAL ?wiki w:isbn ?isbn. } 
 a:name 
 http://…isbn/2020386682  
@@ -1994,7 +1994,7 @@ Notes and Further
 Reading
 4.57
 (211) 
- 211  } Limit the number of returned results; remove duplicates, sort them, …} Specify several data sources (via URI-s) within the query} Construct a graph combining a separate pattern and the query results} Use datatypes and/or language tags when matching a pattern} Aggregation of the results (min, max, average, etc.)} Path expressions (a bit like regular expressions)
+ 211  } Limit the number of returned results; remove duplicates, sort them, …} Specify several data sources (via URI-s) within the query} Construct a graph combining a separate pattern and the query results} Use datatypes and/or language tags when matching a pattern} Aggregation of the results (min, max, average, etc.)} Path expressions (a bit like regular expressions)
 René Witte
 Introduction
 Review
@@ -2025,7 +2025,7 @@ Notes and Further
 Reading
 4.58
 (212) 
- 212  } SPARQL is usually used over the network§ http request is sent to a SPARQL endpoint§ result is the result of the SELECT, the CONSTRUCT,…} Separate documents deﬁne the protocol and the result format• SPARQL Protocol for RDF with HTTP and SOAP bindings• SPARQL results in XML or JSON formats} Big datasets usually offer “SPARQL endpoints” using this protocol
+ 212  } SPARQL is usually used over the network§ http request is sent to a SPARQL endpoint§ result is the result of the SELECT, the CONSTRUCT,…} Separate documents deﬁne the protocol and the result format• SPARQL Protocol for RDF with HTTP and SOAP bindings• SPARQL results in XML or JSON formats} Big datasets usually offer “SPARQL endpoints” using this protocol
 René Witte
 Introduction
 Review
@@ -2087,7 +2087,7 @@ Notes and Further
 Reading
 4.60
 (214) 
- 214  } SPARQL CONSTRUCT returns a new, modiﬁed graph§ the original data remains unchanged!} SPARQL 1.1 Update modiﬁes the original dataset!
+ 214  } SPARQL CONSTRUCT returns a new, modiﬁed graph§ the original data remains unchanged!} SPARQL 1.1 Update modiﬁes the original dataset!
 René Witte
 Introduction
 Review
@@ -2959,7 +2959,7 @@ Notes and Further
 Reading
 4.83
 (171) 
- 171  } Goal: “expose” datasets on the Web§ remember the importance of data!} Set links among the data items from different datasets§ we want to avoid the silo effects
+ 171  } Goal: “expose” datasets on the Web§ remember the importance of data!} Set links among the data items from different datasets§ we want to avoid the silo effects
 René Witte
 Introduction
 Review
@@ -3022,7 +3022,7 @@ Notes and Further
 Reading
 4.85
 (173) 
- 173  } DBpedia is a community effort to§ extract structured (“infobox”) information from Wikipedia§ provide a query endpoint to the dataset§ interlink the DBpedia dataset with other datasets on the Web
+ 173  } DBpedia is a community effort to§ extract structured (“infobox”) information from Wikipedia§ provide a query endpoint to the dataset§ interlink the DBpedia dataset with other datasets on the Web
 René Witte
 Introduction
 Review
@@ -3303,7 +3303,7 @@ Notes and Further
 Reading
 4.94
 (182) 
- 182  } Eg, “bio” related datasets§ done, partially, by the “Linking Open Drug Data” task force of the HCLS IG at W3C
+ 182  } Eg, “bio” related datasets§ done, partially, by the “Linking Open Drug Data” task force of the HCLS IG at W3C
 Courtesy of Richard Cyganiak and Anja Jentzsch René Witte
 Introduction
 Review

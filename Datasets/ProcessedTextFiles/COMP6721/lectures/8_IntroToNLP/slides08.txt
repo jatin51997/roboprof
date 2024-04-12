@@ -5,20 +5,20 @@ Natural Language ProcessingMenu
 2.Bag of word model
 3.n-gram models
 4.Linguistic features for NLP
-◼2
+2
 Languages
-◼Artificial
-❑Smaller vocabulary
-❑Simple syntactic structures
-❑Non-ambiguous
-❑Not tolerant to errors (ex. Syntax error)
-◼Natural
-❑Large and open vocabulary (new words everyday)
-❑Complex syntactic structures
-❑Very ambiguous
-❑Robust (ex. forgot a comma, a word… still OK)
-◼3Question Answering: IBM’s Watson
-◼Won Jeopardy on February 16, 2011!
+Artificial
+Smaller vocabulary
+Simple syntactic structures
+Non-ambiguous
+Not tolerant to errors (ex. Syntax error)
+Natural
+Large and open vocabulary (new words everyday)
+Complex syntactic structures
+Very ambiguous
+Robust (ex. forgot a comma, a word… still OK)
+3Question Answering: IBM’s Watson
+Won Jeopardy on February 16, 2011!
 4WILLIAM WILKINSON’S 
 “AN ACCOUNT OF THE PRINCIPALITIES OF
 WALLACHIA AND MOLDOVIA”
@@ -109,7 +109,7 @@ Dialog
 in SF? 
 Castro Theatre at 7:30. 
 Do you want a ticket?
-slide from Olga Veksler (U. Western Ontario)◼Because it is ambiguous:
+slide from Olga Veksler (U. Western Ontario)Because it is ambiguous:
 1.The computer understands you 
 as well as your mother 
 understands you.
@@ -120,33 +120,33 @@ as well as it understands your
 mother.Why is NLP hard?
 “At last, a computer that understands you like your mother”        
 slide from Olga Veksler (U. Western Ontario)10Another Example of Ambiguity
-❑Even simple sentences are highly ambiguous
-❑“Get the cat with the gloves ”
+Even simple sentences are highly ambiguous
+“Get the cat with the gloves ”
 slide from Olga Veksler (U. Western Ontario)11And Even More Examples of Ambiguity
-◼Iraqi Head Seeks Arms
-◼Ban on Nude Dancing on Governor’s Desk
-◼Juvenile Court to Try Shooting Defendant
-◼Teacher Strikes Idle Kids
-◼Kids Make Nutritious Snacks
-◼British Left Waffles on Falkland Islands
-◼Red Tape Holds Up New Bridges
-◼Bush Wins on Budget, but More Lies Ahead
-◼Hospitals are Sued by 7 Foot Doctors
-◼Stolen Painting Found by Tree
-◼Local HS Dropouts Cut in Half
-slide from Olga Veksler (U. Western Ontario)◼Natural Language Processing
+Iraqi Head Seeks Arms
+Ban on Nude Dancing on Governor’s Desk
+Juvenile Court to Try Shooting Defendant
+Teacher Strikes Idle Kids
+Kids Make Nutritious Snacks
+British Left Waffles on Falkland Islands
+Red Tape Holds Up New Bridges
+Bush Wins on Budget, but More Lies Ahead
+Hospitals are Sued by 7 Foot Doctors
+Stolen Painting Found by Tree
+Local HS Dropouts Cut in Half
+slide from Olga Veksler (U. Western Ontario)Natural Language Processing
 = automatic processing of written texts
 1.Natural Language Understanding
-❑Input = text
+Input = text
 2.Natural Language Generation
-❑Output = text
-◼Speech Processing
+Output = text
+Speech Processing
 = automatic processing of speech
 1.Speech Recognition 
-❑Input = acoustic signal
+Input = acoustic signal
 2.Speech Synthesis
-❑Output = acoustic signalNLP vs Speech Processing
-◼12
+Output = acoustic signalNLP vs Speech Processing
+12
 Remember these slides?
 13
 The Ancient Land of NLP (aka GOFAI)
@@ -212,18 +212,18 @@ Deep Language Processing
 •Rules are developed automatically (using machine learning)
 •And the linguistic features are found automatically!Applications
 Menu
-◼21
+21
 1.Introduction
 2.Bag of word model
 3.n-gram models
 4.Linguistic features for NLP22Bag-of-word Model (BOW)
-◼A simple model where word order is ignored
-◼used in many applications:
-❑NB spam filter seen in class a few weeks ago
-❑Information Retrieval (eg. google search)
-❑...
-◼But has severe limits to understand meaning of text...
-◼Maybe we should take word order into account...
+A simple model where word order is ignored
+used in many applications:
+NB spam filter seen in class a few weeks ago
+Information Retrieval (eg. google search)
+...
+But has severe limits to understand meaning of text...
+Maybe we should take word order into account...
 Word Freq.
 Mary 2
 apples 1
@@ -234,8 +234,8 @@ kill 1
 like 1
 not 1
 to 123Limits of BOW Model
-◼word order is ignored ==> meaning of text is lost.
-◼n-grams take [a bit of] word order into account
+word order is ignored ==> meaning of text is lost.
+n-grams take [a bit of] word order into account
 Word Freq.
 Mary 2
 apples 1
@@ -254,42 +254,42 @@ Mary did not like to kill
 John.
 Mary did eat apples.
 ...Menu
-◼24
+24
 1.Introduction
 2.Bag of word model
 3.n-gram models
 4.Linguistic features for NLP25n-gram Model
-◼An n-gram model is a probability distribution over sequences of 
+An n-gram model is a probability distribution over sequences of 
 events (grams/units/items)
-◼models the order of the events
-◼Used when the past sequence of events is a good indicator of 
+models the order of the events
+Used when the past sequence of events is a good indicator of 
 the next event to occur in the sequence
-◼i.e. To predict the next event in a sequence of event 
-◼E.g.: 
-❑next move of player based on his/her past moves
-◼ left right right up ... up? down? left? right?
-❑next base pair based on past DNA sequence 
-◼ AGCTTCG ... A? G? C? T?
-❑next word based on past words 
-◼ Hi dear, how are ... helicopter? laptop? you? magic?26What’s a Language Model?
-◼A Language model is a n -gram model over word/character 
+i.e. To predict the next event in a sequence of event 
+E.g.: 
+next move of player based on his/her past moves
+ left right right up ... up? down? left? right?
+next base pair based on past DNA sequence 
+ AGCTTCG ... A? G? C? T?
+next word based on past words 
+ Hi dear, how are ... helicopter? laptop? you? magic?26What’s a Language Model?
+A Language model is a n -gram model over word/character 
 sequences
-◼ie: events = words  or  events = character
-◼P(“I’d like a coffee with 2 sugars and milk”) ≈ 0.001
-◼P(“I’d hike a toffee with 2 sugars and silk”) ≈ 0.00000000127Applications of Language Models
-◼Speech Recognition
-◼Statistical Machine Translation
-◼Language Identification
-◼Spelling correction 
-❑He is trying to fineout. 
-❑He is trying to findout. 
-◼Optical character recognition / Handwriting 
+ie: events = words  or  events = character
+P(“I’d like a coffee with 2 sugars and milk”) ≈ 0.001
+P(“I’d hike a toffee with 2 sugars and silk”) ≈ 0.00000000127Applications of Language Models
+Speech Recognition
+Statistical Machine Translation
+Language Identification
+Spelling correction 
+He is trying to fineout. 
+He is trying to findout. 
+Optical character recognition / Handwriting 
 recognition
-◼…In Speech Recognition
+…In Speech Recognition
 ▪Goal: find most likely sentence (S*) given the observed sound (O) … 
 ▪ie. pick the sentence with the highest probability:
-◼We can use Bayes rule to rewrite this as:
-◼Since denominator is the same for each candidate S, we can ignore it for the 
+We can use Bayes rule to rewrite this as:
+Since denominator is the same for each candidate S, we can ignore it for the 
 argmax:
 Acoustic model --
 Probability of the possible 
@@ -315,7 +315,7 @@ P(acoustic signal | word sequence) x P(word sequence)
 P(S)S)|P(O argmax S*
 LS =
 In Statistical Machine Translation
-◼Assume we translate from fr [foreign ] to English  i.e.: (en|fr)
+Assume we translate from fr [foreign ] to English  i.e.: (en|fr)
 Given: Foreign sentence -fr
 Find: The most likely English 
 sentence –en*
@@ -328,35 +328,35 @@ guess how that’s done?
 P(en) x en)|P(fr argmax en*
 en=31“Shannon Game” (Shannon, 1951)
 “I am going to make a collect …”
-◼Predict the next word/character given the n-1previous 
+Predict the next word/character given the n-1previous 
 words/characters.
 https://en.wikipedia.org/wiki/Claude_Shannon321stapproximation
-◼each word has an equal probability to follow any 
+each word has an equal probability to follow any 
 other
-❑with 100,000 words, the probability of each word at any 
+with 100,000 words, the probability of each word at any 
 given point is .00001 
-◼but some words are more frequent then others…
-◼“the” appears many more times, than “ rabbit”332ndapproximation: unigrams
-◼take into account the frequency of the word in 
+but some words are more frequent then others…
+“the” appears many more times, than “ rabbit”332ndapproximation: unigrams
+take into account the frequency of the word in 
 some training corpus
-❑at any given point, “ the” is more probable than “ rabbit”
-◼but does not take word order into account.  This 
+at any given point, “ the” is more probable than “ rabbit”
+but does not take word order into account.  This 
 is the bag of word approach. 
-❑“Just then, the white …”
-◼so the probability of a word also depends on the 
+“Just then, the white …”
+so the probability of a word also depends on the 
 previous words (the history)
 P(wn |w1w2…wn-1)34n-grams
-◼“the large green ______ .”
-❑“mountain ”? “tree”? 
-◼“Sue swallowed the large green ______ .”
-❑“pill”?  “broccoli ”?
-◼Knowing that Sue “ swallowed ” helps narrow down 
+“the large green ______ .”
+“mountain ”? “tree”? 
+“Sue swallowed the large green ______ .”
+“pill”?  “broccoli ”?
+Knowing that Sue “ swallowed ” helps narrow down 
 possibilities 
-◼i.e., going back 3 words before helps
-◼But, how far back do we look?35Bigrams
-◼first-order Markov models
-◼N-by-N matrix of probabilities/frequencies 
-◼N = size of the vocabulary we are usingP(wn|wn-1)1stword2ndword
+i.e., going back 3 words before helps
+But, how far back do we look?35Bigrams
+first-order Markov models
+N-by-N matrix of probabilities/frequencies 
+N = size of the vocabulary we are usingP(wn|wn-1)1stword2ndword
  a aardvark  aardwolf  aback … zoophyte  zucchini  
 a 0 0 0 0 … 8 5 
 aardvark  0 0 0 0 … 0 0 
@@ -367,37 +367,37 @@ zoophyte  0 0 0 1 … 0 0
 zucchini  0 0 0 3 … 0 0 
  
  36Trigrams
-◼second -order Markov models
-◼N-by-N-by-N matrix of probabilities/frequencies 
-◼N = size of the vocabulary we are usingP(wn|wn-1wn-2)1stword
+second -order Markov models
+N-by-N-by-N matrix of probabilities/frequencies 
+N = size of the vocabulary we are usingP(wn|wn-1wn-2)1stword
 2ndword3rdword37Why use only bi -or tri -grams? 
-◼Markov approximation is still costly
+Markov approximation is still costly
 with a 20 000 word vocabulary:
-❑bigram needs to store 400 million parameters
-❑trigram needs to store 8 trillion parameters
-❑using a language model > trigram is impractical38Building n -gram Models
+bigram needs to store 400 million parameters
+trigram needs to store 8 trillion parameters
+using a language model > trigram is impractical38Building n -gram Models
 1.Data preparation: 
-❑Decide on training corpus
-❑Clean and tokenize
-❑How do we deal with sentence boundaries? 
-◼I eat.  I sleep.    
-❑(I eat) (eat I) (I sleep) 
-◼<s>I eat </s> <s> I sleep </s> 
-❑(<s> I) (I eat) (eat </s>) (<s> I) (I sleep) (sleep </s>)39Example 1: 
-◼in a training corpus, we have 10 instances of 
+Decide on training corpus
+Clean and tokenize
+How do we deal with sentence boundaries? 
+I eat.  I sleep.    
+(I eat) (eat I) (I sleep) 
+<s>I eat </s> <s> I sleep </s> 
+(<s> I) (I eat) (eat </s>) (<s> I) (I sleep) (sleep </s>)39Example 1: 
+in a training corpus, we have 10 instances of 
 “come across”
-❑8 times, followed by “ as”
-❑1 time, followed by “ more”
-❑1 time, followed by “ a”
-◼so we have: 
-❑
-❑P(more | come across) = 0.1 
-❑P(a | come across) = 0.1 
-❑P(X | come across) = 0  where X ≠“as”, “more”, “a”
+8 times, followed by “ as”
+1 time, followed by “ more”
+1 time, followed by “ a”
+so we have: 
+
+P(more | come across) = 0.1 
+P(a | come across) = 0.1 
+P(X | come across) = 0  where X ≠“as”, “more”, “a”
 108
 across) C(comeas) across C(come  across) come |P(as = =40Building n -gram Models
 2.Count words and build model
-❑Let C(w1...wn) be the frequency of n -gram w1...wn
+Let C(w1...wn) be the frequency of n -gram w1...wn
 3.Smooth your model (see later)
 ) ...wC(w)...wC(w  ) ...ww|(wP
 1-n 1n 1
@@ -429,37 +429,37 @@ P(restaurant| British ) = .15
  Remember this slide...
 42
 43Some Adjustments
-◼product of probabilities… numerical underflow 
+product of probabilities… numerical underflow 
 for long sentences
-◼so instead of multiplying the probs, we add the 
+so instead of multiplying the probs, we add the 
 log of the probs
 P(I want to eat British food) 
 = log(P(I|<s>)) + log(P(want|I)) + log(P(to|want)) + log(P(eat|to)) + 
 log(P(British|eat)) + log(P(food|British))
 = log(.25) + log(.32) + log(.65) + log (.26) + log(.001) + log(.6)44Problem: Data Sparseness  
-◼What if a sequence never appears in training corpus? P(X)=0
-❑“come across the men” -->prob = 0  
-❑“come across some men” --> prob = 0
-❑“come across 3 men” -->prob = 0
-◼The model assigns a probability of zero to unseen events … 
-◼probability of an n -gram involving unseen words will be zero!
-◼Solution: smoothing
-❑decrease the probability of previously seen events 
-❑so that there is a little bit of probability mass left over for 
+What if a sequence never appears in training corpus? P(X)=0
+“come across the men” -->prob = 0  
+“come across some men” --> prob = 0
+“come across 3 men” -->prob = 0
+The model assigns a probability of zero to unseen events … 
+probability of an n -gram involving unseen words will be zero!
+Solution: smoothing
+decrease the probability of previously seen events 
+so that there is a little bit of probability mass left over for 
 previously unseen events Remember this other slide...
 45
 46Add-one Smoothing
-◼Pretend we have seen every n -gram at least once 
-◼Intuitively:
-❑new_count(n -gram) = old_count(n -gram) + 1
-◼The idea is to give a little bit of the probability 
+Pretend we have seen every n -gram at least once 
+Intuitively:
+new_count(n -gram) = old_count(n -gram) + 1
+The idea is to give a little bit of the probability 
 space to unseen events47Add-one: Example
 unsmoothed bigram counts (frequencies):1stword2ndword
-◼Assume a vocabulary of 1616 (different) words
-❑V = {a, aardvark, aardwolf, aback, … , I, …, want,… to, …, eat, Chinese, …, food, …, lunch, …,    
+Assume a vocabulary of 1616 (different) words
+V = {a, aardvark, aardwolf, aback, … , I, …, want,… to, …, eat, Chinese, …, food, …, lunch, …,    
 zoophyte, zucchini}
-❑|V| = 1616 words
-◼And a total of N = 10,000 bigrams (~word instances) in the training corpus
+|V| = 1616 words
+And a total of N = 10,000 bigrams (~word instances) in the training corpus
  I want to eat Chinese  food lunch  … Total 
 I 8 1087  0 13 0 0 0  C(I)=3437  
 want 3 0 786 0 6 8 6  C(want)= 1215 
@@ -524,41 +524,41 @@ eat .00039  .00039  .0009  .00039  .0078  .0012  .0208
 …         
  
  51Add-delta Smoothing
-◼every previously unseen n -gram is given a low probability
-◼but there are so many of them that too much probability mass is 
+every previously unseen n -gram is given a low probability
+but there are so many of them that too much probability mass is 
 given to unseen events
-◼instead of adding 1, add some other (smaller) positive value 𝛿
-◼most widely used value for 𝛿= 0.5
-◼better than add -one, but still…
+instead of adding 1, add some other (smaller) positive value 𝛿
+most widely used value for 𝛿= 0.5
+better than add -one, but still…
 B   N  )w w (w C  )w w (wPn 12
 n 21 AddD
 ++ = 52Factors of Training Corpus
-◼Size: 
-❑the more, the better
-❑but after a while, not much improvement…
-◼bigrams (characters) after 100’s million words
-◼trigrams (characters) after some billions of words
-◼Genre (adaptation):
-❑training on cooking recipes and testing on aircraft 
+Size: 
+the more, the better
+but after a while, not much improvement…
+bigrams (characters) after 100’s million words
+trigrams (characters) after some billions of words
+Genre (adaptation):
+training on cooking recipes and testing on aircraft 
 maintenance manuals53Example: Language Identification
-◼hypothesis: texts that resemble 
+hypothesis: texts that resemble 
 each other (same author, same 
 language) share similar 
 character/word sequences  
-❑In English character sequence 
+In English character sequence 
 “ing” is more probable than in 
 French  
-◼Training phase: 
-❑construction of the language 
+Training phase: 
+construction of the language 
 model 
-❑with pre -classified documents 
+with pre -classified documents 
 (known language/author)
-◼Testing phase: 
-❑apply language model to unknown 
+Testing phase: 
+apply language model to unknown 
 textAutomatic Language Identification… 54Example: Language Identification
-◼bigram of characters 
-❑characters = 26 letters (case insensitive)
-❑possible variations: case sensitivity, 
+bigram of characters 
+characters = 26 letters (case insensitive)
+possible variations: case sensitivity, 
 punctuation, beginning/end of sentence 
 marker, …551. Train a character -based language model for Italian:
 2. Train a character -based language model for Spanish:
@@ -588,36 +588,36 @@ Y 0.0014  0.0014  0.0014  0.0014  … 0.0014  0.0014
 Z 0.0014  0.0014  0.0014  0.0014  0.0014  0.0014  0.0014  
  
  Google’s Web 1T 5 -gram model
-◼5-grams
-◼generated from 1 trillion words
-◼24 GB compressed 
-❑Number of tokens: 1,024,908,267,229 
-❑Number of sentences: 95,119,665,584 
-❑Number of unigrams: 13,588,391 
-❑Number of bigrams: 314,843,401 
-❑Number of trigrams: 977,069,902 
-❑Number of fourgrams: 1,313,818,354 
-❑Number of fivegrams: 1,176,470,663
-◼See discussion: http://googleresearch.blogspot.com/2006/08/all -our-n-gram -are-belong -
+5-grams
+generated from 1 trillion words
+24 GB compressed 
+Number of tokens: 1,024,908,267,229 
+Number of sentences: 95,119,665,584 
+Number of unigrams: 13,588,391 
+Number of bigrams: 314,843,401 
+Number of trigrams: 977,069,902 
+Number of fourgrams: 1,313,818,354 
+Number of fivegrams: 1,176,470,663
+See discussion: http://googleresearch.blogspot.com/2006/08/all -our-n-gram -are-belong -
 to-you.html
-◼See Google Ngram Viewer: http://en.wikipedia.org/wiki/Google_Ngram_Viewer
+See Google Ngram Viewer: http://en.wikipedia.org/wiki/Google_Ngram_Viewer
 56Problem with n -grams
-◼Natural language is not linear ....
-◼there may be long-distance dependencies .
-❑Syntactic dependencies
-◼The mannext to the large oak tree near … istall.
-◼The mennext to the large oak tree near … aretall.
-❑Semantic dependencies
-◼The birdnext to the large oak tree near … flies rapidly.
-◼The mannext to the large oak tree near … talks rapidly.
-❑World knowledge
-◼Michael Jackson , who was featured in ..., is buried in California.
-◼Michael Bublé , who was featured in ..., is living in California.
-❑...
-◼More complex models of language are needed to handle such 
+Natural language is not linear ....
+there may be long-distance dependencies .
+Syntactic dependencies
+The mannext to the large oak tree near … istall.
+The mennext to the large oak tree near … aretall.
+Semantic dependencies
+The birdnext to the large oak tree near … flies rapidly.
+The mannext to the large oak tree near … talks rapidly.
+World knowledge
+Michael Jackson , who was featured in ..., is buried in California.
+Michael Bublé , who was featured in ..., is living in California.
+...
+More complex models of language are needed to handle such 
 dependencies.
 57Menu
-◼58
+58
 1.Introduction
 2.Bag of word model
 3.n-gram models
@@ -626,92 +626,92 @@ dependencies.
 linguistic features are hand -engineered and fed to the ML model  60Stages of NLU
 source: Luger (2005)61Stages of NLU
 source: Luger (2005)Parsing (Syntax): 
-◼What words are available in a 
+What words are available in a 
 language?  gfiioudd  / table
-◼How to arrange words 
+How to arrange words 
 together? 
 the rose is red / red the rose is
 Semantic interpretation: 
-◼ Lexical Semantics : 
+ Lexical Semantics : 
 What is the 
 meaning/semantic 
 relations between 
 individual words? 
 Chair:  person?  Furniture?
-◼ Compositional 
+ Compositional 
 Semantics: What is the 
 meaning of phrases and 
 sentences?
 The chair’s leg is broken
 62Stages of NLU
-source: Luger (2005)◼ Discourse Analysis
+source: Luger (2005) Discourse Analysis
 How to relate the meaning of sentences to 
 surrounding sentences?
 I have to go to the store.  I need butter.
 I have to go to the university.  I need butter.
-◼ Pragmatics
+ Pragmatics
 How people use language in a social 
 environment?
 Do you have a child?    
 Do you have a quarter?
-◼ World Knowledge 
+ World Knowledge 
 How knowledge about the world (history, 
 facts, …) modifies our understanding of 
 text?
 Bill Gates passed away last night.63Stages of NLU
 source: Luger (2005)
 Parsing (Syntax): 
-◼What words are available in a 
+What words are available in a 
 language?  gfiioudd  / table
-◼How to arrange words 
+How to arrange words 
 together? 
 the rose is red / red the rose is64Syntactic Parsing
 1.Assign the right part of speech (NOUN, VERB, …) to 
 individual words in a text
 1.Determine how words are put together to form 
 correct sentences
-◼The/DET rose/NOUN is/VERB red/ADJ.  
-◼Is/VERB red/ADJ the/DET rose/NOUN.65English Parts -of-Speech
-◼Open (lexical) class words 
-❑new words can be added easily
-❑nouns, main verbs, adjectives, adverbs
-❑some languages do not have all these categories
-◼Closed (functional) class words
-❑generally function/grammatical words 
-❑aka stop words
-❑ex. the, in, and, over, beyond…
-❑relatively fixed membership
-❑prepositions, determiners, pronouns, conjunctions, …
+The/DET rose/NOUN is/VERB red/ADJ.  
+Is/VERB red/ADJ the/DET rose/NOUN.65English Parts -of-Speech
+Open (lexical) class words 
+new words can be added easily
+nouns, main verbs, adjectives, adverbs
+some languages do not have all these categories
+Closed (functional) class words
+generally function/grammatical words 
+aka stop words
+ex. the, in, and, over, beyond…
+relatively fixed membership
+prepositions, determiners, pronouns, conjunctions, …
 Smurf talk on youtube:
 https ://www.youtube.com/watch?v=7BPx -vl8G0066Syntax
-◼How parts -of-speech are organised into larger 
+How parts -of-speech are organised into larger 
 syntactic constituents
-◼Main Constituents:
-❑S: sentence The boy is happy.
-❑NP: noun phrase      the little boy from Paris, Sam Smith, I, 
-❑VP: verb phrase eat an apple, sing, leave Paris in the night 
-❑PP: prepositional phrase  in the morning, about my ticket
-❑AdjP: adjective phrase really funny, rather clear
-❑AdvP: adverb phrase slowly, really slowly67A Parse Tree
-◼a tree representation of the application 
+Main Constituents:
+S: sentence The boy is happy.
+NP: noun phrase      the little boy from Paris, Sam Smith, I, 
+VP: verb phrase eat an apple, sing, leave Paris in the night 
+PP: prepositional phrase  in the morning, about my ticket
+AdjP: adjective phrase really funny, rather clear
+AdvP: adverb phrase slowly, really slowly67A Parse Tree
+a tree representation of the application 
 of the grammar to a specific sentence.
 68a CFG consists of
-◼set of non -terminal symbols 
-❑constituents & parts -of-speech
-❑S, NP, VP, PP, D, N, V, ...
-◼set of terminal symbols 
-❑words & punctuation
-❑cat, mouse, nurses, eat, ...
-◼a non -terminal designated as the starting symbol 
-❑sentence S
-◼a set of re -write rules 
-❑having a single non -terminal on the LHS and one or more 
+set of non -terminal symbols 
+constituents & parts -of-speech
+S, NP, VP, PP, D, N, V, ...
+set of terminal symbols 
+words & punctuation
+cat, mouse, nurses, eat, ...
+a non -terminal designated as the starting symbol 
+sentence S
+a set of re -write rules 
+having a single non -terminal on the LHS and one or more 
 terminal or non -terminal in the RHS
-❑S --> NP VP 
-❑NP --> Pro 
-❑NP --> PN 
-❑NP --> D N69An Example
-◼Lexicon:
+S --> NP VP 
+NP --> Pro 
+NP --> PN 
+NP --> D N69An Example
+Lexicon:
 N --> flight | trip | breeze | morning // noun
 V --> is | prefer | like // 
 verb
@@ -726,7 +726,7 @@ Prep --> from | to | in //
 preposition
 Conj --> and | or | but // 
 conjunction
-◼Grammar:
+Grammar:
 S --> NP VP // I + 
 prefer United
 NP --> Pro | PN | D N | D Adj N   // I, Chicago, the morning
@@ -734,26 +734,26 @@ VP --> V | V NP | V NP PP // is, prefer +
 United, 
 PP --> Prep NP // 
 to Chicago, to I ??70Parsing
-◼parsing: 
-❑goal: 
-◼assign syntactic structures to a sentence 
-❑result: 
-◼(set of) parse trees
-◼we need:
-❑a grammar: 
-◼description of the language constructions
-❑a parsing strategy: 
-◼how the syntactic analysis are to be computed 71Parsing Strategies
-◼parsing is seen as a search problem 
+parsing: 
+goal: 
+assign syntactic structures to a sentence 
+result: 
+(set of) parse trees
+we need:
+a grammar: 
+description of the language constructions
+a parsing strategy: 
+how the syntactic analysis are to be computed 71Parsing Strategies
+parsing is seen as a search problem 
 through the space of all possible parse 
 trees
-❑bottom -up (data -directed): words -->grammar
-❑top-down (goal -directed): grammar -->words
-❑breadth -first: compute all paths in parallel
-❑depth -first: exhaust 1 path before considering 
+bottom -up (data -directed): words -->grammar
+top-down (goal -directed): grammar -->words
+breadth -first: compute all paths in parallel
+depth -first: exhaust 1 path before considering 
 another
-❑Heuristic search72Example: John ate the cat
-◼Bottom -up parsing / 
+Heuristic search72Example: John ate the cat
+Bottom -up parsing / 
 breadth first
 1.John ate the cat
 2.PN ate the cat
@@ -763,7 +763,7 @@ breadth first
 6.NP V ART N
 7.NP V NP
 8.NP VP
-9.S◼Top-down parsing / 
+9.STop-down parsing / 
 depth first
 1.S
 2.NP VP
@@ -775,12 +775,12 @@ depth first
 8.John ate the N
 9.John ate the cat73Depth -first vs Breadth -first 
 the cat eats the mouse.
-◼depth -first: exhaust 1 path 
+depth -first: exhaust 1 path 
 before considering another
-◼breadth -first: 
-❑compute 1 level at a time
-◼Heuristic search: 
-❑e.g. preference to shorter rulesGrammar:
+breadth -first: 
+compute 1 level at a time
+Heuristic search: 
+e.g. preference to shorter rulesGrammar:
 (1) S --> NP VP
 (2) S --> VP
 (3) S --> Aux NP VP 
@@ -811,17 +811,17 @@ Top down ✓ ✓ ✓
 Bottom up ✓ ✓ ✓ 
  
  75Problem: Multiple parses
-◼Many possible parses for a single sentence happens 
+Many possible parses for a single sentence happens 
 very often… 
-❑Prepositional phrase attachment (PP -attachment)
-◼We painted the wall with cracks.
-◼The man saw the boy with the telescope.
-◼I shot an elephant in my pyjamas.
-❑Conjunctions and appositives
-◼Maddy, my dog, and Samy
+Prepositional phrase attachment (PP -attachment)
+We painted the wall with cracks.
+The man saw the boy with the telescope.
+I shot an elephant in my pyjamas.
+Conjunctions and appositives
+Maddy, my dog, and Samy
 --> (Maddy, my dog), and (Samy)
 --> (Maddy), (my dog), and (Samy)
-◼These phenomena can quickly increase the number of 
+These phenomena can quickly increase the number of 
 possible parse trees!76PP attachment:
 The man saw the boy with the telescope.
 Correct parse 1 Correct parse 2
@@ -830,71 +830,71 @@ Probabilistic Parsing
 “One morning I shot an elephant in my pyjamas.  How he got 
 into my pyjamas, I don’t know.”
 G. Marx, Animal Crackers , 1930 .
-◼Sentences can be very ambiguous… 
-❑A non -probabilistic parser may find a large set of possible 
+Sentences can be very ambiguous… 
+A non -probabilistic parser may find a large set of possible 
 parses
-❑--> need to pick the most probable parse one from the set 78Example of a PCFG
-◼Intuitively, P(VP →V NP) is:
-❑the probability of expanding VP by a V NP, as opposed 
+--> need to pick the most probable parse one from the set 78Example of a PCFG
+Intuitively, P(VP →V NP) is:
+the probability of expanding VP by a V NP, as opposed 
 to any other rules for VP
-◼So for:
-❑VP: ∀i ∑iP(VP --> B) = .7 + .3 = 1
-❑NP: ∀i ∑iP(NP --> B) = .4 + .1 + .18 + .04 + .18 + .1 = 1
-source:  Manning, and Schütze, Foundations of Statistical Natural Language Processing, MIT Press (1999)79◼Product of the probabilities of the rules used in subtrees
-◼Ex: “Astronomers saw stars with ears.”
+So for:
+VP: ∀i ∑iP(VP --> B) = .7 + .3 = 1
+NP: ∀i ∑iP(NP --> B) = .4 + .1 + .18 + .04 + .18 + .1 = 1
+source:  Manning, and Schütze, Foundations of Statistical Natural Language Processing, MIT Press (1999)79Product of the probabilities of the rules used in subtrees
+Ex: “Astronomers saw stars with ears.”
 . 
 P(t1) = 1x.1x.7x1x.4x.18x1x1x.18 P(t2) = 1x.1x.3x.7x1x1x.18x1x.18
 = .0009072 = .0006804Probability of a parse tree
 source:  Manning, and Schütze, Foundations of Statistical Natural Language Processing, MIT Press (1999)80Stages of NLU
 source: Luger (2005)
 Semantic interpretation: 
-◼ Lexical Semantics : 
+ Lexical Semantics : 
 What is the 
 meaning/semantic 
 relations between 
 individual words? 
 Chair:  person?  Furniture?
-◼ Compositional 
+ Compositional 
 Semantics: What is the 
 meaning of phrases and 
 sentences?
 The chair’s leg is broken81Semantic Interpretation
-◼Map sentences to some representation of its 
+Map sentences to some representation of its 
 meaning
-❑e.g., logics, knowledge graph, embedding…
+e.g., logics, knowledge graph, embedding…
 1.Lexical Semantics 
-◼i.e., Meaning of individual words
+i.e., Meaning of individual words
 1.Compositional Semantics
-◼i.e., Meaning of combination of words82Lexical Semantics
-◼ie. The meaning of individual words
-❑A word may denote different things (ex. chair)
-❑The meaning/sense of words is not clear -cut
-❑E.g. Overlapping of word senses across languages
+i.e., Meaning of combination of words82Lexical Semantics
+ie. The meaning of individual words
+A word may denote different things (ex. chair)
+The meaning/sense of words is not clear -cut
+E.g. Overlapping of word senses across languages
 legpatte
 étape
 jambe piedanimal
 journey
 humanchair83Word Sense Disambiguation (WSD)
-◼Determining which sense of a word is used 
+Determining which sense of a word is used 
 in a specific sentence
-❑I went to the bank of Montreal and deposited 50$.
-❑I went to the bank of the river and dangled my feet .
-84◼WSD can be viewed as typical classification 
+I went to the bank of Montreal and deposited 50$.
+I went to the bank of the river and dangled my feet .
+84WSD can be viewed as typical classification 
 problem
-❑use machine learning techniques (ex. Naïve Bayes 
+use machine learning techniques (ex. Naïve Bayes 
 classifier, decision tree) to train a system
-❑that learns a classifier (a function f) to assign to 
+that learns a classifier (a function f) to assign to 
 unseen examples one of a fixed number of senses 
 (categories)
-◼Input: 
-❑Target word: The word to be disambiguated 
-❑Features? 
-◼Output: 
-❑Most likely sense of the wordWSD as a Classification Problem85Features for WSD
-◼intuition: 
-❑sense of a word depends on the sense of surrounding words
-◼ex: bass = fish, musical instrument, ...
-◼So use a window of words around the target word as 
+Input: 
+Target word: The word to be disambiguated 
+Features? 
+Output: 
+Most likely sense of the wordWSD as a Classification Problem85Features for WSD
+intuition: 
+sense of a word depends on the sense of surrounding words
+ex: bass = fish, musical instrument, ...
+So use a window of words around the target word as 
 features
 Surrounding words  Most probable sense  
 …river…  fish 
@@ -905,23 +905,23 @@ Surrounding words  Most probable sense
 …striped … fish 
  
  86Features for WSD
-◼Take a window of nwords around the target word
-◼Encode information about the words around the target word
-❑An electric guitar and bass player stand off to one side, 
+Take a window of nwords around the target word
+Encode information about the words around the target word
+An electric guitar and bass player stand off to one side, 
 not really part of the scene, just as a sort of nod to gringo 
 expectations perhaps.87Naïve Bayes WSD
-◼Goal: choose the most probable sense s* for a word given a vector 
+Goal: choose the most probable sense s* for a word given a vector 
 V of surrounding words
-◼Feature vector V contains: 
-❑Features: words [ fishing, big, sound, player, fly, rod, … ]
-❑Value: frequency of these words in a window before & after the 
+Feature vector V contains: 
+Features: words [ fishing, big, sound, player, fly, rod, … ]
+Value: frequency of these words in a window before & after the 
 target word [0, 0, 0, 2, 1, 0, …]
-◼Bayes decision rule: 
-❑s* = argmaxskP(sk|V) 
-❑where:
-◼S is the set of possible senses for the target word
-◼skis a sense in S
-◼V is the feature vector88◼Training a Naïve Bayes classifier 
+Bayes decision rule: 
+s* = argmaxskP(sk|V) 
+where:
+S is the set of possible senses for the target word
+skis a sense in S
+V is the feature vector88Training a Naïve Bayes classifier 
 = estimating P(vj|sk) and P(sk) from a sense -tagged training 
 corpus
 = finding the most likely sense kNaïve Bayes WSD
@@ -944,7 +944,7 @@ tktkj
 kj=
  ) count(word ) count(s  )P(sk
 k=89Example
-◼Training corpus (context window = ±3 words):
+Training corpus (context window = ±3 words):
 …Today the World Bank/ BANK1 and partners arecalling for greater relief…
 …Welcome to the Bank/ BANK1 of America the nation's leading financial institution… 
 …Welcome toAmerica's Job Bank/ BANK1 Visit our siteand…
@@ -952,21 +952,21 @@ k=89Example
 …TheAsian Development Bank/ BANK1 ADB a multilateral development finance…
 …lounging against verdant banks/ BANK2 carving out the ...
 …for swimming, had warned heroff the banks/ BANK2 of the Potomac . Nobody...
-◼Training:
-❑P(the|BANK1 ) = 5/30 P(the|BANK2 ) = 3/12
-❑P(world |BANK1 ) = 1/30 P(world |BANK2 ) = 0/12
-❑P(and|BANK1 ) = 1/30 P(and|BANK2 ) = 0/12
-❑… … 
-❑P(off|BANK1 ) = 0/30 P(off|BANK2 ) = 
+Training:
+P(the|BANK1 ) = 5/30 P(the|BANK2 ) = 3/12
+P(world |BANK1 ) = 1/30 P(world |BANK2 ) = 0/12
+P(and|BANK1 ) = 1/30 P(and|BANK2 ) = 0/12
+… … 
+P(off|BANK1 ) = 0/30 P(off|BANK2 ) = 
 1/12
-❑P(Potomac |BANK1 ) = 0/30 P(Potomac |BANK2 ) = 1/12
-❑P(BANK1 ) = 5/7 P(BANK2 ) = 2/7
-◼Disambiguation: “I lost my left shoe on the banks of the river Nile.”
-❑Score( BANK1 )=log(5/7) + log(P( shoe|BANK1 ))+log(P( on|BANK1 ))+log(P( the|BANK1 )) …
-❑Score( BANK2 )=log(2/7) + log(P( shoe|BANK2 )+log(P( on|BANK2 ))+log(P( the|BANK2 )) …
+P(Potomac |BANK1 ) = 0/30 P(Potomac |BANK2 ) = 1/12
+P(BANK1 ) = 5/7 P(BANK2 ) = 2/7
+Disambiguation: “I lost my left shoe on the banks of the river Nile.”
+Score( BANK1 )=log(5/7) + log(P( shoe|BANK1 ))+log(P( on|BANK1 ))+log(P( the|BANK1 )) …
+Score( BANK2 )=log(2/7) + log(P( shoe|BANK2 )+log(P( on|BANK2 ))+log(P( the|BANK2 )) …
 BANK1 BANK2
 90Example (with add 0.5 smoothing)
-◼Training corpus (context window = ±3 words):
+Training corpus (context window = ±3 words):
 …Today the World Bank/ BANK1 and partners arecalling for greater relief…
 …Welcome to the Bank/ BANK1 of America the nation's leading financial institution… 
 …Welcome toAmerica's Job Bank/ BANK1 Visit our siteand…
@@ -974,92 +974,92 @@ BANK1 BANK2
 …TheAsian Development Bank/ BANK1 ADB a multilateral development finance…
 …lounging against verdant banks/ BANK2 carving out the ...
 …for swimming, had warned heroff the banks/ BANK2 of the Potomac . Nobody...
-◼Assume V = 50
-◼Training:
-❑P(the|BANK1 ) = (5+.5) / (30+.5V) P(the|BANK2 ) = (3+.5) / (12 + .5V)
-❑P(world |BANK1 ) = (1+.5) / 55 P(world |BANK2 ) = (0+.5) / 37
-❑P(and|BANK1 ) = (1+.5) / 55 P(and|BANK2 ) = (0+.5) / 
+Assume V = 50
+Training:
+P(the|BANK1 ) = (5+.5) / (30+.5V) P(the|BANK2 ) = (3+.5) / (12 + .5V)
+P(world |BANK1 ) = (1+.5) / 55 P(world |BANK2 ) = (0+.5) / 37
+P(and|BANK1 ) = (1+.5) / 55 P(and|BANK2 ) = (0+.5) / 
 37
-❑…
-❑P(off|BANK1 ) = (0+.5) / 55 P(off|BANK2 ) = 
+…
+P(off|BANK1 ) = (0+.5) / 55 P(off|BANK2 ) = 
 (1+.5) / 37
-❑P(Potomac |BANK1 ) = (0+.5) / 55 P(Potomac |BANK2 ) = (1+.5) / 
+P(Potomac |BANK1 ) = (0+.5) / 55 P(Potomac |BANK2 ) = (1+.5) / 
 37
-❑P(BANK1 ) = 5/7
+P(BANK1 ) = 5/7
 P(BANK2 ) = 2/7
-◼Disambiguation: “I lost my left shoe on the banks of the river Nile.”
-❑Score( BANK1 )=log(5/7) + log(P( shoe|BANK1 ))+log(P( on|BANK1 ))+log(P( the|BANK1 )) …
-❑Score( BANK2 )=log(2/7) + log(P( shoe|BANK2 ))+log(P( on|BANK2 ))+log(P( the|BANK2 )) …91Stages of NL Understanding
+Disambiguation: “I lost my left shoe on the banks of the river Nile.”
+Score( BANK1 )=log(5/7) + log(P( shoe|BANK1 ))+log(P( on|BANK1 ))+log(P( the|BANK1 )) …
+Score( BANK2 )=log(2/7) + log(P( shoe|BANK2 ))+log(P( on|BANK2 ))+log(P( the|BANK2 )) …91Stages of NL Understanding
 source: Luger (2005)Semantic interpretation: 
-◼ Lexical Semantics : 
+ Lexical Semantics : 
 What is the 
 meaning/semantic 
 relations between 
 individual words? 
 Chair:  person?  Furniture?
-◼ Compositional 
+ Compositional 
 Semantics: What is the 
 meaning of phrases and 
 sentences?
 The chair’s leg is broken
 92Compositional Semantics
-◼The cat eats the mouse = The mouse is eaten by the cat.
-◼Goal: 
-❑map an expression into a knowledge representation
-◼a representation of context -independent, literal meaning
-◼e.g. first -order predicate logic, conceptual graph, embedding...
-❑to assign semantic roles (different from grammatical roles):
-◼Semantic roles: Agent, Patient, Instrument, Time,  Location, …
-◼Grammatical roles:  subject, direct object, ... 
-◼E.g.
-❑The child hid the candy under the bed.
+The cat eats the mouse = The mouse is eaten by the cat.
+Goal: 
+map an expression into a knowledge representation
+a representation of context -independent, literal meaning
+e.g. first -order predicate logic, conceptual graph, embedding...
+to assign semantic roles (different from grammatical roles):
+Semantic roles: Agent, Patient, Instrument, Time,  Location, …
+Grammatical roles:  subject, direct object, ... 
+E.g.
+The child hid the candy under the bed.
 Hide (agent=child, patient=candy, 
 location=under_the_bed, time=past)
 93Some Difficulties
-◼Syntax is not enough
-❑I ate spaghetti with a fork .  <instrument>
-❑I ate spaghetti with my sister .     <accompanying person>
-❑I ate spaghetti with meat balls .  <attribute of food>
-❑I ate spaghetti with lots of appetite . <manner>
+Syntax is not enough
+I ate spaghetti with a fork .  <instrument>
+I ate spaghetti with my sister .     <accompanying person>
+I ate spaghetti with meat balls .  <attribute of food>
+I ate spaghetti with lots of appetite . <manner>
 …
-❑Gun= instrument that can kill
-❑Metal gun… a gun made out of metal    
-❑Water gun… a gun made out of water? 
-❑Fake gun… it is a gun anyways?  Can it kill? 
-❑General Kane … person     but  General Motors … corporation
-◼Parallel problems to syntactic ambiguity
-❑Happy [cats and dogs] live on the farm
-❑[Happy cats] and dogs live on the farm
-◼Quantifier Scoping
-❑Every man loves a woman.
+Gun= instrument that can kill
+Metal gun… a gun made out of metal    
+Water gun… a gun made out of water? 
+Fake gun… it is a gun anyways?  Can it kill? 
+General Kane … person     but  General Motors … corporation
+Parallel problems to syntactic ambiguity
+Happy [cats and dogs] live on the farm
+[Happy cats] and dogs live on the farm
+Quantifier Scoping
+Every man loves a woman.
 94Stages of NLU
-source: Luger (2005)◼ Discourse Analysis
+source: Luger (2005) Discourse Analysis
 How to relate the meaning of sentences to 
 surrounding sentences?
 I have to go to the store.  I need butter.
 I have to go to the university.  I need butter.
-◼ Pragmatics
+ Pragmatics
 How people use language in a social 
 environment?
 Do you have a child?    
 Do you have a quarter?
-◼ World Knowledge 
+ World Knowledge 
 How knowledge about the world (history, 
 facts, …) modifies our understanding of 
 text?
 Bill Gates passed away last night.
 95Discourse Analysis
-◼In logics: 
-◼Not in NL:
-❑John visited Paris.  He bought Mary some expensive 
+In logics: 
+Not in NL:
+John visited Paris.  He bought Mary some expensive 
 perfume.  Then he flew home.  He went to Walmart.  He 
 bought some underwear.
-❑John visited Paris. Then he flew home. He went to 
+John visited Paris. Then he flew home. He went to 
 Walmart. He bought Mary some expensive perfume. He 
 bought some underwear.
-◼Humans infer relations between sentences that may not 
+Humans infer relations between sentences that may not 
 be explicitly stated in order to make a text coherent.
-❑(?) I am going to Concordia.  I need butter.
+(?) I am going to Concordia.  I need butter.
 96Examples of Discourse Relations
 CONDITION  If it rains, I will go out.
 SEQUENCE Do this, then do that.
@@ -1075,60 +1075,60 @@ Turing was a great
 mathematician living in
 Great Britain. He was an 
 atheist as well as gay. Another Classification Problem, again!
-◼Discourse tagging can be viewed as typical classification problem
-◼use machine learning techniques (ex. Naïve Bayes classifier, decision 
+Discourse tagging can be viewed as typical classification problem
+use machine learning techniques (ex. Naïve Bayes classifier, decision 
 tree) to train a system
-◼that learns a classifier to assign to unseen sentences one of a fixed 
+that learns a classifier to assign to unseen sentences one of a fixed 
 number of discourse relations (categories)
-◼Input: 
-◼Sentence  Ex. If it rains, I will go out.
-◼Features? 
+Input: 
+Sentence  Ex. If it rains, I will go out.
+Features? 
 ▪Connectives such as “ if”, “however ”, “in conclusion ”
 ▪Tense of verb (future, past)
 ▪…
-◼Output: 
-◼Most likely relation in the sentence (none, condition, contrast, 
+Output: 
+Most likely relation in the sentence (none, condition, contrast, 
 purpose, …)98Stages of NLU
-source: Luger (2005)◼ Discourse Analysis
+source: Luger (2005) Discourse Analysis
 How to relate the meaning of sentences to 
 surrounding sentences?
 I have to go to the store.  I need butter.
 I have to go to the university.  I need butter.
-◼ Pragmatics
+ Pragmatics
 How people use language in a social 
 environment?
 Do you have a child?    
 Do you have a quarter?
-◼ World Knowledge 
+ World Knowledge 
 How knowledge about the world (history, 
 facts, …) modifies our understanding of 
 text?
 Bill Gates passed away last night.
 99Pragmatics
-◼goes beyond the literal meaning of a sentence 
-◼tries to explain what the speaker is really expressing
-◼understanding how people use language socially 
-❑E.g.: figures of speech, …
-❑E.g.: Could you spare some change?100Stages of NLU
-source: Luger (2005)◼ Discourse Analysis
+goes beyond the literal meaning of a sentence 
+tries to explain what the speaker is really expressing
+understanding how people use language socially 
+E.g.: figures of speech, …
+E.g.: Could you spare some change?100Stages of NLU
+source: Luger (2005) Discourse Analysis
 How to relate the meaning of sentences to 
 surrounding sentences?
 I have to go to the store.  I need butter.
 I have to go to the university.  I need butter.
-◼ Pragmatics
+ Pragmatics
 How people use language in a social 
 environment?
 Do you have a child?    
 Do you have a quarter?
-◼ World Knowledge 
+ World Knowledge 
 How knowledge about the world (history, 
 facts, …) modifies our understanding of 
 text?
 Bill Gates passed away last night.
 101Using World Knowledge
-◼Using our general knowledge of the world to interpret 
+Using our general knowledge of the world to interpret 
 a sentence/discourse
-◼E.g.: 
+E.g.: 
 The trophy would not fit in the brown suitcase because ...
 ... it was too big.
 ... itwas too small.
@@ -1136,7 +1136,7 @@ The professor sent the student to see the principal because…
 …hewanted to see him.
 …hewas throwing paper balls in class.
 …hecould not take it anymore.
-❑Ex: Silence of the lambs…
+Ex: Silence of the lambs…
 Current Research area: see Winograd Schema Challenge
 102Summary of NLU
 source: Luger (2005)Discourse Analysis
