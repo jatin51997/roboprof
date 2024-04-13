@@ -1,0 +1,693 @@
+----- Process Summary -----
+
+User input: List all courses offered by Concordia University.
+
+Recognized intent: list_courses
+
+Extracted entities: [{'entity': 'university', 'start': 28, 'end': 48, 'confidence_entity': 0.9860579371452332, 'value': 'Concordia University', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}]
+
+Generated SPARQL query: PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                        PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+                        PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+                        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+                        SELECT DISTINCT (?course as ?courseURI) ?courseName  ?courseSubject ?courseNumber ?universityName (?university as ?universityURI) 
+                        WHERE {
+                        ?university a voc:University;
+                                    foaf:name "Concordia University" .  
+                        ?course a voc:Course;
+                                foaf:name ?courseName;
+                                voc:courseSubject ?courseSubject;
+                                voc:courseNumber ?courseNumber;
+                                voc:offeredBy ?university .
+                        ?university foaf:name ?universityName .
+                        }
+                        LIMIT 20
+                        
+
+SPARQL query output: {'head': {'vars': ['courseURI', 'courseName', 'courseSubject', 'courseNumber', 'universityName', 'universityURI']}, 'results': {'bindings': [{'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#7276697962'}, 'courseName': {'type': 'literal', 'value': 'Logistics Network Models'}, 'courseSubject': {'type': 'literal', 'value': 'INDU'}, 'courseNumber': {'type': 'literal', 'value': '442'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#7430115495'}, 'courseName': {'type': 'literal', 'value': 'ATHL. THERAPY FIELD INTER.'}, 'courseSubject': {'type': 'literal', 'value': 'CATA'}, 'courseNumber': {'type': 'literal', 'value': '390'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#4294221242'}, 'courseName': {'type': 'literal', 'value': 'SELECTED TOPICS IN MATH I'}, 'courseSubject': {'type': 'literal', 'value': 'MATH'}, 'courseNumber': {'type': 'literal', 'value': '307'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#8497916478'}, 'courseName': {'type': 'literal', 'value': 'Readings in Mathematics Education II - Approaches to Teaching Probability'}, 'courseSubject': {'type': 'literal', 'value': 'MATH'}, 'courseNumber': {'type': 'literal', 'value': '647B'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#5761095059'}, 'courseName': {'type': 'literal', 'value': 'Financial Economics I'}, 'courseSubject': {'type': 'literal', 'value': 'ECON'}, 'courseNumber': {'type': 'literal', 'value': '642'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#5451401232'}, 'courseName': {'type': 'literal', 'value': 'HONOURS PROJECT'}, 'courseSubject': {'type': 'literal', 'value': 'SPAN'}, 'courseNumber': {'type': 'literal', 'value': '490'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#4976691791'}, 'courseName': {'type': 'literal', 'value': 'Supervised Internship I'}, 'courseSubject': {'type': 'literal', 'value': 'PERC'}, 'courseNumber': {'type': 'literal', 'value': '408'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#7427369025'}, 'courseName': {'type': 'literal', 'value': 'Sexual Representation in Cinema'}, 'courseSubject': {'type': 'literal', 'value': 'FMST'}, 'courseNumber': {'type': 'literal', 'value': '391'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#4297758937'}, 'courseName': {'type': 'literal', 'value': 'SELECTED TOPICS IN PHYSICS'}, 'courseSubject': {'type': 'literal', 'value': 'PHYS'}, 'courseNumber': {'type': 'literal', 'value': '324'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#1129422028'}, 'courseName': {'type': 'literal', 'value': 'ISSUES/CONTEMPOR SOCI THEORY'}, 'courseSubject': {'type': 'literal', 'value': 'SOCI'}, 'courseNumber': {'type': 'literal', 'value': '603'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#9137994286'}, 'courseName': {'type': 'literal', 'value': 'Satire'}, 'courseSubject': {'type': 'literal', 'value': 'ENGL'}, 'courseNumber': {'type': 'literal', 'value': '243'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#5969277285'}, 'courseName': {'type': 'literal', 'value': 'Clinical Biomechanics'}, 'courseSubject': {'type': 'literal', 'value': 'EXCI'}, 'courseNumber': {'type': 'literal', 'value': '451'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#7765802199'}, 'courseName': {'type': 'literal', 'value': 'Kinship and Relatedness'}, 'courseSubject': {'type': 'literal', 'value': 'ANTH'}, 'courseNumber': {'type': 'literal', 'value': '361'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3270603476'}, 'courseName': {'type': 'literal', 'value': 'ALTERNATIVE JOURNALISM'}, 'courseSubject': {'type': 'literal', 'value': 'JOUR'}, 'courseNumber': {'type': 'literal', 'value': '335'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#4823134174'}, 'courseName': {'type': 'literal', 'value': 'Communication Media:  Moving Images II'}, 'courseSubject': {'type': 'literal', 'value': 'COMS'}, 'courseNumber': {'type': 'literal', 'value': '384'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#9031299019'}, 'courseName': {'type': 'literal', 'value': 'SEMINAR IN CONSUMER PSYCHOLOGY AND DECISION MAKING'}, 'courseSubject': {'type': 'literal', 'value': 'MSCA'}, 'courseNumber': {'type': 'literal', 'value': '667'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#7478317762'}, 'courseName': {'type': 'literal', 'value': 'Quantitative Methods in Healthcare Systems'}, 'courseSubject': {'type': 'literal', 'value': 'INDU'}, 'courseNumber': {'type': 'literal', 'value': '6521'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#8571704529'}, 'courseName': {'type': 'literal', 'value': 'Building Engineering Drawing and Introduction to Design'}, 'courseSubject': {'type': 'literal', 'value': 'BLDG'}, 'courseNumber': {'type': 'literal', 'value': '212'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#6682241029'}, 'courseName': {'type': 'literal', 'value': 'SELECTED TOPICS IN HISTORY'}, 'courseSubject': {'type': 'literal', 'value': 'HIST'}, 'courseNumber': {'type': 'literal', 'value': '291'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#1385630766'}, 'courseName': {'type': 'literal', 'value': 'Logic, Proofs, and Discrete Structures'}, 'courseSubject': {'type': 'literal', 'value': 'MATH'}, 'courseNumber': {'type': 'literal', 'value': '222'}, 'universityName': {'type': 'literal', 'value': 'Concordia University'}, 'universityURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3174046842'}}]}}
+
+Natural language response: Here are some of the courses that are offered by Concordia University:
+- Logistics Network Models
+- ATHL. THERAPY FIELD INTER.
+- SELECTED TOPICS IN MATH I
+- Readings in Mathematics Education II - Approaches to Teaching Probability
+- Financial Economics I
+- HONOURS PROJECT
+- Supervised Internship I
+- Sexual Representation in Cinema
+- SELECTED TOPICS IN PHYSICS
+- ISSUES/CONTEMPOR SOCI THEORY
+- Satire
+- Clinical Biomechanics
+- Kinship and Relatedness
+- ALTERNATIVE JOURNALISM
+- Communication Media:  Moving Images II
+- SEMINAR IN CONSUMER PSYCHOLOGY AND DECISION MAKING
+- Quantitative Methods in Healthcare Systems
+- Building Engineering Drawing and Introduction to Design
+- SELECTED TOPICS IN HISTORY
+- Logic, Proofs, and Discrete Structures
+
+---------------------------
+----- Process Summary -----
+
+User input: In which courses is deep learning discussed?
+
+Recognized intent: query_course_by_topic
+
+Extracted entities: [{'entity': 'topic', 'start': 20, 'end': 33, 'confidence_entity': 0.9848940372467041, 'value': 'deep learning', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}]
+
+Generated SPARQL query: PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                        PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+                        PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+                        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+                        SELECT DISTINCT (?courseId as ?courseURI)  ?courseName ?courseSubject ?courseNumber ?topicName
+                        WHERE {
+                        ?topic a voc:Topic ;
+                            foaf:name ?topicName;
+                                foaf:name "DEEP LEARNING" ;  
+                                voc:TopicProvenance ?topicProvenance .
+                        ?lecture a voc:Lecture;
+                                voc:LectureContent ?topicProvenance;
+                                voc:BelongsTo ?courseId.
+                        ?courseId a voc:Course;
+                                foaf:name ?courseName;
+                            voc:courseSubject ?courseSubject;
+                            voc:courseNumber ?courseNumber.    
+                        }
+                        
+
+SPARQL query output: {'head': {'vars': ['courseURI', 'courseName', 'courseSubject', 'courseNumber', 'topicName']}, 'results': {'bindings': [{'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#1658620823'}, 'courseName': {'type': 'literal', 'value': 'APPLIED ARTIFICIAL INTELLIGENCE'}, 'courseSubject': {'type': 'literal', 'value': 'COMP'}, 'courseNumber': {'type': 'literal', 'value': '6721'}, 'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseName': {'type': 'literal', 'value': 'INTELLIGENT SYSTEMS'}, 'courseSubject': {'type': 'literal', 'value': 'COMP'}, 'courseNumber': {'type': 'literal', 'value': '6741'}, 'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}}]}}
+
+Natural language response: Courses discussing DEEP LEARNING:
+- APPLIED ARTIFICIAL INTELLIGENCE
+- INTELLIGENT SYSTEMS
+
+---------------------------
+----- Process Summary -----
+
+User input: Which topics are covered in INTELLIGENT SYSTEMS during lecture3?
+
+Recognized intent: query_lecture_topics
+
+Extracted entities: [{'entity': 'course', 'start': 28, 'end': 47, 'confidence_entity': 0.9674272537231445, 'value': 'INTELLIGENT SYSTEMS', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}, {'entity': 'lecture_number', 'start': 55, 'end': 63, 'confidence_entity': 0.9959802627563477, 'value': 'lecture3', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}]
+
+Generated SPARQL query: 
+                     PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                    PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+                    PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+                    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+                        SELECT ?topicName (COUNT(?course) as ?topicFrequency)
+                        WHERE {
+                        ?course a voc:Course;
+                                foaf:name ?courseName;
+                                foaf:name "INTELLIGENT SYSTEMS" .  
+                            
+                        ?lectures voc:BelongsTo ?course;
+                                    voc:LectureNumber ?lectureNumber;
+                                    voc:LectureContent ?lectureContent.
+                                    
+                        ?topic a voc:Topic;
+                                voc:TopicProvenance ?lectureContent;
+                                foaf:name ?topicName.
+                                FILTER(?lectureNumber = "3")
+                        }
+                        GROUP BY ?topicName
+                        ORDER BY DESC(COUNT(?course))
+                        LIMIT 10
+                                                
+
+SPARQL query output: {'head': {'vars': ['topicName', 'topicFrequency']}, 'results': {'bindings': [{'topicName': {'type': 'literal', 'value': 'RDFS'}, 'topicFrequency': {'type': 'literal', 'datatype': 'http://www.w3.org/2001/XMLSchema#integer', 'value': '107'}}, {'topicName': {'type': 'literal', 'value': 'FOAF'}, 'topicFrequency': {'type': 'literal', 'datatype': 'http://www.w3.org/2001/XMLSchema#integer', 'value': '91'}}, {'topicName': {'type': 'literal', 'value': 'URI'}, 'topicFrequency': {'type': 'literal', 'datatype': 'http://www.w3.org/2001/XMLSchema#integer', 'value': '81'}}, {'topicName': {'type': 'literal', 'value': 'RDF SCHEMA'}, 'topicFrequency': {'type': 'literal', 'datatype': 'http://www.w3.org/2001/XMLSchema#integer', 'value': '76'}}, {'topicName': {'type': 'literal', 'value': 'SKOS'}, 'topicFrequency': {'type': 'literal', 'datatype': 'http://www.w3.org/2001/XMLSchema#integer', 'value': '73'}}, {'topicName': {'type': 'literal', 'value': 'DUBLIN CORE'}, 'topicFrequency': {'type': 'literal', 'datatype': 'http://www.w3.org/2001/XMLSchema#integer', 'value': '69'}}, {'topicName': {'type': 'literal', 'value': 'READING'}, 'topicFrequency': {'type': 'literal', 'datatype': 'http://www.w3.org/2001/XMLSchema#integer', 'value': '68'}}, {'topicName': {'type': 'literal', 'value': 'RDF'}, 'topicFrequency': {'type': 'literal', 'datatype': 'http://www.w3.org/2001/XMLSchema#integer', 'value': '42'}}, {'topicName': {'type': 'literal', 'value': 'DBPEDIA'}, 'topicFrequency': {'type': 'literal', 'datatype': 'http://www.w3.org/2001/XMLSchema#integer', 'value': '17'}}, {'topicName': {'type': 'literal', 'value': 'GRAPH'}, 'topicFrequency': {'type': 'literal', 'datatype': 'http://www.w3.org/2001/XMLSchema#integer', 'value': '15'}}]}}
+
+Natural language response: Topics covered in lecture 3 of INTELLIGENT SYSTEMS:
+- RDFS
+- FOAF
+- URI
+- RDF SCHEMA
+- SKOS
+- DUBLIN CORE
+- READING
+- RDF
+- DBPEDIA
+- GRAPH
+
+---------------------------
+----- Process Summary -----
+
+User input: List all courses offered by Concordia University within COMP.
+
+Recognized intent: list_courses_by_subject
+
+Extracted entities: [{'entity': 'university', 'start': 28, 'end': 48, 'confidence_entity': 0.9053091406822205, 'value': 'Concordia University', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}, {'entity': 'subject', 'start': 56, 'end': 60, 'confidence_entity': 0.9980348944664001, 'value': 'COMP', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}]
+
+Generated SPARQL query: 
+                        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                        PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+                        PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+                        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+                        SELECT DISTINCT ?courseName (?courseId as ?courseURI) ?courseSubject ?courseNumber
+                        WHERE {
+                        ?university foaf:name "Concordia University" . 
+                        
+                        ?courseId a voc:Course;
+                                    voc:offeredBy ?university;
+                                    voc:courseSubject ?courseSubject;
+                                    foaf:name ?courseName;
+                                    voc:courseNumber ?courseNumber .
+                        
+                        FILTER(?courseSubject = "COMP")
+                        }
+                        LIMIT 10
+                        
+
+SPARQL query output: {'head': {'vars': ['courseName', 'courseURI', 'courseSubject', 'courseNumber']}, 'results': {'bindings': [{'courseName': {'type': 'literal', 'value': 'Object-Oriented Programming I'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#4904775557'}, 'courseSubject': {'type': 'literal', 'value': 'COMP'}, 'courseNumber': {'type': 'literal', 'value': '248'}}, {'courseName': {'type': 'literal', 'value': 'Image Processing'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#7171457614'}, 'courseSubject': {'type': 'literal', 'value': 'COMP'}, 'courseNumber': {'type': 'literal', 'value': '6771'}}, {'courseName': {'type': 'literal', 'value': 'GEOMETRIC MODLEING AND PROCESSING'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#8928577406'}, 'courseSubject': {'type': 'literal', 'value': 'COMP'}, 'courseNumber': {'type': 'literal', 'value': '438'}}, {'courseName': {'type': 'literal', 'value': 'Object-Oriented Programming II'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#7025026609'}, 'courseSubject': {'type': 'literal', 'value': 'COMP'}, 'courseNumber': {'type': 'literal', 'value': '249'}}, {'courseName': {'type': 'literal', 'value': 'Digital Geometric Modelling'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#9527978673'}, 'courseSubject': {'type': 'literal', 'value': 'COMP'}, 'courseNumber': {'type': 'literal', 'value': '6381'}}, {'courseName': {'type': 'literal', 'value': 'COMPUTER VISION'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3720843604'}, 'courseSubject': {'type': 'literal', 'value': 'COMP'}, 'courseNumber': {'type': 'literal', 'value': '6341'}}, {'courseName': {'type': 'literal', 'value': 'FOUNDATIONS/SEMANTIC WEB'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#1331971401'}, 'courseSubject': {'type': 'literal', 'value': 'COMP'}, 'courseNumber': {'type': 'literal', 'value': '6531'}}, {'courseName': {'type': 'literal', 'value': 'Design and Analysis of Algorithms'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#2874746211'}, 'courseSubject': {'type': 'literal', 'value': 'COMP'}, 'courseNumber': {'type': 'literal', 'value': '465'}}, {'courseName': {'type': 'literal', 'value': 'OPERATING SYSTEMS'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3924660681'}, 'courseSubject': {'type': 'literal', 'value': 'COMP'}, 'courseNumber': {'type': 'literal', 'value': '5461'}}, {'courseName': {'type': 'literal', 'value': 'Fundamentals of Programming'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3251709741'}, 'courseSubject': {'type': 'literal', 'value': 'COMP'}, 'courseNumber': {'type': 'literal', 'value': '218'}}]}}
+
+Natural language response: Here are some courses offered by Concordia University within the subject:
+-Object-Oriented Programming I, COMP 248
+-Image Processing, COMP 6771
+-GEOMETRIC MODLEING AND PROCESSING, COMP 438
+-Object-Oriented Programming II, COMP 249
+-Digital Geometric Modelling, COMP 6381
+-COMPUTER VISION, COMP 6341
+-FOUNDATIONS/SEMANTIC WEB, COMP 6531
+-Design and Analysis of Algorithms, COMP 465
+-OPERATING SYSTEMS, COMP 5461
+-Fundamentals of Programming, COMP 218
+
+---------------------------
+----- Process Summary -----
+
+User input: What materials are recommended for deep learning in COMP 6741?
+
+Recognized intent: recommended_materials
+
+Extracted entities: [{'entity': 'topic', 'start': 35, 'end': 48, 'confidence_entity': 0.913475513458252, 'value': 'deep learning', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}, {'entity': 'subject', 'start': 52, 'end': 56, 'confidence_entity': 0.9992601871490479, 'value': 'COMP', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}, {'entity': 'subjectNumber', 'start': 57, 'end': 61, 'confidence_entity': 0.9982981085777283, 'value': '6741', 'extractor': 'DIETClassifier'}]
+
+Generated SPARQL query: 
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+            PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+       SELECT  (?topic as ?topicURI) ?topicName (?course as ?courseURI) ?courseNo  ?materials
+        WHERE {
+        ?course a voc:Course;
+                voc:courseSubject "COMP";
+                voc:courseNumber "6741";
+                foaf:name ?courseName;
+                voc:courseSubject ?courseSub;
+                voc:courseNumber ?courseNum.
+        
+            ?lecture a voc:Lecture;
+            foaf:name ?lectureName ;
+            voc:LectureContent ?lectureContent;
+            voc:BelongsTo ?course;
+            voc:LectureContent ?materials.
+        
+        ?topic a voc:Topic;
+            foaf:name ?topicName;
+            foaf:name "DEEP LEARNING";
+            voc:TopicProvenance ?lectureContent;
+        BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
+        }LIMIT 10
+        
+
+SPARQL query output: {'head': {'vars': ['topicURI', 'topicName', 'courseURI', 'courseNo', 'materials']}, 'results': {'bindings': [{'topicURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#1318424564'}, 'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'materials': {'type': 'uri', 'value': 'https://www.youtube.com/watch?embed=no&v=4b5d3muPQmA'}}, {'topicURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3709593266'}, 'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'materials': {'type': 'uri', 'value': 'https://www.youtube.com/watch?embed=no&v=4b5d3muPQmA'}}, {'topicURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#1318424564'}, 'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'materials': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt'}}, {'topicURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3709593266'}, 'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'materials': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt'}}, {'topicURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#1318424564'}, 'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'materials': {'type': 'uri', 'value': 'https://en.wikipedia.org/wiki/Precision_and_recall'}}, {'topicURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3709593266'}, 'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'materials': {'type': 'uri', 'value': 'https://en.wikipedia.org/wiki/Precision_and_recall'}}, {'topicURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#1318424564'}, 'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'materials': {'type': 'uri', 'value': 'https://en.wikipedia.org/wiki/K-means_clustering'}}, {'topicURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3709593266'}, 'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'materials': {'type': 'uri', 'value': 'https://en.wikipedia.org/wiki/K-means_clustering'}}, {'topicURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#1318424564'}, 'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'materials': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt'}}, {'topicURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3709593266'}, 'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'materials': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt'}}]}}
+
+Natural language response: Materials recommended for topic DEEP LEARNING in course 6741:
+- https://www.youtube.com/watch?embed=no&v=4b5d3muPQmA
+- https://www.youtube.com/watch?embed=no&v=4b5d3muPQmA
+- file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt
+- file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt
+- https://en.wikipedia.org/wiki/Precision_and_recall
+- https://en.wikipedia.org/wiki/Precision_and_recall
+- https://en.wikipedia.org/wiki/K-means_clustering
+- https://en.wikipedia.org/wiki/K-means_clustering
+- file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt
+- file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt
+
+---------------------------
+----- Process Summary -----
+
+User input: How many credits is COMP 6741 worth?
+
+Recognized intent: course_credits
+
+Extracted entities: [{'entity': 'subject', 'start': 20, 'end': 24, 'confidence_entity': 0.9991064071655273, 'value': 'COMP', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}, {'entity': 'subjectNumber', 'start': 25, 'end': 29, 'confidence_entity': 0.9960070252418518, 'value': '6741', 'extractor': 'DIETClassifier'}]
+
+Generated SPARQL query: 
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+        PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+       SELECT (?course as ?courseURI) ?courseName ?courseSubject ?courseNumber ?type ?credits
+        WHERE {
+        ?course a voc:Course;
+                foaf:name ?courseName;
+                voc:courseSubject ?courseSubject;
+                voc:courseNumber ?courseNumber;
+                voc:CourseType ?type;
+                voc:courseCredits ?credits.
+                
+        FILTER(?courseSubject = "COMP" && ?courseNumber = "6741")
+        }
+        
+
+SPARQL query output: {'head': {'vars': ['courseURI', 'courseName', 'courseSubject', 'courseNumber', 'type', 'credits']}, 'results': {'bindings': [{'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseName': {'type': 'literal', 'value': 'INTELLIGENT SYSTEMS'}, 'courseSubject': {'type': 'literal', 'value': 'COMP'}, 'courseNumber': {'type': 'literal', 'value': '6741'}, 'type': {'type': 'literal', 'value': 'Lecture'}, 'credits': {'type': 'literal', 'value': '4.00'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#4072449489'}, 'courseName': {'type': 'literal', 'value': 'INTELLIGENT SYSTEMS'}, 'courseSubject': {'type': 'literal', 'value': 'COMP'}, 'courseNumber': {'type': 'literal', 'value': '6741'}, 'type': {'type': 'literal', 'value': 'Laboratory'}, 'credits': {'type': 'literal', 'value': '4.00'}}]}}
+
+Natural language response: The credits for subject COMP 6741 are 4.00.
+
+---------------------------
+----- Process Summary -----
+
+User input: For COMP 6741, what additional resources are available?
+
+Recognized intent: additional_resources
+
+Extracted entities: [{'entity': 'subject', 'start': 4, 'end': 8, 'confidence_entity': 0.9955541491508484, 'value': 'COMP', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}, {'entity': 'subjectNumber', 'start': 9, 'end': 13, 'confidence_entity': 0.9965139031410217, 'value': '6741', 'extractor': 'DIETClassifier'}]
+
+Generated SPARQL query: 
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+            PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+       SELECT  DISTINCT (?course as ?courseURI) ?courseNo  ?additionalResources 
+        WHERE {
+        ?course a voc:Course;
+                voc:courseSubject "COMP";
+                voc:courseNumber "6741";
+                foaf:name ?courseName;
+                voc:courseSubject ?courseSub;
+                voc:courseNumber ?courseNum.
+        
+            ?lecture a voc:Lecture;
+            foaf:name ?lectureName ;
+            voc:LectureContent ?lectureContent;
+            voc:BelongsTo ?course;
+            voc:LectureContent ?additionalResources.  
+            ?additionalResources a voc:AdditionalResources.
+        
+        
+        BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
+        }LIMIT 10
+        
+
+SPARQL query output: {'head': {'vars': ['courseURI', 'courseNo', 'additionalResources']}, 'results': {'bindings': [{'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'additionalResources': {'type': 'uri', 'value': 'https://www.youtube.com/watch?embed=no&v=r3yMSl5NB_Q'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'additionalResources': {'type': 'uri', 'value': 'https://www.youtube.com/watch?embed=no&v=4b5d3muPQmA'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'additionalResources': {'type': 'uri', 'value': 'https://en.wikipedia.org/wiki/Precision_and_recall'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'additionalResources': {'type': 'uri', 'value': 'https://en.wikipedia.org/wiki/K-means_clustering'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'additionalResources': {'type': 'uri', 'value': 'https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'additionalResources': {'type': 'uri', 'value': 'https://www.youtube.com/watch?embed=no&v=YpK2U1BxX-I'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'additionalResources': {'type': 'uri', 'value': 'https://techblog.wikimedia.org/2020/03/24/computational-knowledge-wikidata-wikidata-query-service-and-women-who-are-mayors/'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'additionalResources': {'type': 'uri', 'value': 'https://datajournalism.com/read/longreads/the-promise-of-wikidata'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'additionalResources': {'type': 'uri', 'value': 'https://www.youtube.com/watch?embed=no&v=25UIgiiYqsE'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'additionalResources': {'type': 'uri', 'value': 'https://stanford.edu/~shervine/teaching/cs-229/refresher-algebra-calculus'}}]}}
+
+Natural language response: Additional Resources:
+-https://www.youtube.com/watch?embed=no&v=r3yMSl5NB_Q
+-https://www.youtube.com/watch?embed=no&v=4b5d3muPQmA
+-https://en.wikipedia.org/wiki/Precision_and_recall
+-https://en.wikipedia.org/wiki/K-means_clustering
+-https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn
+-https://www.youtube.com/watch?embed=no&v=YpK2U1BxX-I
+-https://techblog.wikimedia.org/2020/03/24/computational-knowledge-wikidata-wikidata-query-service-and-women-who-are-mayors/
+-https://datajournalism.com/read/longreads/the-promise-of-wikidata
+-https://www.youtube.com/watch?embed=no&v=25UIgiiYqsE
+-https://stanford.edu/~shervine/teaching/cs-229/refresher-algebra-calculus
+
+---------------------------
+----- Process Summary -----
+
+User input: Detail the content available for lecture3 in COMP 6741.
+
+Recognized intent: query_lecture_content
+
+Extracted entities: [{'entity': 'lecture_number', 'start': 33, 'end': 41, 'confidence_entity': 0.9770625829696655, 'value': 'lecture3', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}, {'entity': 'subject', 'start': 45, 'end': 49, 'confidence_entity': 0.9990528225898743, 'value': 'COMP', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}, {'entity': 'subjectNumber', 'start': 50, 'end': 54, 'confidence_entity': 0.997430145740509, 'value': '6741', 'extractor': 'DIETClassifier'}]
+
+Generated SPARQL query: 
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+        PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+        SELECT (?course as ?courseURI) ?courseNo (?lecture as ?lectureURI) ?lectureName ?lectureNumber ?lectureContent
+        WHERE {
+        ?course a voc:Course ;
+                voc:courseSubject "COMP" ;
+                voc:courseNumber "6741" ;
+                voc:courseSubject ?courseSub;
+                voc:courseNumber ?courseNum.
+        
+        ?lecture a voc:Lecture ;
+                voc:BelongsTo ?course ;
+                voc:LectureNumber "3";
+                voc:LectureNumber ?lectureNumber;
+                foaf:name ?lectureName;
+                voc:LectureContent ?lectureContent.
+        BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
+        }LIMIT 10
+        
+
+SPARQL query output: {'head': {'vars': ['courseURI', 'courseNo', 'lectureURI', 'lectureName', 'lectureNumber', 'lectureContent']}, 'results': {'bindings': [{'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'lectureURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies'}, 'lectureName': {'type': 'literal', 'value': 'KnowledgeGraphsVocabulariesandOntologies'}, 'lectureNumber': {'type': 'literal', 'value': '3'}, 'lectureContent': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'lectureURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies'}, 'lectureName': {'type': 'literal', 'value': 'KnowledgeGraphsVocabulariesandOntologies'}, 'lectureNumber': {'type': 'literal', 'value': '3'}, 'lectureContent': {'type': 'uri', 'value': 'https://www.youtube.com/watch?embed=no&v=r3yMSl5NB_Q'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'lectureURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies'}, 'lectureName': {'type': 'literal', 'value': 'KnowledgeGraphsVocabulariesandOntologies'}, 'lectureNumber': {'type': 'literal', 'value': '3'}, 'lectureContent': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'lectureURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies'}, 'lectureName': {'type': 'literal', 'value': 'KnowledgeGraphsVocabulariesandOntologies'}, 'lectureNumber': {'type': 'literal', 'value': '3'}, 'lectureContent': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt'}}]}}
+
+Natural language response: Lecture content for lecture 3 in course 6741:
+-file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt
+
+-https://www.youtube.com/watch?embed=no&v=r3yMSl5NB_Q
+
+-file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt
+
+-file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt
+
+
+---------------------------
+----- Process Summary -----
+
+User input: What reading materials are recommended for studying deep learning in COMP 6721?
+
+Recognized intent: query_reading_materials
+
+Extracted entities: [{'entity': 'topic', 'start': 52, 'end': 65, 'confidence_entity': 0.9211518168449402, 'value': 'deep learning', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}, {'entity': 'subject', 'start': 69, 'end': 73, 'confidence_entity': 0.9986438155174255, 'value': 'COMP', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}, {'entity': 'subjectNumber', 'start': 74, 'end': 78, 'confidence_entity': 0.998144268989563, 'value': '6721', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}]
+
+Generated SPARQL query: 
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+            PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+        SELECT  DISTINCT ?topicName (?course as ?courseURI) ?courseNo  ?readingMaterials
+            WHERE {
+            ?course a voc:Course;
+                    voc:courseSubject "COMP";
+                    voc:courseNumber "6721";
+                    foaf:name ?courseName;
+                    voc:courseSubject ?courseSub;
+                    voc:courseNumber ?courseNum.
+            
+                ?lecture a voc:Lecture;
+                foaf:name ?lectureName ;
+                voc:LectureContent ?lectureContent;
+                voc:BelongsTo ?course;
+                voc:LectureContent ?readingMaterials.
+                ?readingMaterials a voc:Readings.
+            
+            ?topic a voc:Topic;
+                foaf:name ?topicName;
+                foaf:name "DEEP LEARNING";
+                voc:TopicProvenance ?lectureContent;
+            BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
+            }LIMIT 10
+        
+
+SPARQL query output: {'head': {'vars': ['topicName', 'courseURI', 'courseNo', 'readingMaterials']}, 'results': {'bindings': [{'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#1658620823'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6721'}, 'readingMaterials': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/7_IntroToDL/readings07.txt'}}, {'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#1658620823'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6721'}, 'readingMaterials': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/10_NLP/readings10.txt'}}]}}
+
+Natural language response: Reading materials recommended for studying DEEP LEARNING in course 6721:
+- file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/7_IntroToDL/readings07.txt
+- file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6721/lectures/10_NLP/readings10.txt
+
+---------------------------
+----- Process Summary -----
+
+User input: What competencies does a student gain after completing COMP 6741
+
+Recognized intent: query_course_competencies
+
+Extracted entities: [{'entity': 'subject', 'start': 55, 'end': 59, 'confidence_entity': 0.999255895614624, 'value': 'COMP', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}, {'entity': 'subjectNumber', 'start': 60, 'end': 64, 'confidence_entity': 0.9976291060447693, 'value': '6741', 'extractor': 'DIETClassifier'}]
+
+Generated SPARQL query: 
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+        PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+        SELECT DISTINCT ?course ?courseNo ?competency (?lectureContent as ?competencyURI)
+        WHERE {
+        ?course a voc:Course ;
+            voc:courseNumber ?courseNum;
+                voc:courseSubject ?courseSub.
+        ?lecture a voc:Lecture;
+                voc:BelongsTo ?course;
+                voc:LectureContent ?lectureContent.
+        ?topic a voc:Topic;
+                voc:TopicProvenance ?lectureContent;
+                    foaf:name ?competency.
+        BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
+        FILTER(?courseSub = "COMP" && ?courseNum="6741")
+        
+        }LIMIT 10
+        
+
+SPARQL query output: {'head': {'vars': ['course', 'courseNo', 'competency', 'competencyURI']}, 'results': {'bindings': [{'course': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'competency': {'type': 'literal', 'value': 'SEMANTICS'}, 'competencyURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt'}}, {'course': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'competency': {'type': 'literal', 'value': 'GRAPH'}, 'competencyURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt'}}, {'course': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'competency': {'type': 'literal', 'value': 'SPARQL'}, 'competencyURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt'}}, {'course': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'competency': {'type': 'literal', 'value': 'KNOWLEDGE GRAPH'}, 'competencyURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt'}}, {'course': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'competency': {'type': 'literal', 'value': 'SEMANTIC WEB'}, 'competencyURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt'}}, {'course': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'competency': {'type': 'literal', 'value': 'WEB ONTOLOGY LANGUAGE'}, 'competencyURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt'}}, {'course': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'competency': {'type': 'literal', 'value': 'DISCOVERABILITY'}, 'competencyURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt'}}, {'course': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'competency': {'type': 'literal', 'value': 'QUEBEC'}, 'competencyURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt'}}, {'course': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'competency': {'type': 'literal', 'value': 'AI'}, 'competencyURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt'}}, {'course': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseNo': {'type': 'literal', 'value': 'COMP 6741'}, 'competency': {'type': 'literal', 'value': 'DATA SCIENCE'}, 'competencyURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt'}}]}}
+
+Natural language response: Competencies gained after completing course 6741:
+- SEMANTICS
+- GRAPH
+- SPARQL
+- KNOWLEDGE GRAPH
+- SEMANTIC WEB
+- WEB ONTOLOGY LANGUAGE
+- DISCOVERABILITY
+- QUEBEC
+- AI
+- DATA SCIENCE
+
+---------------------------
+----- Process Summary -----
+
+User input: What grades did 123456 achieve in COMP 6741?
+
+Recognized intent: query_student_grades
+
+Extracted entities: [{'entity': 'student_id', 'start': 16, 'end': 22, 'confidence_entity': 0.9945975542068481, 'value': '123456', 'extractor': 'DIETClassifier'}, {'entity': 'subject', 'start': 34, 'end': 38, 'confidence_entity': 0.999142050743103, 'value': 'COMP', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}, {'entity': 'subjectNumber', 'start': 39, 'end': 43, 'confidence_entity': 0.997261643409729, 'value': '6741', 'extractor': 'DIETClassifier'}]
+
+Generated SPARQL query: 
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+        PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+        SELECT DISTINCT (?student as ?studentURI) ?IDnumber ?givenName ?familyName ?course ?grade 
+        WHERE {
+        ?student a voc:Student;
+                voc:IDNumber "123456";      
+                voc:CompletedCourse ?completedCourse.
+        
+        ?completedCourse voc:Course ?course ;                   
+                        voc:Grade ?grade .
+        
+        ?student foaf:givenName ?givenName ;
+                foaf:familyName ?familyName ;
+                voc:IDNumber ?IDnumber.
+        
+        FILTER (?course = "COMP6741")
+        }
+        
+
+SPARQL query output: {'head': {'vars': ['studentURI', 'IDnumber', 'givenName', 'familyName', 'course', 'grade']}, 'results': {'bindings': [{'studentURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#123456'}, 'IDnumber': {'type': 'literal', 'value': '123456'}, 'givenName': {'type': 'literal', 'value': 'John'}, 'familyName': {'type': 'literal', 'value': 'Doe'}, 'course': {'type': 'literal', 'value': 'COMP6741'}, 'grade': {'type': 'literal', 'value': 'A-'}}]}}
+
+Natural language response: Grades achieved by student with ID number 123456 in the specified course:
+- Name: John Doe
+  Course: COMP6741
+  Grade: A-
+
+---------------------------
+----- Process Summary -----
+
+User input: Which students have completed COMP 6741?
+
+Recognized intent: query_completed_students
+
+Extracted entities: [{'entity': 'subject', 'start': 30, 'end': 34, 'confidence_entity': 0.9989776611328125, 'value': 'COMP', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}, {'entity': 'subjectNumber', 'start': 35, 'end': 39, 'confidence_entity': 0.9971753358840942, 'value': '6741', 'extractor': 'DIETClassifier'}]
+
+Generated SPARQL query: 
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+        PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+       SELECT DISTINCT (?student as ?studentURI) ?studentID ?givenName ?familyName ?email
+        WHERE {
+        ?student a voc:Student;
+                voc:CompletedCourse ?completedCourse;
+                foaf:givenName ?givenName;
+                foaf:familyName ?familyName;
+                voc:IDNumber ?studentID;
+                foaf:mbox ?email.
+        ?completedCourse voc:Course ?course ;
+                
+        FILTER(?course = "COMP6741")
+        }
+        
+
+SPARQL query output: {'head': {'vars': ['studentURI', 'studentID', 'givenName', 'familyName', 'email']}, 'results': {'bindings': [{'studentURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#456789'}, 'studentID': {'type': 'literal', 'value': '456789'}, 'givenName': {'type': 'literal', 'value': 'Bob'}, 'familyName': {'type': 'literal', 'value': 'Williams'}, 'email': {'type': 'literal', 'value': 'bobwilliams@example.com'}}, {'studentURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#654321'}, 'studentID': {'type': 'literal', 'value': '654321'}, 'givenName': {'type': 'literal', 'value': 'Jane'}, 'familyName': {'type': 'literal', 'value': 'Smith'}, 'email': {'type': 'literal', 'value': 'janesmith@example.com'}}, {'studentURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#987654'}, 'studentID': {'type': 'literal', 'value': '987654'}, 'givenName': {'type': 'literal', 'value': 'Alice'}, 'familyName': {'type': 'literal', 'value': 'Johnson'}, 'email': {'type': 'literal', 'value': 'alicejohnson@example.com'}}, {'studentURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#123456'}, 'studentID': {'type': 'literal', 'value': '123456'}, 'givenName': {'type': 'literal', 'value': 'John'}, 'familyName': {'type': 'literal', 'value': 'Doe'}, 'email': {'type': 'literal', 'value': 'johndoe@example.com'}}]}}
+
+Natural language response: Students who have completed course COMP6741:
+- Name: Bob Williams
+  Student ID: 456789
+  Email: bobwilliams@example.com
+- Name: Jane Smith
+  Student ID: 654321
+  Email: janesmith@example.com
+- Name: Alice Johnson
+  Student ID: 987654
+  Email: alicejohnson@example.com
+- Name: John Doe
+  Student ID: 123456
+  Email: johndoe@example.com
+
+---------------------------
+----- Process Summary -----
+
+User input: Print a transcript for a 123456, listing all the course taken with their grades.
+
+Recognized intent: query_transcript
+
+Extracted entities: [{'entity': 'student_id', 'start': 25, 'end': 31, 'confidence_entity': 0.997132420539856, 'value': '123456', 'extractor': 'DIETClassifier'}]
+
+Generated SPARQL query: 
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+            PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+            SELECT DISTINCT ?course ?grade (?course1 as ?courseURI)
+            WHERE {
+            ?student a voc:Student;
+                    voc:IDNumber "123456";      
+                    voc:CompletedCourse ?completedCourse.
+            
+            ?completedCourse voc:Course ?course ;
+                                voc:Grade ?grade .
+            BIND(REPLACE(STR(?course), "[^A-Za-z]+", "") AS ?alphabeticPrefix).
+            BIND(REPLACE(STR(?course), "[^0-9]+", "") AS ?numericPart).
+            
+            ?course1 a voc:Course;
+                        voc:courseNumber ?numericPart;
+                        voc:courseSubject ?alphabeticPrefix;
+                        voc:CourseType "Lecture".
+            }
+        
+
+SPARQL query output: {'head': {'vars': ['course', 'grade', 'courseURI']}, 'results': {'bindings': [{'course': {'type': 'literal', 'value': 'COMP6721'}, 'grade': {'type': 'literal', 'value': 'B+'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#1658620823'}}, {'course': {'type': 'literal', 'value': 'COMP6741'}, 'grade': {'type': 'literal', 'value': 'A-'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}}]}}
+
+Natural language response: Transcript for student with ID number 123456:
+- Course: COMP6721
+  Grade: B+
+  Course URI: file:///Users/jatin/workspace/roboprof/data#1658620823
+- Course: COMP6741
+  Grade: A-
+  Course URI: file:///Users/jatin/workspace/roboprof/data#3008498559
+
+---------------------------
+----- Process Summary -----
+
+User input: What is COMP 6741 about?
+
+Recognized intent: query_course_description
+
+Extracted entities: [{'entity': 'subject', 'start': 8, 'end': 12, 'confidence_entity': 0.998599648475647, 'value': 'COMP', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}, {'entity': 'subjectNumber', 'start': 13, 'end': 17, 'confidence_entity': 0.9959560036659241, 'value': '6741', 'extractor': 'DIETClassifier'}]
+
+Generated SPARQL query: 
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+        PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+        SELECT (?course as ?courseURI) ?courseName ?courseSubject ?courseNumber ?CourseDescription
+        WHERE {
+          ?course a voc:Course;
+                  foaf:name ?courseName;
+                  voc:courseSubject ?courseSubject;
+                  voc:courseNumber ?courseNumber;
+                  voc:CourseType "Lecture";
+                  voc:CourseDescription ?CourseDescription.
+                  
+          FILTER(?courseSubject = "COMP" && ?courseNumber = "6741")
+        }
+        
+
+SPARQL query output: {'head': {'vars': ['courseURI', 'courseName', 'courseSubject', 'courseNumber', 'CourseDescription']}, 'results': {'bindings': [{'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseName': {'type': 'literal', 'value': 'INTELLIGENT SYSTEMS'}, 'courseSubject': {'type': 'literal', 'value': 'COMP'}, 'courseNumber': {'type': 'literal', 'value': '6741'}, 'CourseDescription': {'type': 'literal', 'value': 'Knowledge representation and reasoning. Uncertainty and conflict resolution. Design of intelligent systems. Grammar-based, rule-based, and blackboard architectures. A project is required.'}}]}}
+
+Natural language response: Course Details:
+- Course URI: file:///Users/jatin/workspace/roboprof/data#3008498559
+  Name: INTELLIGENT SYSTEMS
+  Subject: COMP
+  Number: 6741
+  Description: Knowledge representation and reasoning. Uncertainty and conflict resolution. Design of intelligent systems. Grammar-based, rule-based, and blackboard architectures. A project is required.
+
+---------------------------
+----- Process Summary -----
+
+User input: Can you list the topics discussed in COMP 6741 slides04?
+
+Recognized intent: query_course_event_topics
+
+Extracted entities: [{'entity': 'subject', 'start': 37, 'end': 41, 'confidence_entity': 0.9992365837097168, 'value': 'COMP', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}, {'entity': 'subjectNumber', 'start': 42, 'end': 46, 'confidence_entity': 0.9979195594787598, 'value': '6741', 'extractor': 'DIETClassifier'}, {'entity': 'courseEvent', 'start': 47, 'end': 55, 'confidence_entity': 0.5639016628265381, 'value': 'slides04', 'extractor': 'DIETClassifier'}]
+
+Generated SPARQL query: 
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+        PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+        SELECT DISTINCT (?course as ?courseURI) ?courseName (?lectureContent as ?resourceURI) ?ResourceName ?topicName ?wikiURI
+        WHERE {
+          ?course a voc:Course;
+                  voc:courseSubject ?courseSubject;
+                  voc:courseNumber ?courseNumber.
+          ?lecture a voc:Lecture;
+                  voc:BelongsTo ?course;
+                  foaf:name ?lectureName;
+                  voc:LectureNumber ?lectureNum;
+                  voc:LectureContent ?lectureContent.
+          ?topic a voc:Topic;
+                  voc:TopicProvenance ?lectureContent;
+                  foaf:name ?topicName;
+                  rdfs:seeAlso ?wikiURI.
+          ?lectureContent voc:ResourceName ?ResourceName.
+          BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName).
+          FILTER(?courseSubject = "COMP" && ?courseNumber = "6741" && ?ResourceName ="slides04" )
+        }LIMIT 10
+        
+
+SPARQL query output: {'head': {'vars': ['courseURI', 'courseName', 'resourceURI', 'ResourceName', 'topicName', 'wikiURI']}, 'results': {'bindings': [{'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseName': {'type': 'literal', 'value': 'COMP 6741'}, 'resourceURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt'}, 'ResourceName': {'type': 'literal', 'value': 'slides04'}, 'topicName': {'type': 'literal', 'value': 'FREEBASE'}, 'wikiURI': {'type': 'uri', 'value': 'http://dbpedia.org/resource/Freebase_(database)'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseName': {'type': 'literal', 'value': 'COMP 6741'}, 'resourceURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt'}, 'ResourceName': {'type': 'literal', 'value': 'slides04'}, 'topicName': {'type': 'literal', 'value': 'RDF'}, 'wikiURI': {'type': 'uri', 'value': 'http://dbpedia.org/resource/Resource_Description_Framework'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseName': {'type': 'literal', 'value': 'COMP 6741'}, 'resourceURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt'}, 'ResourceName': {'type': 'literal', 'value': 'slides04'}, 'topicName': {'type': 'literal', 'value': 'SPARQL'}, 'wikiURI': {'type': 'uri', 'value': 'http://dbpedia.org/resource/SPARQL'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseName': {'type': 'literal', 'value': 'COMP 6741'}, 'resourceURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt'}, 'ResourceName': {'type': 'literal', 'value': 'slides04'}, 'topicName': {'type': 'literal', 'value': 'DESIGN ISSUES'}, 'wikiURI': {'type': 'uri', 'value': 'http://dbpedia.org/resource/Design_Issues'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseName': {'type': 'literal', 'value': 'COMP 6741'}, 'resourceURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt'}, 'ResourceName': {'type': 'literal', 'value': 'slides04'}, 'topicName': {'type': 'literal', 'value': 'DBPEDIA'}, 'wikiURI': {'type': 'uri', 'value': 'http://dbpedia.org/resource/DBpedia'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseName': {'type': 'literal', 'value': 'COMP 6741'}, 'resourceURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt'}, 'ResourceName': {'type': 'literal', 'value': 'slides04'}, 'topicName': {'type': 'literal', 'value': 'LINKED OPEN DATA'}, 'wikiURI': {'type': 'uri', 'value': 'http://dbpedia.org/resource/Linked_data'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseName': {'type': 'literal', 'value': 'COMP 6741'}, 'resourceURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt'}, 'ResourceName': {'type': 'literal', 'value': 'slides04'}, 'topicName': {'type': 'literal', 'value': 'WIKIDATA'}, 'wikiURI': {'type': 'uri', 'value': 'http://dbpedia.org/resource/Wikidata'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseName': {'type': 'literal', 'value': 'COMP 6741'}, 'resourceURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt'}, 'ResourceName': {'type': 'literal', 'value': 'slides04'}, 'topicName': {'type': 'literal', 'value': 'LINKED DATA'}, 'wikiURI': {'type': 'uri', 'value': 'http://dbpedia.org/resource/Linked_data'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseName': {'type': 'literal', 'value': 'COMP 6741'}, 'resourceURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt'}, 'ResourceName': {'type': 'literal', 'value': 'slides04'}, 'topicName': {'type': 'literal', 'value': 'READING'}, 'wikiURI': {'type': 'uri', 'value': 'http://dbpedia.org/resource/Reading'}}, {'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseName': {'type': 'literal', 'value': 'COMP 6741'}, 'resourceURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt'}, 'ResourceName': {'type': 'literal', 'value': 'slides04'}, 'topicName': {'type': 'literal', 'value': 'URI'}, 'wikiURI': {'type': 'uri', 'value': 'http://dbpedia.org/resource/Uniform_Resource_Identifier'}}]}}
+
+Natural language response: Topics covered:
+- FREEBASE (See more: http://dbpedia.org/resource/Freebase_(database))
+- RDF (See more: http://dbpedia.org/resource/Resource_Description_Framework)
+- SPARQL (See more: http://dbpedia.org/resource/SPARQL)
+- DESIGN ISSUES (See more: http://dbpedia.org/resource/Design_Issues)
+- DBPEDIA (See more: http://dbpedia.org/resource/DBpedia)
+- LINKED OPEN DATA (See more: http://dbpedia.org/resource/Linked_data)
+- WIKIDATA (See more: http://dbpedia.org/resource/Wikidata)
+- LINKED DATA (See more: http://dbpedia.org/resource/Linked_data)
+- READING (See more: http://dbpedia.org/resource/Reading)
+- URI (See more: http://dbpedia.org/resource/Uniform_Resource_Identifier)
+
+---------------------------
+----- Process Summary -----
+
+User input: Which course events cover Deep Learning?
+
+Recognized intent: query_topic_coverage
+
+Extracted entities: [{'entity': 'topic', 'start': 26, 'end': 39, 'confidence_entity': 0.9973374009132385, 'value': 'deep learning', 'extractor': 'DIETClassifier', 'processors': ['EntitySynonymMapper']}]
+
+Generated SPARQL query: 
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
+        PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+        SELECT ?topicName (?course as ?courseURI) ?courseName  (COUNT(?lectureNum) AS ?occurrences)  (GROUP_CONCAT(DISTINCT CONCAT("Lecture ", STR(?lectureNum)); separator=", ") AS ?lectureNumbers) (GROUP_CONCAT(DISTINCT ?Resourcename; separator=", ") AS ?ResourceName) 
+        WHERE {
+          ?topic a voc:Topic;
+                rdfs:seeAlso ?wikiURI;
+                voc:TopicProvenance ?lectureContent;
+                foaf:name ?topicName.    
+
+          ?lectures a voc:Lecture;       
+                voc:LectureContent ?lectureContent;
+                voc:LectureNumber ?lectureNum;
+                voc:BelongsTo ?course.
+
+          ?course a voc:Course;
+                  voc:courseSubject ?courseSubject;
+                  voc:courseNumber ?courseNumber.
+          ?lectureContent voc:ResourceName ?Resourcename.
+           BIND(CONCAT("Lecture ", STR(?lectureNum)) AS ?lectureNumber).
+          BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName).
+          FILTER(?topicName = "DEEP LEARNING").
+        }
+        GROUP BY ?topicName ?course ?courseName
+        ORDER BY DESC(?occurrences)
+        
+
+SPARQL query output: {'head': {'vars': ['topicName', 'courseURI', 'courseName', 'occurrences', 'lectureNumbers', 'ResourceName']}, 'results': {'bindings': [{'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#1658620823'}, 'courseName': {'type': 'literal', 'value': 'COMP 6721'}, 'occurrences': {'type': 'literal', 'datatype': 'http://www.w3.org/2001/XMLSchema#integer', 'value': '31'}, 'lectureNumbers': {'type': 'literal', 'value': 'Lecture 7, Lecture 10, Lecture 9, Lecture 3'}, 'ResourceName': {'type': 'literal', 'value': 'readings07, readings10, slides09, assignment01'}}, {'topicName': {'type': 'literal', 'value': 'DEEP LEARNING'}, 'courseURI': {'type': 'uri', 'value': 'file:///Users/jatin/workspace/roboprof/data#3008498559'}, 'courseName': {'type': 'literal', 'value': 'COMP 6741'}, 'occurrences': {'type': 'literal', 'datatype': 'http://www.w3.org/2001/XMLSchema#integer', 'value': '2'}, 'lectureNumbers': {'type': 'literal', 'value': 'Lecture 6'}, 'ResourceName': {'type': 'literal', 'value': 'lab06'}}]}}
+
+Natural language response: Course events covering the topic DEEP LEARNING:
+- COMP 6721: 31 times, in Lecture 7, Lecture 10, Lecture 9, Lecture 3, Resources: readings07, readings10, slides09, assignment01
+- COMP 6741: 2 times, in Lecture 6, Resources: lab06
+
+---------------------------
