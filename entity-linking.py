@@ -12,11 +12,8 @@ csv_file = Path("Datasets/entity-urls.csv")
 
 # Function to perform entity linking with DBpedia Spotlight
 def link_entities(text):
-    headers = {
-        "Accept": "application/json",
-        "Content-Type": "application/x-www-form-urlencoded",
-    }
-    data = {"text": text, "confidence": 0.7, "support": 15}
+    headers = {'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded'}
+    data = {'text': text, 'confidence': 0.7, 'support': 30}
     try:
         response = requests.post(spotlight_url, headers=headers, data=data)
         response.raise_for_status()  # This will raise an exception for HTTP errors
@@ -34,9 +31,9 @@ def split_text(text, max_size):
     current_size = 0
 
     for word in words:
-        word_size = len(word.encode("utf-8")) + 1  # add 1 for space
+        word_size = len(word.encode('utf-8')) + 1  # add 1 for space
         if current_size + word_size > max_size:
-            chunks.append(" ".join(current_chunk))
+            chunks.append(' '.join(current_chunk))
             current_chunk = [word]
             current_size = word_size
         else:
@@ -44,7 +41,7 @@ def split_text(text, max_size):
             current_size += word_size
 
     if current_chunk:
-        chunks.append(" ".join(current_chunk))
+        chunks.append(' '.join(current_chunk))
     return chunks
 
 
@@ -60,14 +57,12 @@ with csv_file.open("w", newline="", encoding="utf-8") as csvfile:
             # Ensure each chunk does not exceed the maximum POST size
             for chunk in split_text(text, 2000000):
                 linked_data = link_entities(chunk)
-                if linked_data and "Resources" in linked_data:
-                    for resource in linked_data["Resources"]:
-                        csvwriter.writerow(
-                            [
-                                str(file_path).replace("\\", "/"),
-                                resource["@surfaceForm"],
-                                resource["@URI"],
-                            ]
-                        )
+                if linked_data and 'Resources' in linked_data:
+                    for resource in linked_data['Resources']:
+                        csvwriter.writerow([
+                            str(file_path).replace("\\", "/"),
+                            resource['@surfaceForm'].upper(),
+                            resource['@URI']
+                        ])
 
 print(f"CSV file '{csv_file}' created.")
