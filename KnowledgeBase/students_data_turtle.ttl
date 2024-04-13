@@ -63,10 +63,10 @@ vocdata:987654 a voc:Student ;
         [ voc:Course "COMP6741" ;
             voc:competencies "Machine Learning",
                 "Recommender systems" ] ;
-    voc:CompletedCourse [ voc:Course "COMP6721" ;
-            voc:Grade "A-" ],
-        [ voc:Course "COMP6741" ;
-            voc:Grade "C+" ] ;
+    voc:CompletedCourse [ voc:Course "COMP6741" ;
+            voc:Grade "C+" ],
+        [ voc:Course "COMP6721" ;
+            voc:Grade "A-" ] ;
     voc:IDNumber "987654" ;
     foaf:familyName "Johnson" ;
     foaf:givenName "Alice" ;
