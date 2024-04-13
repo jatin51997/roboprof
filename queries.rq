@@ -225,7 +225,7 @@ WHERE {
   ?course a voc:Course .
 }
 
-SELECT DISTINCT (?course as ?courseURI) ?courseName ?topicName ?wikiURI (?lectureNumber as ?courseEventURI) (?lectureContent as ?resourceURI)  ?ResourceName
+SELECT DISTINCT (?course as ?courseURI) ?courseName ?topicName ?dbpURI (?lectureNumber as ?courseEventURI) (?lectureContent as ?resourceURI)  ?ResourceName
 WHERE {
   ?course a voc:Course;
           voc:courseSubject ?courseSubject;
@@ -238,17 +238,17 @@ WHERE {
   ?topic a voc:Topic;
           voc:TopicProvenance ?lectureContent;
           foaf:name ?topicName;
-          rdfs:seeAlso ?wikiURI.
+          rdfs:seeAlso ?dbpURI.
   ?lectureContent voc:ResourceName ?ResourceName.
   BIND(CONCAT("Lecture ", ?lectureNum) AS ?lectureNumber).
   BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName)
   FILTER(?courseSubject = "COMP" && ?courseNumber = "6721")
 }LIMIT 50
 
-SELECT ?wikiURI ?topicName (?course as ?courseURI) ?courseName  (COUNT(?lectureNumber) AS ?occurrences)  (GROUP_CONCAT(DISTINCT CONCAT("Lecture ", STR(?lectureNum)); separator=", ") AS ?lectureNumbers)
+SELECT ?dbpediaURI ?topicName (?course as ?courseURI) ?courseName  (COUNT(?lectureNumber) AS ?occurrences)  (GROUP_CONCAT(DISTINCT CONCAT("Lecture ", STR(?lectureNum)); separator=", ") AS ?lectureNumbers)
 WHERE {
   ?topic a voc:Topic;
-        rdfs:seeAlso ?wikiURI;
+        rdfs:seeAlso ?dbpediaURI;
           voc:TopicProvenance ?lectureContent;
           foaf:name ?topicName.    
   
@@ -263,9 +263,9 @@ WHERE {
   
    BIND(CONCAT("Lecture ", ?lectureNum) AS ?lectureNumber).
   BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName).
-  FILTER(?wikiURI = <https://www.wikidata.org/wiki/Q197536>).
+  FILTER(?dbpediaURI =<http://dbpedia.org/resource/Convolutional_neural_network> ).
 }
-GROUP BY ?wikiURI ?topicName ?course ?courseName
+GROUP BY ?dbpediaURI ?topicName ?course ?courseName
 ORDER BY DESC(?occurrences)
 
 SELECT DISTINCT ?topicName (?course as ?courseURI) ?courseName  (?lectureNumber as ?courseEventURI) (?lectureContent as ?resourceURI)  ?ResourceName
@@ -315,7 +315,7 @@ WHERE {
   FILTER(?courseSubject = "COMP" && ?courseNumber = "6741")
 }
 
-SELECT DISTINCT (?course as ?courseURI) ?courseName (?lectureContent as ?resourceURI)  ?ResourceName ?topicName ?wikiURI
+SELECT DISTINCT (?course as ?courseURI) ?courseName (?lectureContent as ?resourceURI)  ?ResourceName ?topicName ?dbpURI
 WHERE {
   ?course a voc:Course;
           voc:courseSubject ?courseSubject;
@@ -328,7 +328,7 @@ WHERE {
   ?topic a voc:Topic;
           voc:TopicProvenance ?lectureContent;
           foaf:name ?topicName;
-          rdfs:seeAlso ?wikiURI.
+          rdfs:seeAlso ?dbpURI.
   ?lectureContent voc:ResourceName ?ResourceName.
   BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName).
   FILTER(?courseSubject = "COMP" && ?courseNumber = "6741" && ?ResourceName ="lab05" )
@@ -338,7 +338,7 @@ WHERE {
 SELECT ?topicName (?course as ?courseURI) ?courseName  (COUNT(?lectureNumber) AS ?occurrences)  (GROUP_CONCAT(DISTINCT CONCAT("Lecture ", STR(?lectureNum)); separator=", ") AS ?lectureNumbers) (GROUP_CONCAT(DISTINCT CONCAT(STR(?Resourcename)); separator=", ") AS ?ResourceName) 
 WHERE {
   ?topic a voc:Topic;
-        rdfs:seeAlso ?wikiURI;
+        rdfs:seeAlso ?dbpURI;
           voc:TopicProvenance ?lectureContent;
           foaf:name ?topicName.    
   
