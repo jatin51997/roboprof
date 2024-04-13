@@ -19,7 +19,7 @@ SELECT DISTINCT (?courseId as ?courseURI)  ?courseName ?courseSubject ?courseNum
 WHERE {
  ?topic a voc:Topic ;
       foaf:name ?topicName;
-         foaf:name "Deep Learning" ;
+         foaf:name "DEEP LEARNING" ;
          voc:TopicProvenance ?topicProvenance .
   ?lecture a voc:Lecture;
          voc:LectureContent ?topicProvenance;
@@ -76,7 +76,7 @@ WHERE {
   
   ?topic a voc:Topic;
       foaf:name ?topicName;
-      foaf:name "Deep learning";
+      foaf:name "DEEP LEARNING";
       voc:TopicProvenance ?lectureContent;
   BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
 }
@@ -148,7 +148,7 @@ WHERE {
   
   ?topic a voc:Topic;
       foaf:name ?topicName;
-      foaf:name "Deep Learning";
+      foaf:name "DEEP LEARNING";
       voc:TopicProvenance ?lectureContent;
   BIND(CONCAT(?courseSub, " ", ?courseNum) AS ?courseNo)
 }
@@ -285,7 +285,7 @@ WHERE {
   ?lectureContent voc:ResourceName ?ResourceName.
   BIND(CONCAT("Lecture ", ?lectureNum) AS ?lectureNumber).
   BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName)
-  FILTER(?topicName ="Deep Learning")
+  FILTER(?topicName ="DEEP LEARNING")
 }
 
 SELECT DISTINCT  (?lectureNumber as ?courseEventURI) (?lectureContent as ?resourceURI)  ?ResourceName
@@ -353,7 +353,7 @@ WHERE {
   ?lectureContent voc:ResourceName ?Resourcename.
    BIND(CONCAT("Lecture ", ?lectureNum) AS ?lectureNumber).
   BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName).
-  FILTER(?topicName = "Deep Learning").
+  FILTER(?topicName = "DEEP LEARNING").
 }
 GROUP BY ?topicName ?course ?courseName
 ORDER BY DESC(?occurrences)
