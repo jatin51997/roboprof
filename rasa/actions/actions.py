@@ -5,6 +5,43 @@ from rasa_sdk.executor import CollectingDispatcher
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
+def log_final_summary(
+    user_input, intent, entities, sparql_query, sparql_output, natural_language_response
+):
+    """
+    Logs a summary of the whole process to a file.
+
+    Parameters:
+        user_input (str): The initial user input.
+        intent (str): The recognized intent.
+        entities (list): A list of extracted entities.
+        sparql_query (str): The generated SPARQL query.
+        sparql_output (Any): The output of the SPARQL query (as JSON or parsed data).
+        natural_language_response (str): The final natural language response to the user.
+    """
+    # Define the path to the log file
+    log_file_path = "process_summary_log.txt"
+
+    # Format the summary of all the relevant information
+    summary = (
+        "----- Process Summary -----\n"
+        f"\nUser input: {user_input}\n"
+        f"\nRecognized intent: {intent}\n"
+        f"\nExtracted entities: {entities}\n"
+        f"\nGenerated SPARQL query: {sparql_query}\n"
+        f"\nSPARQL query output: {sparql_output}\n"
+        f"\nNatural language response: {natural_language_response}\n"
+        "---------------------------\n"
+    )
+
+    # Write the summary to the log file
+    with open(log_file_path, "a") as file:
+        file.write(summary)
+
+    # Optionally, you can print a message indicating that the log has been saved
+    print(f"Process summary logged to {log_file_path}")
+
+
 class ActionPersonInfo(Action):
     def name(self):
         return "action_person_info"
@@ -55,6 +92,10 @@ class ActionListCourses(Action):
         response = requests.post(fuseki_endpoint, headers=headers, data=params)
 
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
             sparql_results = self.parse_sparql_results(response.json())
         else:
             dispatcher.utter_message(
@@ -64,6 +105,14 @@ class ActionListCourses(Action):
 
         response_text = self.generate_response(university, sparql_results)
         dispatcher.utter_message(text=response_text)
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[str]:
@@ -100,7 +149,8 @@ class ActionFindCoursesByTopic(Action):
                 text="I'm sorry, I couldn't understand the topic you are asking about. Could you please specify the topic again?"
             )
             return []
-
+        if topic_name:
+            topic_name = topic_name.upper()
         sparql_query = f"""PREFIX foaf: <http://xmlns.com/foaf/0.1/>
                         PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
                         PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
@@ -132,6 +182,10 @@ class ActionFindCoursesByTopic(Action):
         )
 
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
             sparql_results = self.parse_sparql_results(response.json())
         else:
             dispatcher.utter_message(
@@ -141,6 +195,14 @@ class ActionFindCoursesByTopic(Action):
 
         response_text = self.generate_response_for_topic(topic_name, sparql_results)
         dispatcher.utter_message(text=response_text)
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[str]:
@@ -226,6 +288,10 @@ class ActionFindTopicsInLecture(Action):
         )
 
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
             sparql_results = self.parse_sparql_results(response.json())
         else:
             dispatcher.utter_message(
@@ -238,6 +304,15 @@ class ActionFindTopicsInLecture(Action):
         )
 
         dispatcher.utter_message(text=response_text)
+
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[str]:
@@ -316,6 +391,10 @@ class ActionFindCoursesBySubject(Action):
         )
 
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
             courses = self.parse_sparql_results(response.json())
         else:
             dispatcher.utter_message(
@@ -326,6 +405,15 @@ class ActionFindCoursesBySubject(Action):
         response_text = self.generate_response_for_subject(university_name, courses)
 
         dispatcher.utter_message(text=response_text)
+
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[Dict[Text, Any]]:
@@ -386,7 +474,8 @@ class ActionFindMaterialsByTopic(Action):
                 text="I'm sorry, I couldn't understand the topic you are asking about. Could you please ask again?"
             )
             return []
-
+        if topic_name:
+            topic_name = topic_name.upper()
         sparql_query = f"""
             PREFIX foaf: <http://xmlns.com/foaf/0.1/>
             PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
@@ -429,6 +518,10 @@ class ActionFindMaterialsByTopic(Action):
         )
 
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
             materials = self.parse_sparql_results(response.json())
         else:
             dispatcher.utter_message(
@@ -441,6 +534,14 @@ class ActionFindMaterialsByTopic(Action):
         )
 
         dispatcher.utter_message(text=response_text)
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[Dict[Text, Any]]:
@@ -525,6 +626,10 @@ class ActionFindCreditsBySubject(Action):
         )
 
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
             credits = self.parse_sparql_results(response.json())
         else:
             dispatcher.utter_message(
@@ -537,6 +642,14 @@ class ActionFindCreditsBySubject(Action):
         )
 
         dispatcher.utter_message(text=response_text)
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[Dict[Text, Any]]:
@@ -626,6 +739,11 @@ class ActionFindAdditionalResources(Action):
         )
 
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
+
             resources = self.parse_sparql_results(response.json())
         else:
             dispatcher.utter_message(
@@ -636,6 +754,14 @@ class ActionFindAdditionalResources(Action):
         response_text = self.generate_response_for_resources(resources)
 
         dispatcher.utter_message(text=response_text)
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[Dict[Text, Any]]:
@@ -727,6 +853,10 @@ class ActionQueryLectureContent(Action):
         )
 
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
             lecture_details = self.parse_sparql_results(response.json())
         else:
             dispatcher.utter_message(
@@ -739,6 +869,14 @@ class ActionQueryLectureContent(Action):
         )
 
         dispatcher.utter_message(text=response_text)
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[Dict[Text, Any]]:
@@ -790,6 +928,8 @@ class ActionQueryReadingMaterials(Action):
                 text="I'm sorry, I couldn't understand the topic you are asking about. Could you please ask again?"
             )
             return []
+        if topic:
+            topic = topic.upper()
         subject = next(tracker.get_latest_entity_values("subject"), None)
         if subject is None:
             dispatcher.utter_message(
@@ -843,6 +983,10 @@ class ActionQueryReadingMaterials(Action):
         )
 
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
             materials = self.parse_sparql_results(response.json())
         else:
             dispatcher.utter_message(
@@ -855,6 +999,14 @@ class ActionQueryReadingMaterials(Action):
         )
 
         dispatcher.utter_message(text=response_text)
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[Dict[Text, Any]]:
@@ -939,6 +1091,10 @@ class ActionQueryCourseCompetencies(Action):
         )
 
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
             competencies = self.parse_sparql_results(response.json())
         else:
             dispatcher.utter_message(
@@ -951,6 +1107,14 @@ class ActionQueryCourseCompetencies(Action):
         )
 
         dispatcher.utter_message(text=response_text)
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[Dict[Text, Any]]:
@@ -1040,6 +1204,10 @@ class ActionQueryStudentGrades(Action):
         )
 
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
             grades = self.parse_sparql_results(response.json())
         else:
             dispatcher.utter_message(
@@ -1050,6 +1218,14 @@ class ActionQueryStudentGrades(Action):
         response_text = self.generate_response_for_grades(student_id, grades)
 
         dispatcher.utter_message(text=response_text)
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[Dict[Text, Any]]:
@@ -1136,6 +1312,10 @@ class ActionQueryCompletedStudents(Action):
         )
 
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
             students = self.parse_sparql_results(response.json())
         else:
             dispatcher.utter_message(
@@ -1146,6 +1326,14 @@ class ActionQueryCompletedStudents(Action):
         response_text = self.generate_response_for_students(subjectNumber, students)
 
         dispatcher.utter_message(text=response_text)
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[Dict[Text, Any]]:
@@ -1228,6 +1416,10 @@ class ActionQueryTranscript(Action):
         )
 
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
             transcript = self.parse_sparql_results(response.json())
         else:
             dispatcher.utter_message(
@@ -1238,6 +1430,14 @@ class ActionQueryTranscript(Action):
         response_text = self.generate_response_for_transcript(student_id, transcript)
 
         dispatcher.utter_message(text=response_text)
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[Dict[Text, Any]]:
@@ -1319,6 +1519,10 @@ class ActionQueryCourseDetails(Action):
         )
 
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
             course_details = self.parse_sparql_results(response.json())
         else:
             dispatcher.utter_message(
@@ -1329,6 +1533,14 @@ class ActionQueryCourseDetails(Action):
         response_text = self.generate_response_for_course_details(course_details)
 
         dispatcher.utter_message(text=response_text)
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[Dict[Text, Any]]:
@@ -1427,6 +1639,10 @@ class ActionQueryCourseEventTopics(Action):
         )
         print(response.status_code)
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
             topics = self.parse_sparql_results(response.json())
             response_text = self.generate_response_for_topics(topics)
             dispatcher.utter_message(text=response_text)
@@ -1434,7 +1650,14 @@ class ActionQueryCourseEventTopics(Action):
             dispatcher.utter_message(
                 text="There was an error processing your request. Please try again later."
             )
-
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[Dict[Text, Any]]:
@@ -1454,9 +1677,7 @@ class ActionQueryCourseEventTopics(Action):
 
         response = "Topics covered:\n"
         for topic in topics:
-            response += (
-                f"- {topic['topicName']} (See more: {topic['wikiURI']})\n"
-            )
+            response += f"- {topic['topicName']} (See more: {topic['wikiURI']})\n"
 
         return response
 
@@ -1478,7 +1699,8 @@ class ActionQueryTopicCoverage(Action):
                 text="I'm sorry, I couldn't understand the topic you are asking about. Could you please ask again?"
             )
             return []
-
+        if topic_name:
+            topic_name = topic_name.upper()
         sparql_query = f"""
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
         PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
@@ -1520,6 +1742,10 @@ class ActionQueryTopicCoverage(Action):
         )
 
         if response.status_code == 200:
+            user_input = tracker.latest_message["text"]
+            intent = tracker.latest_message["intent"]["name"]
+            entities = tracker.latest_message["entities"]
+            sparql_output = response.json()
             results = self.parse_sparql_results(response.json())
             response_text = self.generate_response_for_topic_coverage(
                 topic_name, results
@@ -1529,7 +1755,14 @@ class ActionQueryTopicCoverage(Action):
             dispatcher.utter_message(
                 text="There was an error processing your request. Please try again later."
             )
-
+        log_final_summary(
+            user_input=user_input,
+            intent=intent,
+            entities=entities,
+            sparql_query=sparql_query,
+            sparql_output=sparql_output,
+            natural_language_response=response_text,
+        )
         return []
 
     def parse_sparql_results(self, json_results: Dict) -> List[Dict[Text, Any]]:
