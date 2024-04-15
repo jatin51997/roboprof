@@ -3,16 +3,16 @@
 @prefix vocdata: <file:///Users/jatin/workspace/roboprof/data#> .
 
 vocdata:123456 a voc:Student ;
-    voc:Competency [ voc:Course "COMP6741" ;
-            voc:competencies "Machine Learning",
-                "Recommender systems" ],
-        [ voc:Course "COMP6721" ;
+    voc:Competency [ voc:Course "COMP6721" ;
             voc:competencies "Deep Learning",
-                "Natural Language Processing" ] ;
-    voc:CompletedCourse [ voc:Course "COMP6741" ;
-            voc:Grade "A-" ],
-        [ voc:Course "COMP6721" ;
-            voc:Grade "B+" ] ;
+                "Natural Language Processing" ],
+        [ voc:Course "COMP6741" ;
+            voc:competencies "Machine Learning",
+                "Recommender systems" ] ;
+    voc:CompletedCourse [ voc:Course "COMP6721" ;
+            voc:Grade "B+" ],
+        [ voc:Course "COMP6741" ;
+            voc:Grade "A-" ] ;
     voc:IDNumber "123456" ;
     foaf:familyName "Doe" ;
     foaf:givenName "John" ;
@@ -26,9 +26,9 @@ vocdata:456789 a voc:Student ;
             voc:competencies "Machine Learning",
                 "Recommender systems" ] ;
     voc:CompletedCourse [ voc:Course "COMP6741" ;
-            voc:Grade "C+" ],
+            voc:Grade "A" ],
         [ voc:Course "COMP6741" ;
-            voc:Grade "A" ] ;
+            voc:Grade "C+" ] ;
     voc:IDNumber "456789" ;
     foaf:familyName "Williams" ;
     foaf:givenName "Bob" ;
@@ -63,10 +63,10 @@ vocdata:987654 a voc:Student ;
         [ voc:Course "COMP6741" ;
             voc:competencies "Machine Learning",
                 "Recommender systems" ] ;
-    voc:CompletedCourse [ voc:Course "COMP6741" ;
-            voc:Grade "C+" ],
-        [ voc:Course "COMP6721" ;
-            voc:Grade "A-" ] ;
+    voc:CompletedCourse [ voc:Course "COMP6721" ;
+            voc:Grade "A-" ],
+        [ voc:Course "COMP6741" ;
+            voc:Grade "C+" ] ;
     voc:IDNumber "987654" ;
     foaf:familyName "Johnson" ;
     foaf:givenName "Alice" ;
