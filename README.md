@@ -43,6 +43,19 @@ The overall goal of this project is to build Roboprof, an intelligent agent that
 
 9. **Vocabulary.ttl**: The schema modeled by us for generating the knowledge base.
 
+10. **Rasa Folder**: This folder contains files and folders related to the Rasa conversational AI platform setup for the project. It includes:
+
+   - **actions/actions.py**: A Python script that defines custom actions and logic to be used by the Rasa chatbot.
+   - **data**: A folder containing the training data for the Rasa chatbot. It includes:
+     - **nlu.yml**: The natural language understanding training data, consisting of various intents and associated examples to help the chatbot understand user queries.
+     - **stories.yml**: The dialogue training data, outlining different conversation paths and scenarios to train the chatbot on handling user interactions.
+   - **config.yml**: A configuration file specifying the configuration settings for the Rasa setup, including the NLU (natural language understanding) and dialogue management components.
+   - **domain.yml**: The domain file that outlines the intents, actions, entities, and responses available in the Rasa chatbot. It serves as the blueprint for the conversation flow.
+   - **endpoints.yml**: A configuration file specifying the endpoints for various services like the Rasa server, action server, and tracker store.
+   - **models**: A folder where trained Rasa models are saved. These models can be used to handle user queries and manage dialogue.
+   - **tests**: A folder for testing data, including test stories and test cases to ensure the chatbot behaves as expected during conversations.
+   - **logs**: A folder for storing logs generated during the training and operation of the Rasa chatbot, useful for debugging and improving the system.
+   - 
 ## Requirements to run the code
 
 SPARQLWrapper &nbsp;&nbsp;&nbsp;&nbsp; 2.0.0 <br/>
@@ -67,4 +80,10 @@ DBpedia spotlight <br/>
 > Start Apache Fuseki and load the generated knowledge base files.
 > Run Generating_Output.py to execute queries and generate output in the OUTPUT folder.
     >> python3 Generating_Output.py
+> Train and Run rasa chat bot
+   >> cd rasa
+   >> rasa train
+   >> rasa shell
+> Run rasa custom actions
+   >> rasa run actions
 ```
