@@ -55,13 +55,13 @@ The overall goal of this project is to build Roboprof, an intelligent agent that
    - **models**: A folder where trained Rasa models are saved. These models can be used to handle user queries and manage dialogue.
    - **tests**: A folder for testing data, including test stories and test cases to ensure the chatbot behaves as expected during conversations.
    - **logs**: A folder for storing logs generated during the training and operation of the Rasa chatbot, useful for debugging and improving the system.
-   - 
+     
 ## Requirements to run the code
 
 SPARQLWrapper &nbsp;&nbsp;&nbsp;&nbsp; 2.0.0 <br/>
 rdflib &nbsp;&nbsp;&nbsp;&nbsp; 7.0.0 <br/>
 DBpedia spotlight <br/>
-
+Rasa 3.6.19 <br/>
 
 ## Execution Steps
 
