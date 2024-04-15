@@ -195,7 +195,7 @@ Reading
 3.7
 (47) 
  47  
-} An RDF Triple (s,p,o) is such that:§ “s”, “p” are URI-s, ie, resources on the Web; “o” is a URI or a literal “s”, “p”, and “o” stand for “subject”, “property”, and “object”§ here is the complete triple:} RDF is a general model for such triples (with machine readable formats like RDF/XML, Turtle, N3, RDFa, Json, …)
+} An RDF Triple (s,p,o) is such that:§ “s”, “p” are URI-s, ie, resources on the Web; “o” is a URI or a literal “s”, “p”, and “o” stand for “subject”, “property”, and “object”§ here is the complete triple:} RDF is a general model for such triples (with machine readable formats like RDF/XML, Turtle, N3, RDFa, Json, …)
 (<http://…isbn…6682>, <http://…/original>, <http://…isbn…409X>) René Witte
 Introduction
 Review
@@ -817,7 +817,7 @@ Notes and Further
 Reading
 3.27
 (71) 
- 71  } RDFS deﬁnes the meaning of these terms§ (these are all special URI-s, we just use the namespace abbreviation)
+ 71  } RDFS deﬁnes the meaning of these terms§ (these are all special URI-s, we just use the namespace abbreviation)
 rdf:type  
 #Novel  
 http://…isbn/000651409X  
@@ -911,7 +911,7 @@ Notes and Further
 Reading
 3.30
 (75) 
- 75  } is not in the original RDF data…} …but can be inferred from the RDFS rules} RDFS environments return that triple, too
+ 75  } is not in the original RDF data…} …but can be inferred from the RDFS rules} RDFS environments return that triple, too
 rdf:type  
 #Novel  
 http://…isbn/000651409X  
@@ -941,7 +941,7 @@ Notes and Further
 Reading
 3.31
 (76) 
- 76  } The RDF Semantics document has a list of (33) entailment rules:§ “if such and such triples are in the graph, add this and this”§ do that recursively until the graph does not change} The relevant rule for our example:
+ 76  } The RDF Semantics document has a list of (33) entailment rules:§ “if such and such triples are in the graph, add this and this”§ do that recursively until the graph does not change} The relevant rule for our example:
 If:   uuu rdfs:subClassOf xxx .   vvv rdf:type uuu . Then add:   vvv rdf:type xxx . !Work sheet #2:Task 6René Witte
 Introduction
 Review
@@ -1063,7 +1063,7 @@ Reading
 3.35
 (80) 
  80  
-<rdf:Property rdf:ID="title">   <rdfs:domain rdf:resource="#Fiction"/>   <rdfs:range rdf:resource="http://...#Literal"/> </rdf:Property> } In RDF/XML:
+<rdf:Property rdf:ID="title">   <rdfs:domain rdf:resource="#Fiction"/>   <rdfs:range rdf:resource="http://...#Literal"/> </rdf:Property> } In RDF/XML:
 :title   rdf:type    rdf:Property;   rdfs:domain :Fiction;   rdfs:range  rdfs:Literal.  } In Turtle:René Witte
 Introduction
 Review
@@ -1394,7 +1394,7 @@ Notes and Further
 Reading
 3.46
 (228) 
- 228  } Represent and share classiﬁcations, glossaries, thesauri, etc§ for example:• Dewey Decimal Classiﬁcation, Art and Architecture Thesaurus, ACM classiﬁcation of keywords and terms…• classiﬁcation/formalization of Web 2.0 type tags} Deﬁne classes and properties to add those structures to an RDF universe§ allow for a quick port of this traditional data, combine it with other data
+ 228  } Represent and share classiﬁcations, glossaries, thesauri, etc§ for example:• Dewey Decimal Classiﬁcation, Art and Architecture Thesaurus, ACM classiﬁcation of keywords and terms…• classiﬁcation/formalization of Web 2.0 type tags} Deﬁne classes and properties to add those structures to an RDF universe§ allow for a quick port of this traditional data, combine it with other data
 René Witte
 Introduction
 Review
@@ -1472,7 +1472,7 @@ Notes and Further
 Reading
 3.49
 (231) 
- 231  } The structure of the LOC page is fairly typical§ label, alternate label, narrower, broader, …§ there is even an ISO standard for these} SKOS provides a basic structure to create an RDF representation of these
+ 231  } The structure of the LOC page is fairly typical§ label, alternate label, narrower, broader, …§ there is even an ISO standard for these} SKOS provides a basic structure to create an RDF representation of these
 René Witte
 Introduction
 Review
@@ -1593,7 +1593,7 @@ Notes and Further
 Reading
 3.53
 (235) 
- 235  } Classes and Properties:§ Basic description (Concept, ConceptScheme,…)§ Labeling (prefLabel, altLabel,…)§ Documentation (deﬁnition, historyNote,…)§ Semantic relations (broader, narrower, related,…)§ Collections (Collection, OrderedCollection,…)§ Concept mappings (broadMatch, narrowMatch,…)
+ 235  } Classes and Properties:§ Basic description (Concept, ConceptScheme,…)§ Labeling (prefLabel, altLabel,…)§ Documentation (deﬁnition, historyNote,…)§ Semantic relations (broader, narrower, related,…)§ Collections (Collection, OrderedCollection,…)§ Concept mappings (broadMatch, narrowMatch,…)
 René Witte
 Introduction
 Review
@@ -1619,7 +1619,7 @@ Notes and Further
 Reading
 3.54
 (236) 
- 236  } SKOS provides a simple bridge between the “print world” and the (Semantic) Web} Thesauri, glossaries, etc, from the library community can be made available§ LOC is a good example} SKOS can also be used to organize, eg, tags, annotate other vocabularies, …
+ 236  } SKOS provides a simple bridge between the “print world” and the (Semantic) Web} Thesauri, glossaries, etc, from the library community can be made available§ LOC is a good example} SKOS can also be used to organize, eg, tags, annotate other vocabularies, …
 René Witte
 Introduction
 Review
@@ -1645,7 +1645,7 @@ Notes and Further
 Reading
 3.55
 (237) 
- 237  } Anybody in the World can refer to common concepts§ they mean the same for everybody} Applications may exploit the relationships among concepts§ eg, SPARQL queries may be issued on the library data+LOC
+ 237  } Anybody in the World can refer to common concepts§ they mean the same for everybody} Applications may exploit the relationships among concepts§ eg, SPARQL queries may be issued on the library data+LOC
 René Witte
 Introduction
 Review

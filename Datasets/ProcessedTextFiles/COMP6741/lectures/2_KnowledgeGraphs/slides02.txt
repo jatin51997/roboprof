@@ -1511,7 +1511,7 @@ Notes and Further
 Reading
 2.44
 (64) 
- 64  } For example, using Python+RDFLib:§ a “Graph” object is created§ the RDF ﬁle is parsed and results stored in the Graph§ the Graph offers methods to retrieve (or add):• triples• (property,object) pairs for a speciﬁc subject• (subject,property) pairs for speciﬁc object• etc.§ the rest is conventional programming…} Similar tools exist in Java, PHP , etc.
+ 64  } For example, using Python+RDFLib:§ a “Graph” object is created§ the RDF ﬁle is parsed and results stored in the Graph§ the Graph offers methods to retrieve (or add):• triples• (property,object) pairs for a speciﬁc subject• (subject,property) pairs for speciﬁc object• etc.§ the rest is conventional programming…} Similar tools exist in Java, PHP , etc.
 René Witte
 Introduction
 Motivation
@@ -1694,7 +1694,7 @@ Notes and Further
 Reading
 2.50
 (23) 
- 23  } Relations form a graph§ the nodes refer to the “real” data or contain some literal§ how the graph is represented in machine is immaterial for now
+ 23  } Relations form a graph§ the nodes refer to the “real” data or contain some literal§ how the graph is represented in machine is immaterial for now
 René Witte
 Introduction
 Motivation
@@ -1936,7 +1936,7 @@ Notes and Further
 Reading
 2.57
 (30) 
- 30  } User of data “F” can now ask queries like:§ “give me the title of the original”• well, … « donnes-moi le titre de l’original »} This information is not in the dataset “F”…} …but can be retrieved by merging with dataset “A”!
+ 30  } User of data “F” can now ask queries like:§ “give me the title of the original”• well, … « donnes-moi le titre de l’original »} This information is not in the dataset “F”…} …but can be retrieved by merging with dataset “A”!
 René Witte
 Introduction
 Motivation
@@ -1965,7 +1965,7 @@ Notes and Further
 Reading
 2.58
 (31) 
- 31  } We “feel” that a:author and f:auteur should be the same} But an automatic merge doest not know that!} Let us add some extra information to the merged data:§ a:author same as f:auteur§ both identify a “Person”§ a term that a community may have already deﬁned:• a “Person” is uniquely identiﬁed by his/her name and, say, homepage• it can be used as a “category” for certain type of resources
+ 31  } We “feel” that a:author and f:auteur should be the same} But an automatic merge doest not know that!} Let us add some extra information to the merged data:§ a:author same as f:auteur§ both identify a “Person”§ a term that a community may have already deﬁned:• a “Person” is uniquely identiﬁed by his/her name and, say, homepage• it can be used as a “category” for certain type of resources
 René Witte
 Introduction
 Motivation
@@ -2035,7 +2035,7 @@ Notes and Further
 Reading
 2.60
 (33) 
- 33  } User of dataset “F” can now query:§ “donnes-moi la page d’accueil de l’auteur de l’original”• well… “give me the home page of the original’s ‘auteur’”} The information is not in datasets “F” or “A”…} …but was made available by:§ merging datasets “A” and datasets “F”§ adding three simple extra statements as an extra “glue”
+ 33  } User of dataset “F” can now query:§ “donnes-moi la page d’accueil de l’auteur de l’original”• well… “give me the home page of the original’s ‘auteur’”} The information is not in datasets “F” or “A”…} …but was made available by:§ merging datasets “A” and datasets “F”§ adding three simple extra statements as an extra “glue”
 René Witte
 Introduction
 Motivation
@@ -2064,7 +2064,7 @@ Notes and Further
 Reading
 2.61
 (34) 
- 34  } Using, e.g., the “Person”, the dataset can be combined with other sources} For example, data in Wikipedia can be extracted using dedicated tools§ e.g., the “dbpedia” project can extract the “infobox” information from Wikipedia already… 
+ 34  } Using, e.g., the “Person”, the dataset can be combined with other sources} For example, data in Wikipedia can be extracted using dedicated tools§ e.g., the “dbpedia” project can extract the “infobox” information from Wikipedia already… 
 René Witte
 Introduction
 Motivation
@@ -2226,7 +2226,7 @@ Notes and Further
 Reading
 2.65
 (38) 
- 38  } It may look like it but, in fact, it should not be…} What happened via automatic means is done every day by Web users!} The difference: a bit of extra rigour so that machines could do this, too
+ 38  } It may look like it but, in fact, it should not be…} What happened via automatic means is done every day by Web users!} The difference: a bit of extra rigour so that machines could do this, too
 !Work sheet #1:Task 10René Witte
 Introduction
 Motivation
