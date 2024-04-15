@@ -2,6 +2,7 @@ import requests
 import csv
 from pathlib import Path
 
+
 # Define the URL for DBpedia Spotlight API
 spotlight_url = "http://localhost:2222/rest/annotate"
 
