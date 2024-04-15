@@ -5,7 +5,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT ?topicName (?course as ?courseURI) ?courseName  (COUNT(?lectureNumber) AS ?occurrences)  (GROUP_CONCAT(DISTINCT CONCAT("Lecture ", STR(?lectureNum)); separator=", ") AS ?lectureNumbers) (GROUP_CONCAT(DISTINCT CONCAT(STR(?Resourcename)); separator=", ") AS ?ResourceName) 
 WHERE {
   ?topic a voc:Topic;
-        rdfs:seeAlso ?wikiURI;
+        rdfs:seeAlso ?dbpURI;
           voc:TopicProvenance ?lectureContent;
           foaf:name ?topicName.    
   
@@ -20,7 +20,7 @@ WHERE {
   ?lectureContent voc:ResourceName ?Resourcename.
    BIND(CONCAT("Lecture ", ?lectureNum) AS ?lectureNumber).
   BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName).
-  FILTER(?topicName = "Deep Learning").
+  FILTER(?topicName = "DEEP LEARNING").
 }
 GROUP BY ?topicName ?course ?courseName
 ORDER BY DESC(?occurrences)

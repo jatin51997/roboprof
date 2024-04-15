@@ -2,10 +2,10 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX vocdata: <file:///Users/jatin/workspace/roboprof/data#>
 PREFIX voc: <file:///Users/jatin/workspace/roboprof/vocabulary.ttl/schema#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-SELECT ?wikiURI ?topicName (?course as ?courseURI) ?courseName  (COUNT(?lectureNumber) AS ?occurrences)  (GROUP_CONCAT(DISTINCT CONCAT("Lecture ", STR(?lectureNum)); separator=", ") AS ?lectureNumbers)
+SELECT ?dbpediaURI ?topicName (?course as ?courseURI) ?courseName  (COUNT(?lectureNumber) AS ?occurrences)  (GROUP_CONCAT(DISTINCT CONCAT("Lecture ", STR(?lectureNum)); separator=", ") AS ?lectureNumbers)
 WHERE {
   ?topic a voc:Topic;
-        rdfs:seeAlso ?wikiURI;
+        rdfs:seeAlso ?dbpediaURI;
           voc:TopicProvenance ?lectureContent;
           foaf:name ?topicName.    
   
@@ -20,7 +20,7 @@ WHERE {
   
    BIND(CONCAT("Lecture ", ?lectureNum) AS ?lectureNumber).
   BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName).
-  FILTER(?wikiURI = <https://www.wikidata.org/wiki/Q197536>).
+  FILTER(?dbpediaURI =<http://dbpedia.org/resource/Convolutional_neural_network> ).
 }
-GROUP BY ?wikiURI ?topicName ?course ?courseName
+GROUP BY ?dbpediaURI ?topicName ?course ?courseName
 ORDER BY DESC(?occurrences)

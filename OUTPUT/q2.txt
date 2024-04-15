@@ -6,7 +6,7 @@ SELECT DISTINCT (?courseId as ?courseURI)  ?courseName ?courseSubject ?courseNum
 WHERE {
  ?topic a voc:Topic ;
       foaf:name ?topicName;
-         foaf:name "Deep Learning" ;
+         foaf:name "DEEP LEARNING" ;
          voc:TopicProvenance ?topicProvenance .
   ?lecture a voc:Lecture;
          voc:LectureContent ?topicProvenance;

@@ -19,5 +19,5 @@ WHERE {
   ?lectureContent voc:ResourceName ?ResourceName.
   BIND(CONCAT("Lecture ", ?lectureNum) AS ?lectureNumber).
   BIND(CONCAT(?courseSubject, " ", ?courseNumber) AS ?courseName)
-  FILTER(?topicName ="Deep Learning")
+  FILTER(?topicName ="DEEP LEARNING")
 }

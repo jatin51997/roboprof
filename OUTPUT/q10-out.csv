@@ -1,61 +1,588 @@
-course,competency,competencyURI
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#8611557354
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#6384923103
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#8396256215
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#8664192821
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#3861768193
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#8543990434
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#3867180435
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#1662913112
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#4782057163
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#6422638390
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#5101961179
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#4907088882
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#5944780142
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#2162853975
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#4266893784
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#1147299623
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#6785204283
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#4637157288
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#8455639908
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#2679955687
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#2989849878
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#6759157676
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#5994242067
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#4655063318
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#6898675838
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#5159753634
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#4023578923
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#9630267478
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#8269509573
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#9566948381
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#3245216063
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#3767145415
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#5777562743
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#5804499577
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#2265252959
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#3983098088
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#5879303587
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#2215714802
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#5997387386
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#3444703172
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#5579504721
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#6694504766
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#1150414646
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#4986352196
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#1381134727
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#9627087710
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#7795508812
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#4008233918
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#8926669252
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#4565702396
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#5502500446
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#7954722071
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#3411243038
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#2695265421
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#3361610454
-COMP6741,Machine Learning,file:///Users/jatin/workspace/roboprof/data#9015273792
-COMP6741,Recommender systems,file:///Users/jatin/workspace/roboprof/data#5788231797
-COMP6741,Recommender systems,file:///Users/jatin/workspace/roboprof/data#7136929273
-COMP6741,Recommender systems,file:///Users/jatin/workspace/roboprof/data#1144411667
-COMP6741,Recommender systems,file:///Users/jatin/workspace/roboprof/data#4934328184
+courseNo,competency,lectureMaterial,topicUri
+COMP 6741,TF-IDF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Tf–idf
+COMP 6741,SCIKIT-LEARN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Scikit-learn
+COMP 6741,SEARCH ENGINE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Search_engine
+COMP 6741,OPEN-SOURCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Open-source_software
+COMP 6741,MOODLE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Moodle
+COMP 6741,LUCENE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Apache_Lucene
+COMP 6741,MACHINE LEARNING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Machine_learning
+COMP 6741,GOOGLE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Google
+COMP 6741,SOLR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Apache_Solr
+COMP 6741,COSINE SIMILARITY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Cosine_similarity
+COMP 6741,PRINCIPAL COMPONENT ANALYSIS (PCA),file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Principal_component_analysis
+COMP 6741,RECOMMENDER ENGINE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Recommender_system
+COMP 6741,LIBRARY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Library
+COMP 6741,ALGORITHM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Algorithm
+COMP 6741,NUBUS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/NuBus
+COMP 6741,PERSONAL SPACE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Proxemics
+COMP 6741,ELASTICSEARCH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Elasticsearch
+COMP 6741,MATRIX,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Definite_matrix
+COMP 6741,ACCEPT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Accept_(band)
+COMP 6741,IDF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Israel_Defense_Forces
+COMP 6741,LANGUAGE LOG,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Language_Log
+COMP 6741,FACETED SEARCH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Faceted_search
+COMP 6741,SCIPY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/SciPy
+COMP 6741,UNSUPERVISED LEARNING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Unsupervised_learning
+COMP 6741,VECTOR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Array_data_structure
+COMP 6741,AM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Amplitude_modulation
+COMP 6741,FEATURE EXTRACTION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Feature_extraction
+COMP 6741,JAVA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Java_virtual_machine
+COMP 6741,CLOUD,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Cloud_computing
+COMP 6741,NEWSGROUP,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Usenet_newsgroup
+COMP 6741,AMAZON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Amazon_rainforest
+COMP 6741,CENTROID,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Centroid
+COMP 6741,ECOSYSTEM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Ecosystem
+COMP 6741,DOG,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Dog
+COMP 6741,NATURAL LANGUAGE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Natural_language_processing
+COMP 6741,K-MEANS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/K-means_clustering
+COMP 6741,PYTHON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Monty_Python
+COMP 6741,K-MEANS CLUSTERING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/K-means_clustering
+COMP 6741,OPEN SOURCE ENTERPRISE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Open_Source_Enterprise
+COMP 6741,VARIANCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Variance
+COMP 6741,RESTFUL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Representational_state_transfer
+COMP 6741,MATPLOTLIB,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Matplotlib
+COMP 6741,ARORA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Arora
+COMP 6741,FEATURE VECTOR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Feature_(machine_learning)
+COMP 6741,APACHE LICENSE 2.0,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Apache_License
+COMP 6741,DATA VISUALIZATION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Data_and_information_visualization
+COMP 6741,INTERNACIONAL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Sport_Club_Internacional
+COMP 6741,PREDICTIVE MODELING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Predictive_modelling
+COMP 6741,PATTERN RECOGNITION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Pattern_recognition
+COMP 6741,NATURAL LANGUAGE PROCESSING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Natural_language_processing
+COMP 6741,NATURAL LANGUAGE PROCESSING (NLP),file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Natural_language_processing
+COMP 6741,API,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/API
+COMP 6741,COMPUTER VISION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Computer_vision
+COMP 6741,CANADA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Canada
+COMP 6741,NUMPY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/NumPy
+COMP 6741,DIMENSIONALITY REDUCTION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Dimensionality_reduction
+COMP 6741,LOGIC,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Boolean_algebra
+COMP 6741,USENET,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Usenet
+COMP 6741,SCATTER PLOT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Scatter_plot
+COMP 6741,PREDICTIVE ANALYTICS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Predictive_analytics
+COMP 6741,SIMILARITY MATRIX,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/lab05.txt,http://dbpedia.org/resource/Similarity_measure
+COMP 6741,ALGORITHM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/worksheet05.txt,http://dbpedia.org/resource/Algorithm
+COMP 6741,SYSTEM 3,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/worksheet05.txt,http://dbpedia.org/resource/Acorn_Eurocard_systems
+COMP 6741,RATINGS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/worksheet05.txt,http://dbpedia.org/resource/Nielsen_ratings
+COMP 6741,MACHINE LEARNING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/worksheet05.txt,http://dbpedia.org/resource/Machine_learning
+COMP 6741,CATION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/worksheet05.txt,http://dbpedia.org/resource/Ion
+COMP 6741,FN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/worksheet05.txt,http://dbpedia.org/resource/Karyotype
+COMP 6741,MACHINE LEARNING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/worksheet05.txt,http://dbpedia.org/resource/Supervised_learning
+COMP 6741,INTELLIGENT SYSTEMS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/worksheet05.txt,http://dbpedia.org/resource/Artificial_intelligence
+COMP 6741,QI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/worksheet05.txt,http://dbpedia.org/resource/Qi
+COMP 6741,READING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Reading
+COMP 6741,VECTOR SPACE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Vector_space
+COMP 6741,RICH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Patricia_Vickers-Rich
+COMP 6741,IDF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Israel_Defense_Forces
+COMP 6741,CLEOPATRA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Cleopatra
+COMP 6741,VECTOR SPACE MODEL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Vector_space_model
+COMP 6741,INVERSE DOCUMENT FREQUENCY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Tf–idf
+COMP 6741,TF-IDF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Tf–idf
+COMP 6741,CAESAR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/CAESAR_self-propelled_howitzer
+COMP 6741,IIN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Toshiyori
+COMP 6741,COSINE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Sine_and_cosine
+COMP 6741,EUCLIDEAN DISTANCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Euclidean_distance
+COMP 6741,SCHÜTZE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Schütze
+COMP 6741,SCALAR PRODUCT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Dot_product
+COMP 6741,CAESAR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Julius_Caesar
+COMP 6741,CAMBRIDGE UNIVERSITY PRESS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Cambridge_University_Press
+COMP 6741,GOLD STANDARD,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Ground_truth
+COMP 6741,MARY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Mary_Shelley
+COMP 6741,FOAF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/FOAF_(ontology)
+COMP 6741,COSINE SIMILARITY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Cosine_similarity
+COMP 6741,MATRIX,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Definite_matrix
+COMP 6741,MACHINE LEARNING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Machine_learning
+COMP 6741,OTHELLO,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Othello
+COMP 6741,CALPURNIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Calpurnia_gens
+COMP 6741,SIMILARITY MATRIX,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Similarity_measure
+COMP 6741,ANTHONY JULIUS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Anthony_Julius
+COMP 6741,TEMPEST,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/The_Tempest
+COMP 6741,RECOMMENDER SYSTEM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Recommender_system
+COMP 6741,METADATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Metadata
+COMP 6741,HINRICH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Kirk_Hinrich
+COMP 6741,INCIDENCE MATRIX,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Incidence_matrix
+COMP 6741,LAST.FM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Last.fm
+COMP 6741,HAMLET,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Hamlet
+COMP 6741,USER MODELING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/User_modeling
+COMP 6741,NON-BINARY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Non-binary_gender
+COMP 6741,DOT PRODUCT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Dot_product
+COMP 6741,MATHEMATICAL MODEL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Mathematical_model
+COMP 6741,CAMBRIDGE UNIVERSITY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Cambridge_University_Press
+COMP 6741,AMAZON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Amazon_rainforest
+COMP 6741,MACBETH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Macbeth
+COMP 6741,E-COMMERCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/E-commerce
+COMP 6741,OPEN KNOWLEDGE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Open_knowledge
+COMP 6741,JOHN BERRYMAN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/John_Berryman
+COMP 6741,F-MEASURE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/F-score
+COMP 6741,INTERNET,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Internet
+COMP 6741,CONCORDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Concordia_University
+COMP 6741,BASEBALL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Baseball
+COMP 6741,GROUND TRUTH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Ground_truth
+COMP 6741,COLLABORATIVE TAGGING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Folksonomy
+COMP 6741,ONTOLOGIES,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/5_RecommenderSystems/slides05.txt,http://dbpedia.org/resource/Ontology
+COMP 6741,CLAUSE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Clause
+COMP 6741,CONCORDIA UNIVERSITY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Concordia_University
+COMP 6741,TUPLE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Tuple
+COMP 6741,SPARQL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/SPARQL
+COMP 6741,COSINE SIMILARITY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Cosine_similarity
+COMP 6741,E-COMMERCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/E-commerce
+COMP 6741,SCIKIT-LEARN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Scikit-learn
+COMP 6741,PERSONALIZED MEDICINE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Personalized_medicine
+COMP 6741,SIMILARITY MATRIX,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Similarity_measure
+COMP 6741,MOODLE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Moodle
+COMP 6741,ARRAY DATA STRUCTURE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Array_data_structure
+COMP 6741,MATRIX,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Definite_matrix
+COMP 6741,PYTHON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Monty_Python
+COMP 6741,DBPEDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/DBpedia
+COMP 6741,LINKED DATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Linked_data
+COMP 6741,PREDICATE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/SQL
+COMP 6741,MACHINE LEARNING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Machine_learning
+COMP 6741,APACHE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Apache_HTTP_Server
+COMP 6741,NUMPY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/NumPy
+COMP 6741,TIME SERIES,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Time_series
+COMP 6741,WORKABLE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Workable_FC
+COMP 6741,WIKIDATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Wikidata
+COMP 6741,LIBRARY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Library
+COMP 6741,INTERNACIONAL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Sport_Club_Internacional
+COMP 6741,DATA PREPROCESSING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Data_pre-processing
+COMP 6741,RECOMMENDER SYSTEM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Recommender_system
+COMP 6741,AM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Amplitude_modulation
+COMP 6741,RATINGS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Credit_rating
+COMP 6741,DATA STRUCTURE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Data_structure
+COMP 6741,LEGO,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Lego
+COMP 6741,SKLEARN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Scikit-learn
+COMP 6741,DEEP LEARNING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Machine_learning
+COMP 6741,ALMA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Alma_Mahler
+COMP 6741,DYNAMICS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Dynamical_system
+COMP 6741,FEATURE EXTRACTION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Feature_extraction
+COMP 6741,ACCEPT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Accept_(band)
+COMP 6741,INTEGER,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Integer
+COMP 6741,DATA SCIENCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Data_science
+COMP 6741,FUSEKI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Fuseki
+COMP 6741,ARTIFICIAL INTELLIGENCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Artificial_intelligence
+COMP 6741,COMPILE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Compiler
+COMP 6741,WORD VECTORS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Word_embedding
+COMP 6741,ECOSYSTEM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Ecosystem
+COMP 6741,RDFS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/RDF_Schema
+COMP 6741,CANADA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Canada
+COMP 6741,FEATURE VECTOR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Feature_(machine_learning)
+COMP 6741,OPEN-SOURCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Open_source
+COMP 6741,TOY STORY 2,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Toy_Story_2
+COMP 6741,ARORA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Arora
+COMP 6741,COSINE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Sine_and_cosine
+COMP 6741,NATURAL LANGUAGE PROCESSING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Natural_language_processing
+COMP 6741,RECOMMENDER ENGINE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Recommender_system
+COMP 6741,GITHUB,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/GitHub
+COMP 6741,COMMA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Comma-separated_values
+COMP 6741,PERSONAL SPACE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Proxemics
+COMP 6741,LANGUAGE LOG,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Language_Log
+COMP 6741,MATRIX FACTORIZATION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Matrix_decomposition
+COMP 6741,ANACONDA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Anaconda
+COMP 6741,VECTOR SPACE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Vector_space
+COMP 6741,PROGRAMMING LANGUAGE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Programming_language
+COMP 6741,SCIENTIFIC COMPUTING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/lab06.txt,http://dbpedia.org/resource/Computational_science
+COMP 6741,MACHINE LEARNING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Machine_learning
+COMP 6741,AI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Artificial_intelligence
+COMP 6741,READING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Reading
+COMP 6741,FEATURE SPACE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Feature_(machine_learning)
+COMP 6741,O'REILLY MEDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/O'Reilly_Media
+COMP 6741,EUCLIDEAN DISTANCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Euclidean_distance
+COMP 6741,CIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Information_security
+COMP 6741,FACEBOOK,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Facebook
+COMP 6741,FALSE NEGATIVE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Type_I_and_type_II_errors
+COMP 6741,CROSS-VALIDATION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Cross-validation_(statistics)
+COMP 6741,VOLTAIRE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Voltaire
+COMP 6741,REINFORCEMENT LEARNING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Reinforcement_learning
+COMP 6741,INFORMATION RETRIEVAL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Information_retrieval
+COMP 6741,BSD LICENSE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/BSD_licenses
+COMP 6741,ALGORITHM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Algorithm
+COMP 6741,CAMBRIDGE ANALYTICA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Cambridge_Analytica
+COMP 6741,COMPUTER PROGRAM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Computer_program
+COMP 6741,NAÏVE BAYES,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Naive_Bayes_classifier
+COMP 6741,IDF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Israel_Defense_Forces
+COMP 6741,ESSENCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Essence
+COMP 6741,VECTOR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Array_data_structure
+COMP 6741,CHABACANO,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Chavacano
+COMP 6741,SPLIT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Split_album
+COMP 6741,CONNECTIONIST,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Connectionism
+COMP 6741,CREATIVE COMMONS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Creative_Commons_license
+COMP 6741,LUANDA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Luanda
+COMP 6741,GUANTANAMO BAY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Guantanamo_Bay_detention_camp
+COMP 6741,PYTHON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Monty_Python
+COMP 6741,INTELLIGENT SYSTEMS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Artificial_intelligence
+COMP 6741,CONTINGENCY TABLE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Contingency_table
+COMP 6741,GOLD STANDARD,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Ground_truth
+COMP 6741,SOCRATES,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Socrates
+COMP 6741,SCIKIT-LEARN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Scikit-learn
+COMP 6741,PARALLEL DISTRIBUTED PROCESSING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Connectionism
+COMP 6741,FALSE POSITIVE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Type_I_and_type_II_errors
+COMP 6741,TIME COMPLEXITY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Time_complexity
+COMP 6741,QI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Qi
+COMP 6741,TYPE I ERROR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Type_I_and_type_II_errors
+COMP 6741,RDFS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/RDF_Schema
+COMP 6741,CONCORDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Concordia_University
+COMP 6741,DOG,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Dog
+COMP 6741,ARTHUR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/King_Arthur
+COMP 6741,ROTE LEARNING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Rote_learning
+COMP 6741,EDA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Electronic_design_automation
+COMP 6741,K-MEANS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/K-means_clustering
+COMP 6741,CONFUSION MATRIX,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Confusion_matrix
+COMP 6741,FN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Karyotype
+COMP 6741,TYPE II ERROR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Type_I_and_type_II_errors
+COMP 6741,PARADISE PAPERS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Paradise_Papers
+COMP 6741,MANHATTAN DISTANCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Taxicab_geometry
+COMP 6741,MATHEMATICAL MODEL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Mathematical_model
+COMP 6741,GUIDO,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Guido_Reni
+COMP 6741,INFORMATION EXTRACTION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Information_extraction
+COMP 6741,VECTOR SPACE MODEL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Vector_space_model
+COMP 6741,EXTRAPOLATE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Extrapolation
+COMP 6741,EXTREME,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Dimension_Films
+COMP 6741,NIS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Israeli_new_shekel
+COMP 6741,ALISON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Alison_DiLaurentis
+COMP 6741,F-MEASURE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/F-score
+COMP 6741,WIKILEAKS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/WikiLeaks
+COMP 6741,ENRON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/6_MachineLearningforIntelligentSystems/slides06.txt,http://dbpedia.org/resource/Enron
+COMP 6741,FOAF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/worksheet02.txt,http://dbpedia.org/resource/FOAF_(ontology)
+COMP 6741,CONCORDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/worksheet02.txt,http://dbpedia.org/resource/Concordia_University
+COMP 6741,GRAPH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/worksheet02.txt,http://dbpedia.org/resource/Graph_theory
+COMP 6741,RDF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/worksheet02.txt,http://dbpedia.org/resource/Resource_Description_Framework
+COMP 6741,INTEGER,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/worksheet02.txt,http://dbpedia.org/resource/Integer
+COMP 6741,RDFS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/worksheet02.txt,http://dbpedia.org/resource/RDF_Schema
+COMP 6741,KNOWLEDGE GRAPH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/worksheet02.txt,http://dbpedia.org/resource/Knowledge_graph
+COMP 6741,INTELLIGENT SYSTEMS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/worksheet02.txt,http://dbpedia.org/resource/Artificial_intelligence
+COMP 6741,PSEUDOCODE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/worksheet02.txt,http://dbpedia.org/resource/Pseudocode
+COMP 6741,RDF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Resource_Description_Framework
+COMP 6741,AI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Artificial_intelligence
+COMP 6741,PREDICATE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/SQL
+COMP 6741,DATA INTEGRATION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Data_integration
+COMP 6741,"GHOSH, AMITAV",file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Amitav_Ghosh
+COMP 6741,MONA LISA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Mona_Lisa
+COMP 6741,READING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Reading
+COMP 6741,SEMANTIC WEB,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Semantic_Web
+COMP 6741,RESOURCE DESCRIPTION FRAMEWORK (RDF),file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Resource_Description_Framework
+COMP 6741,DBPEDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/DBpedia
+COMP 6741,NEO4J,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Neo4j
+COMP 6741,6NOTES,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/BeForU
+COMP 6741,GRAPH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Graph_database
+COMP 6741,WIKIDATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Wikidata
+COMP 6741,YOUTUBE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/YouTube
+COMP 6741,URI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Uniform_Resource_Identifier
+COMP 6741,TL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Turkish_lira
+COMP 6741,AUTEUR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Auteur
+COMP 6741,IDEN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/IDEN
+COMP 6741,RDFS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/RDF_Schema
+COMP 6741,KNOWLEDGE VAULT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Google_Knowledge_Graph
+COMP 6741,LEONARDO DA VINCI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Leonardo_da_Vinci
+COMP 6741,KNOWLEDGE GRAPH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Knowledge_graph
+COMP 6741,MICROSOFT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Microsoft
+COMP 6741,KR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/South_Korea
+COMP 6741,HARPER COLLINS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/HarperCollins
+COMP 6741,SATORI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Satori
+COMP 6741,MIROIRS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Miroirs
+COMP 6741,ISBN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/International_Standard_Book_Number
+COMP 6741,KNOWLEDGE REPRESENTATION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Knowledge_representation_and_reasoning
+COMP 6741,BOB,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Alice_and_Bob
+COMP 6741,W3C,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/World_Wide_Web_Consortium
+COMP 6741,DESCRIPTION LOGIC,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Description_logic
+COMP 6741,KNOWLEDGE GRAPH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Google_Knowledge_Graph
+COMP 6741,STRINGS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/String_theory
+COMP 6741,LIVERPOOL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Liverpool
+COMP 6741,E3,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Euclidean_space
+COMP 6741,REIFICATION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Abstract_and_concrete
+COMP 6741,LLM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Master_of_Laws
+COMP 6741,LONDON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/London
+COMP 6741,SKOLEMIZATION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Skolem_normal_form
+COMP 6741,TRIE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Trie
+COMP 6741,FOAF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/FOAF_(ontology)
+COMP 6741,LINKEDIN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/LinkedIn
+COMP 6741,LAYER CAKE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Layer_cake
+COMP 6741,IBM WATSON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Watson_(computer)
+COMP 6741,HTML,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/HTML
+COMP 6741,FACEBOOK,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Facebook
+COMP 6741,JAVA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Java_virtual_machine
+COMP 6741,AUTOMATION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Automation
+COMP 6741,ALICE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Alice_and_Bob
+COMP 6741,CYC,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Cyc
+COMP 6741,PYTHON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Monty_Python
+COMP 6741,INTERNET,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Internet
+COMP 6741,THE NEXT WEB,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/TNW_(website)
+COMP 6741,STRING LITERAL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/String_literal
+COMP 6741,SEMANTIC NETWORKS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Semantic_network
+COMP 6741,WEB BROWSER,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Web_browser
+COMP 6741,RDFA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/RDFa
+COMP 6741,SS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Schutzstaffel
+COMP 6741,PERCEPTRONS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Perceptron
+COMP 6741,HTTP,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Hypertext_Transfer_Protocol
+COMP 6741,API,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/API
+COMP 6741,AI WINTER,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/AI_winter
+COMP 6741,WORLD WIDE WEB CONSORTIUM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/World_Wide_Web_Consortium
+COMP 6741,A12,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Apple_A12
+COMP 6741,KOLKATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Kolkata
+COMP 6741,AMAZON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Amazon_rainforest
+COMP 6741,SKOS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Simple_Knowledge_Organization_System
+COMP 6741,SEMANTICS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Semantic_Web
+COMP 6741,CONCORDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Concordia_University
+COMP 6741,SPARQL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/SPARQL
+COMP 6741,HERMAN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Nikolaus_Herman
+COMP 6741,HEIDELBERG,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Heidelberg
+COMP 6741,PHP,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/PHP
+COMP 6741,CONCEPTNET,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Open_Mind_Common_Sense
+COMP 6741,JSON-LD,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/JSON-LD
+COMP 6741,RDF/XML,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/XML
+COMP 6741,WORLD WIDE WEB CONSORTIUM (W3C),file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/World_Wide_Web_Consortium
+COMP 6741,CURRENT VERSION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Linux.conf.au
+COMP 6741,SHRDLU,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/SHRDLU
+COMP 6741,HANOVER,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Hanover
+COMP 6741,GOOGLE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Google
+COMP 6741,OPEN ACCESS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Open_data
+COMP 6741,LÉONARD DE VINCI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/slides02.txt,http://dbpedia.org/resource/Leonardo_da_Vinci
+COMP 6741,RDF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Resource_Description_Framework
+COMP 6741,PYTHON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Monty_Python
+COMP 6741,HTML,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/HTML
+COMP 6741,CONCORDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Concordia_University
+COMP 6741,ACCEPT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Accept_(band)
+COMP 6741,GRAPH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Graph_database
+COMP 6741,AI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Artificial_intelligence
+COMP 6741,MOODLE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Moodle
+COMP 6741,MONTREAL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Montreal
+COMP 6741,DATA INTEGRATION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Data_integration
+COMP 6741,WIKIDATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Wikidata
+COMP 6741,JAVA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Java_virtual_machine
+COMP 6741,MACHINE LEARNING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Machine_learning
+COMP 6741,DBPEDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/DBpedia
+COMP 6741,URI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Uniform_Resource_Identifier
+COMP 6741,CONCORDIA UNIVERSITY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Concordia_University
+COMP 6741,FOAF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/FOAF_(ontology)
+COMP 6741,RDFS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/RDF_Schema
+COMP 6741,LINKED DATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Linked_data
+COMP 6741,RDF/XML,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/XML
+COMP 6741,JSON-LD,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/JSON-LD
+COMP 6741,AUTONOMOUS AGENT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Autonomous_agent
+COMP 6741,INTERNACIONAL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Sport_Club_Internacional
+COMP 6741,SPARQL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/SPARQL
+COMP 6741,KNOWLEDGE GRAPH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Knowledge_graph
+COMP 6741,XOR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Bitwise_operation
+COMP 6741,NATURAL LANGUAGE PROCESSING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Natural_language_processing
+COMP 6741,CANADA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Canada
+COMP 6741,OPEN SOURCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Open_source
+COMP 6741,PERSONAL SPACE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Proxemics
+COMP 6741,ARORA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Arora
+COMP 6741,PREDICATE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/SQL
+COMP 6741,PATTERN MATCHING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Pattern_matching
+COMP 6741,LANGUAGE LOG,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Language_Log
+COMP 6741,RDF SCHEMA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/RDF_Schema
+COMP 6741,TRIPLE PATTERNS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/2_KnowledgeGraphs/lab02.txt,http://dbpedia.org/resource/Triplestore
+COMP 6741,MONTREAL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/Montreal
+COMP 6741,DBPEDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/DBpedia
+COMP 6741,CLAUSE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/Clause
+COMP 6741,KNOWLEDGE GRAPH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/Knowledge_graph
+COMP 6741,CONCORDIA UNIVERSITY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/Concordia_University
+COMP 6741,YANGTZE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/Yangtze
+COMP 6741,NILE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/Nile
+COMP 6741,SPARQL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/SPARQL
+COMP 6741,URI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/Uniform_Resource_Identifier
+COMP 6741,INTELLIGENT SYSTEMS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/Artificial_intelligence
+COMP 6741,DAWSON COLLEGE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/Dawson_College
+COMP 6741,LINKED OPEN DATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/Linked_data
+COMP 6741,WIKIDATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/Wikidata
+COMP 6741,ONTOLOGY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/Ontology
+COMP 6741,PREDICATE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/SQL
+COMP 6741,CONCORDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/worksheet03.txt,http://dbpedia.org/resource/Concordia_University
+COMP 6741,SEMANTIC WEB,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Semantic_Web
+COMP 6741,KNOWLEDGE GRAPH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Google_Knowledge_Graph
+COMP 6741,SIRI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Siri
+COMP 6741,GRAPH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Graph_database
+COMP 6741,FOAF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/FOAF_(ontology)
+COMP 6741,PYTHON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Monty_Python
+COMP 6741,DBPEDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/DBpedia
+COMP 6741,CANADA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Canada
+COMP 6741,RDFS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/RDF_Schema
+COMP 6741,KNOWLEDGE GRAPH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Knowledge_graph
+COMP 6741,RDF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Resource_Description_Framework
+COMP 6741,DATA SCIENCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Data_science
+COMP 6741,SOCIAL NETWORK,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Social_network
+COMP 6741,URI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Uniform_Resource_Identifier
+COMP 6741,RDF SCHEMA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/RDF_Schema
+COMP 6741,DISCOVERABILITY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Discoverability
+COMP 6741,ONTOLOGIES,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Ontology
+COMP 6741,SEMANTIC INTEROPERABILITY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Semantic_interoperability
+COMP 6741,AI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Artificial_intelligence
+COMP 6741,CONCORDIA UNIVERSITY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Concordia_University
+COMP 6741,INTELLIGENT AGENT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Intelligent_agent
+COMP 6741,WIKIDATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Wikidata
+COMP 6741,MOODLE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Moodle
+COMP 6741,MONTREAL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Montreal
+COMP 6741,NATURAL LANGUAGE PROCESSING (NLP),file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Natural_language_processing
+COMP 6741,QUEBEC,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Government_of_Quebec
+COMP 6741,SIR GEORGE WILLIAMS UNIVERSITY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Concordia_University
+COMP 6741,WEB ONTOLOGY LANGUAGE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Web_Ontology_Language
+COMP 6741,INTERNACIONAL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Sport_Club_Internacional
+COMP 6741,DATA INTEGRATION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Data_integration
+COMP 6741,MACHINE-READABLE DATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Machine-readable_data
+COMP 6741,SPARQL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/SPARQL
+COMP 6741,PATTERN MATCHING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Pattern_matching
+COMP 6741,PREDICATE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/SQL
+COMP 6741,JOE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Joe_Duplantier
+COMP 6741,LANGUAGE LOG,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Language_Log
+COMP 6741,GOOGLE ASSISTANT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Google_Assistant
+COMP 6741,MCGILL UNIVERSITY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/McGill_University
+COMP 6741,CONCORDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Concordia_University
+COMP 6741,SEMANTICS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Semantic_Web
+COMP 6741,MACHINE LEARNING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Machine_learning
+COMP 6741,ARORA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Arora
+COMP 6741,LOYOLA COLLEGE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Loyola_University_Maryland
+COMP 6741,ECOSYSTEM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Ecosystem
+COMP 6741,ACCEPT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Accept_(band)
+COMP 6741,PERSONAL SPACE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Proxemics
+COMP 6741,ALEXA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Amazon_Alexa
+COMP 6741,KNOWLEDGE-BASED SYSTEMS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Knowledge-based_systems
+COMP 6741,PREDICTIVE ANALYTICS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Predictive_analytics
+COMP 6741,COMPUTER SCIENCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Computer_science
+COMP 6741,RESOURCE DESCRIPTION FRAMEWORK (RDF),file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Resource_Description_Framework
+COMP 6741,E-COMMERCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/E-commerce
+COMP 6741,CRITICAL ROLE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/lab03.txt,http://dbpedia.org/resource/Critical_Role
+COMP 6741,ISO,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/International_Organization_for_Standardization
+COMP 6741,DUBLIN CORE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Dublin_Core
+COMP 6741,READING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Reading
+COMP 6741,RDFS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/RDF_Schema
+COMP 6741,SKOS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Simple_Knowledge_Organization_System
+COMP 6741,FOAF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/FOAF_(ontology)
+COMP 6741,RDF SCHEMA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/RDF_Schema
+COMP 6741,"GHOSH, AMITAV",file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Amitav_Ghosh
+COMP 6741,RDF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Resource_Description_Framework
+COMP 6741,OPEN DATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Open_data
+COMP 6741,METAFICTION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Metafiction
+COMP 6741,SPARQL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/SPARQL
+COMP 6741,LIBRARY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Library
+COMP 6741,URI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Uniform_Resource_Identifier
+COMP 6741,FLICKR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Flickr
+COMP 6741,SCHEMA.ORG,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Schema.org
+COMP 6741,DISCONNECTED,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Beat_Union
+COMP 6741,LINKED DATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Linked_data
+COMP 6741,W3C,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/World_Wide_Web_Consortium
+COMP 6741,MIROIRS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Miroirs
+COMP 6741,LUKE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Gospel_of_Luke
+COMP 6741,LONDON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/London
+COMP 6741,AUTEUR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Auteur
+COMP 6741,LEVERAGE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Leverage_(American_TV_series)
+COMP 6741,WEB 2.0,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Web_2.0
+COMP 6741,LAYER CAKE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Layer_cake
+COMP 6741,DAVID WOOD,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Straitjacket_Fits
+COMP 6741,ACM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Association_for_Computing_Machinery
+COMP 6741,HARPER COLLINS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/HarperCollins
+COMP 6741,RDF/XML,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/XML
+COMP 6741,WORLD WIDE WEB CONSORTIUM (W3C),file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/World_Wide_Web_Consortium
+COMP 6741,W3C RECOMMENDATION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/World_Wide_Web_Consortium
+COMP 6741,SEMANTICS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Semantic_Web
+COMP 6741,SOCIAL NETWORK,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Social_network
+COMP 6741,GRAPH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Graph_database
+COMP 6741,CONCORDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Concordia_University
+COMP 6741,PREDICATE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/SQL
+COMP 6741,SEMANTIC WEB,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Semantic_Web
+COMP 6741,HERMAN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Nikolaus_Herman
+COMP 6741,HEIDELBERG,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Heidelberg
+COMP 6741,RDFA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/RDFa
+COMP 6741,ENTAILMENT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Logical_consequence
+COMP 6741,GHOSTWRITER,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Ghostwriter
+COMP 6741,UNIFORM RESOURCE LOCATOR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/URL
+COMP 6741,KNOWLEDGE GRAPH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Knowledge_graph
+COMP 6741,AI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Artificial_intelligence
+COMP 6741,DEWEY DECIMAL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Dewey_Decimal_Classification
+COMP 6741,THESAURI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Thesaurus
+COMP 6741,METADATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Metadata
+COMP 6741,POKÉMON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Pokémon
+COMP 6741,UNICODE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/3_KnowledgeGraphsVocabulariesandOntologies/slides03.txt,http://dbpedia.org/resource/Unicode
+COMP 6741,WIKIDATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Wikidata
+COMP 6741,SPARQL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/SPARQL
+COMP 6741,URI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Uniform_Resource_Identifier
+COMP 6741,LINKED DATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Linked_data
+COMP 6741,FREEBASE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Freebase_(database)
+COMP 6741,GRAPH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Graph_database
+COMP 6741,RDF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Resource_Description_Framework
+COMP 6741,READING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Reading
+COMP 6741,LINKED OPEN DATA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Linked_data
+COMP 6741,DBPEDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/DBpedia
+COMP 6741,RDFS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/RDF_Schema
+COMP 6741,AMSTERDAM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Amsterdam
+COMP 6741,ENTAILMENT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Logical_consequence
+COMP 6741,BABELNET,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/BabelNet
+COMP 6741,URI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Canton_of_Uri
+COMP 6741,METAWEB,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Metaweb
+COMP 6741,HTML,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/HTML
+COMP 6741,SIGNAL TRANSDUCTION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Signal_transduction
+COMP 6741,HTTP,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Hypertext_Transfer_Protocol
+COMP 6741,MONA LISA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Mona_Lisa
+COMP 6741,PYTHON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Monty_Python
+COMP 6741,"GHOSH, AMITAV",file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Amitav_Ghosh
+COMP 6741,BOB,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Alice_and_Bob
+COMP 6741,XML,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/XML
+COMP 6741,INTEGRAL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Integral
+COMP 6741,O'REILLY MEDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/O'Reilly_Media
+COMP 6741,JSON,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/JSON
+COMP 6741,WGS84,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/World_Geodetic_System
+COMP 6741,NEPTUNE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Neptune
+COMP 6741,SPRINGER INTERNATIONAL PUBLISHING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Springer_Nature
+COMP 6741,FRBR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Functional_Requirements_for_Bibliographic_Records
+COMP 6741,PREDICATE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/SQL
+COMP 6741,ONTOLOGIES,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Ontology
+COMP 6741,GENE ONTOLOGY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Gene_Ontology
+COMP 6741,GENE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Gene
+COMP 6741,DAVID WOOD,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Straitjacket_Fits
+COMP 6741,RDF DATABASE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Triplestore
+COMP 6741,SQL,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/SQL
+COMP 6741,PATTERN MATCHING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Pattern_matching
+COMP 6741,HERMAN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Nikolaus_Herman
+COMP 6741,KNOWLEDGE GRAPH,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Knowledge_graph
+COMP 6741,GOOGLE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Google
+COMP 6741,DOMINGUE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Louis_Domingue
+COMP 6741,OWL2,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Web_Ontology_Language
+COMP 6741,MILAN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Milan
+COMP 6741,MUSICBRAINZ,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/MusicBrainz
+COMP 6741,DESCRIPTION LOGIC,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Description_logic
+COMP 6741,SOAP,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/SOAP
+COMP 6741,NATIONAL CANCER INSTITUTE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/National_Cancer_Institute
+COMP 6741,UNIPROT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/UniProt
+COMP 6741,TRIPLE STORE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Triplestore
+COMP 6741,FUSEKI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Fuseki
+COMP 6741,OPEN BIOMEDICAL ONTOLOGIES FOUNDRY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/OBO_Foundry
+COMP 6741,STRINGS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/String_instrument
+COMP 6741,HEIDELBERG,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Heidelberg
+COMP 6741,SEMANTIC WEB,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Semantic_Web
+COMP 6741,HTTP GET,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Hypertext_Transfer_Protocol
+COMP 6741,PUBLIC KNOWLEDGE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Public_Knowledge
+COMP 6741,MEXICO,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Mexico
+COMP 6741,XHTML,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/XHTML
+COMP 6741,SEMANTICS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Semantic_Web
+COMP 6741,ONTOLOGY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Ontology
+COMP 6741,WORDPRESS.COM,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/WordPress.com
+COMP 6741,WEB ONTOLOGY LANGUAGE (OWL),file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Web_Ontology_Language
+COMP 6741,CONCORDIA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Concordia_University
+COMP 6741,CLAUSE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Clause
+COMP 6741,CANADA,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Canada
+COMP 6741,DATA INTEGRATION,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Data_integration
+COMP 6741,W3C,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/World_Wide_Web_Consortium
+COMP 6741,TIM BERNERS-LEE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Tim_Berners-Lee
+COMP 6741,OPEN SOURCE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Open-source_software
+COMP 6741,SPRINGER,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Springer_Publishing
+COMP 6741,CSV,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Comma-separated_values
+COMP 6741,AUTEUR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Auteur
+COMP 6741,BIOLOGICAL PATHWAY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Biological_pathway
+COMP 6741,GEONAMES,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/GeoNames
+COMP 6741,ALICE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Alice_and_Bob
+COMP 6741,PROTEIN,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Protein
+COMP 6741,FLICKR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Flickr
+COMP 6741,LOGIC,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Logic
+COMP 6741,JAMES,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Epistle_of_James
+COMP 6741,CONCORDIA UNIVERSITY,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Concordia_University
+COMP 6741,AMAZON AWS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Amazon_Web_Services
+COMP 6741,SILO,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Silo
+COMP 6741,QUERY STRING,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/Query_string
+COMP 6741,UTF-8,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/slides04.txt,http://dbpedia.org/resource/UTF-8
+COMP 6741,IDF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/worksheet04.txt,http://dbpedia.org/resource/Israel_Defense_Forces
+COMP 6741,TF-IDF,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/worksheet04.txt,http://dbpedia.org/resource/Tf–idf
+COMP 6741,DOT PRODUCT,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/worksheet04.txt,http://dbpedia.org/resource/Dot_product
+COMP 6741,VECTOR,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/worksheet04.txt,http://dbpedia.org/resource/Array_data_structure
+COMP 6741,INTELLIGENT SYSTEMS,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/worksheet04.txt,http://dbpedia.org/resource/Artificial_intelligence
+COMP 6741,SYSTEM 3,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/worksheet04.txt,http://dbpedia.org/resource/Acorn_Eurocard_systems
+COMP 6741,SPECI,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/worksheet04.txt,http://dbpedia.org/resource/METAR
+COMP 6741,COSINE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/worksheet04.txt,http://dbpedia.org/resource/Sine_and_cosine
+COMP 6741,JOE,file:///Users/jatin/workspace/roboprof/data#Datasets/ProcessedTextFiles/COMP6741/lectures/4_KnowledgeBaseQueriesandLinkedOpenData/worksheet04.txt,http://dbpedia.org/resource/Joe_Jonas
